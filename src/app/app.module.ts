@@ -6,10 +6,14 @@ import { MatCheckboxModule } from '@angular/material';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { NavbarComponentComponent } from './landing-page/layouts/navbar-component/navbar-component.component';
+import { IndexComponent } from './landing-page/index/index.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    NavbarComponentComponent,
+    IndexComponent
   ],
   imports: [
     BrowserModule,

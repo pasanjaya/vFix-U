@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { setTheme } from 'ngx-bootstrap/utils';
+
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  constructor(){
+    setTheme('bs4');
+  }
   title = 'vFix-U';
 }
