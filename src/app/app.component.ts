@@ -8,7 +8,7 @@ import { setTheme } from 'ngx-bootstrap/utils';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  constructor(){
+  constructor() {
     setTheme('bs4');
   }
   title = 'vFix-U';

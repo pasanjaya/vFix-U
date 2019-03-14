@@ -7,9 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponentComponent implements OnInit {
 
-  constructor() { }
+  public title = 'vFix-U';
+  public isCollapsed = true;
 
-  title = 'vFix-U';
+
+  constructor() { }
 
   ngOnInit() {
   }
