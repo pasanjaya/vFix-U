@@ -9,7 +9,8 @@ export class NavbarComponentComponent implements OnInit {
 
   constructor() { }
 
+  title = 'vFix-U';
+
   ngOnInit() {
   }
-
 }
