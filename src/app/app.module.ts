@@ -7,6 +7,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 
 import { CollapseModule } from 'ngx-bootstrap/collapse';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
+import { ButtonsModule } from 'ngx-bootstrap/buttons';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -39,7 +40,8 @@ import { FooterComponentComponent } from './landing-page/layouts/footer-componen
     MatCheckboxModule,
     MatToolbarModule,
     CollapseModule.forRoot(),
-    CarouselModule.forRoot()
+    CarouselModule.forRoot(),
+    ButtonsModule.forRoot()
   ],
   providers: [
 
