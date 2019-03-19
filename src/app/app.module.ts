@@ -19,6 +19,7 @@ import { SellerComponentComponent } from './sellers-dashboard/seller-component/s
 import { NotFoundComponentComponent } from './not-found-component/not-found-component.component';
 import { CarouselComponentComponent } from './landing-page/layouts/carousel-component/carousel-component.component';
 import { FooterComponentComponent } from './landing-page/layouts/footer-component/footer-component.component';
+import { LoginComponentComponent } from './login-component/login-component.component';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { FooterComponentComponent } from './landing-page/layouts/footer-componen
     SellerComponentComponent,
     NotFoundComponentComponent,
     CarouselComponentComponent,
-    FooterComponentComponent
+    FooterComponentComponent,
+    LoginComponentComponent
   ],
   imports: [
     BrowserModule,

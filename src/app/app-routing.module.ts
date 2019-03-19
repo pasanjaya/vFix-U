@@ -6,6 +6,7 @@ import { AdminComponentComponent } from './admin-dashboard/admin-component/admin
 import { BuyerComponentComponent } from './buyers-dashboard/buyer-component/buyer-component.component';
 import { SellerComponentComponent } from './sellers-dashboard/seller-component/seller-component.component';
 import { NotFoundComponentComponent } from './not-found-component/not-found-component.component';
+import { LoginComponentComponent } from './login-component/login-component.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/index', pathMatch: 'full'},
@@ -13,6 +14,7 @@ const routes: Routes = [
   { path: 'admindashboard', component: AdminComponentComponent },
   { path: 'buyerdashboard', component: BuyerComponentComponent },
   { path: 'sellerdashboard', component: SellerComponentComponent },
+  { path: 'login', component: LoginComponentComponent },
   { path: '**', component: NotFoundComponentComponent }
 ];
 

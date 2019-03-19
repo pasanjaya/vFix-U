@@ -20,7 +20,7 @@ export class NavbarComponentComponent implements OnInit {
   }
 
   sidebarToggle() {
-    
+
   }
 
   collapse() {
