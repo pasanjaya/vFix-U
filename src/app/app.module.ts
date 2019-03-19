@@ -11,12 +11,20 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponentComponent } from './landing-page/layouts/navbar-component/navbar-component.component';
 import { IndexComponent } from './landing-page/index/index.component';
+import { AdminComponentComponent } from './admin-dashboard/admin-component/admin-component.component';
+import { BuyerComponentComponent } from './buyers-dashboard/buyer-component/buyer-component.component';
+import { SellerComponentComponent } from './sellers-dashboard/seller-component/seller-component.component';
+import { NotFoundComponentComponent } from './not-found-component/not-found-component.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponentComponent,
-    IndexComponent
+    IndexComponent,
+    AdminComponentComponent,
+    BuyerComponentComponent,
+    SellerComponentComponent,
+    NotFoundComponentComponent
   ],
   imports: [
     BrowserModule,

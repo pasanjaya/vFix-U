@@ -10,9 +10,20 @@ export class NavbarComponentComponent implements OnInit {
   public title = 'vFix-U';
   public isCollapsed = true;
 
-
   constructor() { }
 
   ngOnInit() {
+  }
+
+  getTitle() {
+    return this.title;
+  }
+
+  sidebarToggle() {
+
+  }
+
+  collapse() {
+    this.isCollapsed = this.isCollapsed ? !this.isCollapsed : this.isCollapsed;
   }
 }
