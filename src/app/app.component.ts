@@ -11,5 +11,4 @@ export class AppComponent {
   constructor() {
     setTheme('bs4');
   }
-  title = 'vFix-U';
 }
