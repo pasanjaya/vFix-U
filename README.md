@@ -4,6 +4,17 @@ Third Year Group project; A digital platform for vehicle part sellers and for bu
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.1.
 
+## How to install this project
+
+Use the package manager [npm](https://nodejs.org/en/) to install vFix-U.
+
+```bash
+git clone https://github.com/pasanjaya/vFix-U
+cd vFix-U
+npm install
+```
+
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
