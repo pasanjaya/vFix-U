@@ -6,6 +6,7 @@ import { MatCheckboxModule } from '@angular/material';
 import { MatToolbarModule } from '@angular/material/toolbar';
 
 import { CollapseModule } from 'ngx-bootstrap/collapse';
+import { CarouselModule } from 'ngx-bootstrap/carousel';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,6 +16,8 @@ import { AdminComponentComponent } from './admin-dashboard/admin-component/admin
 import { BuyerComponentComponent } from './buyers-dashboard/buyer-component/buyer-component.component';
 import { SellerComponentComponent } from './sellers-dashboard/seller-component/seller-component.component';
 import { NotFoundComponentComponent } from './not-found-component/not-found-component.component';
+import { CarouselComponentComponent } from './landing-page/layouts/carousel-component/carousel-component.component';
+
 
 @NgModule({
   declarations: [
@@ -24,7 +27,8 @@ import { NotFoundComponentComponent } from './not-found-component/not-found-comp
     AdminComponentComponent,
     BuyerComponentComponent,
     SellerComponentComponent,
-    NotFoundComponentComponent
+    NotFoundComponentComponent,
+    CarouselComponentComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +36,8 @@ import { NotFoundComponentComponent } from './not-found-component/not-found-comp
     BrowserAnimationsModule,
     MatCheckboxModule,
     MatToolbarModule,
-    CollapseModule.forRoot()
+    CollapseModule.forRoot(),
+    CarouselModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
