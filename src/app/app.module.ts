@@ -8,6 +8,7 @@ import { NgModule } from '@angular/core';
 import { CollapseModule } from 'ngx-bootstrap/collapse';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 // import { ButtonsModule } from 'ngx-bootstrap/buttons';
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -46,8 +47,9 @@ import { BuyerSidebarComponentComponent } from './buyers-dashboard/layouts/buyer
     // MatCheckboxModule,
     // MatToolbarModule,
     CollapseModule.forRoot(),
-    CarouselModule.forRoot()
-    // ButtonsModule.forRoot()
+    CarouselModule.forRoot(),
+    // ButtonsModule.forRoot(),
+    BsDropdownModule.forRoot()
   ],
   providers: [
 
