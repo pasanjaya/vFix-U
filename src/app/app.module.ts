@@ -23,6 +23,7 @@ import { FooterComponentComponent } from './landing-page/layouts/footer-componen
 import { LoginComponentComponent } from './login-component/login-component.component';
 import { BuyerNavbarComponentComponent } from './buyers-dashboard/layouts/buyer-navbar-component/buyer-navbar-component.component';
 import { BuyerSidebarComponentComponent } from './buyers-dashboard/layouts/buyer-sidebar-component/buyer-sidebar-component.component';
+import { DashboardComponentComponent } from './buyers-dashboard/pages/dashboard-component/dashboard-component.component';
 
 
 @NgModule({
@@ -38,7 +39,8 @@ import { BuyerSidebarComponentComponent } from './buyers-dashboard/layouts/buyer
     FooterComponentComponent,
     LoginComponentComponent,
     BuyerNavbarComponentComponent,
-    BuyerSidebarComponentComponent
+    BuyerSidebarComponentComponent,
+    DashboardComponentComponent
   ],
   imports: [
     BrowserModule,
