@@ -2,12 +2,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 
-import { MatCheckboxModule } from '@angular/material';
-import { MatToolbarModule } from '@angular/material/toolbar';
+// import { MatCheckboxModule } from '@angular/material';
+// import { MatToolbarModule } from '@angular/material/toolbar';
 
 import { CollapseModule } from 'ngx-bootstrap/collapse';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
-import { ButtonsModule } from 'ngx-bootstrap/buttons';
+// import { ButtonsModule } from 'ngx-bootstrap/buttons';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -43,11 +43,11 @@ import { BuyerSidebarComponentComponent } from './buyers-dashboard/layouts/buyer
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatCheckboxModule,
-    MatToolbarModule,
+    // MatCheckboxModule,
+    // MatToolbarModule,
     CollapseModule.forRoot(),
-    CarouselModule.forRoot(),
-    ButtonsModule.forRoot()
+    CarouselModule.forRoot()
+    // ButtonsModule.forRoot()
   ],
   providers: [
 
