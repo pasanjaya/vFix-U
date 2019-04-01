@@ -47,7 +47,7 @@ import { AdminSidebarComponent } from './admin-dashboard/layouts/admin-sidebar/a
     BuyerNavbarComponentComponent,
     BuyerSidebarComponentComponent,
     DashboardComponentComponent,
-    ManageDeatilsComponent
+    ManageDeatilsComponent,
     AdminDashboardComponent,
     AdminNavbarComponent,
     AdminLoginComponent,
