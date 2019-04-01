@@ -1,3 +1,21 @@
-<p>
-  not-found-component works!
-</p>
+<div class="container h-100">
+  <div class="d-flex justify-content-center align-items-center">
+    <div class="flex-column">
+      <div class="flex-row">
+        <img src="assets/img/errors/oops.png" alt="oops!" />
+      </div>
+      <div class="flex-row">
+        <h1>Page Not Found</h1>
+        <p>
+          We can't find the page you're looking for. <br />You can either return
+          to the previous page, visit our homepage <br />or contact our support
+          team.
+        </p>
+      </div>
+      <div class="flex-row">
+        <a routerLink='/index' class="btn btn-primary" role="button" aria-pressed="true"><i class="ni ni-spaceship"></i> Homepage</a>
+        <a routerLink='/contact' class="btn btn-secondary" role="button" aria-pressed="true"><i class="ni ni-send"></i> Contact us</a>
+      </div>
+    </div>
+  </div>
+</div>

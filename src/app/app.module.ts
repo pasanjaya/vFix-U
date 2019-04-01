@@ -25,6 +25,11 @@ import { BuyerNavbarComponentComponent } from './buyers-dashboard/layouts/buyer-
 import { BuyerSidebarComponentComponent } from './buyers-dashboard/layouts/buyer-sidebar-component/buyer-sidebar-component.component';
 import { DashboardComponentComponent } from './buyers-dashboard/pages/dashboard-component/dashboard-component.component';
 import { ManageDeatilsComponent } from './buyers-dashboard/pages/manage-deatils/manage-deatils.component';
+import { AdminDashboardComponent } from './admin-dashboard/pages/admin-dashboard/admin-dashboard.component';
+import { AdminNavbarComponent } from './admin-dashboard/layouts/admin-navbar/admin-navbar.component';
+import { AdminLoginComponent } from './admin-dashboard/pages/admin-login/admin-login.component';
+import { AdminSidebarComponent } from './admin-dashboard/layouts/admin-sidebar/admin-sidebar.component';
+
 
 
 @NgModule({
@@ -43,6 +48,11 @@ import { ManageDeatilsComponent } from './buyers-dashboard/pages/manage-deatils/
     BuyerSidebarComponentComponent,
     DashboardComponentComponent,
     ManageDeatilsComponent
+    AdminDashboardComponent,
+    AdminNavbarComponent,
+    AdminLoginComponent,
+    AdminSidebarComponent,
+
   ],
   imports: [
     BrowserModule,
