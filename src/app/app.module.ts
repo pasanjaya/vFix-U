@@ -24,6 +24,7 @@ import { LoginComponentComponent } from './login-component/login-component.compo
 import { BuyerNavbarComponentComponent } from './buyers-dashboard/layouts/buyer-navbar-component/buyer-navbar-component.component';
 import { BuyerSidebarComponentComponent } from './buyers-dashboard/layouts/buyer-sidebar-component/buyer-sidebar-component.component';
 import { DashboardComponentComponent } from './buyers-dashboard/pages/dashboard-component/dashboard-component.component';
+import { ManageDeatilsComponent } from './buyers-dashboard/pages/manage-deatils/manage-deatils.component';
 
 
 @NgModule({
@@ -40,7 +41,8 @@ import { DashboardComponentComponent } from './buyers-dashboard/pages/dashboard-
     LoginComponentComponent,
     BuyerNavbarComponentComponent,
     BuyerSidebarComponentComponent,
-    DashboardComponentComponent
+    DashboardComponentComponent,
+    ManageDeatilsComponent
   ],
   imports: [
     BrowserModule,
