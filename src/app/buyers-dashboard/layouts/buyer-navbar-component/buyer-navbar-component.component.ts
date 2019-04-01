@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./buyer-navbar-component.component.scss']
 })
 export class BuyerNavbarComponentComponent implements OnInit {
-  title = 'vFixu';
+  title = 'Buyer-dashBoard';
   constructor() { }
 
   getTitle() {
