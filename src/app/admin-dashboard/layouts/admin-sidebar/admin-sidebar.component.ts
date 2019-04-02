@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { GeneralService } from '../../../services/general.service';
+
 @Component({
   selector: 'app-admin-sidebar',
   templateUrl: './admin-sidebar.component.html',
@@ -7,12 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminSidebarComponent implements OnInit {
 
-  constructor() { }
-  
+  constructor(private generalService: GeneralService) { }
+
   public menuItems: any[];
   public isCollapsed = true;
+  public title: string;
 
   ngOnInit() {
+    this.title = this.generalService.getTitle();
   }
-
 }

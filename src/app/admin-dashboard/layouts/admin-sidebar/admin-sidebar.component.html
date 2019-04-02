@@ -8,7 +8,7 @@
     <!-- Brand -->
     <a class="navbar-brand pt-0" routerLinkActive="active" [routerLink]="['/dashboard']">
       <!-- <img src="./assets/img/brand/red.png" class="navbar-brand-img" alt="..."> -->
-      vFixU
+      {{ title }}
     </a>
     <!-- User -->
     <ul class="nav align-items-center d-md-none">
@@ -93,13 +93,13 @@
       <!-- Navigation -->
       <ul class="navbar-nav mb-md-3">
         <li class="nav-item">
-          <a class="nav-link" href="#">
+          <a class="nav-link" routerLink=''>
             <i class="ni ni-spaceship"></i> Dashboard
           </a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">
-            <i class="ni ni-palette"></i> Tracker
+            <i class="ni ni-map-big"></i> Tracker
           </a>
         </li>
         <li class="nav-item">

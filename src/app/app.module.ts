@@ -33,6 +33,8 @@ import { SellerSidebarComponent } from './sellers-dashboard/layouts/seller-sideb
 import { SellerNavbarComponent } from './sellers-dashboard/layouts/seller-navbar/seller-navbar.component';
 import { SellerDashboardComponent } from './sellers-dashboard/pages/seller-dashboard/seller-dashboard.component';
 
+import { GeneralService } from './services/general.service';
+
 
 
 @NgModule({
@@ -72,7 +74,7 @@ import { SellerDashboardComponent } from './sellers-dashboard/pages/seller-dashb
     BsDropdownModule.forRoot()
   ],
   providers: [
-
+    GeneralService
   ],
   bootstrap: [AppComponent]
 })
