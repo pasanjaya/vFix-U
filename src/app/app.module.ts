@@ -29,6 +29,9 @@ import { AdminDashboardComponent } from './admin-dashboard/pages/admin-dashboard
 import { AdminNavbarComponent } from './admin-dashboard/layouts/admin-navbar/admin-navbar.component';
 import { AdminLoginComponent } from './admin-dashboard/pages/admin-login/admin-login.component';
 import { AdminSidebarComponent } from './admin-dashboard/layouts/admin-sidebar/admin-sidebar.component';
+import { SellerSidebarComponent } from './sellers-dashboard/layouts/seller-sidebar/seller-sidebar.component';
+import { SellerNavbarComponent } from './sellers-dashboard/layouts/seller-navbar/seller-navbar.component';
+import { SellerDashboardComponent } from './sellers-dashboard/pages/seller-dashboard/seller-dashboard.component';
 
 
 
@@ -52,6 +55,9 @@ import { AdminSidebarComponent } from './admin-dashboard/layouts/admin-sidebar/a
     AdminNavbarComponent,
     AdminLoginComponent,
     AdminSidebarComponent,
+    SellerSidebarComponent,
+    SellerNavbarComponent,
+    SellerDashboardComponent
 
   ],
   imports: [
