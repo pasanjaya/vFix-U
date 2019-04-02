@@ -7,7 +7,7 @@ import { NgModule } from '@angular/core';
 
 import { CollapseModule } from 'ngx-bootstrap/collapse';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
-// import { ButtonsModule } from 'ngx-bootstrap/buttons';
+import { ButtonsModule } from 'ngx-bootstrap/buttons';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -62,7 +62,7 @@ import { AdminSidebarComponent } from './admin-dashboard/layouts/admin-sidebar/a
     // MatToolbarModule,
     CollapseModule.forRoot(),
     CarouselModule.forRoot(),
-    // ButtonsModule.forRoot(),
+    ButtonsModule.forRoot(),
     BsDropdownModule.forRoot()
   ],
   providers: [

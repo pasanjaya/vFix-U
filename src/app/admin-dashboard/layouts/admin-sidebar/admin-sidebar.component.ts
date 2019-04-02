@@ -8,6 +8,9 @@ import { Component, OnInit } from '@angular/core';
 export class AdminSidebarComponent implements OnInit {
 
   constructor() { }
+  
+  public menuItems: any[];
+  public isCollapsed = true;
 
   ngOnInit() {
   }

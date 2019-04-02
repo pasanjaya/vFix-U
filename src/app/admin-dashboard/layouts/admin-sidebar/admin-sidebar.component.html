@@ -7,30 +7,31 @@
     </button>
     <!-- Brand -->
     <a class="navbar-brand pt-0" routerLinkActive="active" [routerLink]="['/dashboard']">
-      <img src="./assets/img/brand/red.png" class="navbar-brand-img" alt="...">
+      <!-- <img src="./assets/img/brand/red.png" class="navbar-brand-img" alt="..."> -->
+      vFixU
     </a>
     <!-- User -->
     <ul class="nav align-items-center d-md-none">
-      <li class="nav-item" ngbDropdown placement="bottom-right">
-        <a class="nav-link nav-link-icon" role="button" ngbDropdownToggle>
+      <li class="nav-item" dropdown placement="bottom-right">
+        <a class="nav-link nav-link-icon" role="button" dropdownToggle>
           <i class="ni ni-bell-55"></i>
         </a>
-        <div class="dropdown-menu-arrow dropdown-menu-right" ngbDropdownMenu>
+        <div class="dropdown-menu-arrow dropdown-menu-right" *dropdownMenu>
           <a class="dropdown-item" href="javascript:void(0)">Action</a>
           <a class="dropdown-item" href="javascript:void(0)">Another action</a>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="javascript:void(0)">Something else here</a>
         </div>
       </li>
-      <li class="nav-item" ngbDropdown placement="bottom-right">
-        <a class="nav-link" role="button" ngbDropdownToggle>
+      <li class="nav-item" dropdown placement="bottom-right">
+        <a class="nav-link" role="button" dropdownToggle>
           <div class="media align-items-center">
             <span class="avatar avatar-sm rounded-circle">
               <img alt="Image placeholder" src="./assets/img/theme/team-1-800x800.jpg">
             </span>
           </div>
         </a>
-        <div class="dropdown-menu-arrow dropdown-menu-right" ngbDropdownMenu>
+        <div class="dropdown-menu-arrow dropdown-menu-right" *dropdownMenu>
           <div class=" dropdown-header noti-title">
             <h6 class="text-overflow m-0">Welcome!</h6>
           </div>
@@ -92,18 +93,23 @@
       <!-- Navigation -->
       <ul class="navbar-nav mb-md-3">
         <li class="nav-item">
-          <a class="nav-link" href="https://demos.creative-tim.com/argon-dashboard-angular/documentation/tutorial">
-            <i class="ni ni-spaceship"></i> Getting started
+          <a class="nav-link" href="#">
+            <i class="ni ni-spaceship"></i> Dashboard
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="https://demos.creative-tim.com/argon-dashboard-angular/documentation/colors">
-            <i class="ni ni-palette"></i> Foundation
+          <a class="nav-link" href="#">
+            <i class="ni ni-palette"></i> Tracker
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="https://demos.creative-tim.com/argon-dashboard-angular/documentation/alerts">
-            <i class="ni ni-ui-04"></i> Components
+          <a class="nav-link" href="#">
+            <i class="ni ni-ui-04"></i> MailBox
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">
+            <i class="ni ni-ui-04"></i> Template Editor
           </a>
         </li>
       </ul>

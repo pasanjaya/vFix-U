@@ -9,6 +9,12 @@ export class AdminNavbarComponent implements OnInit {
 
   constructor() { }
 
+  public focus;
+
+  getTitle(){
+    return "vFixu"
+  }
+
   ngOnInit() {
   }
 
