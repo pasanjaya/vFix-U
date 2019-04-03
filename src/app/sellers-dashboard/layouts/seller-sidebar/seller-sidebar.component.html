@@ -8,7 +8,7 @@
     <!-- Brand -->
     <a class="navbar-brand pt-0" routerLinkActive="active" [routerLink]="['/dashboard']">
       <!-- <img src="./assets/img/brand/red.png" class="navbar-brand-img" alt="..."> -->
-      v-FixU
+      {{title}}
     </a>
     <!-- User -->
     <ul class="nav align-items-center d-md-none">
@@ -37,7 +37,7 @@
           </div>
           <a routerLinkActive="active" [routerLink]="['/user-profile']" class="dropdown-item">
             <i class="ni ni-single-02"></i>
-            <span>My profile</span>
+            <span>Profile</span>
           </a>
           <a routerLinkActive="active" [routerLink]="['/user-profile']" class="dropdown-item">
             <i class="ni ni-settings-gear-65"></i>
@@ -94,17 +94,17 @@
       <ul class="navbar-nav mb-md-3">
         <li class="nav-item">
           <a class="nav-link" href="https://demos.creative-tim.com/argon-dashboard-angular/documentation/tutorial">
-            <i class="ni ni-spaceship"></i> Getting started
+            <i class="ni ni-spaceship"></i> Engine parts
           </a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="https://demos.creative-tim.com/argon-dashboard-angular/documentation/colors">
-            <i class="ni ni-palette"></i> Foundation
+            <i class="ni ni-palette"></i> Body parts
           </a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="https://demos.creative-tim.com/argon-dashboard-angular/documentation/alerts">
-            <i class="ni ni-ui-04"></i> Components
+            <i class="ni ni-ui-04"></i> Other
           </a>
         </li>
       </ul>
