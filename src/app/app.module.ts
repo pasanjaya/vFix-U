@@ -10,6 +10,8 @@ import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { ButtonsModule } from 'ngx-bootstrap/buttons';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 
+import { GeneralService } from './services/general.service';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponentComponent } from './landing-page/layouts/navbar-component/navbar-component.component';
@@ -32,9 +34,7 @@ import { AdminSidebarComponent } from './admin-dashboard/layouts/admin-sidebar/a
 import { SellerSidebarComponent } from './sellers-dashboard/layouts/seller-sidebar/seller-sidebar.component';
 import { SellerNavbarComponent } from './sellers-dashboard/layouts/seller-navbar/seller-navbar.component';
 import { SellerDashboardComponent } from './sellers-dashboard/pages/seller-dashboard/seller-dashboard.component';
-
-import { GeneralService } from './services/general.service';
-
+import { AdminMapsComponent } from './admin-dashboard/pages/admin-maps/admin-maps.component';
 
 
 @NgModule({
@@ -59,7 +59,8 @@ import { GeneralService } from './services/general.service';
     AdminSidebarComponent,
     SellerSidebarComponent,
     SellerNavbarComponent,
-    SellerDashboardComponent
+    SellerDashboardComponent,
+    AdminMapsComponent
 
   ],
   imports: [
