@@ -1,3 +1,4 @@
+import { GeneralService } from './../../../services/general.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,10 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./seller-sidebar.component.scss']
 })
 export class SellerSidebarComponent implements OnInit {
-
-  constructor() { }
+  public title: string;
+  constructor(private generalService: GeneralService) { }
 
   ngOnInit() {
+    this.title = this.generalService.getTitle();
   }
 
 }
