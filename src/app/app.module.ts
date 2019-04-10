@@ -22,7 +22,8 @@ import { SellerComponentComponent } from './sellers-dashboard/seller-component/s
 import { NotFoundComponentComponent } from './not-found-component/not-found-component.component';
 import { CarouselComponentComponent } from './landing-page/layouts/carousel-component/carousel-component.component';
 import { FooterComponentComponent } from './landing-page/layouts/footer-component/footer-component.component';
-import { LoginComponentComponent } from './login-component/login-component.component';
+import { SignupComponent } from './auth/signup/signup.component';
+import { LoginComponent } from './auth/login/login.component';
 import { BuyerNavbarComponentComponent } from './buyers-dashboard/layouts/buyer-navbar-component/buyer-navbar-component.component';
 import { BuyerSidebarComponentComponent } from './buyers-dashboard/layouts/buyer-sidebar-component/buyer-sidebar-component.component';
 import { DashboardComponentComponent } from './buyers-dashboard/pages/dashboard-component/dashboard-component.component';
@@ -48,7 +49,8 @@ import { AdminMapsComponent } from './admin-dashboard/pages/admin-maps/admin-map
     NotFoundComponentComponent,
     CarouselComponentComponent,
     FooterComponentComponent,
-    LoginComponentComponent,
+    SignupComponent,
+    LoginComponent,
     BuyerNavbarComponentComponent,
     BuyerSidebarComponentComponent,
     DashboardComponentComponent,

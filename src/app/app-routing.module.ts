@@ -6,7 +6,7 @@ import { AdminComponentComponent } from './admin-dashboard/admin-component/admin
 import { BuyerComponentComponent } from './buyers-dashboard/buyer-component/buyer-component.component';
 import { SellerComponentComponent } from './sellers-dashboard/seller-component/seller-component.component';
 import { NotFoundComponentComponent } from './not-found-component/not-found-component.component';
-import { LoginComponentComponent } from './login-component/login-component.component';
+import { LoginComponent } from './auth/login/login.component';
 import { ManageDeatilsComponent } from './buyers-dashboard/pages/manage-deatils/manage-deatils.component';
 
 const routes: Routes = [
@@ -15,7 +15,7 @@ const routes: Routes = [
   { path: 'admindashboard', component: AdminComponentComponent },
   { path: 'buyerdashboard', component: BuyerComponentComponent },
   { path: 'sellerdashboard', component: SellerComponentComponent },
-  { path: 'login', component: LoginComponentComponent },
+  { path: 'login', component: LoginComponent },
   { path: 'managedetails', component: ManageDeatilsComponent},
   { path: '**', component: NotFoundComponentComponent }
 ];
