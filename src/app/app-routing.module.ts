@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+
 import { IndexComponent } from './landing-page/index/index.component';
 import { AdminComponentComponent } from './admin-dashboard/admin-component/admin-component.component';
 import { BuyerComponentComponent } from './buyers-dashboard/buyer-component/buyer-component.component';
