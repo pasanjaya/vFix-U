@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { NavbarComponentComponent } from './landing-page/layouts/navbar-component/navbar-component.component';
 import { IndexComponent } from './landing-page/index/index.component';
 import { AdminComponentComponent } from './admin-dashboard/admin-component/admin-component.component';
 import { BuyerComponentComponent } from './buyers-dashboard/buyer-component/buyer-component.component';
@@ -12,7 +11,14 @@ import { ManageDeatilsComponent } from './buyers-dashboard/pages/manage-deatils/
 const routes: Routes = [
   { path: '', redirectTo: '/index', pathMatch: 'full'},
   { path: 'index', component: IndexComponent},
-  { path: 'admindashboard', component: AdminComponentComponent },
+  { path: 'admindashboard',
+    component: AdminComponentComponent,
+    children: [
+      { path: '',
+        loadChildren: './admin-dashboard/admin-component/admin.module#AdminModule'
+      }
+    ]
+  },
   { path: 'buyerdashboard', component: BuyerComponentComponent },
   { path: 'sellerdashboard', component: SellerComponentComponent },
   { path: 'login', component: LoginComponent },

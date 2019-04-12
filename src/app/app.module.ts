@@ -17,6 +17,9 @@ import { AppComponent } from './app.component';
 import { NavbarComponentComponent } from './landing-page/layouts/navbar-component/navbar-component.component';
 import { IndexComponent } from './landing-page/index/index.component';
 import { AdminComponentComponent } from './admin-dashboard/admin-component/admin-component.component';
+import { AdminNavbarComponent } from './admin-dashboard/layouts/admin-navbar/admin-navbar.component';
+import { AdminSidebarComponent } from './admin-dashboard/layouts/admin-sidebar/admin-sidebar.component';
+import { AdminModule } from './admin-dashboard/admin-component/admin.module';
 import { BuyerComponentComponent } from './buyers-dashboard/buyer-component/buyer-component.component';
 import { SellerComponentComponent } from './sellers-dashboard/seller-component/seller-component.component';
 import { NotFoundComponentComponent } from './not-found-component/not-found-component.component';
@@ -28,14 +31,9 @@ import { BuyerNavbarComponentComponent } from './buyers-dashboard/layouts/buyer-
 import { BuyerSidebarComponentComponent } from './buyers-dashboard/layouts/buyer-sidebar-component/buyer-sidebar-component.component';
 import { DashboardComponentComponent } from './buyers-dashboard/pages/dashboard-component/dashboard-component.component';
 import { ManageDeatilsComponent } from './buyers-dashboard/pages/manage-deatils/manage-deatils.component';
-import { AdminDashboardComponent } from './admin-dashboard/pages/admin-dashboard/admin-dashboard.component';
-import { AdminNavbarComponent } from './admin-dashboard/layouts/admin-navbar/admin-navbar.component';
-import { AdminLoginComponent } from './admin-dashboard/pages/admin-login/admin-login.component';
-import { AdminSidebarComponent } from './admin-dashboard/layouts/admin-sidebar/admin-sidebar.component';
 import { SellerSidebarComponent } from './sellers-dashboard/layouts/seller-sidebar/seller-sidebar.component';
 import { SellerNavbarComponent } from './sellers-dashboard/layouts/seller-navbar/seller-navbar.component';
 import { SellerDashboardComponent } from './sellers-dashboard/pages/seller-dashboard/seller-dashboard.component';
-import { AdminMapsComponent } from './admin-dashboard/pages/admin-maps/admin-maps.component';
 
 
 @NgModule({
@@ -44,6 +42,8 @@ import { AdminMapsComponent } from './admin-dashboard/pages/admin-maps/admin-map
     NavbarComponentComponent,
     IndexComponent,
     AdminComponentComponent,
+    AdminNavbarComponent,
+    AdminSidebarComponent,
     BuyerComponentComponent,
     SellerComponentComponent,
     NotFoundComponentComponent,
@@ -55,14 +55,9 @@ import { AdminMapsComponent } from './admin-dashboard/pages/admin-maps/admin-map
     BuyerSidebarComponentComponent,
     DashboardComponentComponent,
     ManageDeatilsComponent,
-    AdminDashboardComponent,
-    AdminNavbarComponent,
-    AdminLoginComponent,
-    AdminSidebarComponent,
     SellerSidebarComponent,
     SellerNavbarComponent,
-    SellerDashboardComponent,
-    AdminMapsComponent
+    SellerDashboardComponent
 
   ],
   imports: [
@@ -74,7 +69,8 @@ import { AdminMapsComponent } from './admin-dashboard/pages/admin-maps/admin-map
     CollapseModule.forRoot(),
     CarouselModule.forRoot(),
     ButtonsModule.forRoot(),
-    BsDropdownModule.forRoot()
+    BsDropdownModule.forRoot(),
+    AdminModule
   ],
   providers: [
     GeneralService
