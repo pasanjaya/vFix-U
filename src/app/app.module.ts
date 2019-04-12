@@ -19,7 +19,6 @@ import { IndexComponent } from './landing-page/index/index.component';
 import { AdminComponentComponent } from './admin-dashboard/admin-component/admin-component.component';
 import { AdminNavbarComponent } from './admin-dashboard/layouts/admin-navbar/admin-navbar.component';
 import { AdminSidebarComponent } from './admin-dashboard/layouts/admin-sidebar/admin-sidebar.component';
-import { AdminModule } from './admin-dashboard/admin-component/admin.module';
 import { BuyerComponentComponent } from './buyers-dashboard/buyer-component/buyer-component.component';
 import { SellerComponentComponent } from './sellers-dashboard/seller-component/seller-component.component';
 import { NotFoundComponentComponent } from './not-found-component/not-found-component.component';
@@ -69,8 +68,7 @@ import { SellerDashboardComponent } from './sellers-dashboard/pages/seller-dashb
     CollapseModule.forRoot(),
     CarouselModule.forRoot(),
     ButtonsModule.forRoot(),
-    BsDropdownModule.forRoot(),
-    AdminModule
+    BsDropdownModule.forRoot()
   ],
   providers: [
     GeneralService
