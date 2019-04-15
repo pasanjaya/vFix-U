@@ -6,8 +6,10 @@ import { AdminComponentComponent } from './admin-dashboard/admin-component/admin
 import { BuyerComponentComponent } from './buyers-dashboard/buyer-component/buyer-component.component';
 import { SellerComponentComponent } from './sellers-dashboard/seller-component/seller-component.component';
 import { NotFoundComponentComponent } from './not-found-component/not-found-component.component';
-import { LoginComponent } from './auth/login/login.component';
+// import { LoginComponent } from './auth/login/login.component';
 import { ManageDeatilsComponent } from './buyers-dashboard/pages/manage-deatils/manage-deatils.component';
+// import { SignupComponent } from './auth/signup/signup.component';
+import { AuthLayoutComponent } from './auth/auth-layout/auth-layout.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/index', pathMatch: 'full'},
@@ -20,9 +22,18 @@ const routes: Routes = [
       }
     ]
   },
+  { path: '',
+    component: AuthLayoutComponent,
+    children: [
+      { path: '',
+        loadChildren: './auth/auth-layout/auth-layout.module#AuthLayoutModule'
+      }
+    ]
+  },
   { path: 'buyerdashboard', component: BuyerComponentComponent },
   { path: 'sellerdashboard', component: SellerComponentComponent },
-  { path: 'login', component: LoginComponent },
+  // { path: 'login', component: LoginComponent },
+  // { path: 'signup', component: SignupComponent },
   { path: 'managedetails', component: ManageDeatilsComponent},
   { path: '**', component: NotFoundComponentComponent }
 ];
