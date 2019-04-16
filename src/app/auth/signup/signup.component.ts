@@ -7,9 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SignupComponent implements OnInit {
 
+  isConsumers: boolean;
+
   constructor() { }
 
   ngOnInit() {
+    this.isConsumers = true;
   }
 
 }
