@@ -2,6 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+
 
 // import { MatCheckboxModule } from '@angular/material';
 // import { MatToolbarModule } from '@angular/material/toolbar';
@@ -68,7 +70,8 @@ import { AuthLayoutComponent } from './auth/auth-layout/auth-layout.component';
     CollapseModule.forRoot(),
     CarouselModule.forRoot(),
     ButtonsModule.forRoot(),
-    BsDropdownModule.forRoot()
+    BsDropdownModule.forRoot(),
+    HttpClientModule
   ],
   providers: [
     GeneralService
