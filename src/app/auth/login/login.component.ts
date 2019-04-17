@@ -1,6 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
+import { AuthService } from '../auth.service';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -9,13 +11,17 @@ import { NgForm } from '@angular/forms';
 export class LoginComponent implements OnInit {
 
   // @ViewChild('login') loginForm: NgForm;
-  constructor() { }
+  constructor(public authService: AuthService) { }
 
   ngOnInit() {
   }
 
   onLogin(form: NgForm) {
-    console.log(form.value);
+    if (form.invalid) {
+      return;
+    }
+    this.authService.consumerLogin(form.value.email, form.value.password);
+    form.reset();
   }
 
 }

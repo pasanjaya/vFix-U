@@ -1,6 +1,6 @@
 export interface ConsumerData {
-  fullName: string;
+  fullName?: string;
   email: string;
-  mobileNumber: number;
+  mobileNumber?: number;
   password: string;
 }

@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 
 // import { MatCheckboxModule } from '@angular/material';
@@ -14,6 +14,7 @@ import { ButtonsModule } from 'ngx-bootstrap/buttons';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 
 import { GeneralService } from './services/general.service';
+import { AuthInterceptor } from './auth/auth-interceptor';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -74,7 +75,8 @@ import { AuthLayoutComponent } from './auth/auth-layout/auth-layout.component';
     HttpClientModule
   ],
   providers: [
-    GeneralService
+    GeneralService,
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }
   ],
   bootstrap: [AppComponent]
 })
