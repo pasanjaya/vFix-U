@@ -29,12 +29,15 @@
   <!-- Table -->
   <div class="row justify-content-center">
     <div class="col-lg-6 col-md-8">
+
       <ng-template [ngIf]='isConsumers' [ngIfElse]="merchants">
           <app-consumers [(isConsumers)]="isConsumers"></app-consumers>
       </ng-template>
+
       <ng-template #merchants>
           <app-merchants [(isConsumers)]="isConsumers"></app-merchants>
       </ng-template>
+
     </div>
   </div>
 </div>
