@@ -130,43 +130,45 @@
         </div>
         <div class="card-body">
           <!-- Automotive Parts -->
-          <div class="input-group mb-3">
-            <input
-              type="text"
-              class="form-control"
-              placeholder="Add a new category"
-              #category
-              (keyup.enter)="onAddCategory(category)"
-            />
-            <div class="input-group-append">
-              <button
-                class="btn btn-info"
-                type="button"
-                (click)="onAddCategory(category)"
-              >
-                <span class="ni ni-fat-add"></span>
-              </button>
+          <form (ngSubmit)="onAddCategory(categoryForm)" #categoryForm="ngForm">
+            <div class="input-group mb-3">
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Add a new category"
+                name="category"
+                ngModel
+                #categoryInput="ngModel"
+                required
+              />
+              <div class="input-group-append">
+                <button
+                  class="btn btn-info"
+                  type="submit"
+                  [disabled]='categoryForm.invalid'
+                >
+                  <span class="ni ni-fat-add"></span>
+                </button>
+              </div>
             </div>
-          </div>
+            <small
+                *ngIf="categoryInput.invalid && categoryInput.touched"
+                class="text-danger font-italic"
+                >This field is required</small
+              >
+          </form>
 
           <div class="mb-3">
             <ul class="list-group">
-              <li
-                class="list-group-item"
-                *ngIf=""
-              >
+              <li class="list-group-item" *ngIf="categories.length <= 0;else catList">
                 <small>Task list is empty!</small>
               </li>
-              <li
-                class="list-group-item"
-                #emtylist
-                *ngFor=""
-              >
-                <!-- {{ task.name }} -->
+              <li class="list-group-item" #catList *ngFor="let category of categories">
+                {{ category.catName }}
                 <span
                   class="oi oi-trash float-right"
                   style="cursor: pointer; color: #D9534F;"
-                  (click)="onDeleteCategory()"
+                  (click)="onDeleteCategory(category.id)"
                 ></span>
               </li>
             </ul>
