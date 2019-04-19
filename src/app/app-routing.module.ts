@@ -34,9 +34,7 @@ const routes: Routes = [
   },
   { path: 'buyerdashboard/:id', component: BuyerComponentComponent },
   { path: 'sellerdashboard', component: SellerComponentComponent },
-  { path: 'sellerprofile', component: SellerProfileComponent},
-  // { path: 'login', component: LoginComponent },
-  // { path: 'signup', component: SignupComponent },
+  { path: 'sellerdashboard/sellerprofile', component: SellerProfileComponent },
   { path: 'managedetails', component: ManageDeatilsComponent},
   { path: '**', component: NotFoundComponentComponent }
 ];
