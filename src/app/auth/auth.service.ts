@@ -11,6 +11,7 @@ import { ConsumerData } from './consumer-data.model';
 export class AuthService {
   private token: string;
   private id: string;
+  private isAuthenticated = false;
 
   private authStatusListener = new Subject<boolean>();
 
@@ -70,4 +71,12 @@ export class AuthService {
         }
       });
   }
+
+  userLogout() {
+    this.token = null;
+    this.isAuthenticated = false;
+    this.authStatusListener.next(false);
+    this.router.navigate(['/login']);
+  }
+
 }
