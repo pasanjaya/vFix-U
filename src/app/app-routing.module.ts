@@ -1,3 +1,4 @@
+import { Component } from '@angular/core';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
@@ -10,6 +11,7 @@ import { NotFoundComponentComponent } from './not-found-component/not-found-comp
 import { ManageDeatilsComponent } from './buyers-dashboard/pages/manage-deatils/manage-deatils.component';
 // import { SignupComponent } from './auth/signup/signup.component';
 import { AuthLayoutComponent } from './auth/auth-layout/auth-layout.component';
+import { SellerProfileComponent } from './sellers-dashboard/pages/seller-profile/seller-profile.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/index', pathMatch: 'full'},
@@ -32,6 +34,7 @@ const routes: Routes = [
   },
   { path: 'buyerdashboard/:id', component: BuyerComponentComponent },
   { path: 'sellerdashboard', component: SellerComponentComponent },
+  { path: 'sellerprofile', component: SellerProfileComponent},
   // { path: 'login', component: LoginComponent },
   // { path: 'signup', component: SignupComponent },
   { path: 'managedetails', component: ManageDeatilsComponent},

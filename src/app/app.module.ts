@@ -36,6 +36,7 @@ import { SellerSidebarComponent } from './sellers-dashboard/layouts/seller-sideb
 import { SellerNavbarComponent } from './sellers-dashboard/layouts/seller-navbar/seller-navbar.component';
 import { SellerDashboardComponent } from './sellers-dashboard/pages/seller-dashboard/seller-dashboard.component';
 import { AuthLayoutComponent } from './auth/auth-layout/auth-layout.component';
+import { SellerProfileComponent } from './sellers-dashboard/pages/seller-profile/seller-profile.component';
 
 
 @NgModule({
@@ -58,7 +59,8 @@ import { AuthLayoutComponent } from './auth/auth-layout/auth-layout.component';
     SellerSidebarComponent,
     SellerNavbarComponent,
     SellerDashboardComponent,
-    AuthLayoutComponent
+    AuthLayoutComponent,
+    SellerProfileComponent
 
   ],
   imports: [
