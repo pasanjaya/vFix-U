@@ -30,7 +30,7 @@ const routes: Routes = [
       }
     ]
   },
-  { path: 'buyerdashboard', component: BuyerComponentComponent },
+  { path: 'buyerdashboard/:id', component: BuyerComponentComponent },
   { path: 'sellerdashboard', component: SellerComponentComponent },
   // { path: 'login', component: LoginComponent },
   // { path: 'signup', component: SignupComponent },

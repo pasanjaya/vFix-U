@@ -20,7 +20,7 @@ export class LoginComponent implements OnInit {
     if (form.invalid) {
       return;
     }
-    this.authService.consumerLogin(form.value.email, form.value.password);
+    this.authService.userLogin(form.value.email, form.value.password);
     form.reset();
   }
 

@@ -17,7 +17,7 @@ export class AdminConfigureService {
 
   createCategory(catName: string) {
     const categoryData: CategoryData = { catName };
-    this.http.post<{messege: string, result: any }>('http://localhost:3000/api/admin/category/create', categoryData)
+    this.http.post<{ messege: string, result: any }>('http://localhost:3000/api/admin/category/create', categoryData)
       .subscribe(respose => {
         console.log(respose);
         const id = respose.result._id;

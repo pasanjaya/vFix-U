@@ -3,4 +3,5 @@ export interface ConsumerData {
   email: string;
   mobileNumber?: number;
   password: string;
+  role?: string;
 }

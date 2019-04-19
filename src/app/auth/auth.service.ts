@@ -9,8 +9,9 @@ import { ConsumerData } from './consumer-data.model';
   providedIn: 'root'
 })
 export class AuthService {
-
   private token: string;
+  private id: string;
+
   private authStatusListener = new Subject<boolean>();
 
   constructor(private http: HttpClient, private router: Router) {}
@@ -23,23 +24,49 @@ export class AuthService {
     return this.authStatusListener.asObservable();
   }
 
-  createConsumer(fullName: string, email: string, mobileNumber: number, password: string) {
-    const consumerData: ConsumerData = { fullName: fullName, email: email, mobileNumber: mobileNumber, password: password };
-    this.http.post('http://localhost:3000/api/consumer/register', consumerData)
-    .subscribe(response => {
-      console.log(response);
-    });
+  createConsumer(
+    fullName: string,
+    email: string,
+    mobileNumber: number,
+    password: string
+  ) {
+    const role = 'consumer';
+    const consumerData: ConsumerData = {
+      fullName,
+      email,
+      mobileNumber,
+      password,
+      role
+    };
+    this.http
+      .post('http://localhost:3000/api/consumer/register', consumerData)
+      .subscribe(response => {
+        console.log(response);
+      });
   }
 
-  consumerLogin(email: string, password: string) {
-    const consumerData: ConsumerData = { email: email, password: password };
-    this.http.post<{token: string}>('http://localhost:3000/api/consumer/login', consumerData)
+  userLogin(email: string, password: string) {
+    const userLoginData: ConsumerData = { email, password };
+    this.http
+      .post<{ token: string; role: string; id: string }>(
+        'http://localhost:3000/api/user/login',
+        userLoginData
+      )
       .subscribe(response => {
+        console.log(response);
+        const id = response.id;
+        const role = response.role;
         const token = response.token;
         this.token = token;
         if (token) {
           this.authStatusListener.next(true);
-          this.router.navigate(['/buyerdashboard']);
+          if (role === 'consumer') {
+            this.router.navigate(['/buyerdashboard', id]);
+          } else if (role === 'merchant') {
+            this.router.navigate(['/sellerdashboard', id]);
+          } else {
+            console.log('role error occured at auth service');
+          }
         }
       });
   }
