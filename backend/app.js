@@ -2,10 +2,9 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 
-const Post = require('./models/post');
 
-const consumerRoutes = require("./routes/consumer");
-const categoryRoutes = require("./routes/category");
+const consumerRoutes = require("./routes/consumers");
+const categoryRoutes = require("./routes/categories");
 
 const app = express();
 
@@ -33,12 +32,6 @@ app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Methods", "GET, POST, PATCH, PUT, DELETE, OPTIONS");
   next();
 });
-
-//
-
-// app.use('', (req, res, next) => {
-//   res.send('Hello from express');
-// });
 
 app.use('/api/consumer', consumerRoutes);
 app.use('/api/admin/category', categoryRoutes);

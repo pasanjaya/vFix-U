@@ -16,11 +16,11 @@ export class AdminConfigurationComponent implements OnInit, OnDestroy {
   categories: CategoryData[] = [];
   private categorySub: Subscription;
 
-  constructor(public adminConfigure: AdminConfigureService) { }
+  constructor(public adminConfigureService: AdminConfigureService) { }
 
   ngOnInit() {
-    this.adminConfigure.getCategories();
-    this.categorySub = this.adminConfigure.getCategoryUpdatedListener()
+    this.adminConfigureService.getCategories();
+    this.categorySub = this.adminConfigureService.getCategoryUpdatedListener()
       .subscribe((categories: CategoryData[]) => {
         this.categories = categories;
       });
@@ -31,12 +31,16 @@ export class AdminConfigurationComponent implements OnInit, OnDestroy {
   }
 
   onAddCategory(form: NgModel) {
-    console.log(form);
-    // this.adminConfigure.createCategory(category.value);
+    // console.log(form.value.category);
+    if (form.invalid ) {
+      return;
+    }
+    this.adminConfigureService.createCategory(form.value.category);
+    form.reset();
   }
 
-  onDeleteCategory() {
-
+  onDeleteCategory(categoryId: string) {
+    this.adminConfigureService.deleteCategory(categoryId);
   }
 
 }

@@ -147,7 +147,7 @@
                   type="submit"
                   [disabled]='categoryForm.invalid'
                 >
-                  <span class="ni ni-fat-add"></span>
+                  <span class="fas fa-plus"></span>
                 </button>
               </div>
             </div>
@@ -163,10 +163,10 @@
               <li class="list-group-item" *ngIf="categories.length <= 0;else catList">
                 <small>Task list is empty!</small>
               </li>
-              <li class="list-group-item" #catList *ngFor="let category of categories">
-                {{ category.catName }}
+              <li class="list-group-item" #catList *ngFor="let category of categories; index as i">
+                <span>{{i+1}}. {{ category.catName }}</span>
                 <span
-                  class="oi oi-trash float-right"
+                  class="far fa-trash-alt float-right"
                   style="cursor: pointer; color: #D9534F;"
                   (click)="onDeleteCategory(category.id)"
                 ></span>

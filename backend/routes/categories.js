@@ -22,4 +22,22 @@ router.post('/create', (req, res, next) => {
     });
 });
 
+router.get('/retrive', (req, res, next) => {
+  Category.find().then(document => {
+    res.status(200).json({
+      message: 'Category fetched Successfully!',
+      categories: document
+    });
+  });
+});
+
+router.delete('/delete/:id', (req, res, next) => {
+  Category.deleteOne({_id: req.params.id}).then(result => {
+    console.log(result);
+    res.status(200).json({
+      message: "Category deleted!"
+    });
+  });
+});
+
 module.exports = router;

@@ -17,9 +17,13 @@ export class AdminConfigureService {
 
   createCategory(catName: string) {
     const categoryData: CategoryData = { catName };
-    this.http.post('http://localhost:3000/api/admin/category/create', categoryData)
+    this.http.post<{messege: string, result: any }>('http://localhost:3000/api/admin/category/create', categoryData)
       .subscribe(respose => {
         console.log(respose);
+        const id = respose.result._id;
+        categoryData.id = id;
+        this.categories.push(categoryData);
+        this.categoriesUpdated.next([...this.categories]);
       });
   }
 
@@ -44,5 +48,15 @@ export class AdminConfigureService {
 
   getCategoryUpdatedListener() {
     return this.categoriesUpdated.asObservable();
+  }
+
+  deleteCategory(categoryId: string) {
+    this.http.delete('http://localhost:3000/api/admin/category/delete/' + categoryId)
+      .subscribe(() => {
+        console.log('Deleted!');
+        const updatedCategories = this.categories.filter(category => category.id !== categoryId);
+        this.categories = updatedCategories;
+        this.categoriesUpdated.next([...this.categories]);
+      });
   }
 }
