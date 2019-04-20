@@ -37,6 +37,7 @@ import { SellerNavbarComponent } from './sellers-dashboard/layouts/seller-navbar
 import { SellerDashboardComponent } from './sellers-dashboard/pages/seller-dashboard/seller-dashboard.component';
 import { AuthLayoutComponent } from './auth/auth-layout/auth-layout.component';
 import { SellerProfileComponent } from './sellers-dashboard/pages/seller-profile/seller-profile.component';
+import { SellerAdvertiseComponent } from './sellers-dashboard/pages/seller-advertise/seller-advertise.component';
 
 
 @NgModule({
@@ -60,7 +61,8 @@ import { SellerProfileComponent } from './sellers-dashboard/pages/seller-profile
     SellerNavbarComponent,
     SellerDashboardComponent,
     AuthLayoutComponent,
-    SellerProfileComponent
+    SellerProfileComponent,
+    SellerAdvertiseComponent
 
   ],
   imports: [
