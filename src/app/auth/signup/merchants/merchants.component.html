@@ -13,70 +13,223 @@
       <div class="text-center text-muted display-4 mb-4">
         <small>or Register as Merchants</small>
       </div>
-      <form role="form">
-        <div class="form-group">
-          <div class="input-group input-group-alternative mb-3">
-            <div class="input-group-prepend">
-              <span class="input-group-text"
-                ><i class="ni ni-hat-3"></i
-              ></span>
-            </div>
-            <input class="form-control" placeholder="Name" type="text" />
-          </div>
-        </div>
-        <div class="form-group">
-          <div class="input-group input-group-alternative mb-3">
-            <div class="input-group-prepend">
-              <span class="input-group-text"
-                ><i class="ni ni-email-83"></i
-              ></span>
-            </div>
-            <input class="form-control" placeholder="Email" type="email" />
-          </div>
-        </div>
-        <div class="form-group">
-          <div class="input-group input-group-alternative">
-            <div class="input-group-prepend">
-              <span class="input-group-text"
-                ><i class="ni ni-lock-circle-open"></i
-              ></span>
-            </div>
-            <input
-              class="form-control"
-              placeholder="Password"
-              type="password"
-            />
-          </div>
-        </div>
-        <div class="text-muted font-italic">
-          <small
-            >password strength:
-            <span class="text-success font-weight-700">strong</span></small
-          >
-        </div>
-        <div class="row my-4">
-          <div class="col-12">
-            <div
-              class="custom-control custom-control-alternative custom-checkbox"
-            >
+      <form role="form" [formGroup]="merchantRegForm" (ngSubmit)="onSubmit()">
+          <div class="form-group">
+            <div class="input-group input-group-alternative mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text"
+                  ><i class="ni ni-satisfied"></i
+                ></span>
+              </div>
               <input
-                class="custom-control-input"
-                id="customCheckRegister"
-                type="checkbox"
+                class="form-control"
+                placeholder="Full Name"
+                type="text"
+                formControlName="fullName"
               />
-              <label class="custom-control-label" for="customCheckRegister">
-                <span class="text-muted"
-                  >I agree with the <a href="#!">Privacy Policy</a></span
+            </div>
+            <span
+              *ngIf="
+              merchantRegForm.get('fullName').invalid &&
+              merchantRegForm.get('fullName').touched
+              "
+              class="text-danger"
+            >
+              <span *ngIf="merchantRegForm.get('fullName').errors['required']"
+                >This field is required</span
+              >
+            </span>
+          </div>
+          <div class="form-group" has-danger>
+            <div class="input-group input-group-alternative mb-2">
+              <div class="input-group-prepend">
+                <span class="input-group-text"><i class="ni ni-email-83"></i></span>
+              </div>
+              <input
+                class="form-control"
+                placeholder="Email"
+                type="email"
+                formControlName="email"
+              />
+            </div>
+            <span
+              *ngIf="
+                merchantRegForm.get('email').invalid &&
+                merchantRegForm.get('email').touched
+              "
+              class="text-danger"
+            >
+              <span *ngIf="merchantRegForm.get('email').errors['required']"
+                >This field is required</span
+              >
+            </span>
+          </div>
+          <div class="form-group">
+            <div class="input-group input-group-alternative mb-2">
+              <div class="input-group-prepend">
+                <span class="input-group-text"
+                  ><i class="ni ni-mobile-button"></i
+                ></span>
+              </div>
+              <input
+                class="form-control"
+                placeholder="Mobile Number"
+                type="phone"
+                formControlName="mobileNumber"
+              />
+            </div>
+            <span
+              *ngIf="
+                merchantRegForm.get('mobileNumber').invalid &&
+                merchantRegForm.get('mobileNumber').touched
+              "
+              class="text-danger"
+            >
+              <span *ngIf="merchantRegForm.get('mobileNumber').errors['required']"
+                >This field is required</span
+              >
+            </span>
+          </div>
+          <div class="text-muted">
+            <small
+              >password strength:
+              <span class="text-success font-italic font-weight-700"
+                >strong</span
+              ></small
+            >
+          </div>
+          <div formGroupName="userPassword">
+            <div class="form-group">
+              <div class="input-group input-group-alternative mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"
+                    ><i class="ni ni-lock-circle-open"></i
+                  ></span>
+                </div>
+                <input
+                  class="form-control"
+                  placeholder="Password"
+                  type="password"
+                  formControlName="password"
+                />
+              </div>
+              <span
+                *ngIf="
+                  merchantRegForm.get('userPassword.password').invalid &&
+                  merchantRegForm.get('userPassword.password').touched
+                "
+                class="text-danger"
+              >
+                <!-- <span
+                  *ngIf="
+                    merchantRegForm.get('userPassword.password').errors['passwordMismatched']
+                  "
+                  >Passwords mismatched!</span
+                > -->
+                <span
+                  *ngIf="
+                    merchantRegForm.get('userPassword.password').errors['required']
+                  "
+                  >This field is required</span
                 >
-              </label>
+              </span>
+            </div>
+            <div class="form-group">
+              <div class="input-group input-group-alternative mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"
+                    ><i class="ni ni-lock-circle-open"></i
+                  ></span>
+                </div>
+                <input
+                  class="form-control"
+                  placeholder="Confirm Password"
+                  type="password"
+                  formControlName="confirmPassword"
+                />
+              </div>
+              <span
+                *ngIf="
+                  merchantRegForm.get('userPassword.confirmPassword').invalid &&
+                  merchantRegForm.get('userPassword.confirmPassword').touched
+                "
+                class="text-danger"
+              >
+                <!-- <span
+                  *ngIf="
+                    merchantRegForm.get('userPassword.confirmPassword').errors['passwordMismatched']
+                  "
+                  >Passwords mismatched!</span
+                > -->
+                <span
+                  *ngIf="
+                    merchantRegForm.get('userPassword.confirmPassword').errors[
+                      'required'
+                    ]
+                  "
+                  >This field is required</span
+                >
+              </span>
+            </div>
+            <span
+              *ngIf="
+                merchantRegForm.get('userPassword.password').value &&
+                merchantRegForm.get('userPassword.confirmPassword').value &&
+                merchantRegForm.get('userPassword.password').dirty &&
+                merchantRegForm.get('userPassword.confirmPassword').dirty &&
+                merchantRegForm.get('userPassword').invalid &&
+                merchantRegForm.get('userPassword').touched
+              "
+              class="text-danger"
+            >
+              <span
+                *ngIf="
+                  merchantRegForm.get('userPassword').errors['passwordMismatched']
+                "
+                >Passwords mismatched!</span
+              >
+            </span>
+          </div>
+          <div class="row my-4">
+            <div class="col-12">
+              <div
+                class="custom-control custom-control-alternative custom-checkbox"
+              >
+                <input
+                  class="custom-control-input"
+                  id="customCheckRegister"
+                  type="checkbox"
+                  formControlName="agreement"
+                  required
+                />
+                <label class="custom-control-label" for="customCheckRegister">
+                  <span class="text-muted"
+                    >I agree with the <a href="#!">Privacy Policy</a></span
+                  >
+                </label>
+              </div>
+              <span
+                *ngIf="
+                  merchantRegForm.get('agreement').invalid &&
+                  merchantRegForm.get('agreement').touched
+                "
+                class="text-danger"
+              >
+                <span *ngIf="merchantRegForm.get('agreement').errors['required']"
+                  >This field is required</span
+                >
+              </span>
             </div>
           </div>
-        </div>
-        <div class="text-center">
-          <button type="button" class="btn btn-primary mt-4">
-            Create account
-          </button>
-        </div>
-      </form>
+          <div class="text-center">
+            <button
+              type="submit"
+              class="btn btn-primary mt-4"
+              [disabled]="merchantRegForm.invalid"
+            >
+              Create account
+            </button>
+          </div>
+        </form>
     </div>
   </div>

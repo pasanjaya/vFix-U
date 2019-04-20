@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { Subject } from 'rxjs';
 
 import { ConsumerData } from './consumer-data.model';
+import { MerchantData } from './merchant-data.model';
 
 @Injectable({
   providedIn: 'root'
@@ -41,6 +42,29 @@ export class AuthService {
     };
     this.http
       .post('http://localhost:3000/api/consumer/register', consumerData)
+      .subscribe(response => {
+        console.log(response);
+      });
+  }
+
+  // Merchant services -----------------------------
+
+  createMerchant(
+    fullName: string,
+    email: string,
+    mobileNumber: number,
+    password: string
+  ) {
+    const role = 'merchant';
+    const merchantData: MerchantData = {
+      fullName,
+      email,
+      mobileNumber,
+      password,
+      role
+    };
+    this.http
+      .post('http://localhost:3000/api/merchant/register', merchantData)
       .subscribe(response => {
         console.log(response);
       });

@@ -36,12 +36,12 @@ const routes: Routes = [
     ]
   },
   // buyerdashboard and its pages will routered here
-  { path: 'buyerdashboard', component: BuyerComponentComponent, children: [
-    { path: ':id', component: BuyerDashboardComponent},
-    { path: ':id/managedetails', component: ManageDeatilsComponent},
+  { path: 'buyerdashboard/:id', component: BuyerComponentComponent, children: [
+    { path: '', component: BuyerDashboardComponent},
+    { path: 'managedetails', component: ManageDeatilsComponent},
   ] },
   // sellerdashboard and its pages will routered here
-  { path: 'sellerdashboard', component: SellerComponentComponent, children: [
+  { path: 'sellerdashboard/:id', component: SellerComponentComponent, children: [
     { path: '', component: SellerDashboardComponent },
     { path: 'sellerprofile', component: SellerProfileComponent },
     { path: 'selleradvertise', component: SellerAdvertiseComponent}
