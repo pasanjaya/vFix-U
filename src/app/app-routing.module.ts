@@ -1,3 +1,5 @@
+import { BuyerDashboardComponent } from './buyers-dashboard/pages/buyer-dashboard/buyer-dashboard.component';
+import { SellerDashboardComponent } from './sellers-dashboard/pages/seller-dashboard/seller-dashboard.component';
 import { Component } from '@angular/core';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
@@ -32,10 +34,17 @@ const routes: Routes = [
       }
     ]
   },
-  { path: 'buyerdashboard/:id', component: BuyerComponentComponent },
-  { path: 'sellerdashboard', component: SellerComponentComponent },
-  { path: 'sellerdashboard/sellerprofile', component: SellerProfileComponent },
-  { path: 'managedetails', component: ManageDeatilsComponent},
+  // buyerdashboard and its pages will routered here
+  { path: 'buyerdashboard', component: BuyerComponentComponent, children: [
+    { path: ':id', component: BuyerDashboardComponent},
+    { path: ':id/managedetails', component: ManageDeatilsComponent},
+  ] },
+  // sellerdashboard and its pages will routered here
+  { path: 'sellerdashboard', component: SellerComponentComponent, children: [
+    { path: '', component: SellerDashboardComponent },
+    { path: 'sellerprofile', component: SellerProfileComponent }
+  ] },
+  // wild card routing will direct to this component
   { path: '**', component: NotFoundComponentComponent }
 ];
 
