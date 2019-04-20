@@ -14,6 +14,7 @@ import { ManageDeatilsComponent } from './buyers-dashboard/pages/manage-deatils/
 // import { SignupComponent } from './auth/signup/signup.component';
 import { AuthLayoutComponent } from './auth/auth-layout/auth-layout.component';
 import { SellerProfileComponent } from './sellers-dashboard/pages/seller-profile/seller-profile.component';
+import { SellerAdvertiseComponent } from './sellers-dashboard/pages/seller-advertise/seller-advertise.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/index', pathMatch: 'full'},
@@ -42,7 +43,8 @@ const routes: Routes = [
   // sellerdashboard and its pages will routered here
   { path: 'sellerdashboard', component: SellerComponentComponent, children: [
     { path: '', component: SellerDashboardComponent },
-    { path: 'sellerprofile', component: SellerProfileComponent }
+    { path: 'sellerprofile', component: SellerProfileComponent },
+    { path: 'selleradvertise', component: SellerAdvertiseComponent}
   ] },
   // wild card routing will direct to this component
   { path: '**', component: NotFoundComponentComponent }

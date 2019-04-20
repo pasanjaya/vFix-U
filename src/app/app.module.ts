@@ -37,8 +37,10 @@ import { SellerNavbarComponent } from './sellers-dashboard/layouts/seller-navbar
 import { SellerDashboardComponent } from './sellers-dashboard/pages/seller-dashboard/seller-dashboard.component';
 import { AuthLayoutComponent } from './auth/auth-layout/auth-layout.component';
 import { SellerProfileComponent } from './sellers-dashboard/pages/seller-profile/seller-profile.component';
+import { SellerAdvertiseComponent } from './sellers-dashboard/pages/seller-advertise/seller-advertise.component';
 import { LandingNewArraivalsComponent } from './landing-page/landing-components/landing-new-arraivals/landing-new-arraivals.component';
 import { LandingTestimonialsComponent } from './landing-page/landing-components/landing-testimonials/landing-testimonials.component';
+
 
 
 @NgModule({
@@ -63,6 +65,7 @@ import { LandingTestimonialsComponent } from './landing-page/landing-components/
     SellerDashboardComponent,
     AuthLayoutComponent,
     SellerProfileComponent,
+    SellerAdvertiseComponent,
     LandingNewArraivalsComponent,
     LandingTestimonialsComponent
 
