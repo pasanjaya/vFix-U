@@ -8,6 +8,7 @@ import {
   chartExample1,
   chartExample2
 } from '../../../variables/charts';
+import { AdminDashboardService } from './admin-dashboard.service';
 
 @Component({
   selector: 'app-admin-dashboard',
@@ -20,10 +21,16 @@ export class AdminDashboardComponent implements OnInit {
   public salesChart;
   public clicked: boolean = true;
   public clicked1: boolean = false;
+  public userCount: { consumer: number, merchant: number };
 
-  constructor() {}
+  constructor(public adminDashboardService: AdminDashboardService) {}
 
   ngOnInit() {
+    this.adminDashboardService.getUserCount()
+      .subscribe((res: {consumer: number, merchant: number} ) => {
+        this.userCount = res;
+    });
+
     this.datasets = [
       [0, 20, 10, 30, 15, 40, 20, 60, 60],
       [0, 20, 5, 25, 10, 30, 15, 40, 40]
