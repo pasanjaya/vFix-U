@@ -43,6 +43,7 @@ router.post("/login", (req, res, next) => {
           );
           res.status(200).json({
             token: token,
+            expiresIn: 7200,
             role: 'consumer',
             id: fetchedUser._id
           });
@@ -105,7 +106,6 @@ router.get('/usercount', (req, res, next) => {
     })
   ])
   .then(results => {
-    console.log(results);
     res.status(200).json({
       consumer: results[0],
       merchant: results[1]
@@ -116,22 +116,6 @@ router.get('/usercount', (req, res, next) => {
       message: 'Error occured'
     });
   });
-
-
-  // Role.find().then(result => {
-  //   if(!result) {
-  //     res.status(404).json({
-  //       message: "No users"
-  //     });
-  //   }
-  //   console.log(result);
-  // })
-  // .catch(err => {
-  //   res.status(404).json({
-  //     message: "Error",
-  //     error: err
-  //   });
-  // });
 });
 
 module.exports = router;

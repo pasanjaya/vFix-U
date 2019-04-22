@@ -1,20 +1,19 @@
-import { BuyerDashboardComponent } from './buyers-dashboard/pages/buyer-dashboard/buyer-dashboard.component';
-import { SellerDashboardComponent } from './sellers-dashboard/pages/seller-dashboard/seller-dashboard.component';
-import { Component } from '@angular/core';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
+import { AuthGuard } from './auth/auth.guard';
+
 import { IndexComponent } from './landing-page/index/index.component';
+import { AuthLayoutComponent } from './auth/auth-layout/auth-layout.component';
 import { AdminComponentComponent } from './admin-dashboard/admin-component/admin-component.component';
 import { BuyerComponentComponent } from './buyers-dashboard/buyer-component/buyer-component.component';
-import { SellerComponentComponent } from './sellers-dashboard/seller-component/seller-component.component';
-import { NotFoundComponentComponent } from './not-found-component/not-found-component.component';
-// import { LoginComponent } from './auth/login/login.component';
 import { ManageDeatilsComponent } from './buyers-dashboard/pages/manage-deatils/manage-deatils.component';
-// import { SignupComponent } from './auth/signup/signup.component';
-import { AuthLayoutComponent } from './auth/auth-layout/auth-layout.component';
+import { BuyerDashboardComponent } from './buyers-dashboard/pages/buyer-dashboard/buyer-dashboard.component';
+import { SellerComponentComponent } from './sellers-dashboard/seller-component/seller-component.component';
+import { SellerDashboardComponent } from './sellers-dashboard/pages/seller-dashboard/seller-dashboard.component';
 import { SellerProfileComponent } from './sellers-dashboard/pages/seller-profile/seller-profile.component';
 import { SellerAdvertiseComponent } from './sellers-dashboard/pages/seller-advertise/seller-advertise.component';
+import { NotFoundComponentComponent } from './not-found-component/not-found-component.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/index', pathMatch: 'full'},
@@ -36,12 +35,12 @@ const routes: Routes = [
     ]
   },
   // buyerdashboard and its pages will routered here
-  { path: 'buyerdashboard/:id', component: BuyerComponentComponent, children: [
+  { path: 'buyerdashboard/:id', component: BuyerComponentComponent, canActivate: [AuthGuard], children: [
     { path: '', component: BuyerDashboardComponent},
     { path: 'managedetails', component: ManageDeatilsComponent},
   ] },
   // sellerdashboard and its pages will routered here
-  { path: 'sellerdashboard/:id', component: SellerComponentComponent, children: [
+  { path: 'sellerdashboard/:id', component: SellerComponentComponent, canActivate: [AuthGuard], children: [
     { path: '', component: SellerDashboardComponent },
     { path: 'sellerprofile', component: SellerProfileComponent },
     { path: 'selleradvertise', component: SellerAdvertiseComponent}
@@ -52,6 +51,7 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  providers: [AuthGuard]
 })
 export class AppRoutingModule { }

@@ -1,5 +1,4 @@
 <header>
-
   <nav class="navbar navbar-expand-md navbar-transparent navbar-dark fixed-top">
     <div class="container">
       <!-- <button
@@ -8,33 +7,66 @@
       </button> -->
       <div class="navbar-wrapper">
         <div class="navbar-toggle">
-            <button type="button" class="navbar-toggler" (click)="sidebarToggle()">
-                <span class="navbar-toggler-bar bar1"></span>
-                <span class="navbar-toggler-bar bar2"></span>
-                <span class="navbar-toggler-bar bar3"></span>
-            </button>
+          <button
+            type="button"
+            class="navbar-toggler"
+            (click)="sidebarToggle()"
+          >
+            <span class="navbar-toggler-bar bar1"></span>
+            <span class="navbar-toggler-bar bar2"></span>
+            <span class="navbar-toggler-bar bar3"></span>
+          </button>
         </div>
         <a class="navbar-brand" href="">{{ getTitle() }}</a>
       </div>
-      <button class="navbar-toggler" type="button" (click)="collapse()"
-        [attr.aria-expanded]="!isCollapsed" aria-controls="navbarCollapse">
+      <button
+        class="navbar-toggler"
+        type="button"
+        (click)="collapse()"
+        [attr.aria-expanded]="!isCollapsed"
+        aria-controls="navbarCollapse"
+      >
         <span class="navbar-toggler-bar navbar-kebab"></span>
         <span class="navbar-toggler-bar navbar-kebab"></span>
         <span class="navbar-toggler-bar navbar-kebab"></span>
       </button>
-      <div class="collapse navbar-collapse justify-content-end" id="navbarCollapse" [collapse]="isCollapsed">
+      <div
+        class="collapse navbar-collapse justify-content-end"
+        id="navbarCollapse"
+        [collapse]="isCollapsed"
+      >
         <ul class="navbar-nav ml-auto">
           <li class="nav-item active">
-            <a class="nav-link" routerLink=''>Home <span class="sr-only">(current)</span></a>
+            <a class="nav-link" routerLinkActive="active" routerLink=""
+              >Home</a
+            >
           </li>
           <li class="nav-item">
-            <a class="nav-link" >About</a>
+            <a class="nav-link">About</a>
           </li>
-          <li class="nav-item">
-            <a class="btn btn-secondary btn-sm mr-2 active" routerLink='/register' role="button"><i class="ni ni-circle-08"></i> Register </a>
+          <li class="nav-item" *ngIf="!userIsAuthenticated">
+            <a
+              class="btn btn-secondary btn-sm mr-2"
+              routerLinkActive="active"
+              routerLink="/register"
+              role="button"
+              ><i class="ni ni-circle-08"></i> Register
+            </a>
           </li>
-          <li class="nav-item">
-            <a class="btn btn-sm btn-secondary active" routerLink='/login' role="button"><i class="ni ni-key-25"></i> Login</a>
+          <li class="nav-item" *ngIf="!userIsAuthenticated">
+            <a
+              class="btn btn-sm btn-secondary"
+              routerLinkActive="active"
+              routerLink="/login"
+              role="button"
+              ><i class="ni ni-key-25"></i> Login</a
+            >
+          </li>
+          <li class="nav-item" *ngIf="userIsAuthenticated">
+            <button
+              class="btn btn-sm btn-secondary"
+              (click)="onLogout()"><i class="ni ni-key-25"></i> Logout</button
+            >
           </li>
         </ul>
       </div>

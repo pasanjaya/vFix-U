@@ -2,9 +2,11 @@ const express = require('express');
 
 const Message = require('../models/message');
 
+const checkAuth = require('../middleware/check-auth');
+
 const router = express.Router();
 
-router.post('/create', (req, res, next) => {
+router.post('/create', checkAuth, (req, res, next) => {
   const message = new Message({
     messageCreator: req.body.messageCreator,
     category: req.body.category,

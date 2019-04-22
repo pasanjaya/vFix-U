@@ -22,6 +22,7 @@ export class AdminDashboardComponent implements OnInit {
   public clicked: boolean = true;
   public clicked1: boolean = false;
   public userCount: { consumer: number, merchant: number };
+  public totUserCount = 0;
 
   constructor(public adminDashboardService: AdminDashboardService) {}
 
@@ -29,6 +30,7 @@ export class AdminDashboardComponent implements OnInit {
     this.adminDashboardService.getUserCount()
       .subscribe((res: {consumer: number, merchant: number} ) => {
         this.userCount = res;
+        this.totUserCount = res.consumer + res.merchant;
     });
 
     this.datasets = [
