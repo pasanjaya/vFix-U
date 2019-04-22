@@ -1,7 +1,8 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Subscription } from 'rxjs';
+import { Router } from '@angular/router';
 
 import { AuthService } from './../../../auth/auth.service';
-import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-navbar-component',
@@ -16,7 +17,7 @@ export class NavbarComponentComponent implements OnInit, OnDestroy {
   userIsAuthenticated = false;
   private authListenerSub: Subscription;
 
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService, private router: Router) { }
 
   ngOnInit() {
     this.userIsAuthenticated = this.authService.getIsAuth();
@@ -27,6 +28,18 @@ export class NavbarComponentComponent implements OnInit, OnDestroy {
   }
   ngOnDestroy() {
     this.authListenerSub.unsubscribe();
+  }
+
+  onClickDashboard() {
+    const role = this.authService.getRole();
+    const id = this.authService.getUserId();
+    if (role === 'consumer') {
+      this.router.navigate(['/buyerdashboard', id]);
+    } else if (role === 'merchant') {
+      this.router.navigate(['/sellerdashboard', id]);
+    } else {
+      console.log('role error occured at navbar component');
+    }
   }
 
   onLogout() {

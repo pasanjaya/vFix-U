@@ -11,6 +11,7 @@ import { MerchantData } from './merchant-data.model';
 })
 export class AuthService {
   private token: string;
+  private role: string;
   private id: string;
   private isAuthenticated = false;
   private tokenTimer: NodeJS.Timer;
@@ -21,6 +22,14 @@ export class AuthService {
 
   getToken() {
     return this.token;
+  }
+
+  getUserId() {
+    return this.id;
+  }
+
+  getRole() {
+    return this.role;
   }
 
   getIsAuth() {
@@ -87,10 +96,12 @@ export class AuthService {
         const token = response.token;
         this.token = token;
         if (token) {
-          const expiresInDuration = response.expiresIn;
+          const expiresInDuration = response.expiresIn ;
+          this.setAuthTimer(expiresInDuration);
           const id = response.id;
           const role = response.role;
-          this.setAuthTimer(expiresInDuration);
+          this.id = id;
+          this.role = role;
           this.isAuthenticated = true;
           this.authStatusListener.next(true);
           const now = new Date();
@@ -124,6 +135,8 @@ export class AuthService {
 
   userLogout() {
     this.token = null;
+    this.id = null;
+    this.role = null;
     this.isAuthenticated = false;
     this.authStatusListener.next(false);
     clearTimeout(this.tokenTimer);
@@ -134,7 +147,7 @@ export class AuthService {
   private setAuthTimer(duration: number) {
     this.tokenTimer = setTimeout(() => {
       this.userLogout();
-    }, duration);
+    }, duration * 1000);
   }
 
   private saveAuthData(token: string, expirationDate: Date) {

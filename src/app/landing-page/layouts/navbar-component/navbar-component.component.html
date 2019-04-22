@@ -46,7 +46,7 @@
           </li>
           <li class="nav-item" *ngIf="!userIsAuthenticated">
             <a
-              class="btn btn-secondary btn-sm mr-2"
+              class="btn btn-default btn-sm mr-2"
               routerLinkActive="active"
               routerLink="/register"
               role="button"
@@ -55,7 +55,7 @@
           </li>
           <li class="nav-item" *ngIf="!userIsAuthenticated">
             <a
-              class="btn btn-sm btn-secondary"
+              class="btn btn-sm btn-info"
               routerLinkActive="active"
               routerLink="/login"
               role="button"
@@ -64,7 +64,13 @@
           </li>
           <li class="nav-item" *ngIf="userIsAuthenticated">
             <button
-              class="btn btn-sm btn-secondary"
+              class="btn btn-sm btn-default mr-2"
+              (click)="onClickDashboard()"><i class="ni ni-circle-08"></i> Dashboard</button
+            >
+          </li>
+          <li class="nav-item" *ngIf="userIsAuthenticated">
+            <button
+              class="btn btn-sm btn-primary"
               (click)="onLogout()"><i class="ni ni-key-25"></i> Logout</button
             >
           </li>

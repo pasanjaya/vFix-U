@@ -79,6 +79,7 @@ router.post("/login", (req, res, next) => {
           );
           res.status(201).json({
             token: token,
+            expiresIn: 7200,
             role: 'merchant',
             id: fetchedUser._id
           });
