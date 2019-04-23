@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 declare const google: any;
 
@@ -8,17 +9,18 @@ declare const google: any;
   styleUrls: ['./admin-maps.component.scss']
 })
 export class AdminMapsComponent implements OnInit {
+  map: HTMLElement;
 
   constructor() { }
 
   ngOnInit() {
-    let map = document.getElementById('map-canvas');
-    let lat = map.getAttribute('data-lat');
-    let lng = map.getAttribute('data-lng');
+    this.map = document.getElementById('map-canvas');
+    let lat = this.map.getAttribute('data-lat');
+    let lng = this.map.getAttribute('data-lng');
 
     var myLatlng = new google.maps.LatLng(lat, lng);
     var mapOptions = {
-        zoom: 12,
+        zoom: 5,
         scrollwheel: false,
         center: myLatlng,
         mapTypeId: google.maps.MapTypeId.ROADMAP,
@@ -33,11 +35,11 @@ export class AdminMapsComponent implements OnInit {
           {'featureType':'water','elementType':'all','stylers':[{'color':'#5e72e4'},{'visibility':'on'}]}]
     }
 
-    map = new google.maps.Map(map, mapOptions);
+    this.map = new google.maps.Map(this.map, mapOptions);
 
     var marker = new google.maps.Marker({
         position: myLatlng,
-        map: map,
+        map: this.map,
         animation: google.maps.Animation.DROP,
         title: 'Hello World!'
     });
@@ -50,8 +52,23 @@ export class AdminMapsComponent implements OnInit {
     });
 
     google.maps.event.addListener(marker, 'click', () => {
-        infowindow.open(map, marker);
+        infowindow.open(this.map, marker);
     });
+  }
+
+  onLocate(locateForm: NgForm) {
+    if (locateForm.invalid) {
+      return;
+    }
+    let dataLat:number = locateForm.value.latitude;
+    let dataLng:number = locateForm.value.longitude;
+
+    let latlng = new google.maps.LatLng(dataLat, dataLng);
+    let newMaker = new google.maps.Marker({
+      position: latlng,
+      map: this.map
+    });
+    console.log(locateForm);
   }
 
 }

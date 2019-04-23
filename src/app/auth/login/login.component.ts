@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
 import { AuthService } from '../auth.service';
@@ -10,7 +10,6 @@ import { AuthService } from '../auth.service';
 })
 export class LoginComponent implements OnInit {
 
-  // @ViewChild('login') loginForm: NgForm;
   constructor(public authService: AuthService) { }
 
   ngOnInit() {
