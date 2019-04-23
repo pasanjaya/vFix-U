@@ -1,0 +1,56 @@
+.index-page .header-filter:after {
+  background: rgba(63, 81, 181, 0.64);
+  background: linear-gradient(45deg, rgba(63, 81, 181, 0.88) 0%, rgba(63, 81, 181, 0.45) 100%);
+  background: -moz-linear-gradient(135deg, rgba(63, 81, 181, 0.88) 0%, rgba(125, 46, 185, 0.45) 100%);
+  background: -webkit-linear-gradient(135deg, rgba(63, 81, 181, 0.88) 0%, rgba(63, 81, 181, 0.45) 100%);
+}
+
+.index-page .card-header {
+  margin-top: 30vh;
+  color: #555555 !important;
+  text-align: center;
+}
+
+.card-header {
+  color: #555555;
+}
+.card-signup {
+  margin-top: 50px;
+}
+
+.card-header h1 {
+  margin: auto auto -20px;
+}
+
+.avatar {
+  max-width: 180px;
+  margin: -20px auto 0;
+}
+
+.badge {
+  margin: -25px auto 0 !important;
+}
+
+.user-rating {
+  margin: auto auto -0px;
+  border-radius: 2px;
+}
+
+.text-blue {
+  color: rgb(63, 81, 181) !important;
+}
+.btn-blue {
+  background: rgb(63, 81, 181) !important;
+  background: linear-gradient(45deg, rgba(63, 81, 181, 0.88) 100%, rgba(63, 81, 181, 0.45) 100%);
+  background: -moz-linear-gradient(135deg, rgba(63, 81, 181, 0.88) 100%, rgba(125, 46, 185, 0.45) 100%);
+  background: -webkit-linear-gradient(135deg, rgba(63, 81, 181, 0.88) 100%, rgba(63, 81, 181, 0.45) 100%);
+  color: #ffffff;
+}
+
+.cardindent {
+  margin: auto auto 5px;
+}
+
+.like {
+  margin: -30px auto auto 140px !important;
+}
