@@ -14,6 +14,7 @@ import { SellerDashboardComponent } from './sellers-dashboard/pages/seller-dashb
 import { SellerProfileComponent } from './sellers-dashboard/pages/seller-profile/seller-profile.component';
 import { SellerAdvertiseComponent } from './sellers-dashboard/pages/seller-advertise/seller-advertise.component';
 import { NotFoundComponentComponent } from './not-found-component/not-found-component.component';
+import { SellerMessagesComponent } from './sellers-dashboard/pages/seller-messages/seller-messages.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/index', pathMatch: 'full'},
@@ -43,7 +44,8 @@ const routes: Routes = [
   { path: 'sellerdashboard/:id', component: SellerComponentComponent, canActivate: [AuthGuard], children: [
     { path: '', component: SellerDashboardComponent },
     { path: 'sellerprofile', component: SellerProfileComponent },
-    { path: 'selleradvertise', component: SellerAdvertiseComponent}
+    { path: 'selleradvertise', component: SellerAdvertiseComponent},
+    { path: 'sellermessages', component: SellerMessagesComponent}
   ] },
   // wild card routing will direct to this component
   { path: '**', component: NotFoundComponentComponent }
