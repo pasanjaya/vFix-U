@@ -32,6 +32,7 @@ export class NavbarComponentComponent implements OnInit, OnDestroy {
 
   onClickDashboard() {
     const role = this.authService.getRole();
+    console.log(role);
     const id = this.authService.getUserId();
     if (role === 'consumer') {
       this.router.navigate(['/buyerdashboard', id]);

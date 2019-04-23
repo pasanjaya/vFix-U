@@ -25,7 +25,7 @@ export class AdminMapsComponent implements OnInit {
         center: myLatlng,
         mapTypeId: google.maps.MapTypeId.ROADMAP,
         styles: [
-          {'featureType':'administrative','elementType':'labels.text.fill','stylers':[{'color':'#444444'}]},
+          {featureType: 'administrative','elementType':'labels.text.fill','stylers':[{'color':'#444444'}]},
           {'featureType':'landscape','elementType':'all','stylers':[{'color':'#f2f2f2'}]},
           {'featureType':'poi','elementType':'all','stylers':[{'visibility':'off'}]},
           {'featureType':'road','elementType':'all','stylers':[{'saturation':-100},{'lightness':45}]},
