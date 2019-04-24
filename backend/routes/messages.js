@@ -8,11 +8,11 @@ const router = express.Router();
 
 router.post('/create', checkAuth, (req, res, next) => {
   const message = new Message({
-    messageCreator: req.body.messageCreator,
     category: req.body.category,
     itemName: req.body.itemName,
     itemImage: req.body.itemImage,
-    itemNote: req.body.itemNote
+    itemNote: req.body.itemNote,
+    messageCreator: req.userData.userId
   });
   message.save()
     .then(result => {

@@ -14,6 +14,9 @@ export class NavbarComponentComponent implements OnInit, OnDestroy {
   public title = 'vFix-U';
   public isCollapsed = true;
 
+  private userRole: string;
+  private userId: string;
+
   userIsAuthenticated = false;
   private authListenerSub: Subscription;
 
@@ -21,9 +24,13 @@ export class NavbarComponentComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.userIsAuthenticated = this.authService.getIsAuth();
+    this.userRole = this.authService.getRole();
+    this.userId = this.authService.getUserId();
     this.authListenerSub = this.authService.getAuthStatusLintener()
       .subscribe(isAuthenticated => {
         this.userIsAuthenticated = isAuthenticated;
+        this.userRole = this.authService.getRole();
+        this.userId = this.authService.getUserId();
       });
   }
   ngOnDestroy() {
@@ -31,13 +38,10 @@ export class NavbarComponentComponent implements OnInit, OnDestroy {
   }
 
   onClickDashboard() {
-    const role = this.authService.getRole();
-    console.log(role);
-    const id = this.authService.getUserId();
-    if (role === 'consumer') {
-      this.router.navigate(['/buyerdashboard', id]);
-    } else if (role === 'merchant') {
-      this.router.navigate(['/sellerdashboard', id]);
+    if (this.userRole === 'consumer') {
+      this.router.navigate(['/buyerdashboard', this.userId]);
+    } else if (this.userRole === 'merchant') {
+      this.router.navigate(['/sellerdashboard', this.userId]);
     } else {
       console.log('role error occured at navbar component');
     }

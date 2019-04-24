@@ -37,15 +37,13 @@ router.post("/login", (req, res, next) => {
             });
           }
           const token = jwt.sign(
-            { email: fetchedUser.email, userId: fetchedUser._id },
+            { email: fetchedUser.email, userId: fetchedUser._id, userRole: foundUser.role },
             "this_is_must_be_longer_string",
             { expiresIn: "2h" }
           );
           res.status(200).json({
             token: token,
-            expiresIn: 7200,
-            role: 'consumer',
-            id: fetchedUser._id
+            expiresIn: 7200
           });
         })
         .catch(err => {
@@ -73,15 +71,13 @@ router.post("/login", (req, res, next) => {
             });
           }
           const token = jwt.sign(
-            { email: fetchedUser.email, userId: fetchedUser._id },
+            { email: fetchedUser.email, userId: fetchedUser._id, userRole: foundUser.role },
             "this_is_must_be_longer_string",
             { expiresIn: "2h" }
           );
           res.status(201).json({
             token: token,
-            expiresIn: 7200,
-            role: 'merchant',
-            id: fetchedUser._id
+            expiresIn: 7200
           });
         })
         .catch(err => {

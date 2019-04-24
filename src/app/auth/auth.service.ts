@@ -3,6 +3,8 @@ import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { Subject } from 'rxjs';
 
+import { JwtHelperService } from '@auth0/angular-jwt';
+
 import { ConsumerData } from './consumer-data.model';
 import { MerchantData } from './merchant-data.model';
 
@@ -85,6 +87,7 @@ export class AuthService {
   }
 
   userLogin(email: string, password: string) {
+    const helper = new JwtHelperService();
     const userLoginData: ConsumerData = { email, password };
     this.http
       .post<{ token: string; role: string; id: string, expiresIn: number }>(
@@ -98,15 +101,16 @@ export class AuthService {
         if (token) {
           const expiresInDuration = response.expiresIn ;
           this.setAuthTimer(expiresInDuration);
-          const id = response.id;
-          const role = response.role;
+          const decodedToken = helper.decodeToken(token);
+          const id = decodedToken.userId;
+          const role = decodedToken.userRole;
           this.id = id;
           this.role = role;
           this.isAuthenticated = true;
           this.authStatusListener.next(true);
           const now = new Date();
           const expirationDate = new Date(now.getTime() + expiresInDuration * 1000);
-          this.saveAuthData(token, expirationDate, role);
+          this.saveAuthData(token, expirationDate);
           if (role === 'consumer') {
             this.router.navigate(['/buyerdashboard', id]);
           } else if (role === 'merchant') {
@@ -123,11 +127,14 @@ export class AuthService {
     if (!authInformation) {
       return;
     }
+    const helper = new JwtHelperService();
     const now = new Date();
     const expiresIn = authInformation.expirationDate.getTime() -  now.getTime();
     if (expiresIn > 0) {
       this.token = authInformation.token;
-      this.role = authInformation.role;
+      const decodedToken = helper.decodeToken(this.token);
+      this.role = decodedToken.userRole;
+      this.id = decodedToken.userId;
       this.setAuthTimer(expiresIn / 1000);
       this.isAuthenticated = true;
       this.authStatusListener.next(true);
@@ -151,29 +158,25 @@ export class AuthService {
     }, duration * 1000);
   }
 
-  private saveAuthData(token: string, expirationDate: Date, role: string) {
+  private saveAuthData(token: string, expirationDate: Date) {
     localStorage.setItem('token', token);
     localStorage.setItem('expiration', expirationDate.toISOString());
-    localStorage.setItem('role', role);
   }
 
   private clearAuthData() {
     localStorage.removeItem('token');
     localStorage.removeItem('expiration');
-    localStorage.removeItem('role');
   }
 
   private getAuthData() {
     const token = localStorage.getItem('token');
     const expirationDate = localStorage.getItem('expiration');
-    const role = localStorage.getItem('role');
     if (!token || !expirationDate) {
       return;
     }
     return {
       token,
-      expirationDate: new Date(expirationDate),
-      role
+      expirationDate: new Date(expirationDate)
     };
   }
 

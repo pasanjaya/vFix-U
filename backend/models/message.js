@@ -1,11 +1,11 @@
 const mongoose = require('mongoose');
 
 const messageSchema = mongoose.Schema({
-  messageCreator: { type: String, require: true },
   category: { type: String, require: true },
-  itemName: { type: String },
-  itemImage: { type: String },
-  itemNote: { type: String }
+  itemIdentifier: { type: String },
+  itemImage: { type: String, require: true },
+  itemNote: { type: String },
+  messageCreator: { type: mongoose.Schema.Types.ObjectId, ref: "Consumer", require: true }
 });
 
 module.exports = mongoose.model("Message", messageSchema);
