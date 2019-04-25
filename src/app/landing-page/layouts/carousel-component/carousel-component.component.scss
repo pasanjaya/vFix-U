@@ -1,0 +1,92 @@
+carousel img {
+  margin: auto;
+  width: 100vw;
+  height: 80vh;
+}
+
+// .carousel-inner {
+// 	width: 100%;
+// 	display: inline-block;
+// 	position: relative;
+// }
+// .carousel-inner {
+// 	padding-top: 43.25%;
+// 	display: block;
+// 	content: "";
+// }
+// .carousel-item {
+// 	position: absolute;
+// 	top: 0;
+// 	bottom: 0;
+// 	right: 0;
+// 	left: 0;
+// 	background: skyblue;
+// 	background: no-repeat center center scroll;
+// 	-webkit-background-size: cover;
+// 	-moz-background-size: cover;
+// 	-o-background-size: cover;
+// 	background-size: cover;
+// }
+
+.call-to-action {
+	position: absolute;
+	top: 40%;
+	left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+	width: 60%;
+	z-index: 9;
+	margin-top: 20px;
+	text-align: center;
+}
+.call-to-action h1 {
+	font-size: 52px;
+	font-weight: 700;
+	margin-bottom: 23px;
+}
+.call-to-action h2 {
+	font-size: 26px;
+	font-weight: 300;
+}
+
+.call-to-action h2 span {
+  text-transform: uppercase;
+  background-color: rgba(226, 245, 69, 0.75);
+  padding: 0 10px;
+  color: rgba(27, 38, 49, 0.9);
+}
+a.big-button {
+	color: #fff;
+	font-size: 19px;
+	font-weight: 700;
+	text-transform: uppercase;
+	background: #eb7a00;
+	background: rgba(119, 5, 49, 0.75);
+  padding: 15px 35px;
+  border: 2px solid #fff;
+	border-radius: 50px;
+	margin-top: 80px;
+	margin-bottom: 0;
+	display: inline-block;
+}
+a.big-button:hover {
+	text-decoration: none;
+  background: rgba(73, 25, 39, 0.9);
+}
+a.view-demo {
+	color: #000;
+	font-size: 21px;
+	font-weight: 700;
+	display: inline-block;
+	margin-top: 35px;
+}
+a.view-demo:hover {
+	text-decoration: none;
+	color: #333;
+}
+
+// .carousel-indicators .active {
+//   background: #000;
+// }
+// .carousel-indicators li {
+//   background: rgba(0, 0, 0, 0.5);
+// }

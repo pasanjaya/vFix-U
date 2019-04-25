@@ -90,7 +90,7 @@ export class AuthService {
     const helper = new JwtHelperService();
     const userLoginData: ConsumerData = { email, password };
     this.http
-      .post<{ token: string; role: string; id: string, expiresIn: number }>(
+      .post<{ token: string, expiresIn: number }>(
         'http://localhost:3000/api/user/login',
         userLoginData
       )
