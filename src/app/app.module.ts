@@ -40,6 +40,7 @@ import { SellerProfileComponent } from './sellers-dashboard/pages/seller-profile
 import { SellerAdvertiseComponent } from './sellers-dashboard/pages/seller-advertise/seller-advertise.component';
 import { LandingNewArraivalsComponent } from './landing-page/landing-components/landing-new-arraivals/landing-new-arraivals.component';
 import { LandingTestimonialsComponent } from './landing-page/landing-components/landing-testimonials/landing-testimonials.component';
+import { SellerMessagesComponent } from './sellers-dashboard/pages/seller-messages/seller-messages.component';
 
 
 
@@ -67,7 +68,8 @@ import { LandingTestimonialsComponent } from './landing-page/landing-components/
     SellerProfileComponent,
     SellerAdvertiseComponent,
     LandingNewArraivalsComponent,
-    LandingTestimonialsComponent
+    LandingTestimonialsComponent,
+    SellerMessagesComponent
 
   ],
   imports: [
