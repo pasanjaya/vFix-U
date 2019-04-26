@@ -14,6 +14,7 @@ import { AdminConfigureService } from './admin-configure.service';
 export class AdminConfigurationComponent implements OnInit, OnDestroy {
 
   categories: CategoryData[] = [];
+  images = [];
   private categorySub: Subscription;
 
   constructor(public adminConfigureService: AdminConfigureService) { }
@@ -41,6 +42,14 @@ export class AdminConfigurationComponent implements OnInit, OnDestroy {
 
   onDeleteCategory(categoryId: string) {
     this.adminConfigureService.deleteCategory(categoryId);
+  }
+
+  onAddImage() {
+
+  }
+
+  onDeleteImage() {
+
   }
 
 }
