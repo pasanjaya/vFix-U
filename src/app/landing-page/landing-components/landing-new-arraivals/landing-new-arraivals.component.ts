@@ -7,7 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LandingNewArraivalsComponent implements OnInit {
 
+  itemsPerSlide = 5;
+  singleSlideOffset = true;
+
   constructor() { }
+
+  slides = [
+    {image: 'assets/images/carousel/6.jpg'},
+    {image: 'assets/images/carousel/6.jpg'},
+    {image: 'assets/images/carousel/6.jpg'}
+  ];
 
   ngOnInit() {
   }
