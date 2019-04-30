@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./buyer-sidebar-component.component.scss']
 })
 export class BuyerSidebarComponentComponent implements OnInit {
+  menuItems = [];
   public isCollapsed = true;
   constructor() { }
 
