@@ -14,6 +14,7 @@ import { ButtonsModule } from 'ngx-bootstrap/buttons';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 
 import { GeneralService } from './services/general.service';
+
 import { AuthInterceptor } from './auth/auth-interceptor';
 
 import { AppRoutingModule } from './app-routing.module';

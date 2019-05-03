@@ -1,0 +1,2707 @@
+{
+  "data": {
+    "models": {
+      "307": {
+        "groupId": "307",
+        "groupName": "1007",
+        "groupAlias": "1007",
+        "sort": 15,
+        "groupNameSelector": "1007",
+        "items": {
+          "5383": {
+            "groupId": "307",
+            "groupName": "1007",
+            "groupAlias": "1007",
+            "name": "1007 Hatchback",
+            "nameSelector": "1007 Hatchback",
+            "yearOfConstrFrom": "04.2005",
+            "yearOfConstrTo": "...",
+            "modelAlias": "1007-km",
+            "modelId": "5383",
+            "ratingSale": "34334",
+            "top": 0,
+            "sort": 1
+          }
+        },
+        "yearOfConstrFrom": "04.2005"
+      },
+      "308": {
+        "groupId": "308",
+        "groupName": "104 ",
+        "groupAlias": "104",
+        "sort": 43,
+        "groupNameSelector": "104 ",
+        "items": {
+          "66": {
+            "groupId": "308",
+            "groupName": "104 ",
+            "groupAlias": "104",
+            "name": "104 Hatchback",
+            "nameSelector": "104 Hatchback",
+            "yearOfConstrFrom": "10.1972",
+            "yearOfConstrTo": "06.1988",
+            "modelAlias": "104-1972",
+            "modelId": "66",
+            "ratingSale": "5921",
+            "top": 0,
+            "sort": 2
+          },
+          "72": {
+            "groupId": "308",
+            "groupName": "104 ",
+            "groupAlias": "104",
+            "name": "104 Coupe",
+            "nameSelector": "104 Coupe",
+            "yearOfConstrFrom": "09.1973",
+            "yearOfConstrTo": "06.1988",
+            "modelAlias": "104-coupe",
+            "modelId": "72",
+            "ratingSale": "3710",
+            "top": 0,
+            "sort": 1
+          }
+        },
+        "yearOfConstrFrom": "10.1972"
+      },
+      "309": {
+        "groupId": "309",
+        "groupName": "106",
+        "groupAlias": "106",
+        "sort": 42,
+        "groupNameSelector": "106",
+        "items": {
+          "9967": {
+            "groupId": "309",
+            "groupName": "106",
+            "groupAlias": "106",
+            "name": "106 I Van",
+            "nameSelector": "106 I Van",
+            "yearOfConstrFrom": "08.1991",
+            "yearOfConstrTo": "03.2001",
+            "modelAlias": "106-van-1",
+            "modelId": "9967",
+            "ratingSale": "8880",
+            "top": 0,
+            "sort": 2
+          },
+          "77": {
+            "groupId": "309",
+            "groupName": "106",
+            "groupAlias": "106",
+            "name": "106 I Hatchback",
+            "nameSelector": "106 I Hatchback",
+            "yearOfConstrFrom": "08.1991",
+            "yearOfConstrTo": "04.1996",
+            "modelAlias": "106-i-1a-1c",
+            "modelId": "77",
+            "ratingSale": "108716",
+            "top": 0,
+            "sort": 3
+          },
+          "1559": {
+            "groupId": "309",
+            "groupName": "106",
+            "groupAlias": "106",
+            "name": "106 II Hatchback",
+            "nameSelector": "106 II Hatchback",
+            "yearOfConstrFrom": "04.1996",
+            "yearOfConstrTo": "05.2005",
+            "modelAlias": "106-ii-1",
+            "modelId": "1559",
+            "ratingSale": "167590",
+            "top": 0,
+            "sort": 1
+          }
+        },
+        "yearOfConstrFrom": "08.1991"
+      },
+      "310": {
+        "groupId": "310",
+        "groupName": "107",
+        "groupAlias": "107",
+        "sort": 41,
+        "groupNameSelector": "107",
+        "items": {
+          "5414": {
+            "groupId": "310",
+            "groupName": "107",
+            "groupAlias": "107",
+            "name": "107 Hatchback",
+            "nameSelector": "107 Hatchback",
+            "yearOfConstrFrom": "06.2005",
+            "yearOfConstrTo": "...",
+            "modelAlias": "107-2005",
+            "modelId": "5414",
+            "ratingSale": "129958",
+            "top": 0,
+            "sort": 1
+          }
+        },
+        "yearOfConstrFrom": "06.2005"
+      },
+      "311": {
+        "groupId": "311",
+        "groupName": "204",
+        "groupAlias": "204",
+        "sort": 40,
+        "groupNameSelector": "204",
+        "items": {
+          "192": {
+            "groupId": "311",
+            "groupName": "204",
+            "groupAlias": "204",
+            "name": "204 Saloon",
+            "nameSelector": "204 Saloon",
+            "yearOfConstrFrom": "10.1965",
+            "yearOfConstrTo": "12.1977",
+            "modelAlias": "204-1965",
+            "modelId": "192",
+            "ratingSale": "4351",
+            "top": 0,
+            "sort": 4
+          },
+          "1691": {
+            "groupId": "311",
+            "groupName": "204",
+            "groupAlias": "204",
+            "name": "204 Estate",
+            "nameSelector": "204 Estate",
+            "yearOfConstrFrom": "01.1967",
+            "yearOfConstrTo": "10.1977",
+            "modelAlias": "204-break",
+            "modelId": "1691",
+            "ratingSale": "1218",
+            "top": 0,
+            "sort": 2
+          },
+          "1693": {
+            "groupId": "311",
+            "groupName": "204",
+            "groupAlias": "204",
+            "name": "204 Convertible",
+            "nameSelector": "204 Convertible",
+            "yearOfConstrFrom": "01.1967",
+            "yearOfConstrTo": "10.1970",
+            "modelAlias": "204-convertible",
+            "modelId": "1693",
+            "ratingSale": "1835",
+            "top": 0,
+            "sort": 3
+          },
+          "1692": {
+            "groupId": "311",
+            "groupName": "204",
+            "groupAlias": "204",
+            "name": "204 Coupe",
+            "nameSelector": "204 Coupe",
+            "yearOfConstrFrom": "07.1967",
+            "yearOfConstrTo": "05.1970",
+            "modelAlias": "204-coupe",
+            "modelId": "1692",
+            "ratingSale": "957",
+            "top": 0,
+            "sort": 1
+          }
+        },
+        "yearOfConstrFrom": "10.1965"
+      },
+      "312": {
+        "groupId": "312",
+        "groupName": "205  ",
+        "groupAlias": "205",
+        "sort": 39,
+        "groupNameSelector": "205  ",
+        "items": {
+          "7625": {
+            "groupId": "312",
+            "groupName": "205  ",
+            "groupAlias": "205",
+            "name": "205 XA\\/XAD Van",
+            "nameSelector": "205 XA\\/XAD Van",
+            "yearOfConstrFrom": "02.1983",
+            "yearOfConstrTo": "07.1990",
+            "modelAlias": "205-box-1983",
+            "modelId": "7625",
+            "ratingSale": "3145",
+            "top": 0,
+            "sort": 0
+          },
+          "196": {
+            "groupId": "312",
+            "groupName": "205  ",
+            "groupAlias": "205",
+            "name": "205 I Hatchback",
+            "nameSelector": "205 I Hatchback",
+            "yearOfConstrFrom": "02.1983",
+            "yearOfConstrTo": "10.1987",
+            "modelAlias": "205-i-741a-c",
+            "modelId": "196",
+            "ratingSale": "42141",
+            "top": 0,
+            "sort": 4
+          },
+          "200": {
+            "groupId": "312",
+            "groupName": "205  ",
+            "groupAlias": "205",
+            "name": "205 Convertible",
+            "nameSelector": "205 Convertible",
+            "yearOfConstrFrom": "04.1986",
+            "yearOfConstrTo": "11.1995",
+            "modelAlias": "205-i-convertible-741b-20d",
+            "modelId": "200",
+            "ratingSale": "16683",
+            "top": 0,
+            "sort": 3
+          },
+          "205": {
+            "groupId": "312",
+            "groupName": "205  ",
+            "groupAlias": "205",
+            "name": "205 II Hatchback",
+            "nameSelector": "205 II Hatchback",
+            "yearOfConstrFrom": "01.1987",
+            "yearOfConstrTo": "12.2000",
+            "modelAlias": "205-ii-20a-c",
+            "modelId": "205",
+            "ratingSale": "163595",
+            "top": 0,
+            "sort": 2
+          },
+          "4634": {
+            "groupId": "312",
+            "groupName": "205  ",
+            "groupAlias": "205",
+            "name": "205 F Van",
+            "nameSelector": "205 F Van",
+            "yearOfConstrFrom": "03.1994",
+            "yearOfConstrTo": "05.1997",
+            "modelAlias": "205-box",
+            "modelId": "4634",
+            "ratingSale": "5871",
+            "top": 0,
+            "sort": 1
+          }
+        },
+        "yearOfConstrFrom": "02.1983"
+      },
+      "314": {
+        "groupId": "314",
+        "groupName": "206",
+        "groupAlias": "206",
+        "sort": 38,
+        "groupNameSelector": "206",
+        "items": {
+          "3555": {
+            "groupId": "314",
+            "groupName": "206",
+            "groupAlias": "206",
+            "name": "206 Hatchback (2A\\/C)",
+            "nameSelector": "206 Hatchback (2A\\/C)",
+            "yearOfConstrFrom": "08.1998",
+            "yearOfConstrTo": "...",
+            "modelAlias": "206-hatchback-2a-c",
+            "modelId": "3555",
+            "ratingSale": "807042",
+            "top": 0,
+            "sort": 6
+          },
+          "9836": {
+            "groupId": "314",
+            "groupName": "206",
+            "groupAlias": "206",
+            "name": "206 Van",
+            "nameSelector": "206 Van",
+            "yearOfConstrFrom": "04.1999",
+            "yearOfConstrTo": "03.2009",
+            "modelAlias": "206-van",
+            "modelId": "9836",
+            "ratingSale": "33548",
+            "top": 0,
+            "sort": 5
+          },
+          "4572": {
+            "groupId": "314",
+            "groupName": "206",
+            "groupAlias": "206",
+            "name": "206 CC (2D)",
+            "nameSelector": "206 CC (2D)",
+            "yearOfConstrFrom": "09.2000",
+            "yearOfConstrTo": "...",
+            "modelAlias": "206-cc-2d",
+            "modelId": "4572",
+            "ratingSale": "0",
+            "top": 0,
+            "sort": 4
+          },
+          "4898": {
+            "groupId": "314",
+            "groupName": "206",
+            "groupAlias": "206",
+            "name": "206 SW (2E\\/K)",
+            "nameSelector": "206 SW (2E\\/K)",
+            "yearOfConstrFrom": "07.2002",
+            "yearOfConstrTo": "...",
+            "modelAlias": "206-sw-2e-k",
+            "modelId": "4898",
+            "ratingSale": "151124",
+            "top": 0,
+            "sort": 3
+          },
+          "5615": {
+            "groupId": "314",
+            "groupName": "206",
+            "groupAlias": "206",
+            "name": "206 Saloon",
+            "nameSelector": "206 Saloon",
+            "yearOfConstrFrom": "03.2007",
+            "yearOfConstrTo": "...",
+            "modelAlias": "206-saloon",
+            "modelId": "5615",
+            "ratingSale": "18592",
+            "top": 0,
+            "sort": 2
+          },
+          "8784": {
+            "groupId": "314",
+            "groupName": "206",
+            "groupAlias": "206",
+            "name": "206+ Hatchback (T3E)",
+            "nameSelector": "206+ Hatchback (T3E)",
+            "yearOfConstrFrom": "01.2009",
+            "yearOfConstrTo": "...",
+            "modelAlias": "206-t3e",
+            "modelId": "8784",
+            "ratingSale": "70590",
+            "top": 0,
+            "sort": 1
+          }
+        },
+        "yearOfConstrFrom": "08.1998"
+      },
+      "315": {
+        "groupId": "315",
+        "groupName": "207",
+        "groupAlias": "207",
+        "sort": 37,
+        "groupNameSelector": "207",
+        "items": {
+          "5522": {
+            "groupId": "315",
+            "groupName": "207",
+            "groupAlias": "207",
+            "name": "207 Hatchback",
+            "nameSelector": "207 Hatchback",
+            "yearOfConstrFrom": "02.2006",
+            "yearOfConstrTo": "...",
+            "modelAlias": "207-wa-wc",
+            "modelId": "5522",
+            "ratingSale": "386366",
+            "top": 0,
+            "sort": 5
+          },
+          "5639": {
+            "groupId": "315",
+            "groupName": "207",
+            "groupAlias": "207",
+            "name": "207 CC",
+            "nameSelector": "207 CC",
+            "yearOfConstrFrom": "02.2007",
+            "yearOfConstrTo": "...",
+            "modelAlias": "207-cc-wd",
+            "modelId": "5639",
+            "ratingSale": "67972",
+            "top": 0,
+            "sort": 4
+          },
+          "6433": {
+            "groupId": "315",
+            "groupName": "207",
+            "groupAlias": "207",
+            "name": "207 SW",
+            "nameSelector": "207 SW",
+            "yearOfConstrFrom": "02.2007",
+            "yearOfConstrTo": "...",
+            "modelAlias": "207-sw-wk",
+            "modelId": "6433",
+            "ratingSale": "85209",
+            "top": 0,
+            "sort": 3
+          },
+          "8597": {
+            "groupId": "315",
+            "groupName": "207",
+            "groupAlias": "207",
+            "name": "207 Van",
+            "nameSelector": "207 Van",
+            "yearOfConstrFrom": "04.2007",
+            "yearOfConstrTo": "...",
+            "modelAlias": "207-van",
+            "modelId": "8597",
+            "ratingSale": "10883",
+            "top": 0,
+            "sort": 2
+          },
+          "9618": {
+            "groupId": "315",
+            "groupName": "207",
+            "groupAlias": "207",
+            "name": "207 Saloon",
+            "nameSelector": "207 Saloon",
+            "yearOfConstrFrom": "12.2007",
+            "yearOfConstrTo": "...",
+            "modelAlias": "207-saloon",
+            "modelId": "9618",
+            "ratingSale": "10427",
+            "top": 0,
+            "sort": 1
+          }
+        },
+        "yearOfConstrFrom": "02.2006"
+      },
+      "316": {
+        "groupId": "316",
+        "groupName": "304 ",
+        "groupAlias": "304",
+        "sort": 34,
+        "groupNameSelector": "304 ",
+        "items": {
+          "1694": {
+            "groupId": "316",
+            "groupName": "304 ",
+            "groupAlias": "304",
+            "name": "304 Saloon",
+            "nameSelector": "304 Saloon",
+            "yearOfConstrFrom": "10.1969",
+            "yearOfConstrTo": "10.1979",
+            "modelAlias": "304-04m",
+            "modelId": "1694",
+            "ratingSale": "2131",
+            "top": 0,
+            "sort": 4
+          },
+          "238": {
+            "groupId": "316",
+            "groupName": "304 ",
+            "groupAlias": "304",
+            "name": "304 Convertible",
+            "nameSelector": "304 Convertible",
+            "yearOfConstrFrom": "03.1970",
+            "yearOfConstrTo": "07.1976",
+            "modelAlias": "304-convertible-04b",
+            "modelId": "238",
+            "ratingSale": "4977",
+            "top": 0,
+            "sort": 3
+          },
+          "1695": {
+            "groupId": "316",
+            "groupName": "304 ",
+            "groupAlias": "304",
+            "name": "304 Coupe",
+            "nameSelector": "304 Coupe",
+            "yearOfConstrFrom": "03.1970",
+            "yearOfConstrTo": "04.1975",
+            "modelAlias": "304-coupe-04c",
+            "modelId": "1695",
+            "ratingSale": "2084",
+            "top": 0,
+            "sort": 2
+          },
+          "3493": {
+            "groupId": "316",
+            "groupName": "304 ",
+            "groupAlias": "304",
+            "name": "304 Estate",
+            "nameSelector": "304 Estate",
+            "yearOfConstrFrom": "09.1970",
+            "yearOfConstrTo": "10.1980",
+            "modelAlias": "304-break-04d",
+            "modelId": "3493",
+            "ratingSale": "726",
+            "top": 0,
+            "sort": 1
+          }
+        },
+        "yearOfConstrFrom": "10.1969"
+      },
+      "317": {
+        "groupId": "317",
+        "groupName": "305",
+        "groupAlias": "305",
+        "sort": 33,
+        "groupNameSelector": "305",
+        "items": {
+          "252": {
+            "groupId": "317",
+            "groupName": "305",
+            "groupAlias": "305",
+            "name": "305 I Saloon",
+            "nameSelector": "305 I Saloon",
+            "yearOfConstrFrom": "11.1977",
+            "yearOfConstrTo": "09.1982",
+            "modelAlias": "305-i-581a",
+            "modelId": "252",
+            "ratingSale": "1692",
+            "top": 0,
+            "sort": 4
+          },
+          "242": {
+            "groupId": "317",
+            "groupName": "305",
+            "groupAlias": "305",
+            "name": "305 I Estate",
+            "nameSelector": "305 I Estate",
+            "yearOfConstrFrom": "08.1980",
+            "yearOfConstrTo": "09.1982",
+            "modelAlias": "305-i-break-581d",
+            "modelId": "242",
+            "ratingSale": "477",
+            "top": 0,
+            "sort": 3
+          },
+          "247": {
+            "groupId": "317",
+            "groupName": "305",
+            "groupAlias": "305",
+            "name": "305 II Estate",
+            "nameSelector": "305 II Estate",
+            "yearOfConstrFrom": "10.1982",
+            "yearOfConstrTo": "07.1990",
+            "modelAlias": "305-ii-break-581e",
+            "modelId": "247",
+            "ratingSale": "3209",
+            "top": 0,
+            "sort": 1
+          },
+          "257": {
+            "groupId": "317",
+            "groupName": "305",
+            "groupAlias": "305",
+            "name": "305 II Saloon",
+            "nameSelector": "305 II Saloon",
+            "yearOfConstrFrom": "10.1982",
+            "yearOfConstrTo": "07.1990",
+            "modelAlias": "305-ii-581m",
+            "modelId": "257",
+            "ratingSale": "3169",
+            "top": 0,
+            "sort": 2
+          }
+        },
+        "yearOfConstrFrom": "11.1977"
+      },
+      "318": {
+        "groupId": "318",
+        "groupName": "306  ",
+        "groupAlias": "306",
+        "sort": 32,
+        "groupNameSelector": "306  ",
+        "items": {
+          "264": {
+            "groupId": "318",
+            "groupName": "306  ",
+            "groupAlias": "306",
+            "name": "306 Hatchback",
+            "nameSelector": "306 Hatchback",
+            "yearOfConstrFrom": "01.1993",
+            "yearOfConstrTo": "10.2003",
+            "modelAlias": "306-hatchback-7a-7c-n3-n5",
+            "modelId": "264",
+            "ratingSale": "206686",
+            "top": 0,
+            "sort": 5
+          },
+          "273": {
+            "groupId": "318",
+            "groupName": "306  ",
+            "groupAlias": "306",
+            "name": "306 Saloon",
+            "nameSelector": "306 Saloon",
+            "yearOfConstrFrom": "04.1993",
+            "yearOfConstrTo": "10.2003",
+            "modelAlias": "306-7b-n3-n5",
+            "modelId": "273",
+            "ratingSale": "42972",
+            "top": 0,
+            "sort": 4
+          },
+          "37492": {
+            "groupId": "318",
+            "groupName": "306  ",
+            "groupAlias": "306",
+            "name": "306 Van \\/ Hatchback",
+            "nameSelector": "306 Van \\/ Hatchback",
+            "yearOfConstrFrom": "04.1993",
+            "yearOfConstrTo": "08.2001",
+            "modelAlias": "306-box-body-hatchback",
+            "modelId": "37492",
+            "ratingSale": "2075",
+            "top": 0,
+            "sort": 1
+          },
+          "9979": {
+            "groupId": "318",
+            "groupName": "306  ",
+            "groupAlias": "306",
+            "name": "306 Van \\/ Kombi",
+            "nameSelector": "306 Van \\/ Kombi",
+            "yearOfConstrFrom": "07.1993",
+            "yearOfConstrTo": "08.2002",
+            "modelAlias": "306-van-n-7",
+            "modelId": "9979",
+            "ratingSale": "7162",
+            "top": 0,
+            "sort": 3
+          },
+          "269": {
+            "groupId": "318",
+            "groupName": "306  ",
+            "groupAlias": "306",
+            "name": "306 Convertible",
+            "nameSelector": "306 Convertible",
+            "yearOfConstrFrom": "01.1994",
+            "yearOfConstrTo": "04.2002",
+            "modelAlias": "306-convertible-7d-n3-n5",
+            "modelId": "269",
+            "ratingSale": "30064",
+            "top": 0,
+            "sort": 2
+          },
+          "3921": {
+            "groupId": "318",
+            "groupName": "306  ",
+            "groupAlias": "306",
+            "name": "306 Estate",
+            "nameSelector": "306 Estate",
+            "yearOfConstrFrom": "06.1994",
+            "yearOfConstrTo": "04.2002",
+            "modelAlias": "306-break-7e-n3-n5",
+            "modelId": "3921",
+            "ratingSale": "68808",
+            "top": 0,
+            "sort": 1
+          }
+        },
+        "yearOfConstrFrom": "01.1993"
+      },
+      "319": {
+        "groupId": "319",
+        "groupName": "307",
+        "groupAlias": "307",
+        "sort": 31,
+        "groupNameSelector": "307",
+        "items": {
+          "4771": {
+            "groupId": "319",
+            "groupName": "307",
+            "groupAlias": "307",
+            "name": "307 Hatchback (3A\\/C)",
+            "nameSelector": "307 Hatchback (3A\\/C)",
+            "yearOfConstrFrom": "08.2000",
+            "yearOfConstrTo": "...",
+            "modelAlias": "307-3a-c",
+            "modelId": "4771",
+            "ratingSale": "416928",
+            "top": 0,
+            "sort": 5
+          },
+          "9909": {
+            "groupId": "319",
+            "groupName": "307",
+            "groupAlias": "307",
+            "name": "307 Saloon",
+            "nameSelector": "307 Saloon",
+            "yearOfConstrFrom": "01.2001",
+            "yearOfConstrTo": "...",
+            "modelAlias": "307-saloon",
+            "modelId": "9909",
+            "ratingSale": "21994",
+            "top": 0,
+            "sort": 4
+          },
+          "5113": {
+            "groupId": "319",
+            "groupName": "307",
+            "groupAlias": "307",
+            "name": "307 Estate (3E)",
+            "nameSelector": "307 Estate (3E)",
+            "yearOfConstrFrom": "03.2002",
+            "yearOfConstrTo": "...",
+            "modelAlias": "307-break-3e",
+            "modelId": "5113",
+            "ratingSale": "136615",
+            "top": 0,
+            "sort": 3
+          },
+          "4882": {
+            "groupId": "319",
+            "groupName": "307",
+            "groupAlias": "307",
+            "name": "307 SW (3H)",
+            "nameSelector": "307 SW (3H)",
+            "yearOfConstrFrom": "03.2002",
+            "yearOfConstrTo": "...",
+            "modelAlias": "307-sw-3h",
+            "modelId": "4882",
+            "ratingSale": "397249",
+            "top": 0,
+            "sort": 2
+          },
+          "5011": {
+            "groupId": "319",
+            "groupName": "307",
+            "groupAlias": "307",
+            "name": "307 CC (3B)",
+            "nameSelector": "307 CC (3B)",
+            "yearOfConstrFrom": "10.2003",
+            "yearOfConstrTo": "...",
+            "modelAlias": "307-cc-3b",
+            "modelId": "5011",
+            "ratingSale": "101670",
+            "top": 0,
+            "sort": 1
+          }
+        },
+        "yearOfConstrFrom": "08.2000"
+      },
+      "320": {
+        "groupId": "320",
+        "groupName": "308",
+        "groupAlias": "308",
+        "sort": 30,
+        "groupNameSelector": "308",
+        "items": {
+          "6432": {
+            "groupId": "320",
+            "groupName": "308",
+            "groupAlias": "308",
+            "name": "308 I Hatchback",
+            "nameSelector": "308 I Hatchback",
+            "yearOfConstrFrom": "09.2007",
+            "yearOfConstrTo": "...",
+            "modelAlias": "308-4a-4c",
+            "modelId": "6432",
+            "ratingSale": "156729",
+            "top": 0,
+            "sort": 5
+          },
+          "7376": {
+            "groupId": "320",
+            "groupName": "308",
+            "groupAlias": "308",
+            "name": "308 I SW",
+            "nameSelector": "308 I SW",
+            "yearOfConstrFrom": "09.2007",
+            "yearOfConstrTo": "...",
+            "modelAlias": "308-sw",
+            "modelId": "7376",
+            "ratingSale": "104831",
+            "top": 0,
+            "sort": 4
+          },
+          "7579": {
+            "groupId": "320",
+            "groupName": "308",
+            "groupAlias": "308",
+            "name": "308 I CC",
+            "nameSelector": "308 I CC",
+            "yearOfConstrFrom": "04.2009",
+            "yearOfConstrTo": "...",
+            "modelAlias": "308-cc",
+            "modelId": "7579",
+            "ratingSale": "26606",
+            "top": 0,
+            "sort": 3
+          },
+          "11292": {
+            "groupId": "320",
+            "groupName": "308",
+            "groupAlias": "308",
+            "name": "308 II Hatchback",
+            "nameSelector": "308 II Hatchback",
+            "yearOfConstrFrom": "09.2013",
+            "yearOfConstrTo": "...",
+            "modelAlias": "308-ii",
+            "modelId": "11292",
+            "ratingSale": "43805",
+            "top": 0,
+            "sort": 2
+          },
+          "11791": {
+            "groupId": "320",
+            "groupName": "308",
+            "groupAlias": "308",
+            "name": "308 II SW",
+            "nameSelector": "308 II SW",
+            "yearOfConstrFrom": "03.2014",
+            "yearOfConstrTo": "...",
+            "modelAlias": "308-sw-ii",
+            "modelId": "11791",
+            "ratingSale": "29912",
+            "top": 0,
+            "sort": 1
+          }
+        },
+        "yearOfConstrFrom": "09.2007"
+      },
+      "321": {
+        "groupId": "321",
+        "groupName": "309",
+        "groupAlias": "309",
+        "sort": 29,
+        "groupNameSelector": "309",
+        "items": {
+          "277": {
+            "groupId": "321",
+            "groupName": "309",
+            "groupAlias": "309",
+            "name": "309 I Hatchback",
+            "nameSelector": "309 I Hatchback",
+            "yearOfConstrFrom": "10.1985",
+            "yearOfConstrTo": "12.1989",
+            "modelAlias": "309-i-10c-10a",
+            "modelId": "277",
+            "ratingSale": "11986",
+            "top": 0,
+            "sort": 2
+          },
+          "3452": {
+            "groupId": "321",
+            "groupName": "309",
+            "groupAlias": "309",
+            "name": "309 II Hatchback",
+            "nameSelector": "309 II Hatchback",
+            "yearOfConstrFrom": "07.1989",
+            "yearOfConstrTo": "12.1993",
+            "modelAlias": "309-ii-3c-3a",
+            "modelId": "3452",
+            "ratingSale": "24235",
+            "top": 0,
+            "sort": 1
+          }
+        },
+        "yearOfConstrFrom": "10.1985"
+      },
+      "322": {
+        "groupId": "322",
+        "groupName": "4007 ",
+        "groupAlias": "4007",
+        "sort": 12,
+        "groupNameSelector": "4007 ",
+        "items": {
+          "6232": {
+            "groupId": "322",
+            "groupName": "4007 ",
+            "groupAlias": "4007",
+            "name": "4007",
+            "nameSelector": "4007",
+            "yearOfConstrFrom": "02.2007",
+            "yearOfConstrTo": "...",
+            "modelAlias": "4007-gp",
+            "modelId": "6232",
+            "ratingSale": "30239",
+            "top": 0,
+            "sort": 1
+          }
+        },
+        "yearOfConstrFrom": "02.2007"
+      },
+      "323": {
+        "groupId": "323",
+        "groupName": "404",
+        "groupAlias": "404",
+        "sort": 28,
+        "groupNameSelector": "404",
+        "items": {
+          "1696": {
+            "groupId": "323",
+            "groupName": "404",
+            "groupAlias": "404",
+            "name": "404 Saloon",
+            "nameSelector": "404 Saloon",
+            "yearOfConstrFrom": "04.1962",
+            "yearOfConstrTo": "12.1971",
+            "modelAlias": "404-1963",
+            "modelId": "1696",
+            "ratingSale": "12970",
+            "top": 0,
+            "sort": 2
+          },
+          "1697": {
+            "groupId": "323",
+            "groupName": "404",
+            "groupAlias": "404",
+            "name": "404 Convertible",
+            "nameSelector": "404 Convertible",
+            "yearOfConstrFrom": "04.1963",
+            "yearOfConstrTo": "12.1968",
+            "modelAlias": "404-convertible",
+            "modelId": "1697",
+            "ratingSale": "2488",
+            "top": 0,
+            "sort": 1
+          }
+        },
+        "yearOfConstrFrom": "04.1962"
+      },
+      "324": {
+        "groupId": "324",
+        "groupName": "405",
+        "groupAlias": "405",
+        "sort": 27,
+        "groupNameSelector": "405",
+        "items": {
+          "396": {
+            "groupId": "324",
+            "groupName": "405",
+            "groupAlias": "405",
+            "name": "405 I Saloon (15B)",
+            "nameSelector": "405 I Saloon (15B)",
+            "yearOfConstrFrom": "01.1987",
+            "yearOfConstrTo": "12.1993",
+            "modelAlias": "405-i-15b",
+            "modelId": "396",
+            "ratingSale": "26282",
+            "top": 0,
+            "sort": 4
+          },
+          "387": {
+            "groupId": "324",
+            "groupName": "405",
+            "groupAlias": "405",
+            "name": "405 I Estate (15E)",
+            "nameSelector": "405 I Estate (15E)",
+            "yearOfConstrFrom": "06.1987",
+            "yearOfConstrTo": "08.1992",
+            "modelAlias": "405-i-break-15e",
+            "modelId": "387",
+            "ratingSale": "4871",
+            "top": 0,
+            "sort": 3
+          },
+          "400": {
+            "groupId": "324",
+            "groupName": "405",
+            "groupAlias": "405",
+            "name": "405 II Saloon (4B)",
+            "nameSelector": "405 II Saloon (4B)",
+            "yearOfConstrFrom": "01.1992",
+            "yearOfConstrTo": "11.1999",
+            "modelAlias": "405-ii-4b",
+            "modelId": "400",
+            "ratingSale": "23417",
+            "top": 0,
+            "sort": 2
+          },
+          "392": {
+            "groupId": "324",
+            "groupName": "405",
+            "groupAlias": "405",
+            "name": "405 II Estate (4E)",
+            "nameSelector": "405 II Estate (4E)",
+            "yearOfConstrFrom": "08.1992",
+            "yearOfConstrTo": "10.1998",
+            "modelAlias": "405-ii-break-4e",
+            "modelId": "392",
+            "ratingSale": "7786",
+            "top": 0,
+            "sort": 1
+          },
+          "37301": {
+            "groupId": "324",
+            "groupName": "405",
+            "groupAlias": "405",
+            "name": "405 (15B)",
+            "nameSelector": "405 (15B)",
+            "yearOfConstrFrom": "10.1995",
+            "yearOfConstrTo": "...",
+            "modelAlias": "405-15b",
+            "modelId": "37301",
+            "ratingSale": "335",
+            "top": 0,
+            "sort": 1
+          }
+        },
+        "yearOfConstrFrom": "01.1987"
+      },
+      "325": {
+        "groupId": "325",
+        "groupName": "406",
+        "groupAlias": "406",
+        "sort": 26,
+        "groupNameSelector": "406",
+        "items": {
+          "1477": {
+            "groupId": "325",
+            "groupName": "406",
+            "groupAlias": "406",
+            "name": "406 Saloon",
+            "nameSelector": "406 Saloon",
+            "yearOfConstrFrom": "10.1995",
+            "yearOfConstrTo": "01.2005",
+            "modelAlias": "406-8b",
+            "modelId": "1477",
+            "ratingSale": "208326",
+            "top": 0,
+            "sort": 3
+          },
+          "1901": {
+            "groupId": "325",
+            "groupName": "406",
+            "groupAlias": "406",
+            "name": "406 Estate",
+            "nameSelector": "406 Estate",
+            "yearOfConstrFrom": "10.1996",
+            "yearOfConstrTo": "10.2004",
+            "modelAlias": "406-break-8e-f",
+            "modelId": "1901",
+            "ratingSale": "112238",
+            "top": 0,
+            "sort": 2
+          },
+          "1984": {
+            "groupId": "325",
+            "groupName": "406",
+            "groupAlias": "406",
+            "name": "406 Coupe",
+            "nameSelector": "406 Coupe",
+            "yearOfConstrFrom": "03.1997",
+            "yearOfConstrTo": "02.2005",
+            "modelAlias": "406-coupe-8c",
+            "modelId": "1984",
+            "ratingSale": "75750",
+            "top": 0,
+            "sort": 1
+          }
+        },
+        "yearOfConstrFrom": "10.1995"
+      },
+      "326": {
+        "groupId": "326",
+        "groupName": "407",
+        "groupAlias": "407",
+        "sort": 25,
+        "groupNameSelector": "407",
+        "items": {
+          "5099": {
+            "groupId": "326",
+            "groupName": "407",
+            "groupAlias": "407",
+            "name": "407 Saloon",
+            "nameSelector": "407 Saloon",
+            "yearOfConstrFrom": "05.2004",
+            "yearOfConstrTo": "...",
+            "modelAlias": "407-6d",
+            "modelId": "5099",
+            "ratingSale": "204880",
+            "top": 0,
+            "sort": 3
+          },
+          "5123": {
+            "groupId": "326",
+            "groupName": "407",
+            "groupAlias": "407",
+            "name": "407 SW",
+            "nameSelector": "407 SW",
+            "yearOfConstrFrom": "05.2004",
+            "yearOfConstrTo": "...",
+            "modelAlias": "407-sw-6e",
+            "modelId": "5123",
+            "ratingSale": "225373",
+            "top": 0,
+            "sort": 2
+          },
+          "5460": {
+            "groupId": "326",
+            "groupName": "407",
+            "groupAlias": "407",
+            "name": "407 Coupe",
+            "nameSelector": "407 Coupe",
+            "yearOfConstrFrom": "10.2005",
+            "yearOfConstrTo": "...",
+            "modelAlias": "407-coupe-6c",
+            "modelId": "5460",
+            "ratingSale": "34209",
+            "top": 0,
+            "sort": 1
+          }
+        },
+        "yearOfConstrFrom": "05.2004"
+      },
+      "327": {
+        "groupId": "327",
+        "groupName": "504",
+        "groupAlias": "504",
+        "sort": 23,
+        "groupNameSelector": "504",
+        "items": {
+          "10934": {
+            "groupId": "327",
+            "groupName": "504",
+            "groupAlias": "504",
+            "name": "504 Saloon",
+            "nameSelector": "504 Saloon",
+            "yearOfConstrFrom": "01.1968",
+            "yearOfConstrTo": "09.2005",
+            "modelAlias": "504-1968",
+            "modelId": "10934",
+            "ratingSale": "1351",
+            "top": 0,
+            "sort": 8
+          },
+          "441": {
+            "groupId": "327",
+            "groupName": "504",
+            "groupAlias": "504",
+            "name": "504 Saloon",
+            "nameSelector": "504 Saloon",
+            "yearOfConstrFrom": "07.1968",
+            "yearOfConstrTo": "07.1986",
+            "modelAlias": "504-a-m",
+            "modelId": "441",
+            "ratingSale": "6043",
+            "top": 0,
+            "sort": 7
+          },
+          "1698": {
+            "groupId": "327",
+            "groupName": "504",
+            "groupAlias": "504",
+            "name": "504 Estate",
+            "nameSelector": "504 Estate",
+            "yearOfConstrFrom": "04.1971",
+            "yearOfConstrTo": "07.1986",
+            "modelAlias": "504-break-d-f",
+            "modelId": "1698",
+            "ratingSale": "1733",
+            "top": 0,
+            "sort": 6
+          },
+          "4551": {
+            "groupId": "327",
+            "groupName": "504",
+            "groupAlias": "504",
+            "name": "504 Coupe",
+            "nameSelector": "504 Coupe",
+            "yearOfConstrFrom": "10.1974",
+            "yearOfConstrTo": "08.1984",
+            "modelAlias": "504-coupe",
+            "modelId": "4551",
+            "ratingSale": "5532",
+            "top": 0,
+            "sort": 4
+          },
+          "4552": {
+            "groupId": "327",
+            "groupName": "504",
+            "groupAlias": "504",
+            "name": "504 Convertible",
+            "nameSelector": "504 Convertible",
+            "yearOfConstrFrom": "10.1974",
+            "yearOfConstrTo": "08.1984",
+            "modelAlias": "504-convertible",
+            "modelId": "4552",
+            "ratingSale": "2645",
+            "top": 0,
+            "sort": 5
+          },
+          "1497": {
+            "groupId": "327",
+            "groupName": "504",
+            "groupAlias": "504",
+            "name": "504 Pickup",
+            "nameSelector": "504 Pickup",
+            "yearOfConstrFrom": "01.1980",
+            "yearOfConstrTo": "12.1989",
+            "modelAlias": "504-pickup-e",
+            "modelId": "1497",
+            "ratingSale": "9597",
+            "top": 0,
+            "sort": 3
+          },
+          "10917": {
+            "groupId": "327",
+            "groupName": "504",
+            "groupAlias": "504",
+            "name": "504 Entrepreneur",
+            "nameSelector": "504 Entrepreneur",
+            "yearOfConstrFrom": "08.1990",
+            "yearOfConstrTo": "10.1999",
+            "modelAlias": "504-pickup",
+            "modelId": "10917",
+            "ratingSale": "1005",
+            "top": 0,
+            "sort": 2
+          },
+          "11603": {
+            "groupId": "327",
+            "groupName": "504",
+            "groupAlias": "504",
+            "name": "504 Pickup",
+            "nameSelector": "504 Pickup",
+            "yearOfConstrFrom": "03.1996",
+            "yearOfConstrTo": "03.2006",
+            "modelAlias": "504-pickup-1996",
+            "modelId": "11603",
+            "ratingSale": "655",
+            "top": 0,
+            "sort": 1
+          }
+        },
+        "yearOfConstrFrom": "01.1968"
+      },
+      "328": {
+        "groupId": "328",
+        "groupName": "505",
+        "groupAlias": "505",
+        "sort": 22,
+        "groupNameSelector": "505",
+        "items": {
+          "445": {
+            "groupId": "328",
+            "groupName": "505",
+            "groupAlias": "505",
+            "name": "505 Saloon",
+            "nameSelector": "505 Saloon",
+            "yearOfConstrFrom": "05.1979",
+            "yearOfConstrTo": "10.1996",
+            "modelAlias": "505-551a",
+            "modelId": "445",
+            "ratingSale": "13616",
+            "top": 0,
+            "sort": 2
+          },
+          "3922": {
+            "groupId": "328",
+            "groupName": "505",
+            "groupAlias": "505",
+            "name": "505 Estate",
+            "nameSelector": "505 Estate",
+            "yearOfConstrFrom": "04.1982",
+            "yearOfConstrTo": "11.1995",
+            "modelAlias": "505-break-551d",
+            "modelId": "3922",
+            "ratingSale": "4304",
+            "top": 0,
+            "sort": 1
+          }
+        },
+        "yearOfConstrFrom": "05.1979"
+      },
+      "329": {
+        "groupId": "329",
+        "groupName": "604",
+        "groupAlias": "604",
+        "sort": 20,
+        "groupNameSelector": "604",
+        "items": {
+          "477": {
+            "groupId": "329",
+            "groupName": "604",
+            "groupAlias": "604",
+            "name": "604 Saloon",
+            "nameSelector": "604 Saloon",
+            "yearOfConstrFrom": "09.1975",
+            "yearOfConstrTo": "07.1987",
+            "modelAlias": "604-561a",
+            "modelId": "477",
+            "ratingSale": "2867",
+            "top": 0,
+            "sort": 1
+          }
+        },
+        "yearOfConstrFrom": "09.1975"
+      },
+      "330": {
+        "groupId": "330",
+        "groupName": "605",
+        "groupAlias": "605",
+        "sort": 19,
+        "groupNameSelector": "605",
+        "items": {
+          "481": {
+            "groupId": "330",
+            "groupName": "605",
+            "groupAlias": "605",
+            "name": "605 Saloon",
+            "nameSelector": "605 Saloon",
+            "yearOfConstrFrom": "06.1989",
+            "yearOfConstrTo": "09.1999",
+            "modelAlias": "605-6b",
+            "modelId": "481",
+            "ratingSale": "17251",
+            "top": 0,
+            "sort": 1
+          }
+        },
+        "yearOfConstrFrom": "06.1989"
+      },
+      "331": {
+        "groupId": "331",
+        "groupName": "607",
+        "groupAlias": "607",
+        "sort": 18,
+        "groupNameSelector": "607",
+        "items": {
+          "4351": {
+            "groupId": "331",
+            "groupName": "607",
+            "groupAlias": "607",
+            "name": "607 Saloon",
+            "nameSelector": "607 Saloon",
+            "yearOfConstrFrom": "01.2000",
+            "yearOfConstrTo": "...",
+            "modelAlias": "607-9d-9u",
+            "modelId": "4351",
+            "ratingSale": "111676",
+            "top": 0,
+            "sort": 1
+          }
+        },
+        "yearOfConstrFrom": "01.2000"
+      },
+      "332": {
+        "groupId": "332",
+        "groupName": "806",
+        "groupAlias": "806",
+        "sort": 17,
+        "groupNameSelector": "806",
+        "items": {
+          "49": {
+            "groupId": "332",
+            "groupName": "806",
+            "groupAlias": "806",
+            "name": "806",
+            "nameSelector": "806",
+            "yearOfConstrFrom": "06.1994",
+            "yearOfConstrTo": "08.2002",
+            "modelAlias": "806-221",
+            "modelId": "49",
+            "ratingSale": "63740",
+            "top": 0,
+            "sort": 1
+          }
+        },
+        "yearOfConstrFrom": "06.1994"
+      },
+      "333": {
+        "groupId": "333",
+        "groupName": "807",
+        "groupAlias": "807",
+        "sort": 16,
+        "groupNameSelector": "807",
+        "items": {
+          "4897": {
+            "groupId": "333",
+            "groupName": "807",
+            "groupAlias": "807",
+            "name": "807",
+            "nameSelector": "807",
+            "yearOfConstrFrom": "06.2002",
+            "yearOfConstrTo": "...",
+            "modelAlias": "807-e",
+            "modelId": "4897",
+            "ratingSale": "128076",
+            "top": 0,
+            "sort": 1
+          }
+        },
+        "yearOfConstrFrom": "06.2002"
+      },
+      "334": {
+        "groupId": "334",
+        "groupName": "BOXER",
+        "groupAlias": "boxer",
+        "sort": 8,
+        "groupNameSelector": "BOXER",
+        "items": {
+          "406": {
+            "groupId": "334",
+            "groupName": "BOXER",
+            "groupAlias": "boxer",
+            "name": "Boxer Minibus (230)",
+            "nameSelector": "Boxer Minibus (230)",
+            "yearOfConstrFrom": "03.1994",
+            "yearOfConstrTo": "04.2002",
+            "modelAlias": "boxer-bus-230p",
+            "modelId": "406",
+            "ratingSale": "13441",
+            "top": 0,
+            "sort": 9
+          },
+          "1909": {
+            "groupId": "334",
+            "groupName": "BOXER",
+            "groupAlias": "boxer",
+            "name": "Boxer Van (230)",
+            "nameSelector": "Boxer Van (230)",
+            "yearOfConstrFrom": "03.1994",
+            "yearOfConstrTo": "06.2003",
+            "modelAlias": "boxer-box-230l",
+            "modelId": "1909",
+            "ratingSale": "47505",
+            "top": 0,
+            "sort": 8
+          },
+          "4055": {
+            "groupId": "334",
+            "groupName": "BOXER",
+            "groupAlias": "boxer",
+            "name": "Boxer Platform \\/ Chassis (230)",
+            "nameSelector": "Boxer Platform \\/ Chassis (230)",
+            "yearOfConstrFrom": "03.1994",
+            "yearOfConstrTo": "04.2002",
+            "modelAlias": "boxer-platform-chassis-zct",
+            "modelId": "4055",
+            "ratingSale": "9565",
+            "top": 0,
+            "sort": 7
+          },
+          "4892": {
+            "groupId": "334",
+            "groupName": "BOXER",
+            "groupAlias": "boxer",
+            "name": "Boxer Van (244)",
+            "nameSelector": "Boxer Van (244)",
+            "yearOfConstrFrom": "12.2001",
+            "yearOfConstrTo": "...",
+            "modelAlias": "boxer-box-244",
+            "modelId": "4892",
+            "ratingSale": "30947",
+            "top": 0,
+            "sort": 5
+          },
+          "4907": {
+            "groupId": "334",
+            "groupName": "BOXER",
+            "groupAlias": "boxer",
+            "name": "Boxer Platform \\/ Chassis (244)",
+            "nameSelector": "Boxer Platform \\/ Chassis (244)",
+            "yearOfConstrFrom": "12.2001",
+            "yearOfConstrTo": "...",
+            "modelAlias": "boxer-platform-chassis-244",
+            "modelId": "4907",
+            "ratingSale": "4924",
+            "top": 0,
+            "sort": 4
+          },
+          "4891": {
+            "groupId": "334",
+            "groupName": "BOXER",
+            "groupAlias": "boxer",
+            "name": "Boxer Minibus (244)",
+            "nameSelector": "Boxer Minibus (244)",
+            "yearOfConstrFrom": "12.2001",
+            "yearOfConstrTo": "...",
+            "modelAlias": "boxer-bus-244-z",
+            "modelId": "4891",
+            "ratingSale": "12959",
+            "top": 0,
+            "sort": 6
+          },
+          "5612": {
+            "groupId": "334",
+            "groupName": "BOXER",
+            "groupAlias": "boxer",
+            "name": "Boxer Minibus (250)",
+            "nameSelector": "Boxer Minibus (250)",
+            "yearOfConstrFrom": "09.2005",
+            "yearOfConstrTo": "...",
+            "modelAlias": "boxer-bus",
+            "modelId": "5612",
+            "ratingSale": "21829",
+            "top": 0,
+            "sort": 3
+          },
+          "5613": {
+            "groupId": "334",
+            "groupName": "BOXER",
+            "groupAlias": "boxer",
+            "name": "Boxer Van (250)",
+            "nameSelector": "Boxer Van (250)",
+            "yearOfConstrFrom": "04.2006",
+            "yearOfConstrTo": "...",
+            "modelAlias": "boxer-box",
+            "modelId": "5613",
+            "ratingSale": "73505",
+            "top": 0,
+            "sort": 2
+          },
+          "5614": {
+            "groupId": "334",
+            "groupName": "BOXER",
+            "groupAlias": "boxer",
+            "name": "Boxer Platform \\/ Chassis (250)",
+            "nameSelector": "Boxer Platform \\/ Chassis (250)",
+            "yearOfConstrFrom": "04.2006",
+            "yearOfConstrTo": "...",
+            "modelAlias": "boxer-platform-chassis",
+            "modelId": "5614",
+            "ratingSale": "12032",
+            "top": 0,
+            "sort": 1
+          }
+        },
+        "yearOfConstrFrom": "03.1994"
+      },
+      "335": {
+        "groupId": "335",
+        "groupName": "EXPERT",
+        "groupAlias": "expert",
+        "sort": 7,
+        "groupNameSelector": "EXPERT",
+        "items": {
+          "1962": {
+            "groupId": "335",
+            "groupName": "EXPERT  ",
+            "groupAlias": "expert",
+            "name": "Expert I Van",
+            "nameSelector": "Expert I Van",
+            "yearOfConstrFrom": "07.1995",
+            "yearOfConstrTo": "12.2006",
+            "modelAlias": "expert-box-222",
+            "modelId": "1962",
+            "ratingSale": "58518",
+            "top": 0,
+            "sort": 6
+          },
+          "1550": {
+            "groupId": "335",
+            "groupName": "EXPERT  ",
+            "groupAlias": "expert",
+            "name": "Expert I",
+            "nameSelector": "Expert I",
+            "yearOfConstrFrom": "10.1995",
+            "yearOfConstrTo": "12.2006",
+            "modelAlias": "expert-224",
+            "modelId": "1550",
+            "ratingSale": "32635",
+            "top": 0,
+            "sort": 5
+          },
+          "1963": {
+            "groupId": "335",
+            "groupName": "EXPERT  ",
+            "groupAlias": "expert",
+            "name": "Expert I Platform\\/Chassis",
+            "nameSelector": "Expert I Platform\\/Chassis",
+            "yearOfConstrFrom": "12.1995",
+            "yearOfConstrTo": "12.2006",
+            "modelAlias": "expert-platform-chassis-223",
+            "modelId": "1963",
+            "ratingSale": "2275",
+            "top": 0,
+            "sort": 4
+          },
+          "5642": {
+            "groupId": "335",
+            "groupName": "EXPERT  ",
+            "groupAlias": "expert",
+            "name": "Expert II Tepee",
+            "nameSelector": "Expert II Tepee",
+            "yearOfConstrFrom": "01.2007",
+            "yearOfConstrTo": "...",
+            "modelAlias": "expert-tepee-vf3v",
+            "modelId": "5642",
+            "ratingSale": "29021",
+            "top": 0,
+            "sort": 1
+          },
+          "5643": {
+            "groupId": "335",
+            "groupName": "EXPERT  ",
+            "groupAlias": "expert",
+            "name": "Expert II Van",
+            "nameSelector": "Expert II Van",
+            "yearOfConstrFrom": "01.2007",
+            "yearOfConstrTo": "...",
+            "modelAlias": "expert-box-vf3a-vf3u-vf3x",
+            "modelId": "5643",
+            "ratingSale": "36937",
+            "top": 0,
+            "sort": 3
+          },
+          "5644": {
+            "groupId": "335",
+            "groupName": "EXPERT  ",
+            "groupAlias": "expert",
+            "name": "Expert II Platform\\/Chassis",
+            "nameSelector": "Expert II Platform\\/Chassis",
+            "yearOfConstrFrom": "01.2007",
+            "yearOfConstrTo": "...",
+            "modelAlias": "expert-platform-chassis",
+            "modelId": "5644",
+            "ratingSale": "2295",
+            "top": 0,
+            "sort": 2
+          },
+          "36582": {
+            "groupId": "335",
+            "groupName": "EXPERT  ",
+            "groupAlias": "expert",
+            "name": "Expert III Van",
+            "nameSelector": "Expert III Van",
+            "yearOfConstrFrom": "04.2016",
+            "yearOfConstrTo": "...",
+            "modelAlias": "expert-box",
+            "modelId": "36582",
+            "ratingSale": "2702",
+            "top": 0,
+            "sort": 1
+          }
+        },
+        "yearOfConstrFrom": "07.1995"
+      },
+      "336": {
+        "groupId": "336",
+        "groupName": "J5",
+        "groupAlias": "j5",
+        "sort": 5,
+        "groupNameSelector": "J5",
+        "items": {
+          "5": {
+            "groupId": "336",
+            "groupName": "J5",
+            "groupAlias": "j5",
+            "name": "J5 Minibus (280)",
+            "nameSelector": "J5 Minibus (280)",
+            "yearOfConstrFrom": "09.1981",
+            "yearOfConstrTo": "09.1990",
+            "modelAlias": "j5-bus-280p",
+            "modelId": "5",
+            "ratingSale": "4680",
+            "top": 0,
+            "sort": 6
+          },
+          "1702": {
+            "groupId": "336",
+            "groupName": "J5",
+            "groupAlias": "j5",
+            "name": "J5 Van (280)",
+            "nameSelector": "J5 Van (280)",
+            "yearOfConstrFrom": "09.1981",
+            "yearOfConstrTo": "09.1990",
+            "modelAlias": "j5-box-280l",
+            "modelId": "1702",
+            "ratingSale": "9504",
+            "top": 0,
+            "sort": 5
+          },
+          "1965": {
+            "groupId": "336",
+            "groupName": "J5",
+            "groupAlias": "j5",
+            "name": "J5 Platform \\/ Chassis (280)",
+            "nameSelector": "J5 Platform \\/ Chassis (280)",
+            "yearOfConstrFrom": "09.1981",
+            "yearOfConstrTo": "09.1990",
+            "modelAlias": "j5-platform-chassis-280l",
+            "modelId": "1965",
+            "ratingSale": "18040",
+            "top": 0,
+            "sort": 4
+          },
+          "1703": {
+            "groupId": "336",
+            "groupName": "J5",
+            "groupAlias": "j5",
+            "name": "J5 Platform \\/ Chassis (290)",
+            "nameSelector": "J5 Platform \\/ Chassis (290)",
+            "yearOfConstrFrom": "09.1990",
+            "yearOfConstrTo": "02.1994",
+            "modelAlias": "j5-platform-chassis-290l",
+            "modelId": "1703",
+            "ratingSale": "17194",
+            "top": 0,
+            "sort": 1
+          },
+          "1964": {
+            "groupId": "336",
+            "groupName": "J5",
+            "groupAlias": "j5",
+            "name": "J5 Minibus (290)",
+            "nameSelector": "J5 Minibus (290)",
+            "yearOfConstrFrom": "09.1990",
+            "yearOfConstrTo": "02.1994",
+            "modelAlias": "j5-bus-290p",
+            "modelId": "1964",
+            "ratingSale": "6509",
+            "top": 0,
+            "sort": 3
+          },
+          "1966": {
+            "groupId": "336",
+            "groupName": "J5",
+            "groupAlias": "j5",
+            "name": "J5 Van (290)",
+            "nameSelector": "J5 Van (290)",
+            "yearOfConstrFrom": "09.1990",
+            "yearOfConstrTo": "03.1994",
+            "modelAlias": "j5-box-290l",
+            "modelId": "1966",
+            "ratingSale": "10761",
+            "top": 0,
+            "sort": 2
+          }
+        },
+        "yearOfConstrFrom": "09.1981"
+      },
+      "337": {
+        "groupId": "337",
+        "groupName": "J7",
+        "groupAlias": "j7",
+        "sort": 4,
+        "groupNameSelector": "J7",
+        "items": {
+          "1498": {
+            "groupId": "337",
+            "groupName": "J7  ",
+            "groupAlias": "j7",
+            "name": "J7 Van",
+            "nameSelector": "J7 Van",
+            "yearOfConstrFrom": "08.1968",
+            "yearOfConstrTo": "03.1980",
+            "modelAlias": "j7-box",
+            "modelId": "1498",
+            "ratingSale": "2759",
+            "top": 0,
+            "sort": 2
+          },
+          "4555": {
+            "groupId": "337",
+            "groupName": "J7  ",
+            "groupAlias": "j7",
+            "name": "J7 Minibus",
+            "nameSelector": "J7 Minibus",
+            "yearOfConstrFrom": "08.1968",
+            "yearOfConstrTo": "03.1980",
+            "modelAlias": "j7-bus",
+            "modelId": "4555",
+            "ratingSale": "1742",
+            "top": 0,
+            "sort": 3
+          },
+          "4556": {
+            "groupId": "337",
+            "groupName": "J7  ",
+            "groupAlias": "j7",
+            "name": "J7 Platform\\/Chassis",
+            "nameSelector": "J7 Platform\\/Chassis",
+            "yearOfConstrFrom": "08.1968",
+            "yearOfConstrTo": "03.1980",
+            "modelAlias": "j7-platform-chassis",
+            "modelId": "4556",
+            "ratingSale": "965",
+            "top": 0,
+            "sort": 1
+          }
+        },
+        "yearOfConstrFrom": "08.1968"
+      },
+      "338": {
+        "groupId": "338",
+        "groupName": "J9",
+        "groupAlias": "j9",
+        "sort": 3,
+        "groupNameSelector": "J9",
+        "items": {
+          "1499": {
+            "groupId": "338",
+            "groupName": "J9",
+            "groupAlias": "j9",
+            "name": "J9 Van",
+            "nameSelector": "J9 Van",
+            "yearOfConstrFrom": "03.1980",
+            "yearOfConstrTo": "06.1987",
+            "modelAlias": "j9-box",
+            "modelId": "1499",
+            "ratingSale": "5801",
+            "top": 0,
+            "sort": 2
+          },
+          "4557": {
+            "groupId": "338",
+            "groupName": "J9",
+            "groupAlias": "j9",
+            "name": "J9 Minibus",
+            "nameSelector": "J9 Minibus",
+            "yearOfConstrFrom": "03.1980",
+            "yearOfConstrTo": "06.1987",
+            "modelAlias": "j9-bus",
+            "modelId": "4557",
+            "ratingSale": "1416",
+            "top": 0,
+            "sort": 3
+          },
+          "4558": {
+            "groupId": "338",
+            "groupName": "J9",
+            "groupAlias": "j9",
+            "name": "J9 Platform\\/Chassis",
+            "nameSelector": "J9 Platform\\/Chassis",
+            "yearOfConstrFrom": "03.1980",
+            "yearOfConstrTo": "06.1987",
+            "modelAlias": "j9-platform-chassis",
+            "modelId": "4558",
+            "ratingSale": "2253",
+            "top": 0,
+            "sort": 1
+          }
+        },
+        "yearOfConstrFrom": "03.1980"
+      },
+      "340": {
+        "groupId": "340",
+        "groupName": "PARTNER",
+        "groupAlias": "partner",
+        "sort": 2,
+        "groupNameSelector": "PARTNER",
+        "items": {
+          "1911": {
+            "groupId": "340",
+            "groupName": "PARTNER  ",
+            "groupAlias": "partner",
+            "name": "Partner I Van",
+            "nameSelector": "Partner I Van",
+            "yearOfConstrFrom": "04.1996",
+            "yearOfConstrTo": "12.2015",
+            "modelAlias": "partner-box-5",
+            "modelId": "1911",
+            "ratingSale": "127043",
+            "top": 0,
+            "sort": 5
+          },
+          "1961": {
+            "groupId": "340",
+            "groupName": "PARTNER  ",
+            "groupAlias": "partner",
+            "name": "Partner I Combispace",
+            "nameSelector": "Partner I Combispace",
+            "yearOfConstrFrom": "05.1996",
+            "yearOfConstrTo": "12.2015",
+            "modelAlias": "partner-combispace-5f",
+            "modelId": "1961",
+            "ratingSale": "90859",
+            "top": 0,
+            "sort": 4
+          },
+          "37026": {
+            "groupId": "340",
+            "groupName": "PARTNER  ",
+            "groupAlias": "partner",
+            "name": "Partner I Platform \\/ Chassis",
+            "nameSelector": "Partner I Platform \\/ Chassis",
+            "yearOfConstrFrom": "01.1999",
+            "yearOfConstrTo": "07.2008",
+            "modelAlias": "partner-platform-chassis-1999",
+            "modelId": "37026",
+            "ratingSale": "3811",
+            "top": 0,
+            "sort": 1
+          },
+          "6738": {
+            "groupId": "340",
+            "groupName": "PARTNER  ",
+            "groupAlias": "partner",
+            "name": "Partner II Tepee",
+            "nameSelector": "Partner II Tepee",
+            "yearOfConstrFrom": "04.2008",
+            "yearOfConstrTo": "...",
+            "modelAlias": "partner-tepee",
+            "modelId": "6738",
+            "ratingSale": "70744",
+            "top": 0,
+            "sort": 2
+          },
+          "6739": {
+            "groupId": "340",
+            "groupName": "PARTNER  ",
+            "groupAlias": "partner",
+            "name": "Partner II Van",
+            "nameSelector": "Partner II Van",
+            "yearOfConstrFrom": "04.2008",
+            "yearOfConstrTo": "...",
+            "modelAlias": "partner-box",
+            "modelId": "6739",
+            "ratingSale": "44425",
+            "top": 0,
+            "sort": 3
+          },
+          "9762": {
+            "groupId": "340",
+            "groupName": "PARTNER  ",
+            "groupAlias": "partner",
+            "name": "Partner II Platform \\/ Chassis",
+            "nameSelector": "Partner II Platform \\/ Chassis",
+            "yearOfConstrFrom": "01.2009",
+            "yearOfConstrTo": "...",
+            "modelAlias": "partner-platform-chassis",
+            "modelId": "9762",
+            "ratingSale": "2351",
+            "top": 0,
+            "sort": 1
+          }
+        },
+        "yearOfConstrFrom": "04.1996"
+      },
+      "1086": {
+        "groupId": "1086",
+        "groupName": "BIPPER",
+        "groupAlias": "bipper",
+        "sort": 9,
+        "groupNameSelector": "BIPPER",
+        "items": {
+          "6737": {
+            "groupId": "1086",
+            "groupName": "BIPPER",
+            "groupAlias": "bipper",
+            "name": "Bipper Van",
+            "nameSelector": "Bipper Van",
+            "yearOfConstrFrom": "02.2008",
+            "yearOfConstrTo": "...",
+            "modelAlias": "bipper-aa",
+            "modelId": "6737",
+            "ratingSale": "19133",
+            "top": 0,
+            "sort": 2
+          },
+          "8144": {
+            "groupId": "1086",
+            "groupName": "BIPPER",
+            "groupAlias": "bipper",
+            "name": "Bipper Tepee",
+            "nameSelector": "Bipper Tepee",
+            "yearOfConstrFrom": "04.2008",
+            "yearOfConstrTo": "...",
+            "modelAlias": "bipper-tepee",
+            "modelId": "8144",
+            "ratingSale": "14292",
+            "top": 0,
+            "sort": 1
+          }
+        },
+        "yearOfConstrFrom": "02.2008"
+      },
+      "1087": {
+        "groupId": "1087",
+        "groupName": "3008",
+        "groupAlias": "3008",
+        "sort": 13,
+        "groupNameSelector": "3008",
+        "items": {
+          "7997": {
+            "groupId": "1087",
+            "groupName": "3008",
+            "groupAlias": "3008",
+            "name": "3008 I",
+            "nameSelector": "3008 I",
+            "yearOfConstrFrom": "06.2009",
+            "yearOfConstrTo": "...",
+            "modelAlias": "3008-2009",
+            "modelId": "7997",
+            "ratingSale": "141266",
+            "top": 0,
+            "sort": 1
+          },
+          "36935": {
+            "groupId": "1087",
+            "groupName": "3008",
+            "groupAlias": "3008",
+            "name": "3008 II Off-Road",
+            "nameSelector": "3008 II Off-Road",
+            "yearOfConstrFrom": "05.2016",
+            "yearOfConstrTo": "...",
+            "modelAlias": "3008-suv",
+            "modelId": "36935",
+            "ratingSale": "11413",
+            "top": 0,
+            "sort": 1
+          }
+        },
+        "yearOfConstrFrom": "06.2009"
+      },
+      "1088": {
+        "groupId": "1088",
+        "groupName": "5008",
+        "groupAlias": "5008",
+        "sort": 10,
+        "groupNameSelector": "5008",
+        "items": {
+          "8182": {
+            "groupId": "1088",
+            "groupName": "5008",
+            "groupAlias": "5008",
+            "name": "5008 I",
+            "nameSelector": "5008 I",
+            "yearOfConstrFrom": "06.2009",
+            "yearOfConstrTo": "...",
+            "modelAlias": "5008-2009",
+            "modelId": "8182",
+            "ratingSale": "88029",
+            "top": 0,
+            "sort": 1
+          },
+          "37440": {
+            "groupId": "1088",
+            "groupName": "5008",
+            "groupAlias": "5008",
+            "name": "5008 II",
+            "nameSelector": "5008 II",
+            "yearOfConstrFrom": "12.2016",
+            "yearOfConstrTo": "...",
+            "modelAlias": "5008-ii",
+            "modelId": "37440",
+            "ratingSale": "3706",
+            "top": 0,
+            "sort": 1
+          }
+        },
+        "yearOfConstrFrom": "06.2009"
+      },
+      "1089": {
+        "groupId": "1089",
+        "groupName": "RCZ",
+        "groupAlias": "rcz",
+        "sort": 1,
+        "groupNameSelector": "RCZ",
+        "items": {
+          "8256": {
+            "groupId": "1089",
+            "groupName": "RCZ",
+            "groupAlias": "rcz",
+            "name": "RCZ",
+            "nameSelector": "RCZ",
+            "yearOfConstrFrom": "03.2010",
+            "yearOfConstrTo": "...",
+            "modelAlias": "rcz-2010",
+            "modelId": "8256",
+            "ratingSale": "23211",
+            "top": 0,
+            "sort": 1
+          }
+        },
+        "yearOfConstrFrom": "03.2010"
+      },
+      "1090": {
+        "groupId": "1090",
+        "groupName": "508",
+        "groupAlias": "508",
+        "sort": 21,
+        "groupNameSelector": "508",
+        "items": {
+          "9012": {
+            "groupId": "1090",
+            "groupName": "508",
+            "groupAlias": "508",
+            "name": "508 Saloon",
+            "nameSelector": "508 Saloon",
+            "yearOfConstrFrom": "11.2010",
+            "yearOfConstrTo": "...",
+            "modelAlias": "508-2010",
+            "modelId": "9012",
+            "ratingSale": "50179",
+            "top": 0,
+            "sort": 2
+          },
+          "9013": {
+            "groupId": "1090",
+            "groupName": "508",
+            "groupAlias": "508",
+            "name": "508 SW",
+            "nameSelector": "508 SW",
+            "yearOfConstrFrom": "11.2010",
+            "yearOfConstrTo": "...",
+            "modelAlias": "508-sw",
+            "modelId": "9013",
+            "ratingSale": "95824",
+            "top": 0,
+            "sort": 1
+          }
+        },
+        "yearOfConstrFrom": "11.2010"
+      },
+      "1091": {
+        "groupId": "1091",
+        "groupName": "408",
+        "groupAlias": "408",
+        "sort": 24,
+        "groupNameSelector": "408",
+        "items": {
+          "9128": {
+            "groupId": "1091",
+            "groupName": "408",
+            "groupAlias": "408",
+            "name": "408 Saloon",
+            "nameSelector": "408 Saloon",
+            "yearOfConstrFrom": "02.2010",
+            "yearOfConstrTo": "...",
+            "modelAlias": "408-2010",
+            "modelId": "9128",
+            "ratingSale": "916",
+            "top": 0,
+            "sort": 1
+          }
+        },
+        "yearOfConstrFrom": "02.2010"
+      },
+      "1092": {
+        "groupId": "1092",
+        "groupName": "208",
+        "groupAlias": "208",
+        "sort": 36,
+        "groupNameSelector": "208",
+        "items": {
+          "10164": {
+            "groupId": "1092",
+            "groupName": "208",
+            "groupAlias": "208",
+            "name": "208 Hatchback",
+            "nameSelector": "208 Hatchback",
+            "yearOfConstrFrom": "03.2012",
+            "yearOfConstrTo": "...",
+            "modelAlias": "208-2012",
+            "modelId": "10164",
+            "ratingSale": "144886",
+            "top": 0,
+            "sort": 1
+          },
+          "36228": {
+            "groupId": "1092",
+            "groupName": "208",
+            "groupAlias": "208",
+            "name": "208 Van",
+            "nameSelector": "208 Van",
+            "yearOfConstrFrom": "10.2012",
+            "yearOfConstrTo": "...",
+            "modelAlias": "208-box",
+            "modelId": "36228",
+            "ratingSale": "2053",
+            "top": 0,
+            "sort": 1
+          }
+        },
+        "yearOfConstrFrom": "03.2012"
+      },
+      "1093": {
+        "groupId": "1093",
+        "groupName": "4008",
+        "groupAlias": "4008",
+        "sort": 11,
+        "groupNameSelector": "4008",
+        "items": {
+          "10268": {
+            "groupId": "1093",
+            "groupName": "4008",
+            "groupAlias": "4008",
+            "name": "4008",
+            "nameSelector": "4008",
+            "yearOfConstrFrom": "05.2012",
+            "yearOfConstrTo": "...",
+            "modelAlias": "4008-2012",
+            "modelId": "10268",
+            "ratingSale": "5143",
+            "top": 0,
+            "sort": 1
+          }
+        },
+        "yearOfConstrFrom": "05.2012"
+      },
+      "1094": {
+        "groupId": "1094",
+        "groupName": "301",
+        "groupAlias": "301",
+        "sort": 35,
+        "groupNameSelector": "301",
+        "items": {
+          "11198": {
+            "groupId": "1094",
+            "groupName": "301",
+            "groupAlias": "301",
+            "name": "301 Saloon",
+            "nameSelector": "301 Saloon",
+            "yearOfConstrFrom": "11.2012",
+            "yearOfConstrTo": "...",
+            "modelAlias": "301-2012",
+            "modelId": "11198",
+            "ratingSale": "12583",
+            "top": 0,
+            "sort": 1
+          }
+        },
+        "yearOfConstrFrom": "11.2012"
+      },
+      "1095": {
+        "groupId": "1095",
+        "groupName": "2008",
+        "groupAlias": "2008",
+        "sort": 14,
+        "groupNameSelector": "2008",
+        "items": {
+          "11219": {
+            "groupId": "1095",
+            "groupName": "2008",
+            "groupAlias": "2008",
+            "name": "2008 Estate",
+            "nameSelector": "2008 Estate",
+            "yearOfConstrFrom": "03.2013",
+            "yearOfConstrTo": "...",
+            "modelAlias": "2008-2013",
+            "modelId": "11219",
+            "ratingSale": "49443",
+            "top": 0,
+            "sort": 1
+          }
+        },
+        "yearOfConstrFrom": "03.2013"
+      },
+      "1317": {
+        "groupId": "1317",
+        "groupName": "ION",
+        "groupAlias": "ion",
+        "sort": 0,
+        "groupNameSelector": "ION",
+        "items": {
+          "9011": {
+            "groupId": "1317",
+            "groupName": "ION",
+            "groupAlias": "ion",
+            "name": "iOn",
+            "nameSelector": "iOn",
+            "yearOfConstrFrom": "11.2010",
+            "yearOfConstrTo": "...",
+            "modelAlias": "ion",
+            "modelId": "9011",
+            "ratingSale": "1098",
+            "top": 0,
+            "sort": 0
+          }
+        },
+        "yearOfConstrFrom": "11.2010"
+      },
+      "1318": {
+        "groupId": "1318",
+        "groupName": "108",
+        "groupAlias": "108",
+        "sort": 0,
+        "groupNameSelector": "108",
+        "items": {
+          "12825": {
+            "groupId": "1318",
+            "groupName": "108",
+            "groupAlias": "108",
+            "name": "108 Hatchback",
+            "nameSelector": "108 Hatchback",
+            "yearOfConstrFrom": "05.2014",
+            "yearOfConstrTo": "...",
+            "modelAlias": "108",
+            "modelId": "12825",
+            "ratingSale": "4417",
+            "top": 0,
+            "sort": 0
+          }
+        },
+        "yearOfConstrFrom": "05.2014"
+      },
+      "1319": {
+        "groupId": "1319",
+        "groupName": "TRAVELLER",
+        "groupAlias": "traveller",
+        "sort": 0,
+        "groupNameSelector": "TRAVELLER",
+        "items": {
+          "36453": {
+            "groupId": "1319",
+            "groupName": "TRAVELLER",
+            "groupAlias": "traveller",
+            "name": "Traveller",
+            "nameSelector": "Traveller",
+            "yearOfConstrFrom": "04.2016",
+            "yearOfConstrTo": "...",
+            "modelAlias": "traveller",
+            "modelId": "36453",
+            "ratingSale": "1132",
+            "top": 0,
+            "sort": 1
+          }
+        },
+        "yearOfConstrFrom": "04.2016"
+      }
+    },
+    "labels": {
+      "makersTitle": "Select make",
+      "makersTop": "Popular carmakers",
+      "makersAlpha": "Carmakers are arranged in alphabetical order              ",
+      "modelsTitle": "Select model",
+      "modelsTop": "Popular models",
+      "modelsAlpha": "Car models in alphabetical order",
+      "carsTitle": "Select engine"
+    },
+    "selected": { "makerId": "88", "modelId": 0, "carId": 0 },
+    "selectorOptions": {
+      "makerOptions": [{ "id": 0, "value": "Select make" }],
+      "modelOptions": [
+        { "id": 0, "value": "Select model" },
+        {
+          "value": "104 ",
+          "items": [
+            { "id": 66, "value": "104 Hatchback (10.1972 - 06.1988)" },
+            { "id": 72, "value": "104 Coupe (09.1973 - 06.1988)" }
+          ]
+        },
+        {
+          "value": 106,
+          "items": [
+            { "id": 77, "value": "106 I Hatchback (08.1991 - 04.1996)" },
+            { "id": 9967, "value": "106 I Van (08.1991 - 03.2001)" },
+            { "id": 1559, "value": "106 II Hatchback (04.1996 - 05.2005)" }
+          ]
+        },
+        {
+          "value": 107,
+          "items": [{ "id": 5414, "value": "107 Hatchback (06.2005 - ...)" }]
+        },
+        {
+          "value": 108,
+          "items": [{ "id": 12825, "value": "108 Hatchback (05.2014 - ...)" }]
+        },
+        {
+          "value": 204,
+          "items": [
+            { "id": 192, "value": "204 Saloon (10.1965 - 12.1977)" },
+            { "id": 1693, "value": "204 Convertible (01.1967 - 10.1970)" },
+            { "id": 1691, "value": "204 Estate (01.1967 - 10.1977)" },
+            { "id": 1692, "value": "204 Coupe (07.1967 - 05.1970)" }
+          ]
+        },
+        {
+          "value": "205  ",
+          "items": [
+            { "id": 196, "value": "205 I Hatchback (02.1983 - 10.1987)" },
+            { "id": 7625, "value": "205 XA\\/XAD Van (02.1983 - 07.1990)" },
+            { "id": 200, "value": "205 Convertible (04.1986 - 11.1995)" },
+            { "id": 205, "value": "205 II Hatchback (01.1987 - 12.2000)" },
+            { "id": 4634, "value": "205 F Van (03.1994 - 05.1997)" }
+          ]
+        },
+        {
+          "value": 206,
+          "items": [
+            { "id": 3555, "value": "206 Hatchback (2A\\/C) (08.1998 - ...)" },
+            { "id": 9836, "value": "206 Van (04.1999 - 03.2009)" },
+            { "id": 4572, "value": "206 CC (2D) (09.2000 - ...)" },
+            { "id": 4898, "value": "206 SW (2E\\/K) (07.2002 - ...)" },
+            { "id": 5615, "value": "206 Saloon (03.2007 - ...)" },
+            { "id": 8784, "value": "206+ Hatchback (T3E) (01.2009 - ...)" }
+          ]
+        },
+        {
+          "value": 207,
+          "items": [
+            { "id": 5522, "value": "207 Hatchback (02.2006 - ...)" },
+            { "id": 5639, "value": "207 CC (02.2007 - ...)" },
+            { "id": 6433, "value": "207 SW (02.2007 - ...)" },
+            { "id": 8597, "value": "207 Van (04.2007 - ...)" },
+            { "id": 9618, "value": "207 Saloon (12.2007 - ...)" }
+          ]
+        },
+        {
+          "value": 208,
+          "items": [
+            { "id": 10164, "value": "208 Hatchback (03.2012 - ...)" },
+            { "id": 36228, "value": "208 Van (10.2012 - ...)" }
+          ]
+        },
+        {
+          "value": 301,
+          "items": [{ "id": 11198, "value": "301 Saloon (11.2012 - ...)" }]
+        },
+        {
+          "value": "304 ",
+          "items": [
+            { "id": 1694, "value": "304 Saloon (10.1969 - 10.1979)" },
+            { "id": 1695, "value": "304 Coupe (03.1970 - 04.1975)" },
+            { "id": 238, "value": "304 Convertible (03.1970 - 07.1976)" },
+            { "id": 3493, "value": "304 Estate (09.1970 - 10.1980)" }
+          ]
+        },
+        {
+          "value": 305,
+          "items": [
+            { "id": 252, "value": "305 I Saloon (11.1977 - 09.1982)" },
+            { "id": 242, "value": "305 I Estate (08.1980 - 09.1982)" },
+            { "id": 257, "value": "305 II Saloon (10.1982 - 07.1990)" },
+            { "id": 247, "value": "305 II Estate (10.1982 - 07.1990)" }
+          ]
+        },
+        {
+          "value": "306  ",
+          "items": [
+            { "id": 264, "value": "306 Hatchback (01.1993 - 10.2003)" },
+            {
+              "id": 37492,
+              "value": "306 Van \\/ Hatchback (04.1993 - 08.2001)"
+            },
+            { "id": 273, "value": "306 Saloon (04.1993 - 10.2003)" },
+            { "id": 9979, "value": "306 Van \\/ Kombi (07.1993 - 08.2002)" },
+            { "id": 269, "value": "306 Convertible (01.1994 - 04.2002)" },
+            { "id": 3921, "value": "306 Estate (06.1994 - 04.2002)" }
+          ]
+        },
+        {
+          "value": 307,
+          "items": [
+            { "id": 4771, "value": "307 Hatchback (3A\\/C) (08.2000 - ...)" },
+            { "id": 9909, "value": "307 Saloon (01.2001 - ...)" },
+            { "id": 5113, "value": "307 Estate (3E) (03.2002 - ...)" },
+            { "id": 4882, "value": "307 SW (3H) (03.2002 - ...)" },
+            { "id": 5011, "value": "307 CC (3B) (10.2003 - ...)" }
+          ]
+        },
+        {
+          "value": 308,
+          "items": [
+            { "id": 6432, "value": "308 I Hatchback (09.2007 - ...)" },
+            { "id": 7376, "value": "308 I SW (09.2007 - ...)" },
+            { "id": 7579, "value": "308 I CC (04.2009 - ...)" },
+            { "id": 11292, "value": "308 II Hatchback (09.2013 - ...)" },
+            { "id": 11791, "value": "308 II SW (03.2014 - ...)" }
+          ]
+        },
+        {
+          "value": 309,
+          "items": [
+            { "id": 277, "value": "309 I Hatchback (10.1985 - 12.1989)" },
+            { "id": 3452, "value": "309 II Hatchback (07.1989 - 12.1993)" }
+          ]
+        },
+        {
+          "value": 404,
+          "items": [
+            { "id": 1696, "value": "404 Saloon (04.1962 - 12.1971)" },
+            { "id": 1697, "value": "404 Convertible (04.1963 - 12.1968)" }
+          ]
+        },
+        {
+          "value": 405,
+          "items": [
+            { "id": 396, "value": "405 I Saloon (15B) (01.1987 - 12.1993)" },
+            { "id": 387, "value": "405 I Estate (15E) (06.1987 - 08.1992)" },
+            { "id": 400, "value": "405 II Saloon (4B) (01.1992 - 11.1999)" },
+            { "id": 392, "value": "405 II Estate (4E) (08.1992 - 10.1998)" },
+            { "id": 37301, "value": "405 (15B) (10.1995 - ...)" }
+          ]
+        },
+        {
+          "value": 406,
+          "items": [
+            { "id": 1477, "value": "406 Saloon (10.1995 - 01.2005)" },
+            { "id": 1901, "value": "406 Estate (10.1996 - 10.2004)" },
+            { "id": 1984, "value": "406 Coupe (03.1997 - 02.2005)" }
+          ]
+        },
+        {
+          "value": 407,
+          "items": [
+            { "id": 5099, "value": "407 Saloon (05.2004 - ...)" },
+            { "id": 5123, "value": "407 SW (05.2004 - ...)" },
+            { "id": 5460, "value": "407 Coupe (10.2005 - ...)" }
+          ]
+        },
+        {
+          "value": 408,
+          "items": [{ "id": 9128, "value": "408 Saloon (02.2010 - ...)" }]
+        },
+        {
+          "value": 504,
+          "items": [
+            { "id": 10934, "value": "504 Saloon (01.1968 - 09.2005)" },
+            { "id": 441, "value": "504 Saloon (07.1968 - 07.1986)" },
+            { "id": 1698, "value": "504 Estate (04.1971 - 07.1986)" },
+            { "id": 4552, "value": "504 Convertible (10.1974 - 08.1984)" },
+            { "id": 4551, "value": "504 Coupe (10.1974 - 08.1984)" },
+            { "id": 1497, "value": "504 Pickup (01.1980 - 12.1989)" },
+            { "id": 10917, "value": "504 Entrepreneur (08.1990 - 10.1999)" },
+            { "id": 11603, "value": "504 Pickup (03.1996 - 03.2006)" }
+          ]
+        },
+        {
+          "value": 505,
+          "items": [
+            { "id": 445, "value": "505 Saloon (05.1979 - 10.1996)" },
+            { "id": 3922, "value": "505 Estate (04.1982 - 11.1995)" }
+          ]
+        },
+        {
+          "value": 508,
+          "items": [
+            { "id": 9012, "value": "508 Saloon (11.2010 - ...)" },
+            { "id": 9013, "value": "508 SW (11.2010 - ...)" }
+          ]
+        },
+        {
+          "value": 604,
+          "items": [{ "id": 477, "value": "604 Saloon (09.1975 - 07.1987)" }]
+        },
+        {
+          "value": 605,
+          "items": [{ "id": 481, "value": "605 Saloon (06.1989 - 09.1999)" }]
+        },
+        {
+          "value": 607,
+          "items": [{ "id": 4351, "value": "607 Saloon (01.2000 - ...)" }]
+        },
+        {
+          "value": 806,
+          "items": [{ "id": 49, "value": "806 (06.1994 - 08.2002)" }]
+        },
+        {
+          "value": 807,
+          "items": [{ "id": 4897, "value": "807 (06.2002 - ...)" }]
+        },
+        {
+          "value": 1007,
+          "items": [{ "id": 5383, "value": "1007 Hatchback (04.2005 - ...)" }]
+        },
+        {
+          "value": 2008,
+          "items": [{ "id": 11219, "value": "2008 Estate (03.2013 - ...)" }]
+        },
+        {
+          "value": 3008,
+          "items": [
+            { "id": 7997, "value": "3008 I (06.2009 - ...)" },
+            { "id": 36935, "value": "3008 II Off-Road (05.2016 - ...)" }
+          ]
+        },
+        {
+          "value": "4007 ",
+          "items": [{ "id": 6232, "value": "4007 (02.2007 - ...)" }]
+        },
+        {
+          "value": 4008,
+          "items": [{ "id": 10268, "value": "4008 (05.2012 - ...)" }]
+        },
+        {
+          "value": 5008,
+          "items": [
+            { "id": 8182, "value": "5008 I (06.2009 - ...)" },
+            { "id": 37440, "value": "5008 II (12.2016 - ...)" }
+          ]
+        },
+        {
+          "value": "BIPPER",
+          "items": [
+            { "id": 6737, "value": "Bipper Van (02.2008 - ...)" },
+            { "id": 8144, "value": "Bipper Tepee (04.2008 - ...)" }
+          ]
+        },
+        {
+          "value": "BOXER",
+          "items": [
+            { "id": 406, "value": "Boxer Minibus (230) (03.1994 - 04.2002)" },
+            {
+              "id": 4055,
+              "value": "Boxer Platform \\/ Chassis (230) (03.1994 - 04.2002)"
+            },
+            { "id": 1909, "value": "Boxer Van (230) (03.1994 - 06.2003)" },
+            { "id": 4891, "value": "Boxer Minibus (244) (12.2001 - ...)" },
+            { "id": 4892, "value": "Boxer Van (244) (12.2001 - ...)" },
+            {
+              "id": 4907,
+              "value": "Boxer Platform \\/ Chassis (244) (12.2001 - ...)"
+            },
+            { "id": 5612, "value": "Boxer Minibus (250) (09.2005 - ...)" },
+            { "id": 5613, "value": "Boxer Van (250) (04.2006 - ...)" },
+            {
+              "id": 5614,
+              "value": "Boxer Platform \\/ Chassis (250) (04.2006 - ...)"
+            }
+          ]
+        },
+        {
+          "value": "EXPERT",
+          "items": [
+            { "id": 1962, "value": "Expert I Van (07.1995 - 12.2006)" },
+            { "id": 1550, "value": "Expert I (10.1995 - 12.2006)" },
+            {
+              "id": 1963,
+              "value": "Expert I Platform\\/Chassis (12.1995 - 12.2006)"
+            },
+            { "id": 5643, "value": "Expert II Van (01.2007 - ...)" },
+            {
+              "id": 5644,
+              "value": "Expert II Platform\\/Chassis (01.2007 - ...)"
+            },
+            { "id": 5642, "value": "Expert II Tepee (01.2007 - ...)" },
+            { "id": 36582, "value": "Expert III Van (04.2016 - ...)" }
+          ]
+        },
+        {
+          "value": "ION",
+          "items": [{ "id": 9011, "value": "iOn (11.2010 - ...)" }]
+        },
+        {
+          "value": "J5",
+          "items": [
+            { "id": 5, "value": "J5 Minibus (280) (09.1981 - 09.1990)" },
+            { "id": 1702, "value": "J5 Van (280) (09.1981 - 09.1990)" },
+            {
+              "id": 1965,
+              "value": "J5 Platform \\/ Chassis (280) (09.1981 - 09.1990)"
+            },
+            { "id": 1964, "value": "J5 Minibus (290) (09.1990 - 02.1994)" },
+            {
+              "id": 1703,
+              "value": "J5 Platform \\/ Chassis (290) (09.1990 - 02.1994)"
+            },
+            { "id": 1966, "value": "J5 Van (290) (09.1990 - 03.1994)" }
+          ]
+        },
+        {
+          "value": "J7",
+          "items": [
+            { "id": 4555, "value": "J7 Minibus (08.1968 - 03.1980)" },
+            { "id": 1498, "value": "J7 Van (08.1968 - 03.1980)" },
+            { "id": 4556, "value": "J7 Platform\\/Chassis (08.1968 - 03.1980)" }
+          ]
+        },
+        {
+          "value": "J9",
+          "items": [
+            { "id": 4557, "value": "J9 Minibus (03.1980 - 06.1987)" },
+            { "id": 1499, "value": "J9 Van (03.1980 - 06.1987)" },
+            { "id": 4558, "value": "J9 Platform\\/Chassis (03.1980 - 06.1987)" }
+          ]
+        },
+        {
+          "value": "PARTNER",
+          "items": [
+            { "id": 1911, "value": "Partner I Van (04.1996 - 12.2015)" },
+            { "id": 1961, "value": "Partner I Combispace (05.1996 - 12.2015)" },
+            {
+              "id": 37026,
+              "value": "Partner I Platform \\/ Chassis (01.1999 - 07.2008)"
+            },
+            { "id": 6739, "value": "Partner II Van (04.2008 - ...)" },
+            { "id": 6738, "value": "Partner II Tepee (04.2008 - ...)" },
+            {
+              "id": 9762,
+              "value": "Partner II Platform \\/ Chassis (01.2009 - ...)"
+            }
+          ]
+        },
+        {
+          "value": "RCZ",
+          "items": [{ "id": 8256, "value": "RCZ (03.2010 - ...)" }]
+        },
+        {
+          "value": "TRAVELLER",
+          "items": [{ "id": 36453, "value": "Traveller (04.2016 - ...)" }]
+        }
+      ],
+      "carOptions": [{ "id": 0, "value": "Select engine" }]
+    },
+    "sys": { "db": 0.014009952545166, "rspns": 0.014695882797241 }
+  }
+}

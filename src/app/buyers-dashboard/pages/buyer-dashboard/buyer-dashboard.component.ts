@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { CarSelectorService } from '../../services/car-selector.service';
+
 @Component({
   selector: 'app-dashboard-component',
   templateUrl: './buyer-dashboard.component.html',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BuyerDashboardComponent implements OnInit {
 
-  constructor() { }
+  constructor(private carSelectorService: CarSelectorService) { }
 
   ngOnInit() {
+    // this.carSelectorService.getVehicalDataJSON().subscribe(data => {
+    //   console.log(data);
+    // });
   }
 
 }

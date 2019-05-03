@@ -7,6 +7,9 @@ const consumerRoutes = require("./routes/consumers");
 const categoryRoutes = require("./routes/categories");
 const userRoutes = require("./routes/users");
 const merchantRoutes = require("./routes/merchants");
+const messageRequestRoutes = require("./routes/messageRequests");
+// const carDataRoutes = require("./routes/carData")
+
 
 const app = express();
 
@@ -30,7 +33,7 @@ app.use(bodyParser.urlencoded({extended: false}));
 // handling the cors
 app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Origin", "*");
-  res.setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
+  res.setHeader("Access-Control-Allow-Headers", "Access-Control-Allow-Headers, Origin, X-Requested-With, Content-Type, Accept, Authorization");
   res.setHeader("Access-Control-Allow-Methods", "GET, POST, PATCH, PUT, DELETE, OPTIONS");
   next();
 });
@@ -39,5 +42,7 @@ app.use('/api/consumer', consumerRoutes);
 app.use('/api/merchant', merchantRoutes);
 app.use('/api/user', userRoutes);
 app.use('/api/admin/category', categoryRoutes);
+app.use('/api/message', messageRequestRoutes);
+// app.use('/api/car-data', carDataRoutes);
 
 module.exports = app;
