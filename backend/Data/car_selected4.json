@@ -1,0 +1,417 @@
+{
+  "data": {
+    "cars": {
+      "Diesel": {
+        "items": [
+          {
+            "carId": "408",
+            "modelId": "571",
+            "manuId": "74",
+            "carName": "200 D (123.120)",
+            "alias": "200-d-123-120",
+            "powerKwFrom": "40",
+            "powerHpFrom": "55",
+            "fuel": "Diesel",
+            "name": "200 D 2.0 (123.120) (40 KW \\/ 55 PS) (07.1976 - 02.1979)"
+          },
+          {
+            "carId": "409",
+            "modelId": "571",
+            "manuId": "74",
+            "carName": "200 D",
+            "alias": "200-d",
+            "powerKwFrom": "44",
+            "powerHpFrom": "60",
+            "fuel": "Diesel",
+            "name": "200 D 2.0 (44 KW \\/ 60 PS) (03.1979 - 11.1985)"
+          },
+          {
+            "carId": "410",
+            "modelId": "571",
+            "manuId": "74",
+            "carName": "220 D (123.126)",
+            "alias": "220-d-123-126",
+            "powerKwFrom": "44",
+            "powerHpFrom": "60",
+            "fuel": "Diesel",
+            "name": "220 D 2.2 (123.126) (44 KW \\/ 60 PS) (01.1976 - 02.1979)"
+          },
+          {
+            "carId": "411",
+            "modelId": "571",
+            "manuId": "74",
+            "carName": "220 D",
+            "alias": "220-d",
+            "powerKwFrom": "49",
+            "powerHpFrom": "67",
+            "fuel": "Diesel",
+            "name": "220 D 2.2 (49 KW \\/ 67 PS) (01.1977 - 03.1979)"
+          },
+          {
+            "carId": "412",
+            "modelId": "571",
+            "manuId": "74",
+            "carName": "240 D (123.123)",
+            "alias": "240-d-123-123",
+            "powerKwFrom": "53",
+            "powerHpFrom": "72",
+            "fuel": "Diesel",
+            "name": "240 D 2.4 (123.123) (53 KW \\/ 72 PS) (03.1979 - 11.1985)"
+          },
+          {
+            "carId": "413",
+            "modelId": "571",
+            "manuId": "74",
+            "carName": "240 D (123.123)",
+            "alias": "240-d-123-123",
+            "powerKwFrom": "48",
+            "powerHpFrom": "65",
+            "fuel": "Diesel",
+            "name": "240 D 2.4 (123.123) (48 KW \\/ 65 PS) (02.1976 - 02.1979)"
+          },
+          {
+            "carId": "415",
+            "modelId": "571",
+            "manuId": "74",
+            "carName": "300 D (123.130)",
+            "alias": "300-d-123-130",
+            "powerKwFrom": "59",
+            "powerHpFrom": "80",
+            "fuel": "Diesel",
+            "name": "300 D 3.0 (123.130) (59 KW \\/ 80 PS) (02.1976 - 07.1980)"
+          },
+          {
+            "carId": "416",
+            "modelId": "571",
+            "manuId": "74",
+            "carName": "300 D (123.130)",
+            "alias": "300-d-123-130",
+            "powerKwFrom": "65",
+            "powerHpFrom": "88",
+            "fuel": "Diesel",
+            "name": "300 D 3.0 (123.130) (65 KW \\/ 88 PS) (03.1979 - 11.1985)"
+          },
+          {
+            "carId": "417",
+            "modelId": "571",
+            "manuId": "74",
+            "carName": "300 Turbo-D (123.133)",
+            "alias": "300-d-123-133",
+            "powerKwFrom": "92",
+            "powerHpFrom": "125",
+            "fuel": "Diesel",
+            "name": "300 3.0 Turbodiesel (123.133) (92 KW \\/ 125 PS) (08.1981 - 07.1985)"
+          },
+          {
+            "carId": "45669",
+            "modelId": "571",
+            "manuId": "74",
+            "carName": "240 D",
+            "alias": "240-d",
+            "powerKwFrom": "46",
+            "powerHpFrom": "62",
+            "fuel": "Diesel",
+            "name": "240 D 2.4 (46 KW \\/ 62 PS) (01.1976 - 12.1983)"
+          },
+          {
+            "carId": "45713",
+            "modelId": "571",
+            "manuId": "74",
+            "carName": "300 D",
+            "alias": "300-d",
+            "powerKwFrom": "57",
+            "powerHpFrom": "77",
+            "fuel": "Diesel",
+            "name": "300 D 3.0 (57 KW \\/ 77 PS) (01.1976 - 12.1979)"
+          },
+          {
+            "carId": "116779",
+            "modelId": "571",
+            "manuId": "74",
+            "carName": "300 D",
+            "alias": "300-d",
+            "powerKwFrom": "62",
+            "powerHpFrom": "84",
+            "fuel": "Diesel",
+            "name": "300 D 3.0 (62 KW \\/ 84 PS) (09.1979 - 12.1981)"
+          }
+        ]
+      },
+      "Petrol": {
+        "items": [
+          {
+            "carId": "398",
+            "modelId": "571",
+            "manuId": "74",
+            "carName": "200",
+            "alias": "200",
+            "powerKwFrom": "62",
+            "powerHpFrom": "84",
+            "fuel": "Petrol",
+            "name": "200 2.0 (62 KW \\/ 84 PS) (02.1976 - 08.1980)"
+          },
+          {
+            "carId": "399",
+            "modelId": "571",
+            "manuId": "74",
+            "carName": "200 (123.020)",
+            "alias": "200-123-020",
+            "powerKwFrom": "69",
+            "powerHpFrom": "94",
+            "fuel": "Petrol",
+            "name": "200 2.0 (123.020) (69 KW \\/ 94 PS) (02.1976 - 08.1980)"
+          },
+          {
+            "carId": "400",
+            "modelId": "571",
+            "manuId": "74",
+            "carName": "200",
+            "alias": "200",
+            "powerKwFrom": "74",
+            "powerHpFrom": "101",
+            "fuel": "Petrol",
+            "name": "200 2.0 (74 KW \\/ 101 PS) (06.1980 - 11.1985)"
+          },
+          {
+            "carId": "401",
+            "modelId": "571",
+            "manuId": "74",
+            "carName": "200 (123.220)",
+            "alias": "200-123-220",
+            "powerKwFrom": "80",
+            "powerHpFrom": "109",
+            "fuel": "Petrol",
+            "name": "200 2.0 (123.220) (80 KW \\/ 109 PS) (06.1980 - 11.1985)"
+          },
+          {
+            "carId": "402",
+            "modelId": "571",
+            "manuId": "74",
+            "carName": "230 E (123.223)",
+            "alias": "230-e-123-223",
+            "powerKwFrom": "100",
+            "powerHpFrom": "136",
+            "fuel": "Petrol",
+            "name": "230 E 2.3 (123.223) (100 KW \\/ 136 PS) (04.1980 - 12.1985)"
+          },
+          {
+            "carId": "403",
+            "modelId": "571",
+            "manuId": "74",
+            "carName": "230 (123.023)",
+            "alias": "230-123-023",
+            "powerKwFrom": "80",
+            "powerHpFrom": "109",
+            "fuel": "Petrol",
+            "name": "230 2.3 (123.023) (80 KW \\/ 109 PS) (02.1976 - 03.1981)"
+          },
+          {
+            "carId": "404",
+            "modelId": "571",
+            "manuId": "74",
+            "carName": "250 (123.026)",
+            "alias": "250-123-026",
+            "powerKwFrom": "103",
+            "powerHpFrom": "140",
+            "fuel": "Petrol",
+            "name": "250 2.5 (123.026) (103 KW \\/ 140 PS) (10.1979 - 07.1985)"
+          },
+          {
+            "carId": "405",
+            "modelId": "571",
+            "manuId": "74",
+            "carName": "280 (123.030)",
+            "alias": "280-123-030",
+            "powerKwFrom": "115",
+            "powerHpFrom": "156",
+            "fuel": "Petrol",
+            "name": "280 2.8 (123.030) (115 KW \\/ 156 PS) (02.1976 - 08.1981)"
+          },
+          {
+            "carId": "406",
+            "modelId": "571",
+            "manuId": "74",
+            "carName": "280 E",
+            "alias": "280-e",
+            "powerKwFrom": "130",
+            "powerHpFrom": "177",
+            "fuel": "Petrol",
+            "name": "280 E 2.8 (130 KW \\/ 177 PS) (08.1976 - 08.1981)"
+          },
+          {
+            "carId": "407",
+            "modelId": "571",
+            "manuId": "74",
+            "carName": "280 E (123.033)",
+            "alias": "280-e-123-033",
+            "powerKwFrom": "136",
+            "powerHpFrom": "185",
+            "fuel": "Petrol",
+            "name": "280 E 2.8 (123.033) (136 KW \\/ 185 PS) (02.1976 - 11.1985)"
+          },
+          {
+            "carId": "419",
+            "modelId": "571",
+            "manuId": "74",
+            "carName": "250 (123.026)",
+            "alias": "250-123-026",
+            "powerKwFrom": "95",
+            "powerHpFrom": "129",
+            "fuel": "Petrol",
+            "name": "250 2.5 (123.026) (95 KW \\/ 129 PS) (02.1976 - 10.1979)"
+          },
+          {
+            "carId": "45661",
+            "modelId": "571",
+            "manuId": "74",
+            "carName": "230",
+            "alias": "230",
+            "powerKwFrom": "69",
+            "powerHpFrom": "93",
+            "fuel": "Petrol",
+            "name": "230 2.3 (69 KW \\/ 93 PS) (01.1976 - 12.1978)"
+          },
+          {
+            "carId": "45693",
+            "modelId": "571",
+            "manuId": "74",
+            "carName": "280 E",
+            "alias": "280-e",
+            "powerKwFrom": "104",
+            "powerHpFrom": "141",
+            "fuel": "Petrol",
+            "name": "280 E 2.8 (104 KW \\/ 141 PS) (09.1980 - 12.1981)"
+          }
+        ]
+      }
+    },
+    "labels": {
+      "makersTitle": "Select make",
+      "makersTop": "Popular carmakers",
+      "makersAlpha": "Carmakers are arranged in alphabetical order              ",
+      "modelsTitle": "Select model",
+      "modelsTop": "Popular models",
+      "modelsAlpha": "Car models in alphabetical order",
+      "carsTitle": "Select engine"
+    },
+    "selected": { "makerId": "74", "modelId": "571", "carId": 0 },
+    "selectorOptions": {
+      "makerOptions": [{ "id": 0, "value": "Select make" }],
+      "modelOptions": [{ "id": 0, "value": "Select model" }],
+      "carOptions": [
+        { "id": 0, "value": "Select engine" },
+        {
+          "value": "Diesel",
+          "items": [
+            {
+              "id": 408,
+              "value": "200 D 2.0 (123.120) (40 KW \\/ 55 PS) (07.1976 - 02.1979)"
+            },
+            {
+              "id": 409,
+              "value": "200 D 2.0 (44 KW \\/ 60 PS) (03.1979 - 11.1985)"
+            },
+            {
+              "id": 410,
+              "value": "220 D 2.2 (123.126) (44 KW \\/ 60 PS) (01.1976 - 02.1979)"
+            },
+            {
+              "id": 411,
+              "value": "220 D 2.2 (49 KW \\/ 67 PS) (01.1977 - 03.1979)"
+            },
+            {
+              "id": 413,
+              "value": "240 D 2.4 (123.123) (48 KW \\/ 65 PS) (02.1976 - 02.1979)"
+            },
+            {
+              "id": 412,
+              "value": "240 D 2.4 (123.123) (53 KW \\/ 72 PS) (03.1979 - 11.1985)"
+            },
+            {
+              "id": 45669,
+              "value": "240 D 2.4 (46 KW \\/ 62 PS) (01.1976 - 12.1983)"
+            },
+            {
+              "id": 417,
+              "value": "300 3.0 Turbodiesel (123.133) (92 KW \\/ 125 PS) (08.1981 - 07.1985)"
+            },
+            {
+              "id": 415,
+              "value": "300 D 3.0 (123.130) (59 KW \\/ 80 PS) (02.1976 - 07.1980)"
+            },
+            {
+              "id": 416,
+              "value": "300 D 3.0 (123.130) (65 KW \\/ 88 PS) (03.1979 - 11.1985)"
+            },
+            {
+              "id": 45713,
+              "value": "300 D 3.0 (57 KW \\/ 77 PS) (01.1976 - 12.1979)"
+            },
+            {
+              "id": 116779,
+              "value": "300 D 3.0 (62 KW \\/ 84 PS) (09.1979 - 12.1981)"
+            }
+          ]
+        },
+        {
+          "value": "Petrol",
+          "items": [
+            {
+              "id": 399,
+              "value": "200 2.0 (123.020) (69 KW \\/ 94 PS) (02.1976 - 08.1980)"
+            },
+            {
+              "id": 401,
+              "value": "200 2.0 (123.220) (80 KW \\/ 109 PS) (06.1980 - 11.1985)"
+            },
+            {
+              "id": 398,
+              "value": "200 2.0 (62 KW \\/ 84 PS) (02.1976 - 08.1980)"
+            },
+            {
+              "id": 400,
+              "value": "200 2.0 (74 KW \\/ 101 PS) (06.1980 - 11.1985)"
+            },
+            {
+              "id": 403,
+              "value": "230 2.3 (123.023) (80 KW \\/ 109 PS) (02.1976 - 03.1981)"
+            },
+            {
+              "id": 45661,
+              "value": "230 2.3 (69 KW \\/ 93 PS) (01.1976 - 12.1978)"
+            },
+            {
+              "id": 402,
+              "value": "230 E 2.3 (123.223) (100 KW \\/ 136 PS) (04.1980 - 12.1985)"
+            },
+            {
+              "id": 404,
+              "value": "250 2.5 (123.026) (103 KW \\/ 140 PS) (10.1979 - 07.1985)"
+            },
+            {
+              "id": 419,
+              "value": "250 2.5 (123.026) (95 KW \\/ 129 PS) (02.1976 - 10.1979)"
+            },
+            {
+              "id": 405,
+              "value": "280 2.8 (123.030) (115 KW \\/ 156 PS) (02.1976 - 08.1981)"
+            },
+            {
+              "id": 45693,
+              "value": "280 E 2.8 (104 KW \\/ 141 PS) (09.1980 - 12.1981)"
+            },
+            {
+              "id": 407,
+              "value": "280 E 2.8 (123.033) (136 KW \\/ 185 PS) (02.1976 - 11.1985)"
+            },
+            {
+              "id": 406,
+              "value": "280 E 2.8 (130 KW \\/ 177 PS) (08.1976 - 08.1981)"
+            }
+          ]
+        }
+      ]
+    },
+    "sys": { "db": 0.018051147460938, "rspns": 0.018140077590942 }
+  }
+}

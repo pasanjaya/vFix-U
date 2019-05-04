@@ -9,12 +9,21 @@ import { CarSelectorService } from '../../services/car-selector.service';
 })
 export class BuyerDashboardComponent implements OnInit {
 
+  makers = [];
+  models = [];
+  selectedMaker = 'Audi';
+
   constructor(private carSelectorService: CarSelectorService) { }
 
   ngOnInit() {
-    // this.carSelectorService.getVehicalDataJSON().subscribe(data => {
-    //   console.log(data);
-    // });
+    this.carSelectorService.getVehicleDataJSON();
+    this.makers = this.carSelectorService.getVehicleMakers();
+    this.models = this.carSelectorService.getVehicleModel(this.selectedMaker);
+  }
+
+  changeMaker() {
+    this.models = [];
+    this.models = this.carSelectorService.getVehicleModel(this.selectedMaker);
   }
 
 }
