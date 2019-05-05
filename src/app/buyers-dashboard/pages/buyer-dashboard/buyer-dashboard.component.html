@@ -132,17 +132,17 @@
           </div>
         </div>
         <div class="card-body">
-          <form>
+          <form [formGroup]="partFindForm" (ngSubmit)="onFindMyItem()">
             <div class="form-group">
               <label class="mr-sm-2" for="inlineFormCustomSelect"
-                >Vehical Maker</label
+                >Vehicle Maker</label
               >
               <select
-                [(ngModel)]="selectedMaker"
-                (change)='changeMaker()'
+                (change)="changeMaker()"
                 class="custom-select form-control-alternative mr-sm-2"
                 id="inlineFormCustomSelect"
-                name='maker'
+                placeholder="select your maker"
+                formControlName="maker"
               >
                 <option *ngFor="let maker of makers" [value]="maker">{{
                   maker
@@ -151,27 +151,19 @@
             </div>
             <div class="form-group">
               <label class="mr-sm-2" for="inlineFormCustomSelect"
-                >Vehical Model</label
+                >Vehicle Model</label
               >
               <select
                 class="custom-select form-control-alternative mr-sm-2"
                 id="inlineFormCustomSelect"
+                placeholder="select your model"
+                formControlName="model"
               >
-                <option *ngFor="let model of models" [value]="model"> {{ model }}</option>
+                <option *ngFor="let model of models" [value]="model">
+                  {{ model }}</option
+                >
               </select>
             </div>
-            <!-- <div class="form-group">
-              <label class="mr-sm-2" for="inlineFormCustomSelect">Engine</label>
-              <select
-                class="custom-select form-control-alternative mr-sm-2"
-                id="inlineFormCustomSelect"
-              >
-                <option selected>Select Engine</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
-              </select>
-            </div> -->
             <div class="form-group">
               <label class="mr-sm-2" for="inlineFormCustomSelect"
                 >Part Category</label
@@ -179,11 +171,15 @@
               <select
                 class="custom-select form-control-alternative mr-sm-2"
                 id="inlineFormCustomSelect"
+                placeholder="select item category"
+                formControlName="category"
               >
-                <option selected>Select a Category</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
+                <option
+                  *ngFor="let category of categories"
+                  [value]="category.id"
+                >
+                  {{ category.catName }}</option
+                >
               </select>
             </div>
             <div class="form-group">
@@ -193,17 +189,37 @@
                 class="form-control form-control-alternative"
                 id="input1"
                 placeholder="Enter item name if known"
+                formControlName="sparePartName"
               />
             </div>
             <div class="form-group">
-              <label for="exampleFormControlFile1"
+              <label for="exampleFormControlFile1" class="mr-2"
                 >Spare Part Image Upload and Preview</label
               >
               <input
                 type="file"
                 class="form-control-file"
-                id="exampleFormControlFile1"
+                #filePicker
+                (change)="onImagePicked($event)"
+                required
               />
+              <div class="part-image-preview" *ngIf="imagePreview !== '' && imagePreview && partFindForm.get('partImage').valid">
+                <img [src]="imagePreview" [alt]="partFindForm.value.model">
+              </div>
+              <button type="button" (click)="filePicker.click()" class="btn btn-outline-secondary">
+                  <i class="fas fa-camera"></i> Pick Image
+                </button>
+              <span
+          *ngIf="
+            partFindForm.get('partImage').invalid &&
+            partFindForm.get('partImage').touched
+          "
+          class="text-danger"
+        >
+          <span *ngIf="partFindForm.get('partImage').errors['required']"
+            >This field is required</span
+          >
+        </span>
             </div>
             <div class="form-group">
               <label for="exampleInputEmail1">Note</label>
@@ -212,6 +228,7 @@
                 id="exampleFormControlTextarea1"
                 rows="3"
                 placeholder="Write a brief description here ..."
+                formControlName="note"
               ></textarea>
             </div>
 

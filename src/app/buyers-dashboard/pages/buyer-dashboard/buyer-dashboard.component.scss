@@ -4,3 +4,29 @@
 //   float: none; /* Added */
 //   margin-bottom: 10px; /* Added */
 // }
+.form-group {
+  input.ng-invalid.ng-touched {
+    border-bottom: 1px solid red;
+  }
+  select.ng-invalid.ng-touched {
+    border-bottom: 1px solid red;
+  }
+}
+
+input[type="file"] {
+  visibility: hidden;
+  display: none;
+}
+
+button[type="button"] {
+  border-radius: 0 !important;
+}
+
+.part-image-preview {
+  height: 15rem;
+  margin: 1rem 0;
+
+  img {
+    height: 100%;
+  }
+}
