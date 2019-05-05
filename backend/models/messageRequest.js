@@ -5,9 +5,9 @@ const messageReqSchema = mongoose.Schema({
   vehicalModel: { type: String, require: true },
   categoryId: { type: mongoose.Schema.Types.ObjectId, ref: "Category", require: true },
   sparePartName: { type: String },
-  itemImage: { type: String, require: true },
+  itemImagePath: { type: String, require: true },
   itemNote: { type: String },
   messageCreator: { type: mongoose.Schema.Types.ObjectId, ref: "Consumer", require: true }
 });
 
-module.exports = mongoose.model("MessageRequest", messageReqSchema);
+module.exports = mongoose.model("MessageRequest", messageReqSchema); 

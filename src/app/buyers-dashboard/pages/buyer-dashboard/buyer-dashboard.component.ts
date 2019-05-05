@@ -7,6 +7,8 @@ import { AdminConfigureService } from './../../../admin-dashboard/pages/admin-co
 import { MessageRequestService } from './../../services/message-request.service';
 
 import { CategoryData } from './../../../admin-dashboard/pages/admin-configuration/models/category-data.model';
+import { MessageRequestData } from './../../../models/message-request-data.model';
+
 import { mimeType } from './mime-type.validator';
 
 @Component({
@@ -23,7 +25,10 @@ export class BuyerDashboardComponent implements OnInit, OnDestroy {
   selectedCategory: string;
   imagePreview: string;
 
+  messagesData: MessageRequestData[] = [];
+
   private categorySub: Subscription;
+  private messageDataSub: Subscription;
 
   partFindForm: FormGroup;
 
@@ -46,20 +51,30 @@ export class BuyerDashboardComponent implements OnInit, OnDestroy {
       note: new FormControl(null)
     });
 
+    // fill select options with car data
     this.carSelectorService.getVehicleDataJSON();
     this.makers = this.carSelectorService.getVehicleMakers();
     this.models = this.carSelectorService.getVehicleModel(this.selectedMaker);
 
+    // retrive categories
     this.adminConfigureService.getCategories();
     this.categorySub = this.adminConfigureService
       .getCategoryUpdatedListener()
       .subscribe((categories: CategoryData[]) => {
         this.categories = categories;
       });
+
+    // retrive the messages
+    this.messageRequestService.getMessageRequest();
+    this.messageDataSub = this.messageRequestService.getMessageDataUpdatedListener()
+      .subscribe((requestMessages: MessageRequestData[]) => {
+        this.messagesData = requestMessages;
+      });
   }
 
   ngOnDestroy() {
     this.categorySub.unsubscribe();
+    this.messageDataSub.unsubscribe();
   }
 
   changeMaker() {

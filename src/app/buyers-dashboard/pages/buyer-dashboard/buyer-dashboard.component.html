@@ -203,23 +203,34 @@
                 (change)="onImagePicked($event)"
                 required
               />
-              <div class="part-image-preview" *ngIf="imagePreview !== '' && imagePreview && partFindForm.get('partImage').valid">
-                <img [src]="imagePreview" [alt]="partFindForm.value.model">
+              <div
+                class="part-image-preview"
+                *ngIf="
+                  imagePreview !== '' &&
+                  imagePreview &&
+                  partFindForm.get('partImage').valid
+                "
+              >
+                <img [src]="imagePreview" [alt]="partFindForm.value.model" />
               </div>
-              <button type="button" (click)="filePicker.click()" class="btn btn-outline-secondary">
-                  <i class="fas fa-camera"></i> Pick Image
-                </button>
+              <button
+                type="button"
+                (click)="filePicker.click()"
+                class="btn btn-outline-secondary"
+              >
+                <i class="fas fa-camera"></i> Pick Image
+              </button>
               <span
-          *ngIf="
-            partFindForm.get('partImage').invalid &&
-            partFindForm.get('partImage').touched
-          "
-          class="text-danger"
-        >
-          <span *ngIf="partFindForm.get('partImage').errors['required']"
-            >This field is required</span
-          >
-        </span>
+                *ngIf="
+                  partFindForm.get('partImage').invalid &&
+                  partFindForm.get('partImage').touched
+                "
+                class="text-danger"
+              >
+                <span *ngIf="partFindForm.get('partImage').errors['required']"
+                  >This field is required</span
+                >
+              </span>
             </div>
             <div class="form-group">
               <label for="exampleInputEmail1">Note</label>
@@ -249,7 +260,31 @@
             </div>
           </div>
         </div>
-        <div class="card-body"></div>
+        <div class="card-body">
+          <mat-accordion multi="true" *ngIf="messagesData.length > 0">
+            <mat-expansion-panel *ngFor="let message of messagesData">
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  Request ID: {{ message.id }}
+                </mat-panel-title>
+                <mat-panel-description>
+                  <small class="text-muted">{{ message.model }}</small>
+                </mat-panel-description>
+                <span class="mr-2"
+                  ><mat-icon
+                    matBadge="15"
+                    matBadgeColor="warn"
+                    matBadgePosition="above after"
+                    >notification_important</mat-icon
+                  ></span
+                >
+              </mat-expansion-panel-header>
+              <div class="image-preview">
+                <img [src]="message.partImagePath" [alt]="message.model">
+              </div>
+            </mat-expansion-panel>
+          </mat-accordion>
+        </div>
       </div>
     </div>
   </div>

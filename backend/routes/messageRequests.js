@@ -30,12 +30,13 @@ const storage = multer.diskStorage({
 })
 
 router.post('/create', checkAuth, multer({storage: storage}).single('image'), (req, res, next) => {
+  const url = req.protocol + '://' + req.get('host');
   const message = new Message({
     vehicalMaker: req.body.maker,
     vehicalModel: req.body.model,
     categoryId: req.body.categoryId,
     sparePartName: req.body.sparePartName,
-    itemImage: req.body.itemImage,
+    itemImagePath: url + "/images/buyerRequestImages/" + req.file.filename,
     itemNote: req.body.note,
     messageCreator: req.userData.userId
   });
@@ -51,6 +52,15 @@ router.post('/create', checkAuth, multer({storage: storage}).single('image'), (r
         error: err
       });
     });
+});
+
+router.get('/retrive', (req, res, next) => {
+  Message.find().then(documents => {
+    res.status(200).json({
+      message: "MessageRequestData fetched successfully!",
+      messageDataCollections: documents
+    });
+  });
 });
 
 module.exports = router;

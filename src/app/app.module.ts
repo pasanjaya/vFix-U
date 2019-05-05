@@ -7,6 +7,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 // import { MatCheckboxModule } from '@angular/material';
 // import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatExpansionModule, MatBadgeModule, MatIconModule } from '@angular/material';
 
 import { CollapseModule } from 'ngx-bootstrap/collapse';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
@@ -79,8 +80,9 @@ import { SellerMessagesComponent } from './sellers-dashboard/pages/seller-messag
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
-    // MatCheckboxModule,
-    // MatToolbarModule,
+    MatExpansionModule,
+    MatBadgeModule,
+    MatIconModule,
     CollapseModule.forRoot(),
     CarouselModule.forRoot(),
     ButtonsModule.forRoot(),
