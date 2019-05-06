@@ -4,10 +4,15 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
-
-// import { MatCheckboxModule } from '@angular/material';
-// import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatExpansionModule, MatBadgeModule, MatIconModule } from '@angular/material';
+import {
+  MatExpansionModule,
+  MatBadgeModule,
+  MatIconModule,
+  MatDividerModule,
+  MatListModule,
+  MatCardModule,
+  MatButtonModule
+} from '@angular/material';
 
 import { CollapseModule } from 'ngx-bootstrap/collapse';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
@@ -44,8 +49,6 @@ import { LandingNewArraivalsComponent } from './landing-page/landing-components/
 import { LandingTestimonialsComponent } from './landing-page/landing-components/landing-testimonials/landing-testimonials.component';
 import { SellerMessagesComponent } from './sellers-dashboard/pages/seller-messages/seller-messages.component';
 
-
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -72,7 +75,6 @@ import { SellerMessagesComponent } from './sellers-dashboard/pages/seller-messag
     LandingNewArraivalsComponent,
     LandingTestimonialsComponent,
     SellerMessagesComponent
-
   ],
   imports: [
     BrowserModule,
@@ -82,7 +84,11 @@ import { SellerMessagesComponent } from './sellers-dashboard/pages/seller-messag
     ReactiveFormsModule,
     MatExpansionModule,
     MatBadgeModule,
+    MatDividerModule,
     MatIconModule,
+    MatListModule,
+    MatCardModule,
+    MatButtonModule,
     CollapseModule.forRoot(),
     CarouselModule.forRoot(),
     ButtonsModule.forRoot(),

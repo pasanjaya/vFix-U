@@ -1,3 +1,5 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+
 // .container-fluid > .row > .card {
 //   width: 50vw;
 //   margin: 0 auto; /* Added */
@@ -32,10 +34,51 @@ button[type="button"] {
 }
 
 .image-preview {
-  width: 50%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   img {
     width: 50%;
   }
+}
 
+.headers-align .mat-expansion-panel-header-title,
+.headers-align .mat-expansion-panel-header-description {
+  flex-basis: 0;
+}
+
+.headers-align .mat-expansion-panel-header-description {
+  justify-content: space-between;
+  align-items: center;
+}
+
+.headers-align .mat-expansion-panel-header {
+  font-family: "Roboto";
+  height: 5rem;
+}
+
+.mat-expansion-panel > .row {
+  font-family: "Open Sans", sans-serif !important;
+}
+
+.empty-message {
+  font-family: "Roboto";
+  font-size: 16px;
+  height: 10rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button-row {
+  width: 100%;
+  display: flex;
+
+  button {
+    align-items: right;
+    margin-right: 8px;
+  }
 }

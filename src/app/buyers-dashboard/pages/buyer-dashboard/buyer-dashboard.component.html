@@ -1,7 +1,7 @@
 <div class="header bg-gradient-primary pb-8 pt-5 pt-md-8">
-  <div class="container-fluid">
+  <!-- <div class="container-fluid">
     <div class="header-body">
-      <!-- Card stats -->
+
       <div class="row">
         <div class="col-xl-3 col-lg-6">
           <div class="card card-stats mb-4 mb-xl-0">
@@ -113,7 +113,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
 </div>
 
 <!-- Page content -->
@@ -261,26 +261,54 @@
           </div>
         </div>
         <div class="card-body">
-          <mat-accordion multi="true" *ngIf="messagesData.length > 0">
-            <mat-expansion-panel *ngFor="let message of messagesData">
-              <mat-expansion-panel-header>
+          <mat-card
+            class="empty-message text-muted"
+            *ngIf="messagesData.length === 0"
+          >
+            <span>No requests found !</span>
+          </mat-card>
+          <mat-accordion
+            class="headers-align"
+            multi="true"
+            *ngIf="messagesData.length > 0"
+          >
+            <mat-expansion-panel
+              *ngFor="let message of messagesData"
+              class="mb-2"
+            >
+              <mat-expansion-panel-header collapsedHeight="auto">
                 <mat-panel-title>
-                  Request ID: {{ message.id }}
+                  <h4>Request ID: {{ message.id }}</h4>
                 </mat-panel-title>
                 <mat-panel-description>
                   <small class="text-muted">{{ message.model }}</small>
-                </mat-panel-description>
-                <span class="mr-2"
-                  ><mat-icon
+                  <span
+                    class="mr-2"
                     matBadge="15"
                     matBadgeColor="warn"
-                    matBadgePosition="above after"
-                    >notification_important</mat-icon
-                  ></span
-                >
+                    matBadgePosition="below after"
+                  ></span>
+                </mat-panel-description>
               </mat-expansion-panel-header>
               <div class="image-preview">
-                <img [src]="message.partImagePath" [alt]="message.model">
+                <img [src]="message.partImagePath" [alt]="message.model" />
+                <mat-divider></mat-divider>
+              </div>
+              <dl class="row">
+                <dt class="col-sm-4">Maker:</dt>
+                <dd class="col-sm-8">{{ message.maker }}</dd>
+                <dt class="col-sm-4">Model:</dt>
+                <dd class="col-sm-8">{{ message.model }}</dd>
+                <dt class="col-sm-4">Request Category:</dt>
+                <dd class="col-sm-8">{{ message.categoryId }}</dd>
+                <dt class="col-sm-4">Spare Part Name:</dt>
+                <dd class="col-sm-8">{{ message.sparePartName }}</dd>
+                <dt class="col-sm-4">Note:</dt>
+                <dd class="col-sm-8">{{ message.note }}</dd>
+              </dl>
+              <div class="button-row">
+                <button mat-stroked-button>Edit</button>
+                <button mat-stroked-button color="warn">Delete</button>
               </div>
             </mat-expansion-panel>
           </mat-accordion>
