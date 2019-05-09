@@ -3,36 +3,25 @@
     <div class="header-body">
       <!-- Card stats -->
       <div class="row">
-        <div class="col-sm-4">
-          <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="assets/images/carousel/6.jpg" alt="Card image cap">
+        <div class="col-sm-4" *ngFor="let message of messagesData">
+          <div class="card" style="width: 25rem;">
+            <img class="card-img-top" [src]="message.partImagePath" alt="Card image cap">
             <div class="card-body">
               <h5 class="card-title">New order</h5>
-              <p class="card-text">Buyers' message</p>
-              <a href="#" class="btn btn-primary">Reply</a>
-              <a href="#" class="btn btn-primary">Ignore</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-4">
-          <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="assets/images/carousel/6.jpg" alt="Card image cap">
-            <div class="card-body">
-              <h5 class="card-title">New order</h5>
-              <p class="card-text">Buyers' message</p>
-              <a href="#" class="btn btn-primary">Reply</a>
-              <a href="#" class="btn btn-primary">Ignore</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-4">
-          <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="assets/images/carousel/6.jpg" alt="Card image cap">
-            <div class="card-body">
-              <h5 class="card-title">New order</h5>
-              <p class="card-text">Buyers' message</p>
-              <a href="#" class="btn btn-primary">Reply</a>
-              <a href="#" class="btn btn-primary">Ignore</a>
+              <dl class="row">
+                <dt class="col-sm-4">Maker:</dt>
+                <dd class="col-sm-8">{{ message.maker }}</dd>
+                <dt class="col-sm-4">Model:</dt>
+                <dd class="col-sm-8">{{ message.model }}</dd>
+                <dt class="col-sm-4">Category:</dt>
+                <dd class="col-sm-8">{{ message.categoryId }}</dd>
+                <dt class="col-sm-4">Part Name:</dt>
+                <dd class="col-sm-8">{{ (message.sparePartName !== ' ') ? message.sparePartName: '-'}}</dd>
+                <dt class="col-sm-4">Note:</dt>
+                <dd class="col-sm-8">{{ (message.note !== ' ') ? message.note: '-' }}</dd>
+              </dl>
+              <a href="#" role="button" class="btn btn-secondary">Ignore</a>
+              <a href="#" role="button" class="btn btn-primary">Catch It</a>
             </div>
           </div>
         </div>

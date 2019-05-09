@@ -9,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 export class BuyerNavbarComponentComponent implements OnInit {
   title = 'Buyer-dashBoard';
 
-  constructor(private authServie: AuthService) { }
+  constructor(private authService: AuthService) { }
 
   getTitle() {
     return this.title;
@@ -19,7 +19,7 @@ export class BuyerNavbarComponentComponent implements OnInit {
   }
 
   onLogout() {
-    this.authServie.userLogout();
+    this.authService.userLogout();
   }
 
 }
