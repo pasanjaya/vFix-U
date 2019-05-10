@@ -19,7 +19,7 @@ router.post("/register", (req, res, next) => {
       .then(result => {
         const role = new Role({
           email: req.body.email,
-          role: req.body.role
+          role: req.body.role,
         });
         role
           .save()

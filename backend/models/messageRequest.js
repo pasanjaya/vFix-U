@@ -7,7 +7,8 @@ const messageReqSchema = mongoose.Schema({
   sparePartName: { type: String },
   itemImagePath: { type: String, require: true },
   itemNote: { type: String },
-  messageCreator: { type: mongoose.Schema.Types.ObjectId, ref: "Consumer", require: true }
+  messageCreator: { type: mongoose.Schema.Types.ObjectId, ref: "Consumer", require: true },
+  created_at: { type: Date, default: Date.now }
 });
 
-module.exports = mongoose.model("MessageRequest", messageReqSchema); 
+module.exports = mongoose.model("MessageRequest", messageReqSchema);

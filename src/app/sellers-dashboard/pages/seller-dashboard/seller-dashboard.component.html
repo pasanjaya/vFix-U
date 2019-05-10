@@ -20,8 +20,8 @@
                 <dt class="col-sm-4">Note:</dt>
                 <dd class="col-sm-8">{{ (message.note !== ' ') ? message.note: '-' }}</dd>
               </dl>
-              <a href="#" role="button" class="btn btn-secondary">Ignore</a>
-              <a href="#" role="button" class="btn btn-primary">Catch It</a>
+              <a role="button" class="btn btn-secondary">Ignore</a>
+              <button type="button" (click)="catchIt()" class="btn btn-primary">Catch It</button>
             </div>
           </div>
         </div>

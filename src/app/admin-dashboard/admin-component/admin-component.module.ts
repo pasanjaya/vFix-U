@@ -2,7 +2,9 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-import { BsDropdownModule, CarouselModule } from 'ngx-bootstrap';
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+import { CarouselModule } from 'ngx-bootstrap/carousel';
+import { TabsModule } from 'ngx-bootstrap/tabs';
 
 import { AdminComponentRoutingModule } from './admin-component-routing.module';
 import { AdminMapsComponent } from './../pages/admin-maps/admin-maps.component';
@@ -25,8 +27,9 @@ import { AdminDatabaseComponent } from '../pages/admin-database/admin-database.c
     AdminComponentRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    CarouselModule,
-    BsDropdownModule
+    CarouselModule.forRoot(),
+    BsDropdownModule.forRoot(),
+    TabsModule.forRoot()
   ]
 })
 export class AdminComponentModule { }

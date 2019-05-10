@@ -125,13 +125,16 @@
             <div class="col">
               <h6 class="text-uppercase text-light ls-1 mb-1">Overview</h6>
               <h2 class="text-white mb-0">
-                  <i class="fas fa-database"></i> Database</h2>
+                <i class="fas fa-database"></i> Database
+              </h2>
             </div>
           </div>
         </div>
         <div class="card-body">
-
-            <div class="table-responsive">
+          <tabset>
+            <tab heading="Consumer" id="tab1">
+              <!-- consumer data table -->
+              <div class="table-responsive mt-3 mb-5">
                 <table class="table align-items-center table-dark table-flush">
                   <thead class="thead-light">
                     <tr>
@@ -144,14 +147,21 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
+                    <tr
+                      *ngFor="let consumer of consumerDatabase; last as isLast"
+                    >
                       <th scope="row">
                         <div class="media align-items-center">
                           <a href="#" class="avatar rounded-circle mr-3">
-                            <img alt="Image placeholder" src="assets/img/theme/angular.jpg">
+                            <img
+                              alt="Image placeholder"
+                              src="assets/img/theme/angular.jpg"
+                            />
                           </a>
                           <div class="media-body">
-                            <span class="mb-0 text-sm">Angular Now UI Kit PRO</span>
+                            <span class="mb-0 text-sm">{{
+                              consumer.name
+                            }}</span>
                           </div>
                         </div>
                       </th>
@@ -159,10 +169,10 @@
                         $1,800 USD
                       </td>
                       <td>
-                          <span class="badge badge-dot">
-                            <i class="bg-success"></i> Consumer
-                          </span>
-                        </td>
+                        <span class="badge badge-dot">
+                          <i class="bg-success"></i> Consumer
+                        </span>
+                      </td>
                       <td>
                         <span class="badge badge-dot">
                           <i class="bg-success"></i> completed
@@ -173,20 +183,44 @@
                           <span class="mr-2">100%</span>
                           <div>
                             <div class="progress">
-                              <div class="progress-bar bg-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;"></div>
+                              <div
+                                class="progress-bar bg-success"
+                                role="progressbar"
+                                aria-valuenow="100"
+                                aria-valuemin="0"
+                                aria-valuemax="100"
+                                style="width: 100%;"
+                              ></div>
                             </div>
                           </div>
                         </div>
                       </td>
                       <td class="text-right">
-                        <div dropdown class="dropdown"  placement="bottom-right">
-                          <a class="btn btn-sm btn-icon-only text-light dropdown-toggle"  dropdownToggle>
+                        <div
+                          dropdown
+                          class="dropdown"
+                          [placement]="isLast ? 'top-right' : 'bottom-right'"
+                          [dropup]="isLast"
+                        >
+                          <a
+                            class="btn btn-sm btn-icon-only text-light dropdown-toggle"
+                            dropdownToggle
+                          >
                             <i class="fas fa-ellipsis-v"></i>
                           </a>
-                          <div *dropdownMenu class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-                            <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <a class="dropdown-item" href="#">Something else here</a>
+                          <div
+                            *dropdownMenu
+                            class="dropdown-menu dropdown-menu-right dropdown-menu-arrow"
+                          >
+                            <a class="dropdown-item" style="cursor: pointer;" >
+                              <i class="far fa-envelope"></i> Send Email</a>
+                            <a
+                              class="dropdown-item"
+                              style="cursor: pointer; color: #D9534F;"
+                              (click)="onDeleteConsumer(consumer.id)"
+                            >
+                              <i class="far fa-trash-alt"></i> Delete</a
+                            >
                           </div>
                         </div>
                       </td>
@@ -194,7 +228,9 @@
                   </tbody>
                 </table>
               </div>
-
+            </tab>
+            <tab heading="Basic Title 1">Basic content 1</tab>
+          </tabset>
         </div>
       </div>
     </div>

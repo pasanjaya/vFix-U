@@ -60,6 +60,7 @@ export class AuthService {
       .post('http://localhost:3000/api/consumer/register', consumerData)
       .subscribe(response => {
         console.log(response);
+        this.router.navigate(['/login']);
       });
   }
 
@@ -83,6 +84,7 @@ export class AuthService {
       .post('http://localhost:3000/api/merchant/register', merchantData)
       .subscribe(response => {
         console.log(response);
+        this.router.navigate(['/login']);
       });
   }
 

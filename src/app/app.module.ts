@@ -18,6 +18,7 @@ import { CollapseModule } from 'ngx-bootstrap/collapse';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { ButtonsModule } from 'ngx-bootstrap/buttons';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 import { GeneralService } from './services/general.service';
 
@@ -48,6 +49,9 @@ import { SellerAdvertiseComponent } from './sellers-dashboard/pages/seller-adver
 import { LandingNewArraivalsComponent } from './landing-page/landing-components/landing-new-arraivals/landing-new-arraivals.component';
 import { LandingTestimonialsComponent } from './landing-page/landing-components/landing-testimonials/landing-testimonials.component';
 import { SellerMessagesComponent } from './sellers-dashboard/pages/seller-messages/seller-messages.component';
+import {
+  SellerDashboardCatchitComponent
+ } from './sellers-dashboard/pages/seller-dashboard/seller-dashboard-catchit/seller-dashboard-catchit.component';
 
 @NgModule({
   declarations: [
@@ -74,7 +78,8 @@ import { SellerMessagesComponent } from './sellers-dashboard/pages/seller-messag
     SellerAdvertiseComponent,
     LandingNewArraivalsComponent,
     LandingTestimonialsComponent,
-    SellerMessagesComponent
+    SellerMessagesComponent,
+    SellerDashboardCatchitComponent
   ],
   imports: [
     BrowserModule,
@@ -93,8 +98,10 @@ import { SellerMessagesComponent } from './sellers-dashboard/pages/seller-messag
     CarouselModule.forRoot(),
     ButtonsModule.forRoot(),
     BsDropdownModule.forRoot(),
-    HttpClientModule
+    HttpClientModule,
+    ModalModule.forRoot()
   ],
+  entryComponents: [SellerDashboardCatchitComponent],
   providers: [
     GeneralService,
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }

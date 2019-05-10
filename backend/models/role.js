@@ -3,7 +3,8 @@ const uniqueValidator = require('mongoose-unique-validator');
 
 const roleSchema = mongoose.Schema({
   email: { type: String, require: true, unique: true },
-  role: { type: String, require: true }
+  role: { type: String, require: true },
+  created_at: { type: Date, default: Date.now }
 });
 
 roleSchema.plugin(uniqueValidator);
