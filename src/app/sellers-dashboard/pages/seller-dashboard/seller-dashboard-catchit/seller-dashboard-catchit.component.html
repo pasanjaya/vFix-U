@@ -10,12 +10,124 @@
   </button>
 </div>
 <div class="modal-body">
-  <ul *ngIf="list.length">
-    <li *ngFor="let item of list">{{ item }}</li>
-  </ul>
+  <div class="row">
+    <div class="col-8">
+      <form>
+        <div class="form-group">
+          <label for="exampleInputEmail1">OE/OEM Part Number</label>
+          <input
+            type="email"
+            class="form-control form-control-alternative"
+            id="exampleFormControlInput1"
+            placeholder="OE/OEM No."
+          />
+        </div>
+        <div
+          class="custom-control custom-control-alternative custom-checkbox mb-3"
+        >
+          <input
+            class="custom-control-input"
+            id="customCheck5"
+            type="checkbox"
+          />
+          <label class="custom-control-label" for="customCheck5"
+            >Remanufactured</label
+          >
+        </div>
+        <div class="row">
+          <div
+            class="custom-control custom-control-alternative custom-radio mb-3 ml-3"
+          >
+            <input
+              name="condition"
+              class="custom-control-input"
+              id="new-condition"
+              type="radio"
+            />
+            <label class="custom-control-label" for="new-condition">New</label>
+          </div>
+          <div
+            class="custom-control custom-control-alternative custom-radio mb-3 ml-3"
+          >
+            <input
+              name="condition"
+              class="custom-control-input"
+              id="used-condition"
+              type="radio"
+            />
+            <label class="custom-control-label" for="used-condition"
+              >Used</label
+            >
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Price</label>
+          <input
+            type="email"
+            class="form-control form-control-alternative"
+            id="exampleFormControlInput1"
+            placeholder="Price"
+          />
+        </div>
+        <div class="form-group">
+          <label for="part-image">Part Image</label>
+          <input
+            type="file"
+            class="form-control-file"
+            id="part-image"
+            #imagePicker
+          />
+          <button
+            type="button"
+            class="btn btn-outline-secondary image-picker"
+            (click)="imagePicker.click()"
+          >
+            <i class="fas fa-camera"></i> Upload
+          </button>
+        </div>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Material</label>
+          <input
+            type="email"
+            class="form-control form-control-alternative"
+            id="exampleFormControlInput1"
+            placeholder="Material"
+          />
+        </div>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Model</label>
+          <input
+            type="email"
+            class="form-control form-control-alternative"
+            id="exampleFormControlInput1"
+            placeholder="Model"
+          />
+        </div>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Brand</label>
+          <input
+            type="email"
+            class="form-control form-control-alternative"
+            id="exampleFormControlInput1"
+            placeholder="Part Brand"
+          />
+        </div>
+        <label for="exampleInputEmail1">Note</label>
+        <textarea
+          class="form-control form-control-alternative"
+          rows="3"
+          placeholder="Write a note here ..."
+        ></textarea>
+      </form>
+    </div>
+    <div class="col-4">
+      image
+    </div>
+  </div>
 </div>
 <div class="modal-footer">
   <button type="button" class="btn btn-default" (click)="bsModalRef.hide()">
     {{ closeBtnName }}
   </button>
+  <button type="button" class="btn btn-success">Send</button>
 </div>

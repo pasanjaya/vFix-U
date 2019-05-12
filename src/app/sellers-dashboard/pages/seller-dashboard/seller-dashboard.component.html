@@ -3,8 +3,8 @@
     <div class="header-body">
       <!-- Card stats -->
       <div class="row">
-        <div class="col-sm-4" *ngFor="let message of messagesData">
-          <div class="card" style="width: 25rem;">
+        <div class="card-deck" >
+          <div class="card" style="max-width: 21rem;" *ngFor="let message of messagesData">
             <img class="card-img-top" [src]="message.partImagePath" alt="Card image cap">
             <div class="card-body">
               <h5 class="card-title">New order</h5>

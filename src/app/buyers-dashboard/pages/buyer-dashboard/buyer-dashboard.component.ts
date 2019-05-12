@@ -43,12 +43,12 @@ export class BuyerDashboardComponent implements OnInit, OnDestroy {
       maker: new FormControl(this.selectedMaker, Validators.required),
       model: new FormControl(this.selectedModel, Validators.required),
       category: new FormControl(null, Validators.required),
-      sparePartName: new FormControl(null),
+      sparePartName: new FormControl('N/A'),
       partImage: new FormControl(null, {
         validators: [Validators.required],
         asyncValidators: [mimeType]
       }),
-      note: new FormControl(null)
+      note: new FormControl('N/A')
     });
 
     // fill select options with car data
