@@ -9,7 +9,7 @@ import { MessageRequestService } from './../../services/message-request.service'
 import { CategoryData } from './../../../admin-dashboard/pages/admin-configuration/models/category-data.model';
 import { MessageRequestData } from './../../../models/message-request-data.model';
 
-import { mimeType } from './mime-type.validator';
+import { mimeType } from '../../../validators/mime-type.validator';
 
 @Component({
   selector: 'app-dashboard-component',

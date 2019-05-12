@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { BsModalRef, BsModalService } from 'ngx-bootstrap';
+import { BsModalRef, BsModalService, ModalOptions } from 'ngx-bootstrap';
 
 import { MessageRequestData } from 'src/app/models/message-request-data.model';
 
@@ -37,7 +37,7 @@ export class SellerDashboardComponent implements OnInit, OnDestroy {
     this.messageDataSub.unsubscribe();
   }
 
-  catchIt() {
+  catchIt(index: number) {
     const initialState = {
       list: [
         'Open a modal with component',
@@ -45,9 +45,11 @@ export class SellerDashboardComponent implements OnInit, OnDestroy {
         'Do something else',
         '...'
       ],
-      title: 'Modal with component'
+      title: 'Response for the Customer',
+      data: this.messagesData[index]
     };
-    this.bsModalRef = this.modalService.show(SellerDashboardCatchitComponent, { initialState });
+
+    this.bsModalRef = this.modalService.show(SellerDashboardCatchitComponent, { initialState, class: 'modal-lg' });
     this.bsModalRef.content.closeBtnName = 'Close';
   }
 

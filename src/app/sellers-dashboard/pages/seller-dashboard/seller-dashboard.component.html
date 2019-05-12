@@ -4,7 +4,7 @@
       <!-- Card stats -->
       <div class="row">
         <div class="card-deck" >
-          <div class="card" style="max-width: 21rem;" *ngFor="let message of messagesData">
+          <div class="card" style="max-width: 21rem;" *ngFor="let message of messagesData; let i = index">
             <img class="card-img-top" [src]="message.partImagePath" alt="Card image cap">
             <div class="card-body">
               <h5 class="card-title">New order</h5>
@@ -21,7 +21,7 @@
                 <dd class="col-sm-8">{{ (message.note !== ' ') ? message.note: '-' }}</dd>
               </dl>
               <a role="button" class="btn btn-secondary">Ignore</a>
-              <button type="button" (click)="catchIt()" class="btn btn-primary">Catch It</button>
+              <button type="button" (click)="catchIt(i)" class="btn btn-primary">Catch It</button>
             </div>
           </div>
         </div>

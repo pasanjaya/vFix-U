@@ -11,49 +11,49 @@
 </div>
 <div class="modal-body">
   <div class="row">
-    <div class="col-8">
-      <form>
+    <div class="col-7">
+      <form [formGroup]="sellerReplyForm" (ngSubmit)="onSend()">
         <div class="form-group">
-          <label for="exampleInputEmail1">OE/OEM Part Number</label>
+          <label for="oem">OE/OEM Part Number</label>
           <input
-            type="email"
-            class="form-control form-control-alternative"
-            id="exampleFormControlInput1"
+            type="number"
+            class="form-control"
+            id="oem"
             placeholder="OE/OEM No."
+            formControlName="oemNumber"
           />
         </div>
-        <div
-          class="custom-control custom-control-alternative custom-checkbox mb-3"
-        >
+        <div class="custom-control custom-checkbox mb-3">
           <input
             class="custom-control-input"
             id="customCheck5"
             type="checkbox"
+            formControlName="remanufactured"
           />
           <label class="custom-control-label" for="customCheck5"
             >Remanufactured</label
           >
         </div>
         <div class="row">
-          <div
-            class="custom-control custom-control-alternative custom-radio mb-3 ml-3"
-          >
+          <div class="custom-control custom-radio mb-3 ml-3">
             <input
               name="condition"
+              value="new"
               class="custom-control-input"
               id="new-condition"
               type="radio"
+              formControlName="condition"
             />
             <label class="custom-control-label" for="new-condition">New</label>
           </div>
-          <div
-            class="custom-control custom-control-alternative custom-radio mb-3 ml-3"
-          >
+          <div class="custom-control custom-radio mb-3 ml-3">
             <input
               name="condition"
+              value="used"
               class="custom-control-input"
               id="used-condition"
               type="radio"
+              formControlName="condition"
             />
             <label class="custom-control-label" for="used-condition"
               >Used</label
@@ -64,17 +64,19 @@
           <label for="exampleInputEmail1">Price</label>
           <input
             type="email"
-            class="form-control form-control-alternative"
+            class="form-control"
             id="exampleFormControlInput1"
             placeholder="Price"
+            formControlName="partPrice"
           />
         </div>
         <div class="form-group">
           <label for="part-image">Part Image</label>
           <input
-            type="file"
+            type="image"
             class="form-control-file"
             id="part-image"
+            formControlName="partImage"
             #imagePicker
           />
           <button
@@ -85,43 +87,94 @@
             <i class="fas fa-camera"></i> Upload
           </button>
         </div>
+        <div
+          class="image-preview"
+          *ngIf="imagePreviewPath && imagePreviewPath !== ''"
+        >
+          <img [src]="imagePreviewPath" alt="part-image" />
+        </div>
         <div class="form-group">
           <label for="exampleInputEmail1">Material</label>
           <input
             type="email"
-            class="form-control form-control-alternative"
+            class="form-control"
             id="exampleFormControlInput1"
             placeholder="Material"
+            formControlName="material"
           />
         </div>
         <div class="form-group">
           <label for="exampleInputEmail1">Model</label>
           <input
             type="email"
-            class="form-control form-control-alternative"
+            class="form-control"
             id="exampleFormControlInput1"
             placeholder="Model"
+            formControlName="model"
           />
         </div>
         <div class="form-group">
           <label for="exampleInputEmail1">Brand</label>
           <input
             type="email"
-            class="form-control form-control-alternative"
+            class="form-control"
             id="exampleFormControlInput1"
             placeholder="Part Brand"
+            formControlName="brand"
           />
         </div>
         <label for="exampleInputEmail1">Note</label>
         <textarea
-          class="form-control form-control-alternative"
+          class="form-control"
           rows="3"
           placeholder="Write a note here ..."
+          formControlName="note"
         ></textarea>
+        <input type="submit" class="hidden" #submit />
       </form>
     </div>
-    <div class="col-4">
-      image
+    <div class="col-5">
+      <h2>Request Message</h2>
+      <div class="list-group">
+        <div class="list-group-item list-group-item-action">
+          <div class="d-flex w-100 justifiy-content-between">
+            <h5 class="mb-1">Maker:</h5>
+          </div>
+          <p class="mb-1">{{ data["maker"] }}</p>
+        </div>
+      </div>
+      <div class="list-group">
+        <div class="list-group-item list-group-item-action">
+          <div class="d-flex w-100 justifiy-content-between">
+            <h5 class="mb-1">Model:</h5>
+          </div>
+          <p class="mb-1">{{ data["model"] }}</p>
+        </div>
+      </div>
+      <div class="list-group">
+        <div class="list-group-item list-group-item-action">
+          <div class="d-flex w-100 justifiy-content-between">
+            <h5 class="mb-1">Category:</h5>
+          </div>
+          <p class="mb-1">{{ data["categoryId"] }}</p>
+        </div>
+      </div>
+      <div class="list-group">
+        <div class="list-group-item list-group-item-action">
+          <div class="d-flex w-100 justifiy-content-between">
+            <h5 class="mb-1">Part Name:</h5>
+          </div>
+          <p class="mb-1">{{ data["sparePartName"] }}</p>
+        </div>
+      </div>
+      <div class="list-group">
+        <div class="list-group-item list-group-item-action">
+          <div class="d-flex w-100 justifiy-content-between">
+            <h5 class="mb-1">Note:</h5>
+          </div>
+          <p class="mb-1">{{ data["note"] }}</p>
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -129,5 +182,7 @@
   <button type="button" class="btn btn-default" (click)="bsModalRef.hide()">
     {{ closeBtnName }}
   </button>
-  <button type="button" class="btn btn-success">Send</button>
+  <button type="button" (click)="submit.click()" class="btn btn-success">
+    Send
+  </button>
 </div>
