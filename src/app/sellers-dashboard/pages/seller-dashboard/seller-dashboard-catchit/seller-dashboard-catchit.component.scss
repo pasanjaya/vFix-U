@@ -1,5 +1,5 @@
 
-input[type="image"] {
+input[type="file"] {
   display: none;
   visibility: hidden;
 }
@@ -11,4 +11,13 @@ input[type="submit"] {
 
 .image-picker {
   margin-left: 8px;
+}
+
+.image-preview {
+  height: 10rem;
+  margin: 1rem 0;
+
+  img {
+    height: 100%;
+  }
 }

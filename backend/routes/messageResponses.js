@@ -1,9 +1,9 @@
 const express = require('express');
 const multer = require('multer');
 
-const Message = require('../models/messageRequest');
-
 const checkAuth = require('../middleware/check-auth');
+
+const Response = require('../models/messageResponse');
 
 const router = express.Router();
 
@@ -20,7 +20,7 @@ const storage = multer.diskStorage({
     if(isValid) {
       error = null;
     }
-    cb(error, 'backend/images/buyerRequestImages');
+    cb(error, 'backend/images/sellerResponseImages');
   },
   filename: (req, file, cb) => {
     const name = file.originalname.toLowerCase().split(' ').join('-');
@@ -31,36 +31,30 @@ const storage = multer.diskStorage({
 
 router.post('/create', checkAuth, multer({storage: storage}).single('image'), (req, res, next) => {
   const url = req.protocol + '://' + req.get('host');
-  const message = new Message({
-    vehicalMaker: req.body.maker,
-    vehicalModel: req.body.model,
-    categoryId: req.body.categoryId,
-    sparePartName: req.body.sparePartName,
-    itemImagePath: url + "/images/buyerRequestImages/" + req.file.filename,
-    itemNote: req.body.note,
-    messageCreator: req.userData.userId
+  const messageResponse = new Response({
+    requestId: req.body.requestId,
+    oemNumber: req.body.oemNumber,
+    remanufactured: req.body.remanufactured,
+    condition: req.body.condition,
+    unitPrice: req.body.unitPrice,
+    imagePath: url + "/images/sellerResponseImages/" + req.file.filename,
+    material: req.body.material,
+    model: req.body.model,
+    brand: req.body.brand,
+    note: req.body.note,
+    responseCreator: req.userData.userId
   });
-  message.save()
-    .then(result => {
-      res.status(201).json({
-        message: 'Message Created',
+  messageResponse.save()
+    .then((result) => {
+      res.status(200).json({
+        message: 'message response created',
         result: result
       });
-    })
-    .catch(err => {
+    }).catch((err) => {
       res.status(500).json({
         error: err
       });
     });
-});
-
-router.get('/retrive', (req, res, next) => {
-  Message.find().then(documents => {
-    res.status(200).json({
-      message: "MessageRequestData fetched successfully!",
-      messageDataCollections: documents
-    });
-  });
 });
 
 module.exports = router;

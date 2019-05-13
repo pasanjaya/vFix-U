@@ -9,6 +9,7 @@ const categoryRoutes = require("./routes/categories");
 const userRoutes = require("./routes/users");
 const merchantRoutes = require("./routes/merchants");
 const messageRequestRoutes = require("./routes/messageRequests");
+const messageResponseRoute = require('./routes/messageResponses');
 // const carDataRoutes = require("./routes/carData")
 
 
@@ -45,6 +46,7 @@ app.use('/api/merchant', merchantRoutes);
 app.use('/api/user', userRoutes);
 app.use('/api/admin/category', categoryRoutes);
 app.use('/api/message', messageRequestRoutes);
+app.use('/api/message/response', messageResponseRoute);
 // app.use('/api/car-data', carDataRoutes);
 
 module.exports = app;

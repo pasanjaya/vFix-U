@@ -61,7 +61,7 @@
           </div>
         </div>
         <div class="form-group">
-          <label for="exampleInputEmail1">Price</label>
+          <label for="exampleInputEmail1">Unit Price</label>
           <input
             type="email"
             class="form-control"
@@ -73,10 +73,10 @@
         <div class="form-group">
           <label for="part-image">Part Image</label>
           <input
-            type="image"
+            type="file"
             class="form-control-file"
             id="part-image"
-            formControlName="partImage"
+            (change)="onImageUpload($event)"
             #imagePicker
           />
           <button
@@ -89,7 +89,11 @@
         </div>
         <div
           class="image-preview"
-          *ngIf="imagePreviewPath && imagePreviewPath !== ''"
+          *ngIf="
+            imagePreviewPath &&
+            imagePreviewPath !== '' &&
+            this.sellerReplyForm.get('partImage').valid
+          "
         >
           <img [src]="imagePreviewPath" alt="part-image" />
         </div>
