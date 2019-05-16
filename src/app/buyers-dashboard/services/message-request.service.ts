@@ -42,7 +42,8 @@ export class MessageRequestService {
           sparePartName,
           partImagePath: response.result.itemImagePath,
           note,
-          messageCreator: response.result.messageCreator
+          messageCreator: response.result.messageCreator,
+          created_at: response.result.created_at
         };
         this.messagesData.push(messageRequest);
         this.messageDataUpdated.next([...this.messagesData]);
@@ -63,7 +64,9 @@ export class MessageRequestService {
             sparePartName: messageDataCollection.sparePartName,
             partImagePath: messageDataCollection.itemImagePath,
             note: messageDataCollection.itemNote,
-            messageCreator: messageDataCollection.messageCreator
+            messageCreator: messageDataCollection.messageCreator,
+            responses: messageDataCollection.rensponses,
+            created_at: messageDataCollection.created_at
           };
         });
       })

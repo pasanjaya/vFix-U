@@ -4,6 +4,7 @@ const multer = require('multer');
 const checkAuth = require('../middleware/check-auth');
 
 const Response = require('../models/messageResponse');
+const Request = require('../models/messageRequest');
 
 const router = express.Router();
 
@@ -46,9 +47,20 @@ router.post('/create', checkAuth, multer({storage: storage}).single('image'), (r
   });
   messageResponse.save()
     .then((result) => {
-      res.status(200).json({
-        message: 'message response created',
-        result: result
+      Request.findOne({_id: result.requestId}, (err, request) => {
+        if (err) console.log('Error is: ' + err);
+        if (!request) {
+          res.status(404).json({
+            message: 'valid document not found'
+          });
+        }
+        request.rensponses.push(result._id);
+        request.save().then((updatedresult) => {
+          res.status(200).json({
+            message: 'message response created',
+            result: [result, updatedresult]
+          });
+        });
       });
     }).catch((err) => {
       res.status(500).json({
@@ -56,5 +68,9 @@ router.post('/create', checkAuth, multer({storage: storage}).single('image'), (r
       });
     });
 });
+
+// router.get('/retrive', (req, res, next) => {
+
+// });
 
 module.exports = router;

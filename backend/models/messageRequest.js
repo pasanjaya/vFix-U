@@ -8,6 +8,7 @@ const messageReqSchema = mongoose.Schema({
   itemImagePath: { type: String, require: true },
   itemNote: { type: String },
   messageCreator: { type: mongoose.Schema.Types.ObjectId, ref: "Consumer", require: true },
+  rensponses: [{ type: mongoose.Schema.Types.ObjectId, ref: "MessageResponse"}],
   created_at: { type: Date, default: Date.now }
 });
 

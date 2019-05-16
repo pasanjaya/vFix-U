@@ -7,4 +7,7 @@ export interface MessageRequestData {
   partImagePath: string;
   note?: string;
   messageCreator?: string;
+  responses?: [];
+  created_at?: Date;
+
 }

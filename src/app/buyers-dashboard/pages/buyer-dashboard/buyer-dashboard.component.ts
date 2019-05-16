@@ -132,4 +132,5 @@ export class BuyerDashboardComponent implements OnInit, OnDestroy {
     );
     this.partFindForm.reset();
   }
+
 }
