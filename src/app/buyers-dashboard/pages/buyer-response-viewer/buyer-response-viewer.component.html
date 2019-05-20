@@ -1,0 +1,48 @@
+<div class="container mt-5">
+  <div class="row">
+    <div class="col">
+      <div class="list-group">
+        <a
+          class="list-group-item list-group-item-action flex-column align-items-start"
+          *ngFor="let response of responseData; let i = index"
+          (click)="changeContent(i)"
+          fragment="i"
+          routerLinkActive="active"
+        >
+          <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1">{{ response.requestId }}</h5>
+            <small>3 days ago</small>
+          </div>
+          <p class="mb-1">{{ response.responseCreator }}</p>
+          <small>Rs. {{ response.unitPrice }}</small>
+        </a>
+      </div>
+    </div>
+    <div class="col-5">
+      <div class="card">
+        <h5 class="card-header">Featured</h5>
+        <div class="card-body">
+          <h5 class="card-title">response</h5>
+          <p class="card-text">
+            {{ contentData[0]?.requestId }}
+          </p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Seller Details</h5>
+          <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+          <p class="card-text">
+            Some quick example text to build on the card title and make up the
+            bulk of the card's content.
+          </p>
+          <a href="#" class="card-link">Card link</a>
+          <a href="#" class="card-link">Another link</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

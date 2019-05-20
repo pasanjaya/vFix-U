@@ -282,7 +282,13 @@
                 </mat-panel-title>
                 <mat-panel-description>
                   <small class="text-muted">{{ message.model }}</small>
-                  <mat-icon [matBadge]="message.responses.length" matBadgeColor="accent" color="primary">notification_important</mat-icon>
+                  <mat-icon
+                    [matBadge]="message.responses.length"
+                    matBadgeColor="accent"
+                    matBadgeSize="medium"
+                    color="primary"
+                    >notification_important</mat-icon
+                  >
                 </mat-panel-description>
               </mat-expansion-panel-header>
               <div class="image-preview">
@@ -301,12 +307,22 @@
                 <dt class="col-sm-4">Note:</dt>
                 <dd class="col-sm-8">{{ message.note }}</dd>
               </dl>
-              <div class="button-row" *ngIf="message.responses.length < 1; else viewTemplate">
+              <div
+                class="button-row"
+                *ngIf="message.responses.length < 1; else viewTemplate"
+              >
                 <button mat-stroked-button>Edit</button>
-                <button mat-stroked-button color="warn">Close</button>
+                <button mat-stroked-button color="warn">Remove</button>
               </div>
               <ng-template #viewTemplate>
-                <button mat-stroked-button color="primary">View Responses</button>
+                <button
+                  mat-stroked-button
+                  color="primary"
+                  [routerLink]="['response']"
+                  [queryParams]="{ view: message.id }"
+                >
+                  View Responses
+                </button>
               </ng-template>
             </mat-expansion-panel>
           </mat-accordion>

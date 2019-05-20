@@ -39,6 +39,7 @@ import { FooterComponentComponent } from './landing-page/layouts/footer-componen
 import { BuyerNavbarComponentComponent } from './buyers-dashboard/layouts/buyer-navbar-component/buyer-navbar-component.component';
 import { BuyerSidebarComponentComponent } from './buyers-dashboard/layouts/buyer-sidebar-component/buyer-sidebar-component.component';
 import { BuyerDashboardComponent } from './buyers-dashboard/pages/buyer-dashboard/buyer-dashboard.component';
+import { BuyerResponseViewerComponent } from './buyers-dashboard/pages/buyer-response-viewer/buyer-response-viewer.component';
 import { BuyerProfileComponent } from './buyers-dashboard/pages/buyer-profile/buyer-profile.component';
 import { SellerSidebarComponent } from './sellers-dashboard/layouts/seller-sidebar/seller-sidebar.component';
 import { SellerNavbarComponent } from './sellers-dashboard/layouts/seller-navbar/seller-navbar.component';
@@ -79,7 +80,8 @@ import {
     LandingNewArraivalsComponent,
     LandingTestimonialsComponent,
     SellerMessagesComponent,
-    SellerDashboardCatchitComponent
+    SellerDashboardCatchitComponent,
+    BuyerResponseViewerComponent
   ],
   imports: [
     BrowserModule,

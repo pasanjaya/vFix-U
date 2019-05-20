@@ -10,7 +10,7 @@
       "prefix": "app",
       "schematics": {
         "@schematics/angular:component": {
-          "styleExt": "scss"
+          "styleext": "scss"
         }
       },
       "architect": {
@@ -142,7 +142,7 @@
   "defaultProject": "vFix-U",
   "schematics": {
     "@schematics/angular:component": {
-      "styleExt": "scss"
+      "styleext": "scss"
     }
   }
 }

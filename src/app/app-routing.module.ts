@@ -9,6 +9,7 @@ import { AdminComponentComponent } from './admin-dashboard/admin-component/admin
 import { BuyerComponentComponent } from './buyers-dashboard/buyer-component/buyer-component.component';
 import { BuyerProfileComponent } from './buyers-dashboard/pages/buyer-profile/buyer-profile.component';
 import { BuyerDashboardComponent } from './buyers-dashboard/pages/buyer-dashboard/buyer-dashboard.component';
+import { BuyerResponseViewerComponent } from './buyers-dashboard/pages/buyer-response-viewer/buyer-response-viewer.component';
 import { SellerComponentComponent } from './sellers-dashboard/seller-component/seller-component.component';
 import { SellerDashboardComponent } from './sellers-dashboard/pages/seller-dashboard/seller-dashboard.component';
 import { SellerProfileComponent } from './sellers-dashboard/pages/seller-profile/seller-profile.component';
@@ -37,8 +38,9 @@ const routes: Routes = [
   },
   // buyerdashboard and its pages will routered here
   { path: 'buyerdashboard/:id', component: BuyerComponentComponent, canActivate: [AuthGuard], children: [
-    { path: '', component: BuyerDashboardComponent},
-    { path: 'buyerprofile', component: BuyerProfileComponent},
+    { path: '', component: BuyerDashboardComponent },
+    { path: 'response', component: BuyerResponseViewerComponent },
+    { path: 'buyerprofile', component: BuyerProfileComponent },
   ] },
   // sellerdashboard and its pages will routered here
   { path: 'sellerdashboard/:id', component: SellerComponentComponent, canActivate: [AuthGuard], children: [

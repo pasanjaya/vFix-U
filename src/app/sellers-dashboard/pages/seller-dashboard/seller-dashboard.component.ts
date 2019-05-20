@@ -25,7 +25,7 @@ export class SellerDashboardComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     // retrive the messages
-    this.messageRequestService.getMessageRequest();
+    this.messageRequestService.getMessageRequestSeller();
     this.messageDataSub = this.messageRequestService.getMessageDataUpdatedListener()
       .subscribe((requestMessages: MessageRequestData[]) => {
         this.messagesData = requestMessages;

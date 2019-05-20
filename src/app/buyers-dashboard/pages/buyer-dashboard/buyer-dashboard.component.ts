@@ -1,6 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { Subscription } from 'rxjs';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Subscription } from 'rxjs';
 
 import { CarSelectorService } from '../../services/car-selector.service';
 import { AdminConfigureService } from './../../../admin-dashboard/pages/admin-configuration/admin-configure.service';
@@ -66,7 +67,8 @@ export class BuyerDashboardComponent implements OnInit, OnDestroy {
 
     // retrive the messages
     this.messageRequestService.getMessageRequest();
-    this.messageDataSub = this.messageRequestService.getMessageDataUpdatedListener()
+    this.messageDataSub = this.messageRequestService
+      .getMessageDataUpdatedListener()
       .subscribe((requestMessages: MessageRequestData[]) => {
         this.messagesData = requestMessages;
       });
@@ -133,4 +135,6 @@ export class BuyerDashboardComponent implements OnInit, OnDestroy {
     this.partFindForm.reset();
   }
 
+
+  
 }

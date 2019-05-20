@@ -54,7 +54,16 @@ router.post('/create', checkAuth, multer({storage: storage}).single('image'), (r
     });
 });
 
-router.get('/retrive', (req, res, next) => {
+router.get('/retrive', checkAuth, (req, res, next) => {
+  Message.find({ messageCreator: req.userData.userId }).then(documents => {
+    res.status(200).json({
+      message: "MessageRequestData fetched successfully!",
+      messageDataCollections: documents
+    });
+  });
+});
+
+router.get('/retrive-seller', checkAuth, (req, res, next) => {
   Message.find().then(documents => {
     res.status(200).json({
       message: "MessageRequestData fetched successfully!",
