@@ -136,5 +136,4 @@ export class BuyerDashboardComponent implements OnInit, OnDestroy {
   }
 
 
-  
 }

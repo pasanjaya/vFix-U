@@ -1,6 +1,5 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { MessageResponseData } from 'src/app/models/message-response-data.model';
 
 @Injectable({
   providedIn: 'root'

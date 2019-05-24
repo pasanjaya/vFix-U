@@ -1,4 +1,4 @@
-<div class="container mt-5">
+<div class="container-fluid mt-7">
   <div class="row">
     <div class="col">
       <div class="list-group">
@@ -22,23 +22,60 @@
       <div class="card">
         <h5 class="card-header">Featured</h5>
         <div class="card-body">
-          <h5 class="card-title">response</h5>
-          <p class="card-text">
-            {{ contentData[0]?.requestId }}
-          </p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
+          <img
+            [src]="contentData[0]?.imagePath"
+            [alt]="contentData[0]?.oemNumber"
+            class="mb-5"
+          />
+          <dl class="row">
+            <dt class="col-sm-4">OE/OEM Part No.:</dt>
+            <dd class="col-sm-8">{{ contentData[0]?.oemNumber }}</dd>
+            <dt class="col-sm-4">Remanufactured:</dt>
+            <dd class="col-sm-8">
+              {{ contentData[0]?.remanufactured ? "Yes" : "No" }}
+            </dd>
+            <dt class="col-sm-4">Condition:</dt>
+            <dd class="col-sm-8">
+              {{ contentData[0]?.condition | titlecase }}
+            </dd>
+            <dt class="col-sm-4">Material:</dt>
+            <dd class="col-sm-8">{{ contentData[0]?.material }}</dd>
+            <dt class="col-sm-4">Model:</dt>
+            <dd class="col-sm-8">{{ contentData[0]?.model }}</dd>
+            <dt class="col-sm-4">Brand:</dt>
+            <dd class="col-sm-8">{{ contentData[0]?.brand }}</dd>
+            <dt class="col-sm-4">Seller Note:</dt>
+            <dd class="col-sm-8">{{ contentData[0]?.note }}</dd>
+          </dl>
         </div>
       </div>
     </div>
     <div class="col">
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">Seller Details</h5>
-          <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-          <p class="card-text">
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
-          </p>
+      <div class="card card-profile shadow">
+        <div class="row justify-content-center">
+          <div class="col-lg-3 order-lg-2">
+            <div class="card-profile-image">
+              <a href="javascript:void(0)">
+                <img
+                  src="assets/img/theme/team-4-800x800.jpg"
+                  class="rounded-circle"
+                />
+              </a>
+            </div>
+            <p>Shop Name Here</p>
+          </div>
+
+        </div>
+        <div
+          class="card-header text-center border-0 pt-8 pt-md-4 pb-0 pb-md-4"
+        ></div>
+        <div class="card-body pt-0 pt-md-4">
+          <dl>
+            <dt class="col-sm-4">Unit Price:</dt>
+            <dd class="col-sm-8 text-success display-4">
+              {{ contentData[0]?.unitPrice }}
+            </dd>
+          </dl>
           <a href="#" class="card-link">Card link</a>
           <a href="#" class="card-link">Another link</a>
         </div>

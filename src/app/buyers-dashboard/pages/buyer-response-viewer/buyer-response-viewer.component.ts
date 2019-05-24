@@ -29,7 +29,8 @@ export class BuyerResponseViewerComponent implements OnInit, OnDestroy {
     // console.log(this.route.snapshot.fragment);
     return new Promise((resolve, reject) => {
       this.messageRequestService.getMessageResponses(messageId);
-      this.responseDataSub = this.messageRequestService.getResponseDataUpdateListener().subscribe((response: MessageResponseData[]) => {
+      this.responseDataSub = this.messageRequestService.getResponseDataUpdateListener()
+      .subscribe((response: MessageResponseData[]) => {
         if (response) {
           this.responseData = response;
           resolve();

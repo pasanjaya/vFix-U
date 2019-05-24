@@ -42,10 +42,10 @@ export class MessageRequestService {
       .subscribe(response => {
         const messageRequest: MessageRequestData = {
           id: response.result._id,
-          maker,
-          model,
-          categoryId,
-          sparePartName,
+          maker: response.result.maker,
+          model: response.result.model,
+          categoryId: response.result.categoryId,
+          sparePartName: response.result.sparePartName,
           partImagePath: response.result.itemImagePath,
           note,
           messageCreator: response.result.messageCreator,

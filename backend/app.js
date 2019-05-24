@@ -8,6 +8,7 @@ const consumerRoutes = require("./routes/consumers");
 const categoryRoutes = require("./routes/categories");
 const userRoutes = require("./routes/users");
 const merchantRoutes = require("./routes/merchants");
+const merchantProfiles = require("./routes/merchant-profiles");
 const messageRequestRoutes = require("./routes/messageRequests");
 const messageResponseRoute = require('./routes/messageResponses');
 // const carDataRoutes = require("./routes/carData")
@@ -43,6 +44,7 @@ app.use((req, res, next) => {
 
 app.use('/api/consumer', consumerRoutes);
 app.use('/api/merchant', merchantRoutes);
+app.use('/api/profile/merchant', merchantProfiles);
 app.use('/api/user', userRoutes);
 app.use('/api/admin/category', categoryRoutes);
 app.use('/api/message', messageRequestRoutes);

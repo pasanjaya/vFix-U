@@ -283,7 +283,7 @@
                 <mat-panel-description>
                   <small class="text-muted">{{ message.model }}</small>
                   <mat-icon
-                    [matBadge]="message.responses.length"
+                    [matBadge]="message.responses?.length"
                     matBadgeColor="accent"
                     matBadgeSize="medium"
                     color="primary"
@@ -309,7 +309,7 @@
               </dl>
               <div
                 class="button-row"
-                *ngIf="message.responses.length < 1; else viewTemplate"
+                *ngIf="message.responses?.length < 1; else viewTemplate"
               >
                 <button mat-stroked-button>Edit</button>
                 <button mat-stroked-button color="warn">Remove</button>

@@ -6,7 +6,8 @@ const merchantSchema = mongoose.Schema({
   email: { type: String, require: true, unique: true },
   mobileNumber: { type: Number, require: true },
   password: { type: String, require: true },
-  created_at: { type: Date, default: Date.now }
+  created_at: { type: Date, default: Date.now },
+  profile: { type: mongoose.Schema.Types.ObjectId, ref: 'MerchantProfile' }
 });
 
 merchantSchema.plugin(uniqueValidator);
