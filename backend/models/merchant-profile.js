@@ -3,6 +3,7 @@ const uniqueValidator = require('mongoose-unique-validator');
 const Schema = mongoose.Schema;
 
 const profileSchema = Schema({
+  merchantId: { type: Schema.Types.ObjectId, ref: 'Merchant', require:true },
   shopName: { type: String, require: true },
   shopReg: { type: String, require: true },
   address: { type: String, require: true },

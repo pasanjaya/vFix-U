@@ -10,11 +10,20 @@
           routerLinkActive="active"
         >
           <div class="d-flex w-100 justify-content-between">
-            <h5 class="mb-1">{{ response.requestId }}</h5>
+            <h3 class="mb-1 text-uppercase text-muted mb-0">
+              {{ response.responseCreator.profile.shopName }}
+            </h3>
             <small>3 days ago</small>
           </div>
-          <p class="mb-1">{{ response.responseCreator }}</p>
-          <small>Rs. {{ response.unitPrice }}</small>
+          <div class="d-flex w-100 justify-content-around">
+            <span class="h2 font-weight-bold mb-0 text-success">
+              Rs. {{ response.unitPrice }}
+            </span>
+            <small class="text-warning"
+              ><i class="fas fa-map-marker-alt"></i>
+              {{ response.responseCreator.profile.city }}</small
+            >
+          </div>
         </a>
       </div>
     </div>
@@ -25,8 +34,9 @@
           <img
             [src]="contentData[0]?.imagePath"
             [alt]="contentData[0]?.oemNumber"
-            class="mb-5"
+            class="mb-2"
           />
+          <hr class="my-4" />
           <dl class="row">
             <dt class="col-sm-4">OE/OEM Part No.:</dt>
             <dd class="col-sm-8">{{ contentData[0]?.oemNumber }}</dd>
@@ -39,9 +49,19 @@
               {{ contentData[0]?.condition | titlecase }}
             </dd>
             <dt class="col-sm-4">Material:</dt>
-            <dd class="col-sm-8">{{ contentData[0]?.material }}</dd>
+            <dd class="col-sm-8">
+              {{
+                contentData[0]?.material === "null"
+                  ? "-"
+                  : contentData[0]?.material
+              }}
+            </dd>
             <dt class="col-sm-4">Model:</dt>
-            <dd class="col-sm-8">{{ contentData[0]?.model }}</dd>
+            <dd class="col-sm-8">
+              {{
+                contentData[0]?.model === "null" ? "-" : contentData[0]?.model
+              }}
+            </dd>
             <dt class="col-sm-4">Brand:</dt>
             <dd class="col-sm-8">{{ contentData[0]?.brand }}</dd>
             <dt class="col-sm-4">Seller Note:</dt>
@@ -52,32 +72,61 @@
     </div>
     <div class="col">
       <div class="card card-profile shadow">
-        <div class="row justify-content-center">
-          <div class="col-lg-3 order-lg-2">
-            <div class="card-profile-image">
-              <a href="javascript:void(0)">
-                <img
-                  src="assets/img/theme/team-4-800x800.jpg"
-                  class="rounded-circle"
-                />
-              </a>
+        <div class="card-header text-center border-0 pt-8 pt-md-4 pb-0 pb-md-4">
+          <div class="row justify-content-center">
+            <div class="col-lg-3 order-lg-2">
+              <div class="card-profile-image">
+                <a href="javascript:void(0)">
+                  <img
+                    src="assets/img/theme/team-4-800x800.jpg"
+                    class="rounded-circle"
+                  />
+                </a>
+              </div>
             </div>
-            <p>Shop Name Here</p>
           </div>
-
         </div>
-        <div
-          class="card-header text-center border-0 pt-8 pt-md-4 pb-0 pb-md-4"
-        ></div>
         <div class="card-body pt-0 pt-md-4">
-          <dl>
-            <dt class="col-sm-4">Unit Price:</dt>
-            <dd class="col-sm-8 text-success display-4">
-              {{ contentData[0]?.unitPrice }}
-            </dd>
-          </dl>
-          <a href="#" class="card-link">Card link</a>
-          <a href="#" class="card-link">Another link</a>
+          <div class="row">
+            <div class="col">
+              <div
+                class="card-profile-stats d-flex justify-content-center mt-md-5"
+              >
+                <div>
+                  <span class="heading">10</span>
+                  <span class="description">Reviews</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="text-center">
+            <link
+              rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+            />
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
+            <h2>{{ contentData[0]?.responseCreator.profile.shopName }}</h2>
+            <h3>{{ contentData[0]?.responseCreator.profile.address | titlecase }}</h3>
+            <hr class="my-4" />
+            <div class="card-body">
+              <dl>
+                <dt class="text-left">Unit Price:</dt>
+                <dd class="text-center text-success display-4">
+                  {{ 'Rs. ' + contentData[0]?.unitPrice }}
+                </dd>
+              </dl>
+            </div>
+            <div class="card-body">
+              <h3 class="text-left">Get Contacts</h3>
+              <div class="contact-section">
+                <span><i class="fas fa-phone"></i></span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

@@ -9,6 +9,7 @@ const router = express.Router();
 
 router.post('/save', checkAuth, (req, res, next) => {
   const profile = new MerchantProfile({
+    merchantId: req.userData.userId,
     shopName: req.body.shopName,
     shopReg: req.body.shopReg,
     address: req.body.address,

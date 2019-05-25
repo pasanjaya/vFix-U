@@ -10,6 +10,6 @@ export interface MessageResponseData {
   model: string;
   brand: string;
   note: string;
-  responseCreator: string;
+  responseCreator: any;
   created_at?: Date;
 }
