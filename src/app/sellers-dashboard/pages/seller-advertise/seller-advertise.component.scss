@@ -1,0 +1,17 @@
+input[type='file'] {
+  display: none;
+  visibility: hidden;
+}
+
+.image-preview {
+  display: inline-block;
+}
+
+.form-group {
+  input.ng-invalid.ng-touched {
+    border: 1px solid red;
+  }
+  textarea.ng-invalid.ng-touched {
+    border: 1px solid red;
+  }
+}

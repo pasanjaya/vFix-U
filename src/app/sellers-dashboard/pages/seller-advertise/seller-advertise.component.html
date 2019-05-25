@@ -1,31 +1,59 @@
-<div class="card" style="width: 50rem;">
-  <img class="card-img-top" src="assets/images/carousel/6.jpg" alt="Card image cap">
-  <div class="card-body">
-    <form>
-      <div class="row">
-        <div class="col-md-6">
-          <div class="form-group has-success">
-            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Publisher" class="form-control is-valid">
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-6">
-          <div class="form-group has-success">
-              <div class="input-group-prepend">
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-8">
+      <h3>New Advertiesment</h3>
+      <div class="card">
+        <div class="card-body">
+          <form [formGroup]="advertisingForm" (ngSubmit)="onPublish()">
+            <div class="row">
+              <div class="col">
+                <div class="form-group">
+                  <label for="title">Title</label>
+                  <input type="text" class="form-control" id="title" placeholder="title" formControlName="title" />
+                </div>
               </div>
-                <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="Description" class="form-control is-valid"></textarea>
             </div>
-          </div>
-        </div>
-      <div class="row">
-        <div class="col-md-6">
-          <div class="form-group has-success">
-            <input type="text" placeholder="Location" class="form-control is-valid" />
-          </div>
+            <div class="row">
+              <div class="col">
+                <div class="form-group">
+                  <label for="des">Description</label>
+                  <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="Description" formControlName="description"></textarea>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <div class="form-group">
+                  <label for="adv-image" class="mr-3">Adv. Image</label>
+                  <input type="file" class="form-control-file" id="adv-image" (change)="onAdvImageUpload($event)"
+                    #imagePicker />
+                  <button type="button" class="btn btn-outline-secondary image-picker" (click)="imagePicker.click()">
+                    <i class="fas fa-camera"></i> Upload
+                  </button>
+                </div>
+                <div class="image-preview" *ngIf="
+                    advImagePreviewPath &&
+                    advImagePreviewPath !== '' &&
+                    this.advertisingForm.get('advImage').valid
+                  ">
+                  <img [src]="advImagePreviewPath" alt="adv-image" />
+                </div>
+              </div>
+            </div>
+            <div class="text-right">
+              <button type="submit" class="btn btn-success">Publish</button>
+            </div>
+          </form>
         </div>
       </div>
-    </form>
-    <a href="#" class="btn btn-primary">Publish</a>
+    </div>
+    <div class="col-4">
+      <h3>Published</h3>
+      <div class="card">
+        <div class="card-body">
+          <h3 class="text-muted">You have no published advertiesments</h3>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
