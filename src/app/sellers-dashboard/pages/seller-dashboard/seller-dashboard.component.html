@@ -1,11 +1,26 @@
 <div class="header bg-gradient-primary pb-8 pt-5 pt-md-8">
   <div class="container-fluid">
-    <div class="header-body">
+    <!-- Spinner -->
+    <div class="d-flex justify-content-center" *ngIf="isLoading">
+      <div class="spinner-grow text-secondary" role="status">
+        <span class="sr-only">Loading...</span>
+      </div>
+    </div>
+
+    <div class="header-body" *ngIf="!isLoading">
       <!-- Card stats -->
       <div class="row">
-        <div class="card-deck" >
-          <div class="card" style="max-width: 21rem;" *ngFor="let message of messagesData; let i = index">
-            <img class="card-img-top" [src]="message.partImagePath" alt="Card image cap">
+        <div class="card-deck">
+          <div
+            class="card"
+            style="max-width: 21rem;"
+            *ngFor="let message of messagesData; let i = index"
+          >
+            <img
+              class="card-img-top"
+              [src]="message.partImagePath"
+              alt="Card image cap"
+            />
             <div class="card-body">
               <h5 class="card-title">New order</h5>
               <dl class="row">
@@ -16,19 +31,37 @@
                 <dt class="col-sm-4">Category:</dt>
                 <dd class="col-sm-8">{{ message.categoryId }}</dd>
                 <dt class="col-sm-4">Part Name:</dt>
-                <dd class="col-sm-8">{{ (message.sparePartName !== ' ') ? message.sparePartName: '-'}}</dd>
+                <dd class="col-sm-8">
+                  {{
+                    message.sparePartName !== " " ? message.sparePartName : "-"
+                  }}
+                </dd>
                 <dt class="col-sm-4">Note:</dt>
-                <dd class="col-sm-8">{{ (message.note !== ' ') ? message.note: '-' }}</dd>
+                <dd class="col-sm-8">
+                  {{ message.note !== " " ? message.note : "-" }}
+                </dd>
               </dl>
               <a role="button" class="btn btn-secondary">Ignore</a>
-              <button type="button" (click)="catchIt(i)" class="btn btn-primary">Catch It</button>
+              <button
+                type="button"
+                (click)="catchIt(i)"
+                class="btn btn-primary"
+              >
+                Catch It
+              </button>
             </div>
           </div>
         </div>
       </div>
-      <br>
-      <button type="button" [routerLink]="['sellermessages']" routerLinkActive="active" class="btn btn-secondary btn-lg btn-block">Show all</button>
+      <br />
+      <button
+        type="button"
+        [routerLink]="['sellermessages']"
+        routerLinkActive="active"
+        class="btn btn-secondary btn-lg btn-block"
+      >
+        Show all
+      </button>
     </div>
   </div>
 </div>
-

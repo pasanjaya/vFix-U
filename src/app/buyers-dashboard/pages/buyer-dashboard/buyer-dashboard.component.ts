@@ -18,6 +18,7 @@ import { mimeType } from '../../../validators/mime-type.validator';
   styleUrls: ['./buyer-dashboard.component.scss']
 })
 export class BuyerDashboardComponent implements OnInit, OnDestroy {
+  isLoading = false;
   makers = [];
   models = [];
   categories: CategoryData[] = [];
@@ -58,19 +59,23 @@ export class BuyerDashboardComponent implements OnInit, OnDestroy {
     this.models = this.carSelectorService.getVehicleModel(this.selectedMaker);
 
     // retrive categories
+    this.isLoading = true;
     this.adminConfigureService.getCategories();
     this.categorySub = this.adminConfigureService
       .getCategoryUpdatedListener()
       .subscribe((categories: CategoryData[]) => {
         this.categories = categories;
+        this.isLoading = false;
       });
 
     // retrive the messages
+    this.isLoading = true;
     this.messageRequestService.getMessageRequest();
     this.messageDataSub = this.messageRequestService
       .getMessageDataUpdatedListener()
       .subscribe((requestMessages: MessageRequestData[]) => {
         this.messagesData = requestMessages;
+        this.isLoading = false;
       });
   }
 

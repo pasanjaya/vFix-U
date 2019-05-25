@@ -12,6 +12,8 @@ import { MessageResponseData } from 'src/app/models/message-response-data.model'
 })
 export class BuyerResponseViewerComponent implements OnInit, OnDestroy {
 
+  isLoading = false;
+
   responseData: MessageResponseData[] = [];
   contentData: MessageResponseData[] = [];
 
@@ -51,8 +53,10 @@ export class BuyerResponseViewerComponent implements OnInit, OnDestroy {
   }
 
   changeContent(index: number) {
+    this.isLoading = true;
     this.contentData = [];
     this.contentData.push(this.responseData[index]);
+    this.isLoading = false;
     console.log(this.contentData);
   }
 

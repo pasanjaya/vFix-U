@@ -14,7 +14,7 @@ import { SellerDashboardCatchitComponent } from './seller-dashboard-catchit/sell
   styleUrls: ['./seller-dashboard.component.scss']
 })
 export class SellerDashboardComponent implements OnInit, OnDestroy {
-
+  isLoading = false;
   messagesData: MessageRequestData[] = [];
 
   private messageDataSub: Subscription;
@@ -25,10 +25,12 @@ export class SellerDashboardComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     // retrive the messages
+    this.isLoading = true;
     this.messageRequestService.getMessageRequestSeller();
     this.messageDataSub = this.messageRequestService.getMessageDataUpdatedListener()
       .subscribe((requestMessages: MessageRequestData[]) => {
         this.messagesData = requestMessages;
+        this.isLoading = false;
       });
 
   }
