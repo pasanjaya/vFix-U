@@ -12,6 +12,7 @@ const merchantProfiles = require("./routes/merchant-profiles");
 const advertisementRoutes = require("./routes/advertisements");
 const messageRequestRoutes = require("./routes/messageRequests");
 const messageResponseRoute = require('./routes/messageResponses');
+const landingRoutes = require('./routes/landingAdvertisements');
 
 // const carDataRoutes = require("./routes/carData")
 
@@ -52,6 +53,7 @@ app.use('/api/admin/category', categoryRoutes);
 app.use('/api/message', messageRequestRoutes);
 app.use('/api/message/response', messageResponseRoute);
 app.use('/api/merchant/adver', advertisementRoutes);
+app.use('/api/landing', landingRoutes);
 // app.use('/api/car-data', carDataRoutes);
 
 module.exports = app;

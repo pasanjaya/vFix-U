@@ -3,28 +3,10 @@
 </div>
 
 <div class="card-deck mt-3">
-  <div class="card">
-    <img class="card-img-top" src="assets/images/carousel/6.jpg" alt="Card image cap">
+  <div class="card" *ngFor="let advertisement of advertisements">
+    <img class="card-img-top" [src]="advertisement?.advertisementPath" alt="Card image cap">
     <div class="card-body">
-      <h3 class="card-title">Card title</h3>
-    </div>
-  </div>
-  <div class="card">
-    <img class="card-img-top" src="assets/images/carousel/6.jpg" alt="Card image cap">
-    <div class="card-body">
-      <h3 class="card-title">Card title</h3>
-    </div>
-  </div>
-  <div class="card">
-    <img class="card-img-top" src="assets/images/carousel/6.jpg" alt="Card image cap">
-    <div class="card-body">
-      <h3 class="card-title">Card title</h3>
-    </div>
-  </div>
-  <div class="card">
-    <img class="card-img-top" src="assets/images/carousel/6.jpg" alt="Card image cap">
-    <div class="card-body">
-      <h3 class="card-title">Card title</h3>
+      <h3 class="card-title">{{ advertisement?.title }}</h3>
     </div>
   </div>
 </div>

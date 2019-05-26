@@ -1,4 +1,7 @@
+import { AdvertisementData } from 'src/app/models/advertisement-data.model';
 import { Component, OnInit } from '@angular/core';
+
+import { LandingPageService } from '../../services/landingpage.service';
 
 @Component({
   selector: 'app-landing-new-arraivals',
@@ -7,10 +10,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LandingNewArraivalsComponent implements OnInit {
 
+  isLoading = false;
+
   itemsPerSlide = 5;
   singleSlideOffset = true;
 
-  constructor() { }
+  advertisements: AdvertisementData[] = [];
+
+  constructor(private landingPageService: LandingPageService) { }
 
   slides = [
     {image: 'assets/images/carousel/6.jpg'},
@@ -19,6 +26,13 @@ export class LandingNewArraivalsComponent implements OnInit {
   ];
 
   ngOnInit() {
+    this.isLoading = true;
+    this.landingPageService.getNewArrivals();
+    this.landingPageService.getAdvertisementUpdatedListener().subscribe((result: AdvertisementData[]) => {
+      this.advertisements = result;
+      this.isLoading = false;
+      console.log(this.advertisements);
+    });
   }
 
 }

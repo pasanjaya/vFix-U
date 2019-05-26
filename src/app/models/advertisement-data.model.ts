@@ -4,4 +4,5 @@ export interface AdvertisementData {
   description: string;
   advertisementPath: string;
   created_at?: Date;
+  modified_at?: Date;
 }
