@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SellerSidebarComponent implements OnInit {
   public title: string;
+  isCollapsed = false;
   constructor(private generalService: GeneralService) { }
 
   ngOnInit() {

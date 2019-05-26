@@ -16,6 +16,7 @@ import { SellerProfileComponent } from './sellers-dashboard/pages/seller-profile
 import { SellerAdvertiseComponent } from './sellers-dashboard/pages/seller-advertise/seller-advertise.component';
 import { NotFoundComponentComponent } from './not-found-component/not-found-component.component';
 import { SellerMessagesComponent } from './sellers-dashboard/pages/seller-messages/seller-messages.component';
+import { SellerIncomeComponent } from './sellers-dashboard/pages/seller-income/seller-income.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/index', pathMatch: 'full'},
@@ -47,7 +48,8 @@ const routes: Routes = [
     { path: '', component: SellerDashboardComponent },
     { path: 'sellerprofile', component: SellerProfileComponent },
     { path: 'selleradvertise', component: SellerAdvertiseComponent},
-    { path: 'sellermessages', component: SellerMessagesComponent}
+    { path: 'sellermessages', component: SellerMessagesComponent},
+    { path: 'sellerincome', component: SellerIncomeComponent}
   ] },
   // wild card routing will direct to this component
   { path: '**', component: NotFoundComponentComponent }
