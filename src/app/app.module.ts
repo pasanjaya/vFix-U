@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import {
@@ -13,6 +13,7 @@ import {
   MatCardModule,
   MatButtonModule
 } from '@angular/material';
+
 
 import { CollapseModule } from 'ngx-bootstrap/collapse';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
@@ -100,8 +101,8 @@ import {
     CarouselModule.forRoot(),
     // ButtonsModule.forRoot(),
     BsDropdownModule.forRoot(),
-    HttpClientModule,
-    ModalModule.forRoot()
+    ModalModule.forRoot(),
+    HttpClientModule
   ],
   entryComponents: [SellerDashboardCatchitComponent],
   providers: [

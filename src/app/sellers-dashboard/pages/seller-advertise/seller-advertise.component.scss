@@ -4,7 +4,11 @@ input[type='file'] {
 }
 
 .image-preview {
-  display: inline-block;
+  width: 100%;
+
+  img {
+    width: 100%;
+  }
 }
 
 .form-group {
