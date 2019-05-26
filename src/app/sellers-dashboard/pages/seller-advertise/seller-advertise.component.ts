@@ -1,10 +1,13 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 import { mimeType } from '../../../validators/mime-type.validator';
 
 import { SellerAdvertisementService } from '../../services/seller-advertisement.service';
 import { AdvertisementData } from 'src/app/models/advertisement-data.model';
+
+import { DeleteConfirmationBoxComponent } from 'src/app/shared/delete-confirmation-box/delete-confirmation-box.component';
 
 @Component({
   selector: 'app-seller-advertise',
@@ -21,7 +24,10 @@ export class SellerAdvertiseComponent implements OnInit {
 
   advertisements: AdvertisementData[] = [];
 
-  constructor(private sellerAdvertisementService: SellerAdvertisementService) {}
+  constructor(
+    private sellerAdvertisementService: SellerAdvertisementService,
+    public dialog: MatDialog
+  ) {}
 
   ngOnInit() {
     this.advertisingForm = new FormGroup({
@@ -113,5 +119,19 @@ export class SellerAdvertiseComponent implements OnInit {
   // delete advertisements
   deleteAdv(id: string) {
     this.sellerAdvertisementService.deleteAdvertisement(id);
+  }
+
+  openDialog(id: string): void {
+    const dialogRef = this.dialog.open(DeleteConfirmationBoxComponent, {
+      width: '350px',
+      data: 'Do you confirm the deletion of this advertisement?'
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        console.log('Yes clicked');
+        this.deleteAdv(id);
+      }
+    });
   }
 }
