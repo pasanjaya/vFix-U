@@ -108,6 +108,19 @@
             You have no published advertiesments
           </h3>
           <div class="list-group">
+
+              <div
+                class="list-group-item list-group-item-action flex-column align-items-start"
+                *ngFor="let advertiesment of advertisements; let i = index"
+              >
+                <div class="d-flex w-100 justify-content-between">
+                  <h3 class="mb-1 text-uppercase text-muted mb-0">
+                    {{ advertiesment.title }}
+                  </h3>
+                  <div>
+                      <small class="text-dark mr-3" style="cursor: pointer" (click)="editAdv(i)"><i class="far fa-edit"></i></small>
+                      <small class="text-danger" style="cursor: pointer" (click)="openDialog(advertiesment.id)"><i class="far fa-trash-alt"></i></small>
+                  </div>
             <div
               class="list-group-item list-group-item-action flex-column align-items-start"
               *ngFor="let advertiesment of advertisements; let i = index"
@@ -129,6 +142,7 @@
                     (click)="deleteAdv(advertiesment.id)"
                     ><i class="far fa-trash-alt"></i
                   ></small>
+
                 </div>
               </div>
               <span class="h5 mb-0">

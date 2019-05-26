@@ -11,7 +11,8 @@ import {
   MatDividerModule,
   MatListModule,
   MatCardModule,
-  MatButtonModule
+  MatButtonModule,
+  MatDialogModule
 } from '@angular/material';
 
 
@@ -54,6 +55,7 @@ import { SellerMessagesComponent } from './sellers-dashboard/pages/seller-messag
 import {
   SellerDashboardCatchitComponent
  } from './sellers-dashboard/pages/seller-dashboard/seller-dashboard-catchit/seller-dashboard-catchit.component';
+import { DeleteConfirmationBoxComponent } from './shared/delete-confirmation-box/delete-confirmation-box.component';
 
 @NgModule({
   declarations: [
@@ -82,7 +84,8 @@ import {
     LandingTestimonialsComponent,
     SellerMessagesComponent,
     SellerDashboardCatchitComponent,
-    BuyerResponseViewerComponent
+    BuyerResponseViewerComponent,
+    DeleteConfirmationBoxComponent
   ],
   imports: [
     BrowserModule,
@@ -97,6 +100,7 @@ import {
     MatListModule,
     MatCardModule,
     MatButtonModule,
+    MatDialogModule,
     CollapseModule.forRoot(),
     CarouselModule.forRoot(),
     // ButtonsModule.forRoot(),
@@ -104,7 +108,7 @@ import {
     ModalModule.forRoot(),
     HttpClientModule
   ],
-  entryComponents: [SellerDashboardCatchitComponent],
+  entryComponents: [SellerDashboardCatchitComponent, DeleteConfirmationBoxComponent],
   providers: [
     GeneralService,
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }
