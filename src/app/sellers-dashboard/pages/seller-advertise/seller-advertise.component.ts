@@ -15,6 +15,7 @@ import { DeleteConfirmationBoxComponent } from 'src/app/shared/delete-confirmati
   styleUrls: ['./seller-advertise.component.scss']
 })
 export class SellerAdvertiseComponent implements OnInit {
+  isInvalid = false;
   isLoading = false;
   mode = 'create';
   editingAdv = '';
@@ -75,8 +76,10 @@ export class SellerAdvertiseComponent implements OnInit {
   onPublish() {
     if (this.advertisingForm.invalid) {
       console.log(this.advertisingForm);
+      this.isInvalid = true;
       return;
     }
+    this.isInvalid = false;
     if (this.mode === 'create') {
       console.log(this.advertisingForm);
       this.sellerAdvertisementService.createAdvertisment(
@@ -98,7 +101,7 @@ export class SellerAdvertiseComponent implements OnInit {
       this.advertisingForm.reset();
     }
   }
-
+  // edit advertisement
   editAdv(index: number) {
     this.mode = 'edit';
     const doc = this.advertisements[index];
