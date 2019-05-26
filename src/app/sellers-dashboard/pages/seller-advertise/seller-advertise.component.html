@@ -51,6 +51,16 @@
                     <i class="fas fa-camera"></i> Upload
                   </button>
                 </div>
+                <span
+                  *ngIf="advertisingForm.get('advImage').invalid && isInvalid"
+                  class="h5"
+                >
+                  <span
+                    *ngIf="advertisingForm.get('advImage').errors['required']"
+                    class="text-danger"
+                    >Please Upload an image to continue</span
+                  >
+                </span>
                 <div
                   class="image-preview"
                   *ngIf="
@@ -64,8 +74,20 @@
               </div>
             </div>
             <div class="text-right">
-              <button type="submit" class="btn btn-success" *ngIf="mode === 'create'">Publish</button>
-              <button type="submit" class="btn btn-success" *ngIf="mode === 'edit'">Update</button>
+              <button
+                type="submit"
+                class="btn btn-success"
+                *ngIf="mode === 'create'"
+              >
+                Publish
+              </button>
+              <button
+                type="submit"
+                class="btn btn-success"
+                *ngIf="mode === 'edit'"
+              >
+                Update
+              </button>
             </div>
           </form>
         </div>
@@ -82,26 +104,38 @@
           </div>
         </div>
         <div class="card-body" *ngIf="!isLoading">
-          <h3 class="text-muted" *ngIf="advertisements.length < 1">You have no published advertiesments</h3>
+          <h3 class="text-muted" *ngIf="advertisements.length < 1">
+            You have no published advertiesments
+          </h3>
           <div class="list-group">
-              <div
-                class="list-group-item list-group-item-action flex-column align-items-start"
-                *ngFor="let advertiesment of advertisements; let i = index"
-              >
-                <div class="d-flex w-100 justify-content-between">
-                  <h3 class="mb-1 text-uppercase text-muted mb-0">
-                    {{ advertiesment.title }}
-                  </h3>
-                  <div>
-                      <small class="text-dark mr-3" style="cursor: pointer" (click)="editAdv(i)"><i class="far fa-edit"></i></small>
-                      <small class="text-danger" style="cursor: pointer" (click)="deleteAdv(advertiesment.id)"><i class="far fa-trash-alt"></i></small>
-                  </div>
+            <div
+              class="list-group-item list-group-item-action flex-column align-items-start"
+              *ngFor="let advertiesment of advertisements; let i = index"
+            >
+              <div class="d-flex w-100 justify-content-between">
+                <h3 class="mb-1 text-uppercase text-muted mb-0">
+                  {{ advertiesment.title }}
+                </h3>
+                <div>
+                  <small
+                    class="text-dark mr-3"
+                    style="cursor: pointer"
+                    (click)="editAdv(i)"
+                    ><i class="far fa-edit"></i
+                  ></small>
+                  <small
+                    class="text-danger"
+                    style="cursor: pointer"
+                    (click)="deleteAdv(advertiesment.id)"
+                    ><i class="far fa-trash-alt"></i
+                  ></small>
                 </div>
-                  <span class="h5 mb-0">
-                    {{ advertiesment.description }}
-                  </span>
               </div>
+              <span class="h5 mb-0">
+                {{ advertiesment.description }}
+              </span>
             </div>
+          </div>
         </div>
       </div>
     </div>
