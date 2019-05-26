@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { MatDialog } from '@angular/material';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
@@ -14,7 +15,7 @@ import { DeleteConfirmationBoxComponent } from 'src/app/shared/delete-confirmati
   templateUrl: './seller-advertise.component.html',
   styleUrls: ['./seller-advertise.component.scss']
 })
-export class SellerAdvertiseComponent implements OnInit {
+export class SellerAdvertiseComponent implements OnInit, OnDestroy {
   isInvalid = false;
   isLoading = false;
   mode = 'create';
@@ -23,6 +24,7 @@ export class SellerAdvertiseComponent implements OnInit {
   advertisingForm: FormGroup;
 
   advertisements: AdvertisementData[] = [];
+  private advertisementSub: Subscription;
 
   constructor(
     private sellerAdvertisementService: SellerAdvertisementService,
@@ -42,12 +44,16 @@ export class SellerAdvertiseComponent implements OnInit {
     // retrive advertiesment data
     this.isLoading = true;
     this.sellerAdvertisementService.getAdvertisements();
-    this.sellerAdvertisementService
+    this.advertisementSub = this.sellerAdvertisementService
       .getAdvertisementUpadateListener()
       .subscribe((advertisements: AdvertisementData[]) => {
         this.advertisements = advertisements;
         this.isLoading = false;
       });
+  }
+
+  ngOnDestroy() {
+    this.advertisementSub.unsubscribe();
   }
 
   onAdvImageUpload(event: Event) {

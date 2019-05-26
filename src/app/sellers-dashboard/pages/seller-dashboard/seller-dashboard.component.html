@@ -1,13 +1,29 @@
-<div class="header bg-gradient-primary pb-8 pt-5 pt-md-8">
-  <div class="container-fluid">
+<div class="header bg-gradient-default pb-8 pt-5 pt-md-8">
+  <div class="container-fluid" *ngIf="isLoading">
     <!-- Spinner -->
-    <div class="d-flex justify-content-center" *ngIf="isLoading">
-      <div class="spinner-grow text-secondary" role="status">
-        <span class="sr-only">Loading...</span>
+    <div class="d-flex justify-content-center">
+        <div class="spinner-grow text-secondary" role="status">
+          <span class="sr-only">Loading...</span>
+        </div>
       </div>
+  </div>
+  <div class="container-fluid" *ngIf="!hasProfile && !isLoading">
+    <div class="jumbotron text-center">
+          <h1 class="display-4">Hello, {{ username | titlecase }}</h1>
+          <p class="lead">
+            There is only one step to start your jurney, Remember there are many request waiting for you ;-)
+          </p>
+          <hr class="my-4" />
+          <p>
+            Please create a profile to continue!
+          </p>
+          <p class="lead">
+            <button class="btn btn-default btn-lg" [routerLink]="['sellerprofile']" >Create Profile</button>
+          </p>
     </div>
-
-    <div class="header-body" *ngIf="!isLoading">
+  </div>
+  <div class="container-fluid" *ngIf="hasProfile && !isLoading">
+    <div class="header-body">
       <!-- Card stats -->
       <div class="row">
         <div class="card-deck">

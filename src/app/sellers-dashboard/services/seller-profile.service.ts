@@ -1,20 +1,16 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Subject } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
 
 import { MerchantProfile } from '../pages/seller-profile/merchant-profile.model';
-import { Merchant } from '../pages/seller-profile/merchant.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SellerProfileService {
 
-  private userData: Merchant[] = [];
-  private userDataUpdated = new Subject<Merchant[]>();
-
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private router: Router) {}
 
   saveProfile(
     shopName: string,
@@ -37,57 +33,45 @@ export class SellerProfileService {
       about
     };
     this.http
-      .post('http://localhost:3000/api/profile/merchant/save', merchantProfile)
+      .post<{message: string, result: any }>('http://localhost:3000/api/profile/merchant/save', merchantProfile)
       .subscribe(response => {
+        if (response) {
+          const id = response.result[1]._id;
+          this.router.navigate(['/sellerdashboard', id]);
+        }
         console.log(response);
       });
   }
 
-  getUser() {
-    this.http.get<{message: string, result: any }>('http://localhost:3000/api/profile/merchant/user')
-    .pipe(
-      map(userdata => {
-        return userdata.result.map(
-          user => {
-            return {
-              id: user._id,
-              fullName: user.fullName,
-              email: user.email,
-              mobileNumber: user.mobileNumber,
-              profile: user.profile
-            };
-          }
-        );
-      })
-    )
-    .subscribe(transformedUser => {
-      this.userData = transformedUser;
-      this.userDataUpdated.next([...this.userData]);
-      console.log(transformedUser);
-    });
+  getUser(): Observable<any> {
+    return this.http.get<{message: string, result: any }>('http://localhost:3000/api/profile/merchant/user');
   }
 
-  getuserDataUpdatedListener() {
-    return this.userDataUpdated.asObservable();
-  }
-
-  getProfile() {
-    this.http.get<{message: string, result: any }>('http://localhost:3000/api/profile/merchant/retrive')
-      .pipe(
-        map(result => {
-        return result.result.map(
-          userProfile => {
-          return {
-            id: userProfile._id,
-            fullName: userProfile.fullName,
-            email: userProfile.email,
-            mobileNumber: userProfile.mobileNumber
-          };
-        });
-      }))
-      .subscribe( transformedResult => {
-        console.log(transformedResult);
-    });
+  getProfile(): Observable<any> {
+    return this.http.get<{message: string, result: any }>('http://localhost:3000/api/profile/merchant/retrive');
   }
 
 }
+
+
+
+// fullName: "Isuru Banadaranayake"
+// mobileNumber: 716361982
+// password: "$2b$10$yCMgi9SjBOuC0NNYuEHMeOW62ngq5hA.eZHbHahbq4PF.MbDvKayC"
+// profile:
+//     about: null
+//     address: "27,nawala road,kotte"
+//     city: "Colombo"
+//     contactNo: "0112345678"
+//     created_at: "2019-05-24T15:58:24.140Z"
+//     latitude: "7.8731"
+//     longitude: "80.7718"
+//     merchantId: "5cd5cced7316f51710fba853"
+//     modified_at: "2019-05-24T15:58:24.140Z"
+//     shopName: "IAB dealers"
+//     shopReg: "19950527"
+//     __v: 0
+//     _id: "5ce81670a76935088a6de6ca"
+//     __proto__: Object
+// __v: 0
+// _id: "5cd5cced7316f51710fba853"

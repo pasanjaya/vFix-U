@@ -1,13 +1,13 @@
-const express = require('express');
+const express = require("express");
 
-const checkAuth = require('../middleware/check-auth');
+const checkAuth = require("../middleware/check-auth");
 
-const Merchant = require('../models/merchant');
-const MerchantProfile = require('../models/merchant-profile');
+const Merchant = require("../models/merchant");
+const MerchantProfile = require("../models/merchant-profile");
 
 const router = express.Router();
 
-router.post('/save', checkAuth, (req, res, next) => {
+router.post("/save", checkAuth, (req, res, next) => {
   const profile = new MerchantProfile({
     merchantId: req.userData.userId,
     shopName: req.body.shopName,
@@ -19,49 +19,53 @@ router.post('/save', checkAuth, (req, res, next) => {
     longitude: req.body.longitude,
     about: req.body.about
   });
-  profile.save().then( (savedResult) => {
-    Merchant.findOne({ _id: req.userData.userId }, (err, merchant) => {
-      if (err) console.log('Error occured');
-      merchant.profile = savedResult._id;
-      merchant.save().then((updatedMerchant) => {
-        res.status(200).json({
-          message: 'profile Saved',
-          result: [savedResult, updatedMerchant]
+  profile
+    .save()
+    .then(savedResult => {
+      Merchant.findOne({ _id: req.userData.userId }, (err, merchant) => {
+        if (err) console.log("Error occured");
+        merchant.profile = savedResult._id;
+        merchant.save().then(updatedMerchant => {
+          res.status(200).json({
+            message: "profile Saved",
+            result: [savedResult, updatedMerchant]
+          });
         });
       });
-    });
-  })
-  .catch(err => {
-    res.status(500).json({
-      error: err
-    });
-  });
-});
-
-router.get('/user', checkAuth, (req, res, next) => {
-  Merchant.findOne({ email: req.userData.email })
-  .then(user => {
-      res.status(200).json({
-        message: 'data retrive succusesfully',
-        result: user
-      });
-  });
-});
-
-router.get('/retrive', checkAuth, (req, res, next) => {
-  Merchant.findOne({ email: req.userData.email }).populate('profile').exec((err, merchant) => {
-    if (err) {
+    })
+    .catch(err => {
       res.status(500).json({
         error: err
       });
-    }
-    if( merchant) {
-      res.status(200).json({
-        message: 'data retrive succusesfully',
-        result: merchant
-      });
-    }
+    });
+});
+
+router.get("/user", checkAuth, (req, res, next) => {
+  Merchant.findOne({ email: req.userData.email }).select('fullName profile').then(user => {
+    res.status(200).json({
+      message: "data retrive succusesfully",
+      result: user
+    });
   });
+});
+
+router.get("/retrive", checkAuth, (req, res, next) => {
+  Merchant.findOne({ email: req.userData.email })
+    .populate("profile")
+    .select('fullName mobileNumber profile')
+    .exec((err, merchant) => {
+      if (err) {
+        res.status(500).json({
+          error: err
+        });
+      }
+      if (merchant) {
+        res.status(200).json({
+          message: "data retrive succusesfully",
+          result: merchant
+        });
+      }
+    });
 });
 
 module.exports = router;

@@ -10,13 +10,27 @@ import { Merchant } from './merchant.model';
   styleUrls: ['./seller-profile.component.scss']
 })
 export class SellerProfileComponent implements OnInit {
-  constructor(private sellerProfileService: SellerProfileService) {}
 
+  profile: any;
+  hasProfile = false;
+  firstName = '';
+  userName = '';
   profileForm: FormGroup;
   private profileMode = false;
   userData: Merchant[] = [];
 
+  constructor(private sellerProfileService: SellerProfileService) {}
+
   ngOnInit() {
+
+    this.sellerProfileService.getUser().subscribe(user => {
+      if (user.result.profile) {
+        this.hasProfile = true;
+      }
+      this.userName = user.result.fullName;
+      this.firstName = this.userName.split(' ')[0];
+    });
+
     this.profileForm = new FormGroup({
       mode: new FormControl(false, Validators.required),
       shopName: new FormControl(null, Validators.required),
@@ -28,16 +42,6 @@ export class SellerProfileComponent implements OnInit {
       longitude: new FormControl(80.7718, Validators.required),
       about: new FormControl(null)
     });
-    // this.sellerProfileService.getUser();
-    // this.sellerProfileService.getuserDataUpdatedListener()
-    //   .subscribe((userData: Merchant[]) => {
-    //     this.userData = userData;
-    //     console.log(this.userData);
-    // });
-
-    // if (!this.profileMode) {
-    //   this.sellerProfileService.getProfile();
-    // }
   }
 
   get mode() {
@@ -92,5 +96,23 @@ export class SellerProfileComponent implements OnInit {
       this.longitude.value,
       this.about.value
     );
+  }
+
+  onEdit() {
+    this.sellerProfileService.getProfile().subscribe(profile => {
+      const myprofile = {
+        fullName: profile.result.fullName,
+        mobileNumber: profile.result.mobileNumber,
+        shopName: profile.result.profile.shopName,
+        shopReg: profile.result.profile.shopReg,
+        address: profile.result.profile.address,
+        city: profile.result.profile.city,
+        contactNo: profile.result.profile.contactNo,
+        latitude: profile.result.profile.latitude,
+        longitude: profile.result.profile.longitude,
+        about: profile.result.profile.about
+      };
+      this.profile = profile;
+    });
   }
 }

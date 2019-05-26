@@ -1,4 +1,5 @@
 export interface MerchantProfile {
+  id?: string;
   shopName: string;
   shopReg: string;
   address: string;
