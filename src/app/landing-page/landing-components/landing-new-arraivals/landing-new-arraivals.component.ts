@@ -31,7 +31,6 @@ export class LandingNewArraivalsComponent implements OnInit {
     this.landingPageService.getAdvertisementUpdatedListener().subscribe((result: AdvertisementData[]) => {
       this.advertisements = result;
       this.isLoading = false;
-      console.log(this.advertisements);
     });
   }
 

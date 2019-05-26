@@ -46,7 +46,7 @@ button[type="button"] {
 
 .headers-align .mat-expansion-panel-header-title,
 .headers-align .mat-expansion-panel-header-description {
-  flex-basis: 0;
+  flex-basis: 2;
 }
 
 .headers-align .mat-expansion-panel-header-description {
@@ -56,11 +56,6 @@ button[type="button"] {
 
 .headers-align .mat-expansion-panel-header {
   font-family: "Roboto";
-  height: 5rem;
-}
-
-.mat-expansion-panel > .row {
-  font-family: "Open Sans", sans-serif !important;
 }
 
 .empty-message {

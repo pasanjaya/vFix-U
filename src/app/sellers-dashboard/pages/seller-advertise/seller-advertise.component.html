@@ -1,6 +1,6 @@
 <div class="container mt-5">
   <div class="row">
-    <div class="col-8">
+    <div class="col-7">
       <h3>New Advertiesment</h3>
       <div class="card">
         <div class="card-body">
@@ -93,7 +93,7 @@
         </div>
       </div>
     </div>
-    <div class="col-4">
+    <div class="col-5">
       <h3>Published</h3>
       <div class="card">
         <div class="card-body" *ngIf="isLoading">
@@ -108,25 +108,15 @@
             You have no published advertiesments
           </h3>
           <div class="list-group">
-
-              <div
-                class="list-group-item list-group-item-action flex-column align-items-start"
-                *ngFor="let advertiesment of advertisements; let i = index"
-              >
-                <div class="d-flex w-100 justify-content-between">
-                  <h3 class="mb-1 text-uppercase text-muted mb-0">
-                    {{ advertiesment.title }}
-                  </h3>
-                  <div>
-                      <small class="text-dark mr-3" style="cursor: pointer" (click)="editAdv(i)"><i class="far fa-edit"></i></small>
-                      <small class="text-danger" style="cursor: pointer" (click)="openDialog(advertiesment.id)"><i class="far fa-trash-alt"></i></small>
-                  </div>
             <div
               class="list-group-item list-group-item-action flex-column align-items-start"
               *ngFor="let advertiesment of advertisements; let i = index"
             >
               <div class="d-flex w-100 justify-content-between">
-                <h3 class="mb-1 text-uppercase text-muted mb-0">
+                <h3
+                  class="mb-1 text-uppercase text-muted text-truncate"
+                  style="max-width: 220px;"
+                >
                   {{ advertiesment.title }}
                 </h3>
                 <div>
@@ -139,15 +129,14 @@
                   <small
                     class="text-danger"
                     style="cursor: pointer"
-                    (click)="deleteAdv(advertiesment.id)"
+                    (click)="openDialog(advertiesment.id)"
                     ><i class="far fa-trash-alt"></i
                   ></small>
-
                 </div>
               </div>
-              <span class="h5 mb-0">
-                {{ advertiesment.description }}
-              </span>
+              <div class="text-truncate mt-3" style="display: block;">
+                <h5>{{ advertiesment.description }}</h5>
+              </div>
             </div>
           </div>
         </div>

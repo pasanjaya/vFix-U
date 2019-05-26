@@ -263,7 +263,7 @@
         <!-- Spinner -->
         <div class="card-body" *ngIf="isLoading">
           <div class="d-flex justify-content-center">
-              <div class="spinner-grow text-secondary" role="status">
+              <div class="spinner-grow text-muted" role="status">
                 <span class="sr-only">Loading...</span>
             </div>
           </div>
@@ -285,20 +285,21 @@
               *ngFor="let message of messagesData"
               class="mb-2"
             >
-              <mat-expansion-panel-header collapsedHeight="auto">
-                <mat-panel-title>
-                  <h4>Request ID: {{ message.id }}</h4>
-                </mat-panel-title>
-                <mat-panel-description>
-                  <small class="text-muted">{{ message.model }}</small>
-                  <mat-icon
-                    [matBadge]="message.responses?.length"
-                    matBadgeColor="accent"
-                    matBadgeSize="medium"
-                    color="primary"
-                    >notification_important</mat-icon
-                  >
-                </mat-panel-description>
+              <mat-expansion-panel-header class="m-1">
+
+                  <mat-panel-title class="m-2">
+                    <h4 class="text-truncate" style="max-width: 200px;">Request ID: {{ message.id }}</h4>
+                  </mat-panel-title>
+                  <mat-panel-description>
+                    <small class="text-muted">{{ message.model }}</small>
+                    <mat-icon
+                      [matBadge]="message.responses?.length"
+                      matBadgeColor="accent"
+                      matBadgeSize="medium"
+                      color="primary"
+                      >notification_important</mat-icon
+                    >
+                  </mat-panel-description>
               </mat-expansion-panel-header>
               <div class="image-preview">
                 <img [src]="message.partImagePath" [alt]="message.model" />

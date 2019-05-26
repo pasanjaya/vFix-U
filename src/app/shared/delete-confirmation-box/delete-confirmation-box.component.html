@@ -1,7 +1,17 @@
 <div mat-dialog-content>
-  {{message}}
+  {{ message }}
 </div>
-<div mat-dialog-actions>
-  <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Yes</button>
-  <button mat-button (click)="onNoClick()">No</button>
+<div class="d-flex justify-content-end">
+  <div mat-dialog-actions>
+    <button mat-stroked-button (click)="onNoClick()">No</button>
+    <button
+    class="ml-2"
+      mat-stroked-button
+      color="warn"
+      [mat-dialog-close]="true"
+      cdkFocusInitial
+    >
+      Yes
+    </button>
+  </div>
 </div>

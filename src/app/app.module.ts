@@ -108,7 +108,10 @@ import { DeleteConfirmationBoxComponent } from './shared/delete-confirmation-box
     ModalModule.forRoot(),
     HttpClientModule
   ],
-  entryComponents: [SellerDashboardCatchitComponent, DeleteConfirmationBoxComponent],
+  entryComponents: [
+    SellerDashboardCatchitComponent,
+    DeleteConfirmationBoxComponent
+  ],
   providers: [
     GeneralService,
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }
