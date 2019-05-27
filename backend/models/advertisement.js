@@ -6,7 +6,7 @@ const advertisementSchema = new Schema({
   description: { type: String, require: true },
   advImage: { type: String, require: true },
   createdBy: { type: Schema.Types.ObjectId, ref: 'Merchant', require: true },
-  created_at: { type: Date, default: Date.now() },
+  created_at: { type: Date },
   modified_at: { type: Date }
 });
 

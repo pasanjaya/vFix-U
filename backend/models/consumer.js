@@ -6,7 +6,7 @@ const consumerSchema = mongoose.Schema({
   email: { type: String, require: true, unique: true },
   mobileNumber: { type: Number, require: true },
   password: { type: String, require: true },
-  created_at: { type: Date, default: Date.now }
+  created_at: { type: Date }
 });
 
 consumerSchema.plugin(uniqueValidator);

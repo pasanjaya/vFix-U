@@ -51,6 +51,37 @@ export class SellerProfileService {
     return this.http.get<{message: string, result: any }>('http://localhost:3000/api/profile/merchant/retrive');
   }
 
+  updateProfile(
+    id: string,
+    shopName: string,
+    shopReg: string,
+    address: string,
+    city: string,
+    contactNo: string,
+    latitude: string,
+    longitude: string,
+    about: string
+  ) {
+    const merchantProfile: MerchantProfile = {
+      id,
+      shopName,
+      shopReg,
+      address,
+      city,
+      contactNo,
+      latitude,
+      longitude,
+      about
+    };
+    this.http.put('http://localhost:3000/api/profile/merchant/update/' + id, merchantProfile)
+    .subscribe(response => {
+      console.log(response);
+      if (response) {
+        this.router.navigate(['/sellerdashboard', id]);
+      }
+    });
+  }
+
 }
 
 

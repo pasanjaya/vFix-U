@@ -50,7 +50,8 @@ router.post(
       model: req.body.model,
       brand: req.body.brand,
       note: req.body.note,
-      responseCreator: req.userData.userId
+      responseCreator: req.userData.userId,
+      created_at: Date.now()
     });
     messageResponse
       .save()

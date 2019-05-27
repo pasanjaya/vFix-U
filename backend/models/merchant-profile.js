@@ -12,8 +12,8 @@ const profileSchema = Schema({
   latitude: { type: String, require: true },
   longitude: { type: String, require: true },
   about: { type: String },
-  created_at: { type: Date, default: Date.now() },
-  modified_at: { type: Date, default: Date.now() }
+  created_at: { type: Date },
+  modified_at: { type: Date }
 });
 
 profileSchema.plugin(uniqueValidator);

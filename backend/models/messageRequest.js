@@ -9,7 +9,7 @@ const messageReqSchema = mongoose.Schema({
   itemNote: { type: String },
   messageCreator: { type: mongoose.Schema.Types.ObjectId, ref: "Consumer", require: true },
   rensponses: [{ type: mongoose.Schema.Types.ObjectId, ref: "MessageResponse"}],
-  created_at: { type: Date, default: Date.now }
+  created_at: { type: Date }
 });
 
 module.exports = mongoose.model("MessageRequest", messageReqSchema);

@@ -15,7 +15,7 @@
             available in public</b
           >
         </p>
-        <button type="button" class="btn btn-default" *ngIf="hasProfile">Edit profile</button>
+        <button type="button" class="btn btn-default" *ngIf="hasProfile" (click)="onEdit()">Edit profile</button>
       </div>
     </div>
   </div>
@@ -121,6 +121,9 @@
         </div>
         <div class="card-body">
           <form [formGroup]="profileForm" (ngSubmit)="onSave()">
+            <div class="spinner-border spinner-border-sm" role="status" *ngIf="isLoading">
+              <span class="sr-only">Loading...</span>
+            </div>
             <!-- <div class='row'>
               <div class="form-group">
                   <label class="custom-toggle">
@@ -285,7 +288,8 @@
             <!-- Save -->
             <div class="pl-lg-4 text-right">
               <div class="form-group">
-                <button type="submit" class="btn btn-success">Save</button>
+                <button type="submit" class="btn btn-success" *ngIf="!editMode && !hasProfile">Save</button>
+                <button type="submit" class="btn btn-success" *ngIf="editMode">Update</button>
               </div>
             </div>
           </form>

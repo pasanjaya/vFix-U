@@ -12,7 +12,8 @@ router.post('/register', (req, res, next) => {
       fullName: req.body.fullName,
       email: req.body.email,
       mobileNumber: req.body.mobileNumber,
-      password: hash
+      password: hash,
+      created_at: Date.now()
     });
     merchant
       .save()

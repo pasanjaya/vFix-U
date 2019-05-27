@@ -12,7 +12,7 @@ const messageResSchema = mongoose.Schema({
   brand: { type: String, require: true },
   note: { type: String },
   responseCreator: { type: mongoose.Schema.Types.ObjectId, ref: 'Merchant', require: true },
-  created_at: { type: Date, default: Date.now }
+  created_at: { type: Date }
 });
 
 module.exports = mongoose.model("MessageResponse", messageResSchema);

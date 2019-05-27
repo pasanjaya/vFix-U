@@ -42,7 +42,8 @@ router.post(
       title: req.body.title,
       description: req.body.description,
       advImage: url + "/images/advertisementImages/" + req.file.filename,
-      createdBy: req.userData.userId
+      createdBy: req.userData.userId,
+      created_at: Date.now()
     });
     advertisement
       .save()

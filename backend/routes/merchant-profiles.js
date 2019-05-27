@@ -17,7 +17,9 @@ router.post("/save", checkAuth, (req, res, next) => {
     contactNo: req.body.contactNo,
     latitude: req.body.latitude,
     longitude: req.body.longitude,
-    about: req.body.about
+    about: req.body.about,
+    created_at: Date.now(),
+    modified_at: Date.now()
   });
   profile
     .save()
@@ -66,6 +68,27 @@ router.get("/retrive", checkAuth, (req, res, next) => {
         });
       }
     });
+});
+
+router.put('/update/:id', checkAuth, (req, res, next) => {
+  const profile = new MerchantProfile({
+    _id: req.body.id,
+    merchantId: req.userData.userId,
+    shopName: req.body.shopName,
+    shopReg: req.body.shopReg,
+    address: req.body.address,
+    city: req.body.city,
+    contactNo: req.body.contactNo,
+    latitude: req.body.latitude,
+    longitude: req.body.longitude,
+    about: req.body.about,
+    modified_at: Date.now()
+  });
+  MerchantProfile.updateOne({_id: req.params.id}, profile).then(result => {
+    res.status(200).json({
+      message: "updated profile"
+    });
+  });
 });
 
 module.exports = router;

@@ -38,7 +38,8 @@ router.post('/create', checkAuth, multer({storage: storage}).single('image'), (r
     sparePartName: req.body.sparePartName,
     itemImagePath: url + "/images/buyerRequestImages/" + req.file.filename,
     itemNote: req.body.note,
-    messageCreator: req.userData.userId
+    messageCreator: req.userData.userId,
+    created_at: Date.now()
   });
   message.save()
     .then(result => {
