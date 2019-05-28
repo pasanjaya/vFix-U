@@ -2,24 +2,27 @@
   <div class="container-fluid" *ngIf="isLoading">
     <!-- Spinner -->
     <div class="d-flex justify-content-center">
-        <div class="spinner-grow text-secondary" role="status">
-          <span class="sr-only">Loading...</span>
-        </div>
+      <div class="spinner-grow text-secondary" role="status">
+        <span class="sr-only">Loading...</span>
       </div>
+    </div>
   </div>
   <div class="container-fluid" *ngIf="!hasProfile && !isLoading">
     <div class="jumbotron text-center">
-          <h1 class="display-4">Hello, {{ username | titlecase }}</h1>
-          <p class="lead">
-            There is only one step to start your jurney, Remember there are many request waiting for you ;-)
-          </p>
-          <hr class="my-4" />
-          <p>
-            Please create a profile to continue!
-          </p>
-          <p class="lead">
-            <button class="btn btn-default btn-lg" [routerLink]="['sellerprofile']" >Create Profile</button>
-          </p>
+      <h1 class="display-4">Hello, {{ username | titlecase }}</h1>
+      <p class="lead">
+        There is only one step to start your jurney, Remember there are many
+        request waiting for you ;-)
+      </p>
+      <hr class="my-4" />
+      <p>
+        Please create a profile to continue!
+      </p>
+      <p class="lead">
+        <button class="btn btn-default btn-lg" [routerLink]="['sellerprofile']">
+          Create Profile
+        </button>
+      </p>
     </div>
   </div>
   <div class="container-fluid" *ngIf="hasProfile && !isLoading">
@@ -70,13 +73,25 @@
         </div>
       </div>
       <br />
-      <button
-        type="button"
-        [routerLink]="['sellermessages']"
-        class="btn btn-secondary btn-lg btn-block"
-      >
-        Show all
-      </button>
+      <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-center">
+          <li class="page-item" [ngClass]="{disabled: currentPage == 1}">
+            <a class="page-link" (click)="currentPage = currentPage - 1" tabindex="-1">
+              <i class="fa fa-angle-left"></i>
+              <span class="sr-only">Previous</span>
+            </a>
+          </li>
+          <li class="page-item active"><a class="page-link" >1</a></li>
+          <li class="page-item"><a class="page-link" >2</a></li>
+          <li class="page-item"><a class="page-link" >3</a></li>
+          <li class="page-item">
+            <a class="page-link" (click)="currentPage = currentPage + 1">
+              <i class="fa fa-angle-right"></i>
+              <span class="sr-only">Next</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
     </div>
   </div>
 </div>

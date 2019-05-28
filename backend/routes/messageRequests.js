@@ -64,8 +64,17 @@ router.get('/retrive', checkAuth, (req, res, next) => {
   });
 });
 
-router.get('/retrive-seller', checkAuth, (req, res, next) => {
-  Message.find().then(documents => {
+// sellers message retrive
+router.get('/retrive-seller', (req, res, next) => {
+  const pageSize = 4;
+  const currentpage = +req.query.page;
+  const messageQuery = Message.find();
+  if ( pageSize && currentpage ) {
+    messageQuery
+      .skip(pageSize * (currentpage - 1))
+      .limit(pageSize);
+  }
+  messageQuery.then(documents => {
     res.status(200).json({
       message: "MessageRequestData fetched successfully!",
       messageDataCollections: documents

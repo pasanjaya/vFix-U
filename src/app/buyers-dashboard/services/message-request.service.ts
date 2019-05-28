@@ -56,7 +56,7 @@ export class MessageRequestService {
         console.log(response);
       });
   }
-
+// buyer message retive
   getMessageRequest() {
     this.http
       .get<{ message: string; messageDataCollections: any }>(
@@ -88,10 +88,12 @@ export class MessageRequestService {
       });
   }
 
-  getMessageRequestSeller() {
+  // sellers message retrive
+  getMessageRequestSeller(currentPage: number) {
+    const queryParams = `?page=${currentPage}`;
     this.http
       .get<{ message: string; messageDataCollections: any }>(
-        'http://localhost:3000/api/message/retrive-seller'
+        'http://localhost:3000/api/message/retrive-seller' + queryParams
       )
       .pipe(
         map(messageData => {

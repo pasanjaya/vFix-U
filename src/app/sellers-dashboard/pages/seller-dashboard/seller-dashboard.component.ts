@@ -19,6 +19,7 @@ export class SellerDashboardComponent implements OnInit, OnDestroy {
   isLoading = false;
   username = '';
   messagesData: MessageRequestData[] = [];
+  currentPage = 1;
 
   private messageDataSub: Subscription;
 
@@ -44,7 +45,7 @@ export class SellerDashboardComponent implements OnInit, OnDestroy {
       });
     }).then(() => {
       // retrive the messages
-      this.messageRequestService.getMessageRequestSeller();
+      this.messageRequestService.getMessageRequestSeller(this.currentPage);
       this.messageDataSub = this.messageRequestService
         .getMessageDataUpdatedListener()
         .subscribe((requestMessages: MessageRequestData[]) => {
