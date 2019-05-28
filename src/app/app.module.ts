@@ -54,6 +54,7 @@ import { LandingTestimonialsComponent } from './landing-page/landing-components/
 import { SellerMessagesComponent } from './sellers-dashboard/pages/seller-messages/seller-messages.component';
 import { SellerDashboardCatchitComponent } from './sellers-dashboard/pages/seller-dashboard/seller-dashboard-catchit/seller-dashboard-catchit.component';
 import { SellerIncomeComponent } from './sellers-dashboard/pages/seller-income/seller-income.component';
+import { BuyerMapComponent } from './buyers-dashboard/pages/buyer-map/buyer-map.component';
 
 import { DeleteConfirmationBoxComponent } from './shared/delete-confirmation-box/delete-confirmation-box.component';
 import { ErrorComponent } from './shared/errors/errors.component';
@@ -88,7 +89,8 @@ import { ErrorComponent } from './shared/errors/errors.component';
     BuyerResponseViewerComponent,
     DeleteConfirmationBoxComponent,
     SellerIncomeComponent,
-    ErrorComponent
+    ErrorComponent,
+    BuyerMapComponent
   ],
   imports: [
     BrowserModule,

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { JwtHelperService } from '@auth0/angular-jwt';
 
 @Component({
   selector: 'app-buyer-sidebar-component',
@@ -8,6 +9,9 @@ import { Component, OnInit } from '@angular/core';
 export class BuyerSidebarComponentComponent implements OnInit {
   menuItems = [];
   public isCollapsed = true;
+
+  userId='';
+   
   constructor() { }
 
   collapse() {
@@ -16,5 +20,13 @@ export class BuyerSidebarComponentComponent implements OnInit {
 
   ngOnInit() {
   }
+  getUserId() {
+    const helper = new JwtHelperService();
+    const token = localStorage.getItem('token');
+    const decodedToken = helper.decodeToken(token);
+    const tokenid = decodedToken.userId;
+    this.userId = tokenid;
+  }
+
 
 }
