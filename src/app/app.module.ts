@@ -57,6 +57,7 @@ import {
  } from './sellers-dashboard/pages/seller-dashboard/seller-dashboard-catchit/seller-dashboard-catchit.component';
 import { DeleteConfirmationBoxComponent } from './shared/delete-confirmation-box/delete-confirmation-box.component';
 import { SellerIncomeComponent } from './sellers-dashboard/pages/seller-income/seller-income.component';
+import { BuyerMapComponent } from './buyers-dashboard/pages/buyer-map/buyer-map.component';
 
 @NgModule({
   declarations: [
@@ -87,7 +88,8 @@ import { SellerIncomeComponent } from './sellers-dashboard/pages/seller-income/s
     SellerDashboardCatchitComponent,
     BuyerResponseViewerComponent,
     DeleteConfirmationBoxComponent,
-    SellerIncomeComponent
+    SellerIncomeComponent,
+    BuyerMapComponent
   ],
   imports: [
     BrowserModule,

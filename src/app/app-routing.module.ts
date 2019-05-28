@@ -17,6 +17,7 @@ import { SellerAdvertiseComponent } from './sellers-dashboard/pages/seller-adver
 import { NotFoundComponentComponent } from './not-found-component/not-found-component.component';
 import { SellerMessagesComponent } from './sellers-dashboard/pages/seller-messages/seller-messages.component';
 import { SellerIncomeComponent } from './sellers-dashboard/pages/seller-income/seller-income.component';
+import { BuyerMapComponent } from './buyers-dashboard/pages/buyer-map/buyer-map.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/index', pathMatch: 'full'},
@@ -42,6 +43,7 @@ const routes: Routes = [
     { path: '', component: BuyerDashboardComponent },
     { path: 'response', component: BuyerResponseViewerComponent },
     { path: 'buyerprofile', component: BuyerProfileComponent },
+    { path: 'buyertracker', component: BuyerMapComponent }
   ] },
   // sellerdashboard and its pages will routered here
   { path: 'sellerdashboard/:id', component: SellerComponentComponent, canActivate: [AuthGuard], children: [
