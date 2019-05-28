@@ -61,6 +61,8 @@ export class AuthService {
       .subscribe(response => {
         console.log(response);
         this.router.navigate(['/login']);
+      }, error => {
+        this.authStatusListener.next(false);
       });
   }
 
@@ -85,6 +87,8 @@ export class AuthService {
       .subscribe(response => {
         console.log(response);
         this.router.navigate(['/login']);
+      }, error => {
+        this.authStatusListener.next(false);
       });
   }
 
@@ -121,6 +125,8 @@ export class AuthService {
             console.log('role error occured at auth service');
           }
         }
+      }, error => {
+        this.authStatusListener.next(false);
       });
   }
 

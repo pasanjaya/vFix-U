@@ -37,7 +37,7 @@ router.post("/save", checkAuth, (req, res, next) => {
     })
     .catch(err => {
       res.status(500).json({
-        error: err
+        message: 'Profile creating error'
       });
     });
 });
@@ -47,6 +47,10 @@ router.get("/user", checkAuth, (req, res, next) => {
     res.status(200).json({
       message: "data retrive succusesfully",
       result: user
+    });
+  }).catch(err => {
+    res.status(500).json({
+      message: 'Data retriving error'
     });
   });
 });
@@ -58,7 +62,7 @@ router.get("/retrive", checkAuth, (req, res, next) => {
     .exec((err, merchant) => {
       if (err) {
         res.status(500).json({
-          error: err
+          message: 'Data retiving error'
         });
       }
       if (merchant) {
@@ -84,9 +88,14 @@ router.put('/update/:id', checkAuth, (req, res, next) => {
     about: req.body.about,
     modified_at: Date.now()
   });
-  MerchantProfile.updateOne({_id: req.params.id}, profile).then(result => {
-    res.status(200).json({
-      message: "updated profile"
+  MerchantProfile.updateOne({_id: req.params.id}, profile)
+    .then(result => {
+      res.status(200).json({
+        message: "updated profile"
+      });
+  }).catch(err => {
+    res.status(500).json({
+      message: 'Profile couldn\'t update'
     });
   });
 });

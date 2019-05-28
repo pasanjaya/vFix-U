@@ -4,6 +4,6 @@
 
 const request = require("request");
 
-request.post()
+request.post();
 
 module.exports = router;

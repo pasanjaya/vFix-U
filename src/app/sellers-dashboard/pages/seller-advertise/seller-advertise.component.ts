@@ -52,10 +52,6 @@ export class SellerAdvertiseComponent implements OnInit, OnDestroy {
       });
   }
 
-  ngOnDestroy() {
-    this.advertisementSub.unsubscribe();
-  }
-
   onAdvImageUpload(event: Event) {
     const image = (event.target as HTMLInputElement).files[0];
     this.advertisingForm.patchValue({ advImage: image });
@@ -140,4 +136,9 @@ export class SellerAdvertiseComponent implements OnInit, OnDestroy {
       }
     });
   }
+
+  ngOnDestroy() {
+    this.advertisementSub.unsubscribe();
+  }
+
 }

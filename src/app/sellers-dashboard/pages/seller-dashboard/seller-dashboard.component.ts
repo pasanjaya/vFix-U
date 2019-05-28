@@ -58,12 +58,6 @@ export class SellerDashboardComponent implements OnInit, OnDestroy {
     });
   }
 
-  ngOnDestroy() {
-    if (this.hasProfile) {
-      this.messageDataSub.unsubscribe();
-    }
-  }
-
   catchIt(index: number) {
     const initialState = {
       list: [
@@ -81,5 +75,11 @@ export class SellerDashboardComponent implements OnInit, OnDestroy {
       class: 'modal-lg'
     });
     this.bsModalRef.content.closeBtnName = 'Close';
+  }
+
+  ngOnDestroy() {
+    if (this.hasProfile) {
+      this.messageDataSub.unsubscribe();
+    }
   }
 }

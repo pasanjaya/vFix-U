@@ -50,16 +50,27 @@ router.post('/create', checkAuth, multer({storage: storage}).single('image'), (r
     })
     .catch(err => {
       res.status(500).json({
-        error: err
+        message: 'Message creating failed'
       });
     });
 });
 
 router.get('/retrive', checkAuth, (req, res, next) => {
-  Message.find({ messageCreator: req.userData.userId }).then(documents => {
-    res.status(200).json({
-      message: "MessageRequestData fetched successfully!",
-      messageDataCollections: documents
+  Message.find({ messageCreator: req.userData.userId })
+  .then(documents => {
+    if(documents) {
+      res.status(200).json({
+        message: "MessageRequestData fetched successfully!",
+        messageDataCollections: documents
+      });
+    } else {
+      res.status(404).json({
+        message: "No request data found!"
+      });
+    }
+  }).catch(err => {
+    res.status(500).json({
+      message: "Fatching Data failed"
     });
   });
 });
@@ -78,6 +89,10 @@ router.get('/retrive-seller', (req, res, next) => {
     res.status(200).json({
       message: "MessageRequestData fetched successfully!",
       messageDataCollections: documents
+    });
+  }).catch(err => {
+    res.status(500).json({
+      message: "Fatching Data failed"
     });
   });
 });

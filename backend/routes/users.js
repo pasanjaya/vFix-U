@@ -113,7 +113,7 @@ router.get("/usercount", (req, res, next) => {
     })
     .catch(err => {
       res.status(500).json({
-        message: "Error occured"
+        message: "Error occured when data fatching"
       });
     });
 });
@@ -123,6 +123,10 @@ router.get("/consumerdata", (req, res, next) => {
     res.status(200).json({
       message: "User data found",
       userData: document
+    });
+  }).catch(err => {
+    res.status(500).json({
+      message: 'User data fetching error'
     });
   });
 });
@@ -146,7 +150,7 @@ router.delete("/consumerremove/:id", (req, res, next) => {
     })
     .catch(err => {
       res.status(500).json({
-        message: "Error occured"
+        message: "Consumer deleteing error"
       });
     });
 });

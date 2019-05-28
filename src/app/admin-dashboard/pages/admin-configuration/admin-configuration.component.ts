@@ -27,9 +27,6 @@ export class AdminConfigurationComponent implements OnInit, OnDestroy {
       });
   }
 
-  ngOnDestroy() {
-    this.categorySub.unsubscribe();
-  }
 
   onAddCategory(form: NgModel) {
     // console.log(form.value.category);
@@ -50,6 +47,10 @@ export class AdminConfigurationComponent implements OnInit, OnDestroy {
 
   onDeleteImage() {
 
+  }
+
+  ngOnDestroy() {
+    this.categorySub.unsubscribe();
   }
 
 }

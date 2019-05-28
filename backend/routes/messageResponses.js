@@ -74,7 +74,7 @@ router.post(
       })
       .catch(err => {
         res.status(500).json({
-          error: err
+          message: 'Response message not created'
         });
       });
   }
@@ -106,7 +106,7 @@ router.get("/retrive/:id", (req, res, next) => {
     .exec((err, documents) => {
       if (err) {
         res.status(500).json({
-          error: err
+          message: 'Response and creator profile population error'
         });
       }
       if (!documents) {

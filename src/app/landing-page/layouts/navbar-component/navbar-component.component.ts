@@ -33,9 +33,6 @@ export class NavbarComponentComponent implements OnInit, OnDestroy {
         this.userId = this.authService.getUserId();
       });
   }
-  ngOnDestroy() {
-    this.authListenerSub.unsubscribe();
-  }
 
   onClickDashboard() {
     if (this.userRole === 'consumer') {
@@ -61,5 +58,9 @@ export class NavbarComponentComponent implements OnInit, OnDestroy {
 
   collapse() {
     this.isCollapsed = this.isCollapsed ? !this.isCollapsed : this.isCollapsed;
+  }
+
+  ngOnDestroy() {
+    this.authListenerSub.unsubscribe();
   }
 }

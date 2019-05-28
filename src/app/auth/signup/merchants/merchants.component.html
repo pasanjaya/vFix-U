@@ -227,6 +227,7 @@
               class="btn btn-primary mt-4"
               [disabled]="merchantRegForm.invalid"
             >
+            <span class="spinner-grow spinner-grow-sm" *ngIf="isLoading" role="status" aria-hidden="true"></span>
               Create account
             </button>
           </div>

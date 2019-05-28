@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -6,7 +6,7 @@ import { Router } from '@angular/router';
   templateUrl: './auth-layout.component.html',
   styleUrls: ['./auth-layout.component.scss']
 })
-export class AuthLayoutComponent implements OnInit {
+export class AuthLayoutComponent implements OnInit, OnDestroy {
 
   test: Date = new Date();
   public isCollapsed = true;
@@ -14,9 +14,9 @@ export class AuthLayoutComponent implements OnInit {
   constructor(private router: Router) { }
 
   ngOnInit() {
-    let html = document.getElementsByTagName('html')[0];
+    const html = document.getElementsByTagName('html')[0];
     html.classList.add('auth-layout');
-    let body = document.getElementsByTagName('body')[0];
+    const body = document.getElementsByTagName('body')[0];
     body.classList.add('bg-default');
     this.router.events.subscribe((event) => {
       this.isCollapsed = true;
@@ -24,10 +24,10 @@ export class AuthLayoutComponent implements OnInit {
 
   }
   ngOnDestroy() {
-    let html = document.getElementsByTagName("html")[0];
-    html.classList.remove("auth-layout");
-    let body = document.getElementsByTagName("body")[0];
-    body.classList.remove("bg-default");
+    const html = document.getElementsByTagName('html')[0];
+    html.classList.remove('auth-layout');
+    const body = document.getElementsByTagName('body')[0];
+    body.classList.remove('bg-default');
   }
 
 }

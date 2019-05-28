@@ -79,10 +79,6 @@ export class BuyerDashboardComponent implements OnInit, OnDestroy {
       });
   }
 
-  ngOnDestroy() {
-    this.categorySub.unsubscribe();
-    this.messageDataSub.unsubscribe();
-  }
 
   changeMaker() {
     this.selectedMaker = this.partFindForm.get('maker').value;
@@ -140,5 +136,9 @@ export class BuyerDashboardComponent implements OnInit, OnDestroy {
     this.partFindForm.reset();
   }
 
+  ngOnDestroy() {
+    this.categorySub.unsubscribe();
+    this.messageDataSub.unsubscribe();
+  }
 
 }

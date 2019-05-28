@@ -1,5 +1,6 @@
-import { Component, OnInit, EventEmitter, Input, Output } from '@angular/core';
+import { Component, OnInit, EventEmitter, Input, Output, OnDestroy } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { Subscription } from 'rxjs';
 
 import { AuthService } from './../../auth.service';
 
@@ -8,7 +9,7 @@ import { AuthService } from './../../auth.service';
   templateUrl: './merchants.component.html',
   styleUrls: ['./merchants.component.scss', '../signup.component.scss']
 })
-export class MerchantsComponent implements OnInit {
+export class MerchantsComponent implements OnInit, OnDestroy {
 
   @Input()
   isConsumers: boolean;
@@ -17,10 +18,16 @@ export class MerchantsComponent implements OnInit {
   isConsumersChange = new EventEmitter<boolean>();
 
   merchantRegForm: FormGroup;
-
+  isLoading = false;
+  private authStatusSub: Subscription;
   constructor(public authService: AuthService) { }
 
   ngOnInit() {
+    this.authStatusSub = this.authService.getAuthStatusLintener()
+    .subscribe( authStatus => {
+      this.isLoading = false;
+    });
+
     this.merchantRegForm = new FormGroup({
       fullName: new FormControl(null, [Validators.required]),
       email: new FormControl(null, [Validators.required, Validators.email]),
@@ -31,6 +38,7 @@ export class MerchantsComponent implements OnInit {
       }, [Validators.required, this.confirmPasswordValidator] ),
       agreement: new FormControl(null, [Validators.requiredTrue])
     });
+
   }
 
   get fullName() {
@@ -68,7 +76,7 @@ export class MerchantsComponent implements OnInit {
     if (this.merchantRegForm.invalid) {
       return;
     }
-
+    this.isLoading = true;
     this.authService.createMerchant(
       this.fullName.value,
       this.email.value,
@@ -81,6 +89,10 @@ export class MerchantsComponent implements OnInit {
 
   onClick() {
     this.isConsumersChange.emit(!this.isConsumers);
+  }
+
+  ngOnDestroy() {
+    this.authStatusSub.unsubscribe();
   }
 
 }

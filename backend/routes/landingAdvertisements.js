@@ -11,7 +11,7 @@ router.get("/newarrival", (req, res, next) => {
     .exec((err, docs) => {
       if (err) {
         res.status(500).json({
-          error: err
+          message: 'Error fetching data to landing-page'
         });
       }
       if (docs) {

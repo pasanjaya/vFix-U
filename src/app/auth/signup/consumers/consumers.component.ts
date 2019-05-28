@@ -1,5 +1,6 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, OnDestroy } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { Subscription } from 'rxjs';
 
 import { AuthService } from '../../auth.service';
 
@@ -8,7 +9,7 @@ import { AuthService } from '../../auth.service';
   templateUrl: './consumers.component.html',
   styleUrls: ['./consumers.component.scss', '../signup.component.scss']
 })
-export class ConsumersComponent implements OnInit {
+export class ConsumersComponent implements OnInit, OnDestroy {
 
   @Input()
   isConsumers: boolean;
@@ -17,7 +18,8 @@ export class ConsumersComponent implements OnInit {
   isConsumersChange = new EventEmitter<boolean>();
 
   consumerRegForm: FormGroup;
-
+  isLoading = false;
+  private authStatusSub: Subscription;
   constructor(public authService: AuthService) { }
 
   ngOnInit() {
@@ -30,6 +32,11 @@ export class ConsumersComponent implements OnInit {
         confirmPassword: new FormControl(null, [Validators.required, Validators.minLength(8)])
       }, [Validators.required, this.confirmPasswordValidator] ),
       agreement: new FormControl(null, [Validators.requiredTrue])
+    });
+
+    this.authStatusSub = this.authService.getAuthStatusLintener()
+    .subscribe( authStatus => {
+      this.isLoading = false;
     });
   }
 
@@ -81,6 +88,10 @@ export class ConsumersComponent implements OnInit {
 
   onClick() {
     this.isConsumersChange.emit(!this.isConsumers);
+  }
+
+  ngOnDestroy() {
+    this.authStatusSub.unsubscribe();
   }
 
 }

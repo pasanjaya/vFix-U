@@ -55,17 +55,22 @@ router.post(
       })
       .catch(err => {
         res.status(500).json({
-          error: err
+          message: 'Advertisement post error!'
         });
       });
   }
 );
 
 router.get("/retrive", checkAuth, (req, res, next) => {
-  Advertisement.find({ createdBy: req.userData.userId }).then(document => {
+  Advertisement.find({ createdBy: req.userData.userId })
+  .then(document => {
     res.status(200).json({
       message: "Advertisement Fetched Succussfully!",
       documents: document
+    });
+  }).catch(err => {
+    res.status(500).json({
+      message: "Advertisement Fetching Error"
     });
   });
 });
@@ -88,19 +93,35 @@ router.put(
       advImage: imagePath,
       modified_at: Date.now()
     });
-    Advertisement.updateOne({_id: req.params.id}, advertisement).then(result => {
-      res.status(200).json({
-        message: 'Updated Successfully'
+    Advertisement.updateOne({_id: req.params.id}, advertisement)
+    .then(result => {
+      if (result.nModified > 0) {
+        res.status(200).json({
+          message: 'Updated Successfully'
+        });
+      } else {
+        res.status(401).json({
+          message: 'Not Authorized'
+        });
+      }
+    }).catch(err => {
+      res.status(500).json({
+        message: 'Couldn\'t update advertisment'
       });
     });
   }
 );
 
 router.delete('/delete/:id',checkAuth, (req, res, next) => {
-  Advertisement.deleteOne({_id: req.params.id}).then(result => {
+  Advertisement.deleteOne({_id: req.params.id})
+  .then(result => {
     console.log(result);
     res.status(200).json({
       message: "Advetisement deleted!"
+    });
+  }).catch(err => {
+    res.status(500).json({
+      message: 'Couldn\'t delete advertisment'
     });
   });
 });

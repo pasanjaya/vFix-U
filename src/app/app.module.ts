@@ -15,7 +15,6 @@ import {
   MatDialogModule
 } from '@angular/material';
 
-
 import { CollapseModule } from 'ngx-bootstrap/collapse';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 // import { ButtonsModule } from 'ngx-bootstrap/buttons';
@@ -25,6 +24,7 @@ import { ModalModule } from 'ngx-bootstrap/modal';
 import { GeneralService } from './services/general.service';
 
 import { AuthInterceptor } from './auth/auth-interceptor';
+import { ErrorInterceptor } from './error-interceptor';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -52,11 +52,11 @@ import { SellerAdvertiseComponent } from './sellers-dashboard/pages/seller-adver
 import { LandingNewArraivalsComponent } from './landing-page/landing-components/landing-new-arraivals/landing-new-arraivals.component';
 import { LandingTestimonialsComponent } from './landing-page/landing-components/landing-testimonials/landing-testimonials.component';
 import { SellerMessagesComponent } from './sellers-dashboard/pages/seller-messages/seller-messages.component';
-import {
-  SellerDashboardCatchitComponent
- } from './sellers-dashboard/pages/seller-dashboard/seller-dashboard-catchit/seller-dashboard-catchit.component';
-import { DeleteConfirmationBoxComponent } from './shared/delete-confirmation-box/delete-confirmation-box.component';
+import { SellerDashboardCatchitComponent } from './sellers-dashboard/pages/seller-dashboard/seller-dashboard-catchit/seller-dashboard-catchit.component';
 import { SellerIncomeComponent } from './sellers-dashboard/pages/seller-income/seller-income.component';
+
+import { DeleteConfirmationBoxComponent } from './shared/delete-confirmation-box/delete-confirmation-box.component';
+import { ErrorComponent } from './shared/errors/errors.component';
 
 @NgModule({
   declarations: [
@@ -87,7 +87,8 @@ import { SellerIncomeComponent } from './sellers-dashboard/pages/seller-income/s
     SellerDashboardCatchitComponent,
     BuyerResponseViewerComponent,
     DeleteConfirmationBoxComponent,
-    SellerIncomeComponent
+    SellerIncomeComponent,
+    ErrorComponent
   ],
   imports: [
     BrowserModule,
@@ -112,12 +113,14 @@ import { SellerIncomeComponent } from './sellers-dashboard/pages/seller-income/s
   ],
   entryComponents: [
     SellerDashboardCatchitComponent,
-    DeleteConfirmationBoxComponent
+    DeleteConfirmationBoxComponent,
+    ErrorComponent
   ],
   providers: [
     GeneralService,
-    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true }
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

@@ -102,6 +102,7 @@
               <button type="submit"
               class="btn btn-primary my-4"
               [disabled]="login.invalid">
+              <span class="spinner-grow spinner-grow-sm" *ngIf="isLoading" role="status" aria-hidden="true"></span>
                 Sign in
               </button>
             </div>

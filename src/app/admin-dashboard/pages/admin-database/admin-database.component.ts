@@ -27,17 +27,16 @@ export class AdminDatabaseComponent implements OnInit, OnDestroy {
       });
   }
 
-  ngOnDestroy() {
-    this.consumerDatabaseSub.unsubscribe();
-  }
-
-
   onAddImage() {
 
   }
 
   onDeleteConsumer(consumerId: string) {
     this.adminDatabaseService.deleteConsumer(consumerId);
+  }
+
+  ngOnDestroy() {
+    this.consumerDatabaseSub.unsubscribe();
   }
 
 }

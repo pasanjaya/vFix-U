@@ -47,17 +47,17 @@ export class BuyerResponseViewerComponent implements OnInit, OnDestroy {
     .catch(() => console.log('Error undifined subscribe'));
   }
 
-  ngOnDestroy() {
-    this.queryParamsSub.unsubscribe();
-    this.responseDataSub.unsubscribe();
-  }
-
   changeContent(index: number) {
     this.isLoading = true;
     this.contentData = [];
     this.contentData.push(this.responseData[index]);
     this.isLoading = false;
     console.log(this.contentData);
+  }
+
+  ngOnDestroy() {
+    this.queryParamsSub.unsubscribe();
+    this.responseDataSub.unsubscribe();
   }
 
 }
