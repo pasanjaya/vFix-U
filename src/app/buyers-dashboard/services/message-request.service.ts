@@ -10,10 +10,14 @@ import { MessageResponseData } from 'src/app/models/message-response-data.model'
   providedIn: 'root'
 })
 export class MessageRequestService {
-
   private messagesData: MessageRequestData[] = [];
-  private responseData: MessageResponseData[] = [];
   private messageDataUpdated = new Subject<MessageRequestData[]>();
+  private messagesSellerData: MessageRequestData[] = [];
+  private messageSellerDataUpdated = new Subject<{
+    messages: MessageRequestData[];
+    messageCount: number;
+  }>();
+  private responseData: MessageResponseData[] = [];
   private responseDataUpdated = new Subject<MessageResponseData[]>();
 
   constructor(private http: HttpClient) {}
@@ -56,7 +60,7 @@ export class MessageRequestService {
         console.log(response);
       });
   }
-// buyer message retive
+  // buyer message retive
   getMessageRequest() {
     this.http
       .get<{ message: string; messageDataCollections: any }>(
@@ -88,77 +92,89 @@ export class MessageRequestService {
       });
   }
 
-  // sellers message retrive
-  getMessageRequestSeller(currentPage: number) {
-    const queryParams = `?page=${currentPage}`;
-    this.http
-      .get<{ message: string; messageDataCollections: any }>(
-        'http://localhost:3000/api/message/retrive-seller' + queryParams
-      )
-      .pipe(
-        map(messageData => {
-          return messageData.messageDataCollections.map(
-            messageDataCollection => {
-              return {
-                id: messageDataCollection._id,
-                maker: messageDataCollection.vehicalMaker,
-                model: messageDataCollection.vehicalModel,
-                categoryId: messageDataCollection.categoryId,
-                sparePartName: messageDataCollection.sparePartName,
-                partImagePath: messageDataCollection.itemImagePath,
-                note: messageDataCollection.itemNote,
-                messageCreator: messageDataCollection.messageCreator,
-                responses: messageDataCollection.rensponses,
-                created_at: messageDataCollection.created_at
-              };
-            }
-          );
-        })
-      )
-      .subscribe(transformedData => {
-        this.messagesData = transformedData;
-        this.messageDataUpdated.next([...this.messagesData]);
-      });
-  }
-
   getMessageDataUpdatedListener() {
     return this.messageDataUpdated.asObservable();
   }
 
-  getMessageResponses(messageReqId: string) {
-    this.http.get<{ message: string; responseCollection: any }>(
-      'http://localhost:3000/api/message/response/retrive/' + messageReqId
-    )
-    .pipe(
-      map(response => {
-      return response.responseCollection.map(document => {
-        const responseData: MessageResponseData = {
-          id: document._id,
-          requestId: document.requestId,
-          oemNumber: document.oemNumber,
-          remanufactured: document.remanufactured,
-          condition: document.condition,
-          unitPrice: document.unitPrice,
-          imagePath: document.imagePath,
-          material: document.material,
-          model: document.model,
-          brand: document.brand,
-          note: document.note,
-          responseCreator: document.responseCreator,
-          created_at: document.created_at
-        };
-        return responseData;
+  // sellers message retrive
+  getMessageRequestSeller(currentPage: number) {
+    const queryParams = `?page=${currentPage}`;
+    this.http
+      .get<{
+        message: string;
+        messageDataCollections: any;
+        maxMessage: number;
+      }>('http://localhost:3000/api/message/retrive-seller' + queryParams)
+      .pipe(
+        map(messageData => {
+          return {
+            messages: messageData.messageDataCollections.map(
+              messageDataCollection => {
+                return {
+                  id: messageDataCollection._id,
+                  maker: messageDataCollection.vehicalMaker,
+                  model: messageDataCollection.vehicalModel,
+                  categoryId: messageDataCollection.categoryId,
+                  sparePartName: messageDataCollection.sparePartName,
+                  partImagePath: messageDataCollection.itemImagePath,
+                  note: messageDataCollection.itemNote,
+                  messageCreator: messageDataCollection.messageCreator,
+                  responses: messageDataCollection.rensponses,
+                  created_at: messageDataCollection.created_at
+                };
+              }
+            ),
+            maxMessage: messageData.maxMessage
+          };
+        })
+      )
+      .subscribe(transformedData => {
+        this.messagesSellerData = transformedData.messages;
+        this.messageSellerDataUpdated.next({
+          messages: [...this.messagesSellerData],
+          messageCount: transformedData.maxMessage
+        });
       });
-    }))
-    .subscribe((transformedResult) => {
-      this.responseData = transformedResult;
-      this.responseDataUpdated.next([...this.responseData]);
-    });
+  }
+
+  getMessageSellerDataUpdatedListener() {
+    return this.messageSellerDataUpdated.asObservable();
+  }
+
+  getMessageResponses(messageReqId: string) {
+    this.http
+      .get<{ message: string; responseCollection: any }>(
+        'http://localhost:3000/api/message/response/retrive/' + messageReqId
+      )
+      .pipe(
+        map(response => {
+          return response.responseCollection.map(document => {
+            const responseData: MessageResponseData = {
+              id: document._id,
+              requestId: document.requestId,
+              oemNumber: document.oemNumber,
+              remanufactured: document.remanufactured,
+              condition: document.condition,
+              unitPrice: document.unitPrice,
+              imagePath: document.imagePath,
+              material: document.material,
+              model: document.model,
+              brand: document.brand,
+              note: document.note,
+              responseCreator: document.responseCreator,
+              created_at: document.created_at
+            };
+            return responseData;
+          });
+        })
+      )
+      .subscribe(transformedResult => {
+        this.responseData = transformedResult;
+        this.responseDataUpdated.next([...this.responseData]);
+      });
   }
 
   getResponseDataUpdateListener() {
     return this.responseDataUpdated.asObservable();
   }
-
-
 }

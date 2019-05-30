@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { BsModalRef, BsModalService } from 'ngx-bootstrap';
+import { BsModalRef, BsModalService, PageChangedEvent } from 'ngx-bootstrap';
 
 import { MessageRequestData } from 'src/app/models/message-request-data.model';
 
@@ -20,6 +20,8 @@ export class SellerDashboardComponent implements OnInit, OnDestroy {
   username = '';
   messagesData: MessageRequestData[] = [];
   currentPage = 1;
+  totalMessageCount = 0;
+  messagePerPage = 4;
 
   private messageDataSub: Subscription;
 
@@ -47,15 +49,23 @@ export class SellerDashboardComponent implements OnInit, OnDestroy {
       // retrive the messages
       this.messageRequestService.getMessageRequestSeller(this.currentPage);
       this.messageDataSub = this.messageRequestService
-        .getMessageDataUpdatedListener()
-        .subscribe((requestMessages: MessageRequestData[]) => {
-          this.messagesData = requestMessages;
+        .getMessageSellerDataUpdatedListener()
+        .subscribe((requestMessagesData: { messages: MessageRequestData[], messageCount: number }) => {
+          this.messagesData = requestMessagesData.messages;
+          this.totalMessageCount = requestMessagesData.messageCount;
           this.isLoading = false;
         });
     }).catch(() => {
       console.log('Profile not created');
       this.isLoading = false;
     });
+  }
+
+  pageChanged(event: PageChangedEvent) {
+    this.isLoading = true;
+    this.currentPage = event.page;
+    this.messageRequestService.getMessageRequestSeller(this.currentPage);
+    this.isLoading = false;
   }
 
   catchIt(index: number) {

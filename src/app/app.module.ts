@@ -17,9 +17,10 @@ import {
 
 import { CollapseModule } from 'ngx-bootstrap/collapse';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
-// import { ButtonsModule } from 'ngx-bootstrap/buttons';
+import { ButtonsModule } from 'ngx-bootstrap/buttons';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { ModalModule } from 'ngx-bootstrap/modal';
+import { PaginationModule } from 'ngx-bootstrap/pagination';
 
 import { GeneralService } from './services/general.service';
 
@@ -108,9 +109,10 @@ import { ErrorComponent } from './shared/errors/errors.component';
     MatDialogModule,
     CollapseModule.forRoot(),
     CarouselModule.forRoot(),
-    // ButtonsModule.forRoot(),
+    ButtonsModule.forRoot(),
     BsDropdownModule.forRoot(),
     ModalModule.forRoot(),
+    PaginationModule.forRoot(),
     HttpClientModule
   ],
   entryComponents: [

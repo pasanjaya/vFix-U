@@ -4,6 +4,9 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { LandingPageService } from '../../services/landingpage.service';
 import { Subscription } from 'rxjs';
 
+// import Glide from '@glidejs/glide';
+// import { Autoplay, Images } from '@glidejs/glide/dist/glide.modular.esm';
+
 @Component({
   selector: 'app-landing-new-arraivals',
   templateUrl: './landing-new-arraivals.component.html',
@@ -12,18 +15,15 @@ import { Subscription } from 'rxjs';
 export class LandingNewArraivalsComponent implements OnInit, OnDestroy {
   isLoading = false;
 
-  itemsPerSlide = 5;
-  singleSlideOffset = true;
-
   advertisements: AdvertisementData[] = [];
   private advertisementUpdatedListenerSub: Subscription;
 
   constructor(private landingPageService: LandingPageService) {}
 
   slides = [
-    { image: 'assets/images/carousel/6.jpg' },
-    { image: 'assets/images/carousel/6.jpg' },
-    { image: 'assets/images/carousel/6.jpg' }
+    { id: 1, image: 'assets/images/carousel/6.jpg' },
+    { id: 2, image: 'assets/images/carousel/2.jpg' },
+    { id: 3, image: 'assets/images/carousel/3.jpg' }
   ];
 
   ngOnInit() {
@@ -35,6 +35,15 @@ export class LandingNewArraivalsComponent implements OnInit, OnDestroy {
         this.advertisements = result;
         this.isLoading = false;
       });
+
+    // new Glide('.glide', {
+    //   startAt: 0,
+    //   perView: 3,
+    //   autoplay: 3500,
+    //   hoverpause: true,
+    //   bound: true,
+    //   animationDuration: 1000
+    // }).mount({ Autoplay, Images });
   }
 
   ngOnDestroy() {

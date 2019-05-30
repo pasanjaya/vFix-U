@@ -31,6 +31,9 @@ mongoose
   })
   .catch(() => {
     console.log('Connection Failed!!');
+    res.status(501).json({
+      message: 'Connction Failed'
+    });
   });
 
 app.use(bodyParser.json());
