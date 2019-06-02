@@ -92,3 +92,24 @@ h3.view-demo {
 // .carousel-indicators li {
 //   background: rgba(0, 0, 0, 0.5);
 // }
+
+.tag-line {
+  background-image: url('src/assets/images/tag-line/background1.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 45px 0;
+  margin: 0px;
+}
+
+.tag-line-content {
+  margin: auto;
+  .inner--text {
+    font-size: 21px;
+    color: rgba(208, 208, 208, 1);
+
+  }
+  .inner--icon {
+    color: #DFE5F9;
+  }
+
+}

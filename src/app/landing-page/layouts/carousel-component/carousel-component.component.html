@@ -1,14 +1,41 @@
 <div class="call-to-action">
-	<h1>We're Coming Soon</h1>
-	<h2>Make it easy for you to descover <span>Automotive Parts</span>.</h2>
+  <h1>We're Coming Soon</h1>
+  <h2>Make it easy for you to descover <span>Automotive Parts</span>.</h2>
 
-	<a class="big-button" routerLink="/register" title="register">Join Now</a>
-	<div class="clear"></div>
-	<h3 class="view-demo">It's free!</h3>
+  <a class="big-button" routerLink="/register" title="register">Join Now</a>
+  <div class="clear"></div>
+  <h3 class="view-demo">It's free!</h3>
 </div>
 
 <carousel>
-  <slide *ngFor="let slide of slides; let index=index">
-    <img [src]="slide.image" alt="image slide" style="display: block; width: 100%;">
+  <slide *ngFor="let slide of slides; let index = index">
+    <img
+      [src]="slide.image"
+      alt="image slide"
+      style="display: block; width: 100%;"
+    />
   </slide>
 </carousel>
+
+<!-- tag Line -->
+
+<div class="tag-line">
+  <div class="d-flex justify-content-around">
+    <div class="tag-line-content">
+      <span class="inner--icon display-4"><i class="fas fa-hand-holding-usd"></i></span>
+      <span class="inner--text ml-3"> <strong>Lowest Prices</strong> Guaranteed</span>
+    </div>
+    <div class="tag-line-content">
+      <span class="inner--icon display-4"><i class="fas fa-medal"></i></span>
+      <span class="inner--text ml-3"> <strong>High Quality</strong> Parts</span>
+    </div>
+    <div class="tag-line-content">
+      <span class="inner--icon display-4"><i class="fas fa-shield-alt"></i></span>
+      <span class="inner--text ml-3"> <strong>100% Secure</strong> Payment</span>
+    </div>
+    <div class="tag-line-content">
+      <span class="inner--icon display-4"><i class="fas fa-truck"></i></span>
+      <span class="inner--text ml-3"> <strong>On-Time</strong> Delivery</span>
+    </div>
+  </div>
+</div>
