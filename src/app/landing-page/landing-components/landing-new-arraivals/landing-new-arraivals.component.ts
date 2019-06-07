@@ -35,15 +35,6 @@ export class LandingNewArraivalsComponent implements OnInit, OnDestroy {
         this.advertisements = result;
         this.isLoading = false;
       });
-
-    // new Glide('.glide', {
-    //   startAt: 0,
-    //   perView: 3,
-    //   autoplay: 3500,
-    //   hoverpause: true,
-    //   bound: true,
-    //   animationDuration: 1000
-    // }).mount({ Autoplay, Images });
   }
 
   ngOnDestroy() {

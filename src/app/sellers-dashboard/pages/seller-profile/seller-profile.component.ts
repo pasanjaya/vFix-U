@@ -3,7 +3,6 @@ import { Component, OnInit } from '@angular/core';
 import { SellerProfileService } from '../../services/seller-profile.service';
 
 import { Merchant } from './merchant.model';
-import { resolve } from 'dns';
 
 @Component({
   selector: 'app-seller-profile',

@@ -15,9 +15,9 @@ npm install
 ```
 
 
-## Development server
+## Development servers
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Run `node server` for the backend server start. It will connect with the Mongo Cloud Atles. Then in a new terminal run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 ## Code scaffolding
 
