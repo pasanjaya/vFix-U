@@ -13,9 +13,12 @@ import { Subscription } from 'rxjs';
 export class AdminDatabaseComponent implements OnInit, OnDestroy {
 
   images = [];
-  consumerDatabase: AdminDatabaseData[] = [];
 
+  consumerDatabase: AdminDatabaseData[] = [];
   private consumerDatabaseSub: Subscription;
+
+  merchantDatabase: AdminDatabaseData[] = [];
+  private merchantDatabaseSub: Subscription;
 
   constructor(private adminDatabaseService: AdminDatabaseService) { }
 
@@ -24,6 +27,12 @@ export class AdminDatabaseComponent implements OnInit, OnDestroy {
     this.consumerDatabaseSub = this.adminDatabaseService.getConsumerDatabaseUpdatedListener()
       .subscribe((consumerData: AdminDatabaseData[]) => {
         this.consumerDatabase = consumerData;
+      });
+
+    this.adminDatabaseService.getMerchantData();
+    this.merchantDatabaseSub = this.adminDatabaseService.getMerchantDatabaseUpdatedListener()
+      .subscribe((merchantData: AdminDatabaseData[]) => {
+        this.merchantDatabase = merchantData;
       });
   }
 
@@ -35,8 +44,13 @@ export class AdminDatabaseComponent implements OnInit, OnDestroy {
     this.adminDatabaseService.deleteConsumer(consumerId);
   }
 
+  onDeleteMerchant(merchantId: string) {
+    this.adminDatabaseService.deleteMerchant(merchantId);
+  }
+
   ngOnDestroy() {
     this.consumerDatabaseSub.unsubscribe();
+    this.merchantDatabaseSub.unsubscribe();
   }
 
 }

@@ -8,6 +8,7 @@ import {
   chartExample1,
   chartExample2
 } from '../../../variables/charts';
+
 import { AdminDashboardService } from './admin-dashboard.service';
 
 @Component({
@@ -23,8 +24,13 @@ export class AdminDashboardComponent implements OnInit {
   public clicked1: boolean = false;
   public userCount: { consumer: number, merchant: number };
   public totUserCount = 0;
+  public now: Date = new Date();
 
-  constructor(public adminDashboardService: AdminDashboardService) {}
+  constructor(public adminDashboardService: AdminDashboardService) {
+    setInterval(() => {
+      this.now = new Date();
+    }, 1);
+  }
 
   ngOnInit() {
     this.adminDashboardService.getUserCount()

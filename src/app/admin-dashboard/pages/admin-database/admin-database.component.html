@@ -166,7 +166,7 @@
                         </div>
                       </th>
                       <td>
-                        $1,800 USD
+                        {{ consumer.email }}
                       </td>
                       <td>
                         <span class="badge badge-dot">
@@ -229,7 +229,103 @@
                 </table>
               </div>
             </tab>
-            <tab heading="Basic Title 1">Basic content 1</tab>
+            <tab heading="Merchant" id="tab2">
+              <!-- Merchant data table -->
+              <div class="table-responsive mt-3 mb-5">
+                <table class="table align-items-center table-dark table-flush">
+                  <thead class="thead-light">
+                    <tr>
+                      <th scope="col">Full Name</th>
+                      <th scope="col">Email</th>
+                      <th scope="col">Role</th>
+                      <th scope="col">Status</th>
+                      <th scope="col">Completion</th>
+                      <th scope="col"></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr
+                      *ngFor="let merchant of merchantDatabase; last as isLast"
+                    >
+                      <th scope="row">
+                        <div class="media align-items-center">
+                          <a href="#" class="avatar rounded-circle mr-3">
+                            <img
+                              alt="Image placeholder"
+                              src="assets/img/theme/angular.jpg"
+                            />
+                          </a>
+                          <div class="media-body">
+                            <span class="mb-0 text-sm">{{
+                              merchant.name
+                            }}</span>
+                          </div>
+                        </div>
+                      </th>
+                      <td>
+                        {{ merchant.email }}
+                      </td>
+                      <td>
+                        <span class="badge badge-dot">
+                          <i class="bg-success"></i> Merchant
+                        </span>
+                      </td>
+                      <td>
+                        <span class="badge badge-dot">
+                          <i class="bg-success"></i> completed
+                        </span>
+                      </td>
+                      <td>
+                        <div class="d-flex align-items-center">
+                          <span class="mr-2">100%</span>
+                          <div>
+                            <div class="progress">
+                              <div
+                                class="progress-bar bg-success"
+                                role="progressbar"
+                                aria-valuenow="100"
+                                aria-valuemin="0"
+                                aria-valuemax="100"
+                                style="width: 100%;"
+                              ></div>
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                      <td class="text-right">
+                        <div
+                          dropdown
+                          class="dropdown"
+                          [placement]="isLast ? 'top-right' : 'bottom-right'"
+                          [dropup]="isLast"
+                        >
+                          <a
+                            class="btn btn-sm btn-icon-only text-light dropdown-toggle"
+                            dropdownToggle
+                          >
+                            <i class="fas fa-ellipsis-v"></i>
+                          </a>
+                          <div
+                            *dropdownMenu
+                            class="dropdown-menu dropdown-menu-right dropdown-menu-arrow"
+                          >
+                            <a class="dropdown-item" style="cursor: pointer;" >
+                              <i class="far fa-envelope"></i> Send Email</a>
+                            <a
+                              class="dropdown-item"
+                              style="cursor: pointer; color: #D9534F;"
+                              (click)="onDeleteMerchant(merchant.id)"
+                            >
+                              <i class="far fa-trash-alt"></i> Delete</a
+                            >
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </tab>
           </tabset>
         </div>
       </div>
