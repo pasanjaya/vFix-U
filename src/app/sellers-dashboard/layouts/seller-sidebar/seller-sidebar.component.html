@@ -73,16 +73,24 @@
         <li class="nav-item">
           <a
             class="nav-link"
+            [routerLink]="['/sellerdashboard', userId]"
+          >
+            <i class="ni ni-tv-2 text-primary"></i> Dashboard
+          </a>
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
             [routerLink]="['sellerincome']"
           >
-            <i class="ni ni-chart-bar-32"></i> Income
+            <i class="ni ni-chart-bar-32 text-green"></i> Income
           </a>
         </li>
         <li class="nav-item">
           <a
             class="nav-link"
           >
-            <i class="ni ni-email-83"></i> Mailbox
+            <i class="ni ni-email-83 text-orange"></i> Mailbox
           </a>
         </li>
         <li class="nav-item">
