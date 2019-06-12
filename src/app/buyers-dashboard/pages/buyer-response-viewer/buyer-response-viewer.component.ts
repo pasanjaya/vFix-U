@@ -11,7 +11,7 @@ import { MessageResponseData } from 'src/app/models/message-response-data.model'
   styleUrls: ['./buyer-response-viewer.component.scss']
 })
 export class BuyerResponseViewerComponent implements OnInit, OnDestroy {
-
+  contactView = false;
   isLoading = false;
   now = new Date();
   responseData: MessageResponseData[] = [];
@@ -51,10 +51,15 @@ export class BuyerResponseViewerComponent implements OnInit, OnDestroy {
 
   changeContent(index: number) {
     this.isLoading = true;
+    this.contactView = false;
     this.contentData = [];
     this.contentData.push(this.responseData[index]);
     this.isLoading = false;
     console.log(this.contentData);
+  }
+
+  viewContact() {
+    this.contactView = true;
   }
 
   ngOnDestroy() {

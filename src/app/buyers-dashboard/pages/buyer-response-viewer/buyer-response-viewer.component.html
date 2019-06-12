@@ -134,9 +134,16 @@
             <div class="card-body">
               <h3 class="text-left text-orange">Get Contacts</h3>
               <div class="contact-section btn">
-                <span><i class="fas fa-tty"></i></span>
+                <span (click)="viewContact()" *ngIf="!contactView"><i class="fas fa-tty"></i></span>
+                <h1 class="display-4" *ngIf="contactView">{{ contentData[0]?.responseCreator.profile.contactNo }}</h1>
               </div>
             </div>
+            <div class="card-body">
+                <h3 class="text-left text-yellow">Place Order</h3>
+                <div class="contact-section btn">
+                  <span><i class="fas fa-truck mr-2"></i> Under Construction</span>
+                </div>
+              </div>
           </div>
         </div>
       </div>
