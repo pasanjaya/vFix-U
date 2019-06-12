@@ -13,7 +13,8 @@
             <h3 class="mb-1 text-uppercase text-muted mb-0">
               {{ response.responseCreator.profile.shopName }}
             </h3>
-            <small>3 days ago</small>
+            <small>{{ response.created_at | date }}</small>
+
           </div>
           <div class="d-flex w-100 justify-content-around">
             <span class="h2 font-weight-bold mb-0 text-success">
@@ -30,7 +31,15 @@
     <div class="col-5">
       <div class="card">
         <h5 class="card-header">Featured</h5>
-        <div class="card-body">
+        <!-- Spinner -->
+        <div *ngIf="isLoading">
+          <div class="d-flex justify-content-center">
+            <div class="spinner-grow text-muted" role="status">
+              <span class="sr-only">Loading...</span>
+            </div>
+          </div>
+        </div>
+        <div class="card-body" *ngIf="!isLoading">
           <img
             [src]="contentData[0]?.imagePath"
             [alt]="contentData[0]?.oemNumber"
@@ -78,7 +87,7 @@
               <div class="card-profile-image">
                 <a href="javascript:void(0)">
                   <img
-                    src="assets/img/theme/team-4-800x800.jpg"
+                    src="assets/img/icons/common/merchant.png"
                     class="rounded-circle"
                   />
                 </a>
@@ -116,14 +125,14 @@
               <dl>
                 <dt class="text-left">Unit Price:</dt>
                 <dd class="text-center text-success display-4">
-                  {{ contentData[0]?.unitPrice }}
+                  {{ contentData[0]?.unitPrice + ' /='}}
                 </dd>
               </dl>
             </div>
             <div class="card-body">
-              <h3 class="text-left">Get Contacts</h3>
-              <div class="contact-section">
-                <span><i class="fas fa-phone"></i></span>
+              <h3 class="text-left text-orange">Get Contacts</h3>
+              <div class="contact-section btn">
+                <span><i class="fas fa-tty"></i></span>
               </div>
             </div>
           </div>

@@ -16,6 +16,7 @@ export class SellerSidebarComponent implements OnInit {
 
   ngOnInit() {
     this.title = this.generalService.getTitle();
+    this.getUserId();
   }
 
   getUserId() {
