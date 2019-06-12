@@ -1,5 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { MatDialog } from '@angular/material';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 
@@ -12,12 +13,14 @@ import { MessageRequestData } from './../../../models/message-request-data.model
 
 import { mimeType } from '../../../validators/mime-type.validator';
 
+import { DeleteConfirmationBoxComponent } from 'src/app/shared/delete-confirmation-box/delete-confirmation-box.component';
 @Component({
   selector: 'app-dashboard-component',
   templateUrl: './buyer-dashboard.component.html',
   styleUrls: ['./buyer-dashboard.component.scss']
 })
 export class BuyerDashboardComponent implements OnInit, OnDestroy {
+  [x: string]: any;
   isLoading = false;
   makers = [];
   models = [];
@@ -37,7 +40,8 @@ export class BuyerDashboardComponent implements OnInit, OnDestroy {
   constructor(
     private carSelectorService: CarSelectorService,
     private adminConfigureService: AdminConfigureService,
-    private messageRequestService: MessageRequestService
+    private messageRequestService: MessageRequestService,
+    public dialog: MatDialog
   ) {}
 
   ngOnInit() {
@@ -134,6 +138,19 @@ export class BuyerDashboardComponent implements OnInit, OnDestroy {
       this.note.value
     );
     this.partFindForm.reset();
+  }
+
+  openDialog(): void {
+    const dialogRef = this.dialog.open(DeleteConfirmationBoxComponent, {
+      width: '350px',
+      data: 'Do you confirm the deletion of this request?'
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        console.log('Yes clicked');
+      }
+    });
   }
 
   ngOnDestroy() {
