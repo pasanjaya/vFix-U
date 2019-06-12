@@ -22,7 +22,18 @@
             placeholder="OE/OEM No."
             formControlName="oemNumber"
           />
+          <span
+          *ngIf="
+          sellerReplyForm.get('oemNumber').invalid && isInvalid
+          "
+          class="text-danger"
+        >
+          <span *ngIf="sellerReplyForm.get('oemNumber').errors['required']"
+            ><small>This field is required</small></span
+          >
+        </span>
         </div>
+
         <div class="custom-control custom-checkbox mb-3">
           <input
             class="custom-control-input"
@@ -61,7 +72,7 @@
           </div>
         </div>
         <div class="form-group">
-          <label for="exampleInputEmail1">Unit Price</label>
+          <label for="exampleInputEmail1">Unit Price (Rs.)</label>
           <input
             type="email"
             class="form-control"
@@ -69,6 +80,16 @@
             placeholder="Price"
             formControlName="partPrice"
           />
+          <span
+          *ngIf="
+          sellerReplyForm.get('partPrice').invalid && isInvalid
+          "
+          class="text-danger"
+        >
+          <span *ngIf="sellerReplyForm.get('partPrice').errors['required']"
+            ><small>This field is required</small></span
+          >
+        </span>
         </div>
         <div class="form-group">
           <label for="part-image">Part Image</label>
@@ -126,6 +147,16 @@
             placeholder="Part Brand"
             formControlName="brand"
           />
+          <span
+          *ngIf="
+          sellerReplyForm.get('brand').invalid && isInvalid
+          "
+          class="text-danger"
+        >
+          <span *ngIf="sellerReplyForm.get('brand').errors['required']"
+            ><small>This field is required</small></span
+          >
+        </span>
         </div>
         <label for="exampleInputEmail1">Note</label>
         <textarea

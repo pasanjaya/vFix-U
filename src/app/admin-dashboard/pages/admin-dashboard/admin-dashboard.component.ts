@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit } from '@angular/core';
 import Chart from 'chart.js';
 
 // core components
@@ -26,7 +26,8 @@ export class AdminDashboardComponent implements OnInit {
   public totUserCount = 0;
   public now: Date = new Date();
 
-  constructor(public adminDashboardService: AdminDashboardService) {
+  constructor(
+    public adminDashboardService: AdminDashboardService) {
     setInterval(() => {
       this.now = new Date();
     }, 1);

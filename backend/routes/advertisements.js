@@ -115,7 +115,6 @@ router.put(
 router.delete('/delete/:id',checkAuth, (req, res, next) => {
   Advertisement.deleteOne({_id: req.params.id})
   .then(result => {
-    console.log(result);
     res.status(200).json({
       message: "Advetisement deleted!"
     });

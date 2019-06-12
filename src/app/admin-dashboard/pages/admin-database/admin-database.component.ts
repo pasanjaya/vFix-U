@@ -1,4 +1,6 @@
+import { DeleteConfirmationBoxComponent } from 'src/app/shared/delete-confirmation-box/delete-confirmation-box.component';
 import { Component, OnInit, OnDestroy } from '@angular/core';
+import { MatDialog } from '@angular/material';
 
 import { AdminDatabaseService } from './admin-database.service';
 
@@ -20,7 +22,10 @@ export class AdminDatabaseComponent implements OnInit, OnDestroy {
   merchantDatabase: AdminDatabaseData[] = [];
   private merchantDatabaseSub: Subscription;
 
-  constructor(private adminDatabaseService: AdminDatabaseService) { }
+  constructor(
+    private adminDatabaseService: AdminDatabaseService,
+    public dialog: MatDialog
+    ) { }
 
   ngOnInit() {
     this.adminDatabaseService.getConsumerData();
@@ -40,12 +45,32 @@ export class AdminDatabaseComponent implements OnInit, OnDestroy {
 
   }
 
-  onDeleteConsumer(consumerId: string) {
-    this.adminDatabaseService.deleteConsumer(consumerId);
+  onDeleteConsumer(consumerId: string): void {
+    const dialogRef = this.dialog.open(DeleteConfirmationBoxComponent, {
+      width: '350px',
+      data: 'Are You Sure? This will delete every details of this consumer'
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        console.log('Yes clicked');
+        this.adminDatabaseService.deleteConsumer(consumerId);
+      }
+    });
   }
 
-  onDeleteMerchant(merchantId: string) {
-    this.adminDatabaseService.deleteMerchant(merchantId);
+  onDeleteMerchant(merchantId: string): void {
+    const dialogRef = this.dialog.open(DeleteConfirmationBoxComponent, {
+      width: '350px',
+      data: 'Are You Sure? This will delete every details of this merchant'
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        console.log('Yes clicked');
+        this.adminDatabaseService.deleteMerchant(merchantId);
+      }
+    });
   }
 
   ngOnDestroy() {
