@@ -322,7 +322,7 @@
                 *ngIf="message.responses?.length < 1; else viewTemplate"
               >
                 <button mat-stroked-button>Edit</button>
-                <button mat-stroked-button color="warn">Remove</button>
+                <button mat-stroked-button color="warn" (click)="openDialog()"> Remove </button>
               </div>
               <ng-template #viewTemplate>
                 <button
