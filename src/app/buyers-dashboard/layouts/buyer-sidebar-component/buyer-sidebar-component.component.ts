@@ -10,8 +10,8 @@ export class BuyerSidebarComponentComponent implements OnInit {
   menuItems = [];
   public isCollapsed = true;
 
-  userId='';
-   
+  userId = '';
+
   constructor() { }
 
   collapse() {
@@ -19,7 +19,9 @@ export class BuyerSidebarComponentComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.getUserId();
   }
+
   getUserId() {
     const helper = new JwtHelperService();
     const token = localStorage.getItem('token');

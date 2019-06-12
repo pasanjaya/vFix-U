@@ -1,0 +1,46 @@
+.card-header {
+  width: 100%;
+  position: relative;
+  z-index: 1;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding: 64px 15px 64px 15px;
+}
+
+.card-header::before {
+  content: "";
+  display: block;
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(54, 84, 99, 0.7);
+}
+
+form div {
+  display: flex;
+  justify-content: space-around;
+  justify-self: center;
+}
+
+input, textarea {
+  max-width: 25rem;
+  text-align: start;
+}
+
+label {
+  text-align: right;
+  width: 80px;
+  font-size: 15px;
+}

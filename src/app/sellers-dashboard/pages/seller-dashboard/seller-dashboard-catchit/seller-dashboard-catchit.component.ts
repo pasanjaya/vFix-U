@@ -16,6 +16,7 @@ export class SellerDashboardCatchitComponent implements OnInit {
   closeBtnName: string;
   list: any[] = [];
   data = [];
+  isInvalid = false;
 
   imagePreviewPath: string;
 
@@ -31,7 +32,7 @@ export class SellerDashboardCatchitComponent implements OnInit {
       oemNumber: new FormControl(null, Validators.required),
       remanufactured: new FormControl(false, Validators.required),
       condition: new FormControl('new', Validators.required),
-      partPrice: new FormControl(0.0, Validators.required),
+      partPrice: new FormControl(null, Validators.required),
       partImage: new FormControl(null, {
         validators: [Validators.required],
         asyncValidators: [mimeType]
@@ -93,6 +94,7 @@ export class SellerDashboardCatchitComponent implements OnInit {
   onSend() {
     console.log(this.sellerReplyForm);
     if (this.sellerReplyForm.invalid) {
+      this.isInvalid = true;
       return;
     }
 

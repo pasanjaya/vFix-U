@@ -16,7 +16,7 @@
     <a
       class="navbar-brand pt-0"
       routerLinkActive="active"
-      [routerLink]="['/index']"
+      href="http://localhost:4200/index"
     >
       <!-- <img src="./assets/img/brand/red.png" class="navbar-brand-img" alt="..."> -->
       {{ title }}
@@ -73,24 +73,30 @@
         <li class="nav-item">
           <a
             class="nav-link"
+            [routerLink]="['/sellerdashboard', userId]"
+          >
+            <i class="ni ni-tv-2 text-primary"></i> Dashboard
+          </a>
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
             [routerLink]="['sellerincome']"
-            href="https://demos.creative-tim.com/argon-dashboard-angular/documentation/tutorial"
           >
-            <i class="ni ni-chart-bar-32"></i> Income
+            <i class="ni ni-chart-bar-32 text-green"></i> Income
           </a>
         </li>
         <li class="nav-item">
           <a
             class="nav-link"
-            href="https://demos.creative-tim.com/argon-dashboard-angular/documentation/colors"
           >
-            <i class="ni ni-email-83"></i> Mailbox
+            <i class="ni ni-email-83 text-orange"></i> Mailbox
           </a>
         </li>
         <li class="nav-item">
           <a
             class="nav-link"
-            href="https://demos.creative-tim.com/argon-dashboard-angular/documentation/alerts"
+
           >
             <i class="ni ni-settings"></i> Settings
           </a>

@@ -14,33 +14,33 @@
     <li class="nav-item">
       <a
         class="nav-link mb-sm-3 mb-md-0"
-        [routerLink]="['sellerprofile']"
-        routerLinkActive="active"
-        ><i class="ni ni-circle-08 mr-2"></i>Profile</a
-      >
-    </li>
-    <li class="nav-item">
-      <a
-        class="nav-link mb-sm-3 mb-md-0"
-        [routerLink]="['sellermessages']"
-        routerLinkActive="active"
-        ><i class="ni ni-calendar-grid-58 mr-2"></i>Messages
-        <span class="badge badge-primary">4</span>
-      </a>
-    </li>
-    <li class="nav-item">
-      <a
-        class="nav-link mb-sm-3 mb-md-0"
         [routerLink]="['selleradvertise']"
         routerLinkActive="active"
-        ><i class="ni ni-fat-add mr-2"></i>Publish my ad</a
+        ><i class="ni ni-fat-add mr-2"></i>Publish Adv</a
       >
     </li>
     <li class="nav-item">
+        <a
+          class="nav-link mb-sm-3 mb-md-0"
+          [routerLink]="['sellerprofile']"
+          routerLinkActive="active"
+          ><i class="ni ni-circle-08 mr-2"></i>Profile</a
+        >
+      </li>
+    <li class="nav-item">
+        <a
+          class="nav-link mb-sm-3 mb-md-0"
+          [routerLink]="['support']"
+          routerLinkActive="active"
+          ><i class="ni ni-support-16 mr-2"></i>Support
+        </a>
+      </li>
+    <li class="nav-item text-orange">
       <a
         class="nav-link mb-sm-3 mb-md-0"
         (click)="onLogout()"
-        ><i class="ni ni-key-25 mr-2"></i>Logout</a
+        style="cursor: pointer"
+        ><i class="ni ni-user-run mr-2"></i><span>Logout</span></a
       >
     </li>
   </ul>

@@ -13,7 +13,7 @@ import { MessageResponseData } from 'src/app/models/message-response-data.model'
 export class BuyerResponseViewerComponent implements OnInit, OnDestroy {
 
   isLoading = false;
-
+  now = new Date();
   responseData: MessageResponseData[] = [];
   contentData: MessageResponseData[] = [];
 
@@ -30,11 +30,13 @@ export class BuyerResponseViewerComponent implements OnInit, OnDestroy {
       });
     // console.log(this.route.snapshot.fragment);
     return new Promise((resolve, reject) => {
+      this.isLoading = true;
       this.messageRequestService.getMessageResponses(messageId);
       this.responseDataSub = this.messageRequestService.getResponseDataUpdateListener()
       .subscribe((response: MessageResponseData[]) => {
         if (response) {
           this.responseData = response;
+          this.isLoading = false;
           resolve();
         } else {
           reject();

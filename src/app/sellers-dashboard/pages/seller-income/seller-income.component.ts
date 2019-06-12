@@ -7,7 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SellerIncomeComponent implements OnInit {
 
-  constructor() { }
+  now: Date  = new Date();
+
+  constructor() {
+    setInterval(() => {
+      this.now = new Date();
+    }, 1);
+   }
 
   ngOnInit() {
   }

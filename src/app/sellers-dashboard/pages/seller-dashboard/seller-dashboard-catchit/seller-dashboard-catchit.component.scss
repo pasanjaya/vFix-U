@@ -21,3 +21,9 @@ input[type="submit"] {
     height: 100%;
   }
 }
+
+.form-group {
+  input.ng-invalid.ng-touched {
+    border: 1px solid red;
+  }
+}

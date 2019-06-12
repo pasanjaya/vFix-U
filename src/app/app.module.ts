@@ -59,6 +59,7 @@ import { BuyerMapComponent } from './buyers-dashboard/pages/buyer-map/buyer-map.
 
 import { DeleteConfirmationBoxComponent } from './shared/delete-confirmation-box/delete-confirmation-box.component';
 import { ErrorComponent } from './shared/errors/errors.component';
+import { SupportComponent } from './support/support.component';
 
 @NgModule({
   declarations: [
@@ -91,7 +92,8 @@ import { ErrorComponent } from './shared/errors/errors.component';
     DeleteConfirmationBoxComponent,
     SellerIncomeComponent,
     ErrorComponent,
-    BuyerMapComponent
+    BuyerMapComponent,
+    SupportComponent
   ],
   imports: [
     BrowserModule,
