@@ -19,18 +19,7 @@ export class MessageResponseService {
     brand: string,
     note: string
   ) {
-    // const messageResponseData: MessageResponseData = {
-    //   requestId,
-    //   oemNumber,
-    //   remanufactured,
-    //   condition,
-    //   unitPrice,
-    //   imagePath,
-    //   material,
-    //   model,
-    //   brand,
-    //   note
-    // };
+
     const boolAsString = (remanufactured) ? 'true' : 'false';
     const messageResponseData = new FormData();
     messageResponseData.append('requestId', requestId);
@@ -47,6 +36,18 @@ export class MessageResponseService {
 
     this.http.post<{message: string, result: string}>('http://localhost:3000/api/message/response/create', messageResponseData)
     .subscribe(response => {
+      console.log(response);
+    });
+  }
+
+  rejectRequest(rejectId: string, status: string) {
+
+    const messageIgnore = {
+      request_id: rejectId,
+      status: status
+    };
+
+    this.http.post('http://localhost:3000/api/message/response/reqIgnore', messageIgnore).subscribe(response => {
       console.log(response);
     });
   }

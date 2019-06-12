@@ -2,6 +2,7 @@ const express = require("express");
 const multer = require("multer");
 
 const Message = require("../models/messageRequest");
+const CatchItIgnore = require("../models/merchantCatchIgnore");
 
 const checkAuth = require("../middleware/check-auth");
 
@@ -86,31 +87,88 @@ router.get("/retrive", checkAuth, (req, res, next) => {
 });
 
 // sellers message retrive
-router.get("/retrive-seller", (req, res, next) => {
-  const pageSize = 4;
-  const currentpage = +req.query.page;
-  const messageQuery = Message.find();
-  let fetchedMessage;
-  if (pageSize && currentpage) {
-    messageQuery.skip(pageSize * (currentpage - 1)).limit(pageSize);
-  }
-  messageQuery
-    .then(documents => {
-      fetchedMessage = documents;
-      return Message.countDocuments();
-    })
-    .then(count => {
-      res.status(200).json({
-        message: "MessageRequestData fetched successfully!",
-        messageDataCollections: fetchedMessage,
-        maxMessage: count
-      });
-    })
-    .catch(err => {
-      res.status(500).json({
-        message: "Fatching Data failed"
-      });
+router.get("/retrive-seller", checkAuth, (req, res, next) => {
+  let messageQuery;
+
+  CatchItIgnore.find({ merchantId: req.userData.userId }).select('requestId')
+  .then(oldDoc => {
+
+    if(oldDoc.length !== 0){
+      let filterArray = [];
+    oldDoc.forEach(element => {
+      filterArray.push(element.requestId);
     });
+      messageQuery = Message.find({ _id: {$nin: filterArray } });
+    }
+    else {
+      messageQuery = Message.find();
+    }
+
+    const pageSize = 4;
+    const currentpage = +req.query.page;
+    let fetchedMessage;
+    if (pageSize && currentpage) {
+      messageQuery.skip(pageSize * (currentpage - 1)).limit(pageSize);
+    }
+    messageQuery
+      .then(documents => {
+        fetchedMessage = documents;
+        return Message.countDocuments();
+      })
+      .then(count => {
+        res.status(200).json({
+          message: "MessageRequestData fetched successfully!",
+          messageDataCollections: fetchedMessage,
+          maxMessage: count
+        });
+      })
+      .catch(err => {
+        res.status(500).json({
+          message: "Fatching Data failed"
+        });
+      });
+
+  }).catch(err => {
+
+  });
+
+  // if(notEmpty){
+  //   console.log("came here down of while");
+  // }
+  // else{
+  //   messageQuery = Message.find();
+  //   console.log("came here");
+  //   console.log(oldDoc);
+  // }
+
+
+  // // for(let i=0;i<messageQuery.countDocuments;++i){
+  // //   if(messageQuery.){}
+  // // }
+
+  // const pageSize = 4;
+  // const currentpage = +req.query.page;
+  // let fetchedMessage;
+  // if (pageSize && currentpage) {
+  //   messageQuery.skip(pageSize * (currentpage - 1)).limit(pageSize);
+  // }
+  // messageQuery
+  //   .then(documents => {
+  //     fetchedMessage = documents;
+  //     return Message.countDocuments();
+  //   })
+  //   .then(count => {
+  //     res.status(200).json({
+  //       message: "MessageRequestData fetched successfully!",
+  //       messageDataCollections: fetchedMessage,
+  //       maxMessage: count
+  //     });
+  //   })
+  //   .catch(err => {
+  //     res.status(500).json({
+  //       message: "Fatching Data failed"
+  //     });
+  //   });
 });
 
 module.exports = router;
