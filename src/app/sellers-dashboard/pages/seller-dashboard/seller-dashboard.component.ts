@@ -1,3 +1,4 @@
+import { MessageResponseService } from './../../services/message-response.service';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { BsModalRef, BsModalService, PageChangedEvent } from 'ngx-bootstrap';
@@ -30,6 +31,7 @@ export class SellerDashboardComponent implements OnInit, OnDestroy {
   constructor(
     private sellerProfileService: SellerProfileService,
     private messageRequestService: MessageRequestService,
+    private messageResponseService: MessageResponseService,
     private modalService: BsModalService
   ) {}
 
@@ -85,6 +87,12 @@ export class SellerDashboardComponent implements OnInit, OnDestroy {
       class: 'modal-lg'
     });
     this.bsModalRef.content.closeBtnName = 'Close';
+  }
+
+  ignored(id: string) {
+    const updatedMessage = this.messagesData.filter(advert => advert.id !== id);
+    this.messagesData = updatedMessage;
+    this.messageResponseService.rejectRequest(id, 'ignore');
   }
 
   ngOnDestroy() {

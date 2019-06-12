@@ -5,6 +5,7 @@ const checkAuth = require("../middleware/check-auth");
 
 const Response = require("../models/messageResponse");
 const Request = require("../models/messageRequest");
+const CatchItIgnore = require("../models/merchantCatchIgnore");
 
 const router = express.Router();
 
@@ -120,5 +121,27 @@ router.get("/retrive/:id", (req, res, next) => {
       });
     });
 });
+
+// ingnore requested
+router.post('/reqIgnore', checkAuth, (req, res, next) => {
+  console.log(req.body);
+  const catchItIgnore = new CatchItIgnore({
+    merchantId: req.userData.userId,
+    requestId: req.body.request_id,
+    status: req.body.status
+  });
+  catchItIgnore.save()
+    .then(result => {
+      res.status(201).json({
+        message: 'ignored this message',
+        response: result
+      });
+    })
+    .catch(err => {
+      res.status(501).json({
+        message: 'message not ignored'
+      })
+    })
+})
 
 module.exports = router;
