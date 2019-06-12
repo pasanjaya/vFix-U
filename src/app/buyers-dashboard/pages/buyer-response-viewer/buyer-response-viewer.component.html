@@ -40,11 +40,13 @@
           </div>
         </div>
         <div class="card-body" *ngIf="!isLoading">
-          <img
-            [src]="contentData[0]?.imagePath"
-            [alt]="contentData[0]?.oemNumber"
-            class="mb-2"
-          />
+          <div class="image-wrapper">
+              <img
+              [src]="contentData[0]?.imagePath"
+              [alt]="contentData[0]?.oemNumber"
+              class="mb-2"
+            />
+          </div>
           <hr class="my-4" />
           <dl class="row">
             <dt class="col-sm-4">OE/OEM Part No.:</dt>
