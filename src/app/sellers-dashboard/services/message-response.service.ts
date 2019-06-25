@@ -40,10 +40,10 @@ export class MessageResponseService {
     });
   }
 
-  rejectRequest(rejectId: string, status: string) {
+  rejectCatchRequest(rejectCatchId: string, status: string) {
 
     const messageIgnore = {
-      request_id: rejectId,
+      request_id: rejectCatchId,
       status: status
     };
 

@@ -7,6 +7,7 @@ const MerchantProfile = require("../models/merchant-profile");
 
 const router = express.Router();
 
+// create profile
 router.post("/save", checkAuth, (req, res, next) => {
   const profile = new MerchantProfile({
     merchantId: req.userData.userId,
@@ -42,6 +43,7 @@ router.post("/save", checkAuth, (req, res, next) => {
     });
 });
 
+// get fullName and profile
 router.get("/user", checkAuth, (req, res, next) => {
   Merchant.findOne({ email: req.userData.email }).select('fullName profile').then(user => {
     res.status(200).json({

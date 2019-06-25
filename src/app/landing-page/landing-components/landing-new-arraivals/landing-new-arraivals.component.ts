@@ -14,6 +14,7 @@ import { Subscription } from 'rxjs';
 })
 export class LandingNewArraivalsComponent implements OnInit, OnDestroy {
   isLoading = false;
+  advertCount = 0;
 
   advertisements: AdvertisementData[] = [];
   private advertisementUpdatedListenerSub: Subscription;
@@ -33,6 +34,7 @@ export class LandingNewArraivalsComponent implements OnInit, OnDestroy {
       .getAdvertisementUpdatedListener()
       .subscribe((result: AdvertisementData[]) => {
         this.advertisements = result;
+        this.advertCount = this.advertisements.length;
         this.isLoading = false;
       });
   }

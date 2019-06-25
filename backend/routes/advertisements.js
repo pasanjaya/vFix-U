@@ -23,10 +23,13 @@ const storage = multer.diskStorage({
     cb(error, "backend/images/advertisementImages");
   },
   filename: (req, file, cb) => {
-    const name = file.originalname
+    let name = file.originalname
       .toLowerCase()
       .split(" ")
       .join("-");
+    if(name.includes("advert")) {
+      name = name.replace(/advert/gi, "a_dvert");
+    }
     const ext = MIME_TYPE_MAP[file.mimetype];
     cb(null, name + "-" + Date.now() + "." + ext);
   }

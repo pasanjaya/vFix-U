@@ -5,9 +5,9 @@ const Advertisements = require("../models/advertisement");
 const router = express.Router();
 
 router.get("/newarrival", (req, res, next) => {
-  Advertisements.find({})
+  Advertisements.find({approved: true})
     .sort({ created_at: -1, modified_at: -1 })
-    .limit(5)
+    .limit(4)
     .exec((err, docs) => {
       if (err) {
         res.status(500).json({

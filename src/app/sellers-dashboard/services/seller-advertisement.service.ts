@@ -83,6 +83,7 @@ export class SellerAdvertisementService {
       advertiseData.append('title', title);
       advertiseData.append('description', description);
       advertiseData.append('image', image, title);
+
     } else {
       advertiseData = {
         id,

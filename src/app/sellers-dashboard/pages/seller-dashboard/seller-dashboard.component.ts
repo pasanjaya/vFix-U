@@ -92,7 +92,7 @@ export class SellerDashboardComponent implements OnInit, OnDestroy {
   ignored(id: string) {
     const updatedMessage = this.messagesData.filter(advert => advert.id !== id);
     this.messagesData = updatedMessage;
-    this.messageResponseService.rejectRequest(id, 'ignore');
+    this.messageResponseService.rejectCatchRequest(id, 'ignore');
   }
 
   ngOnDestroy() {
