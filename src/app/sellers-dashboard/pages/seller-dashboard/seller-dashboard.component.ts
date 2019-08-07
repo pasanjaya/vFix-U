@@ -22,7 +22,7 @@ export class SellerDashboardComponent implements OnInit, OnDestroy {
   messagesData: MessageRequestData[] = [];
   currentPage = 1;
   totalMessageCount = 0;
-  messagePerPage = 4;
+  messagePerPage = 3;
 
   private messageDataSub: Subscription;
 

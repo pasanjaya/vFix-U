@@ -104,7 +104,7 @@ router.get("/retrive-seller", checkAuth, (req, res, next) => {
       messageQuery = Message.find();
     }
 
-    const pageSize = 4;
+    const pageSize = 3;
     const currentpage = +req.query.page;
     let fetchedMessage;
     if (pageSize && currentpage) {
