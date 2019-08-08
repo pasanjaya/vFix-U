@@ -60,6 +60,7 @@ export class BuyerResponseViewerComponent implements OnInit, OnDestroy {
 
   viewContact() {
     this.contactView = true;
+    console.log(this.contactView);
   }
 
   ngOnDestroy() {

@@ -3,10 +3,14 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { map } from 'rxjs/operators';
 
+import { environment } from '../../../environments/environment';
+
 import { JwtHelperService } from '@auth0/angular-jwt';
 
 import { AdvertisementData } from '../../models/advertisement-data.model';
 import { Subject } from 'rxjs';
+
+const BACKEND_URL = environment.apiUrl + 'merchant/adver/';
 
 @Injectable({
   providedIn: 'root'
@@ -34,7 +38,7 @@ export class SellerAdvertisementService {
 
     this.http
       .post<{ message: string; result: any }>(
-        'http://localhost:3000/api/merchant/adver/create',
+        BACKEND_URL + 'create',
         advertisment
       )
       .subscribe(response => {
@@ -52,7 +56,7 @@ export class SellerAdvertisementService {
   }
 
   getAdvertisements() {
-    this.http.get<{message: string; documents: any }>('http://localhost:3000/api/merchant/adver/retrive')
+    this.http.get<{message: string; documents: any }>(BACKEND_URL + 'retrive')
       .pipe(map(response => {
         return response.documents.map(document => {
           return {
@@ -92,7 +96,7 @@ export class SellerAdvertisementService {
         advertisementPath: image
       };
     }
-    this.http.put('http://localhost:3000/api/merchant/adver/update/' + id, advertiseData)
+    this.http.put(BACKEND_URL + 'update/' + id, advertiseData)
     .subscribe(response => {
       console.log(response);
       const updatedAdv = [...this.advertisement];
@@ -112,7 +116,7 @@ export class SellerAdvertisementService {
   }
 
   deleteAdvertisement(id: string) {
-    this.http.delete('http://localhost:3000/api/merchant/adver/delete/' + id)
+    this.http.delete(BACKEND_URL + 'delete/' + id)
     .subscribe(() => {
       console.log('deleted');
       const updatedAdvertisements = this.advertisement.filter(advert => advert.id !== id);

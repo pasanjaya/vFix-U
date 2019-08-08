@@ -3,7 +3,11 @@ import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 
+import { environment } from '../../../environments/environment';
+
 import { MerchantProfile } from '../pages/seller-profile/merchant-profile.model';
+
+const BACKEND_URL = environment.apiUrl + 'profile/merchant/';
 
 @Injectable({
   providedIn: 'root'
@@ -33,7 +37,7 @@ export class SellerProfileService {
       about
     };
     this.http
-      .post<{message: string, result: any }>('http://localhost:3000/api/profile/merchant/save', merchantProfile)
+      .post<{message: string, result: any }>(BACKEND_URL + 'save', merchantProfile)
       .subscribe(response => {
         if (response) {
           const id = response.result[1]._id;
@@ -44,11 +48,11 @@ export class SellerProfileService {
   }
 
   getUser(): Observable<any> {
-    return this.http.get<{message: string, result: any }>('http://localhost:3000/api/profile/merchant/user');
+    return this.http.get<{message: string, result: any }>(BACKEND_URL + 'user');
   }
 
   getProfile(): Observable<any> {
-    return this.http.get<{message: string, result: any }>('http://localhost:3000/api/profile/merchant/retrive');
+    return this.http.get<{message: string, result: any }>(BACKEND_URL + 'retrive');
   }
 
   updateProfile(
@@ -73,7 +77,7 @@ export class SellerProfileService {
       longitude,
       about
     };
-    this.http.put('http://localhost:3000/api/profile/merchant/update/' + id, merchantProfile)
+    this.http.put(BACKEND_URL + 'update/' + id, merchantProfile)
     .subscribe(response => {
       console.log(response);
       if (response) {

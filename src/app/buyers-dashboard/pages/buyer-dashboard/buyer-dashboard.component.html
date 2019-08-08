@@ -1,4 +1,4 @@
-<div class="header bg-gradient-primary pb-8 pt-5 pt-md-8">
+<div class="header bg-gradient-primary pb-7 pt-5 pt-md-8">
   <!-- <div class="container-fluid">
     <div class="header-body">
 
@@ -119,7 +119,7 @@
 <!-- Page content -->
 <div class="container-fluid mt--7">
   <div class="row">
-    <div class="col-lg-6 mb-5 mb-xl-4">
+    <div class="col-xl-6 mb-5">
       <div class="card shadow">
         <div class="card-header bg-transparent">
           <div class="row align-items-center">
@@ -286,14 +286,13 @@
               class="mb-2"
             >
               <mat-expansion-panel-header class="m-1">
-
                   <mat-panel-title class="m-2">
-                    <h4 class="text-truncate" style="max-width: 200px;">Request ID: {{ message.id }}</h4>
+                    <h4 class="text-truncate" style="max-width: 200px;">{{ message.model }}</h4>
                   </mat-panel-title>
                   <mat-panel-description>
-                    <small class="text-muted">{{ message.model }}</small>
+                    <small class="text-muted"></small>
                     <mat-icon
-                      [matBadge]="message.responses?.length"
+                      [matBadge]="((message.responses?.length) > 0 ) ? message.responses?.length: null"
                       matBadgeColor="accent"
                       matBadgeSize="medium"
                       color="primary"
@@ -306,6 +305,8 @@
                 <mat-divider></mat-divider>
               </div>
               <dl class="row">
+                <dt class="col-sm-4">Request ID:</dt>
+                <dd class="col-sm-8">{{ message.id }}</dd>
                 <dt class="col-sm-4">Maker:</dt>
                 <dd class="col-sm-8">{{ message.maker }}</dd>
                 <dt class="col-sm-4">Model:</dt>
