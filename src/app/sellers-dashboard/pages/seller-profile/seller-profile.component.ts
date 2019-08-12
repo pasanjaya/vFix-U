@@ -124,8 +124,8 @@ export class SellerProfileComponent implements OnInit {
           address: profile.result.profile.address,
           city: profile.result.profile.city,
           contactNo: profile.result.profile.contactNo,
-          latitude: profile.result.profile.latitude,
-          longitude: profile.result.profile.longitude,
+          latitude: profile.result.profile.geometry.coordinates[1],
+          longitude: profile.result.profile.geometry.coordinates[0],
           about: profile.result.profile.about
         };
         this.profile = myprofile;

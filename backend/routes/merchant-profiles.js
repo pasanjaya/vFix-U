@@ -16,8 +16,7 @@ router.post("/save", checkAuth, (req, res, next) => {
     address: req.body.address,
     city: req.body.city,
     contactNo: req.body.contactNo,
-    latitude: req.body.latitude,
-    longitude: req.body.longitude,
+    geometry: { type: "Point", coordinates: [req.body.longitude, req.body.latitude] },
     about: req.body.about,
     created_at: Date.now(),
     modified_at: Date.now()
@@ -85,8 +84,7 @@ router.put('/update/:id', checkAuth, (req, res, next) => {
     address: req.body.address,
     city: req.body.city,
     contactNo: req.body.contactNo,
-    latitude: req.body.latitude,
-    longitude: req.body.longitude,
+    geometry: { type: "Point", coordinates: [req.body.longitude, req.body.latitude] },
     about: req.body.about,
     modified_at: Date.now()
   });

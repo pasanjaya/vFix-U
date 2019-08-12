@@ -2,6 +2,25 @@ const mongoose = require('mongoose');
 const uniqueValidator = require('mongoose-unique-validator');
 const Schema = mongoose.Schema;
 
+const GeoSchema = Schema({
+  type: { type: String, default: "Point" },
+  coordinates: { type: [Number] }
+});
+
+// const profileSchema = Schema({
+//   merchantId: { type: Schema.Types.ObjectId, ref: 'Merchant', require:true },
+//   shopName: { type: String, require: true },
+//   shopReg: { type: String, require: true },
+//   address: { type: String, require: true },
+//   city: { type: String, require: true },
+//   contactNo: { type: String, require: true },
+//   latitude: { type: String, require: true },
+//   longitude: { type: String, require: true },
+//   about: { type: String },
+//   created_at: { type: Date },
+//   modified_at: { type: Date }
+// });
+
 const profileSchema = Schema({
   merchantId: { type: Schema.Types.ObjectId, ref: 'Merchant', require:true },
   shopName: { type: String, require: true },
@@ -9,8 +28,7 @@ const profileSchema = Schema({
   address: { type: String, require: true },
   city: { type: String, require: true },
   contactNo: { type: String, require: true },
-  latitude: { type: String, require: true },
-  longitude: { type: String, require: true },
+  geometry: GeoSchema,
   about: { type: String },
   created_at: { type: Date },
   modified_at: { type: Date }
