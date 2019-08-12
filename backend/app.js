@@ -24,8 +24,10 @@ const app = express();
 mongoose.set('useNewUrlParser', true);
 mongoose.set('useCreateIndex', true);
 
+const dbURI = "mongodb+srv://vfixu:OD7NtyVogn7ygY7T@cluster-vfixu-lxl1o.mongodb.net/vfixu?retryWrites=true";
+
 mongoose
-.connect("mongodb+srv://vfixu:OD7NtyVogn7ygY7T@cluster-vfixu-lxl1o.mongodb.net/vfixu?retryWrites=true")
+.connect(dbURI)
   .then(() => {
     console.log('Connected to database!');
   })
@@ -35,6 +37,36 @@ mongoose
       message: 'Connction Failed'
     });
   });
+
+// CONNECTION EVENTS
+// When successfully connected
+mongoose.connection.on('connected', function () {
+  console.log('Mongoose default connection open');
+});
+
+// If the connection throws an error
+mongoose.connection.on('error',function (err) {
+  console.log('Mongoose default connection error: ' + err);
+  res.status(501).json({
+    message: 'Mongoose default connection error'
+  });
+});
+
+// When the connection is disconnected
+mongoose.connection.on('disconnected', function () {
+  console.log('Mongoose default connection disconnected');
+  res.status(501).json({
+    message: 'Mongoose default connection disconnected'
+  });
+});
+
+// If the Node process ends, close the Mongoose connection
+process.on('SIGINT', function() {
+  mongoose.connection.close(function () {
+    console.log('Mongoose default connection disconnected through app termination');
+    process.exit(0);
+  });
+});
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));

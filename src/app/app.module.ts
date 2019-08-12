@@ -12,7 +12,8 @@ import {
   MatListModule,
   MatCardModule,
   MatButtonModule,
-  MatDialogModule
+  MatDialogModule,
+  MatStepperModule
 } from '@angular/material';
 
 import { CollapseModule } from 'ngx-bootstrap/collapse';
@@ -60,6 +61,7 @@ import { BuyerMapComponent } from './buyers-dashboard/pages/buyer-map/buyer-map.
 import { DeleteConfirmationBoxComponent } from './shared/delete-confirmation-box/delete-confirmation-box.component';
 import { ErrorComponent } from './shared/errors/errors.component';
 import { SupportComponent } from './support/support.component';
+import { BuyerDeliveryOptionComponent } from './buyers-dashboard/pages/buyer-delivery-option/buyer-delivery-option.component';
 
 @NgModule({
   declarations: [
@@ -93,7 +95,8 @@ import { SupportComponent } from './support/support.component';
     SellerIncomeComponent,
     ErrorComponent,
     BuyerMapComponent,
-    SupportComponent
+    SupportComponent,
+    BuyerDeliveryOptionComponent
   ],
   imports: [
     BrowserModule,
@@ -109,6 +112,7 @@ import { SupportComponent } from './support/support.component';
     MatCardModule,
     MatButtonModule,
     MatDialogModule,
+    MatStepperModule,
     CollapseModule.forRoot(),
     CarouselModule.forRoot(),
     ButtonsModule.forRoot(),

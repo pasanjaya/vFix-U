@@ -19,6 +19,7 @@ import { SellerMessagesComponent } from './sellers-dashboard/pages/seller-messag
 import { SellerIncomeComponent } from './sellers-dashboard/pages/seller-income/seller-income.component';
 import { BuyerMapComponent } from './buyers-dashboard/pages/buyer-map/buyer-map.component';
 import { SupportComponent } from './support/support.component';
+import { BuyerDeliveryOptionComponent } from './buyers-dashboard/pages/buyer-delivery-option/buyer-delivery-option.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/index', pathMatch: 'full'},
@@ -43,6 +44,7 @@ const routes: Routes = [
   { path: 'buyerdashboard/:id', component: BuyerComponentComponent, canActivate: [AuthGuard], children: [
     { path: '', component: BuyerDashboardComponent },
     { path: 'response', component: BuyerResponseViewerComponent },
+    { path: 'response/order', component: BuyerDeliveryOptionComponent },
     { path: 'buyerprofile', component: BuyerProfileComponent },
     { path: 'buyertracker', component: BuyerMapComponent },
     { path: 'support', component: SupportComponent }

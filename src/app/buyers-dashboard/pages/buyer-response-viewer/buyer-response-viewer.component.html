@@ -141,7 +141,8 @@
             <div class="card-body">
                 <h3 class="text-left text-yellow">Place Order</h3>
                 <div class="contact-section btn">
-                  <span><i class="fas fa-truck mr-2"></i> Under Construction</span>
+                  <button routerLink="order" [queryParams]="{ orderId: contentData[0]?.id }"><i class="fas fa-truck mr-2"></i> Order Now</button>
+                  <span>Under Construction</span>
                 </div>
               </div>
           </div>
