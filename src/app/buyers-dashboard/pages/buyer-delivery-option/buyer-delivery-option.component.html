@@ -2,11 +2,116 @@
   <div class="row">
     <mat-card class="container-card">
       <mat-card-header>
-        <mat-horizontal-stepper >
+        <mat-horizontal-stepper class="horizontal-stepper">
           <mat-step label="SHIPPING" completed=false>
-            <mat-card>
+            <mat-card class="stepper-card">
               <mat-card-content>
                 <!-- shipping content -->
+                <form [formGroup]="shippingForm" (ngSubmit)="onOrder()">
+                    <!-- Address -->
+                    <h6 class="heading-small text-muted mb-4">Recipient's information</h6>
+                    <div class="pl-lg-4">
+                      <div class="row">
+                        <div class="col-lg-6">
+                          <div class="form-group">
+                            <label class="form-control-label" for="input-shop-name"
+                              >Name</label
+                            >
+                            <input
+                              id="input-shop-name"
+                              class="form-control form-control-alternative"
+                              placeholder="Name"
+                              type="text"
+                              formControlName="name"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-lg-6">
+                          <div class="form-group">
+                            <label class="form-control-label" for="input-address"
+                              >Address</label
+                            >
+                            <input
+                              id="input-address"
+                              class="form-control form-control-alternative"
+                              placeholder="Address"
+                              type="text"
+                              formControlName="address"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-lg-3">
+                          <div class="form-group">
+                            <label class="form-control-label" for="input-city"
+                              >City</label
+                            >
+                            <input
+                              type="text"
+                              id="input-city"
+                              class="form-control form-control-alternative"
+                              placeholder="City"
+                              formControlName="city"
+                            />
+                          </div>
+                        </div>
+                        <div class="col-lg-3">
+                          <div class="form-group">
+                            <label class="form-control-label" for="input-contact"
+                              >Contact No.</label
+                            >
+                            <input
+                              type="text"
+                              id="input-contact"
+                              class="form-control form-control-alternative"
+                              placeholder="011 XXX XXXX"
+                              formControlName="contactNo"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-lg-3">
+                          <div class="form-group">
+                            <label class="form-control-label" for="input-latitude"
+                              >Latitude</label
+                            >
+                            <input
+                              type="text"
+                              id="input-latitude"
+                              class="form-control form-control-alternative"
+                              placeholder="latitude"
+                              formControlName="latitude"
+                            />
+                          </div>
+                        </div>
+                        <div class="col-lg-3">
+                          <div class="form-group">
+                            <label class="form-control-label" for="input-longitude"
+                              >Longitude</label
+                            >
+                            <input
+                              type="text"
+                              id="input-longitude"
+                              class="form-control form-control-alternative"
+                              placeholder="longitude"
+                              formControlName="longitude"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Description -->
+                    <!-- Save -->
+                    <div class="pl-lg-4 text-right">
+                      <div class="form-group">
+                        <button type="submit" class="btn btn-success">Save</button>
+                      </div>
+                    </div>
+                  </form>
               </mat-card-content>
               <mat-card-actions class="text-right">
                 <button mat-button matStepperNext>Next</button>
@@ -14,7 +119,7 @@
             </mat-card>
           </mat-step>
           <mat-step label="PAYMENT" completed=false>
-            <mat-card>
+            <mat-card class="stepper-card">
               <mat-card-content>
                 <!-- Payment content -->
               </mat-card-content>
@@ -25,7 +130,7 @@
             </mat-card>
           </mat-step>
           <mat-step label="REVIEW" completed=false>
-            <mat-card>
+            <mat-card class="stepper-card">
               <mat-card-content>
                 <div class="row">
                   <div class="col-12 col-md-8 order-review">
