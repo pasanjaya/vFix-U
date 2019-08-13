@@ -6,6 +6,30 @@
           <mat-step label="SHIPPING" completed=false>
             <mat-card class="stepper-card">
               <mat-card-content>
+                <!-- order summary -->
+                <table class="table table-dark">
+                    <thead>
+                      <tr>
+                        <th >Your Order</th>
+                        <th >Quantity</th>
+                        <th >Unit Price</th>
+                        <th >Total Price</th>
+                       </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                       <td>{{ order_response?.brand }}</td>
+                       <th >
+                          <div class="input-group input-group-sm mb-3">
+                              <input type="text" (input)="getQuality($event)" class="form-control" >
+                            </div>
+                       </th>
+                       <th >Rs {{ order_response?.unitPrice}}</th>
+                       <th >Rs {{(quality)*order_response?.unitPrice}}</th>
+                      </tr>
+                    </tbody>
+                  </table>
+
                 <!-- shipping content -->
                 <form [formGroup]="shippingForm" (ngSubmit)="onOrder()">
                     <!-- Address -->
