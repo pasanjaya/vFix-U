@@ -1,10 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { BuyerDeliveryService } from '../../services/buyer-delivery.service';
 
-import{OrderResponse} from '../../../models/order-response.model'
+import { BuyerDeliveryService } from '../../services/buyer-delivery.service';
+import { AuthService} from '../../../auth/auth.service';
+import {PaymentService} from '../../services/payment.service';
+
+import{OrderResponse} from '../../../models/order-response.model';
+import {Payment} from '../buyer-delivery-option/payment.model'
+
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-buyer-delivery-option',
@@ -14,10 +20,30 @@ import{OrderResponse} from '../../../models/order-response.model'
 
 
 export class BuyerDeliveryOptionComponent implements OnInit {
-
+  private BASEURL = environment.baseUrl;
   private queryParamsSub: Subscription;
 
-  constructor(private route: ActivatedRoute, private buyerDeliveryService: BuyerDeliveryService) { }
+  @ViewChild('payNow') payNowForm;
+
+  constructor(private route: ActivatedRoute,
+    private authService: AuthService,
+    private buyerDeliveryService: BuyerDeliveryService,
+    private paymentService:PaymentService) { }
+
+  currentPayment: Payment = {
+    first_name: '',
+    last_name: '',
+    address: '',
+    city: '',
+    country:'',
+    email:'',
+    pnumber:'',
+    amount: 0,
+    order_id: '',
+  };
+  payForm: FormGroup;
+  country="Srilanka";
+  orderId: string = Math.random().toString(36).substring(8);
 
   
   total = 0;
@@ -25,15 +51,31 @@ export class BuyerDeliveryOptionComponent implements OnInit {
   shippingForm: FormGroup;
   order_response: OrderResponse;
   
+  private userId: String;
+  return_url: string;
+  cancel_url: string;
+  userIsAuthenticated = false;
+  private authListenerSub: Subscription;
 
   ngOnInit() {
-    
+
+    this.currentPayment.order_id = this.orderId
+
+   
     let orderId = this.route.snapshot.queryParams['orderId'];
     this.queryParamsSub = this.route.queryParams
       .subscribe((qParams) => {
         orderId = qParams['orderId'];
       });
     
+    this.userId = this.authService.getUserId();
+    this.authListenerSub = this.authService.getAuthStatusLintener()
+      .subscribe(isAuthenticated => {
+        this.userId = this.authService.getUserId();
+        this.return_url = this.BASEURL + "/buyerdashboard/" + this.userId + "/success";
+        this.cancel_url = this.BASEURL + "/buyerdashboard/" + this.userId + "/cancel";
+      });
+
     
     this.buyerDeliveryService.getOrderResponses(orderId)
     .subscribe(document => {
@@ -66,6 +108,14 @@ export class BuyerDeliveryOptionComponent implements OnInit {
   onOrder() {
 
   }
+
+  onPay(){
+    this.paymentService.savePayment(this.currentPayment)
+    .subscribe((Data)=>{
+      this.payNowForm.nativeElement.submit();
+    })
+  }
+  
   
 
   getQuality(event: Event){
@@ -73,6 +123,10 @@ export class BuyerDeliveryOptionComponent implements OnInit {
     this.quality=(<HTMLInputElement>event.target).value
     console.log(this.quality)
     parseInt(this.quality);
+  }
+
+  ngOnDestroy() {
+    this.authListenerSub.unsubscribe();
   }
 
 }

@@ -20,6 +20,8 @@ import { SellerIncomeComponent } from './sellers-dashboard/pages/seller-income/s
 import { BuyerMapComponent } from './buyers-dashboard/pages/buyer-map/buyer-map.component';
 import { SupportComponent } from './support/support.component';
 import { BuyerDeliveryOptionComponent } from './buyers-dashboard/pages/buyer-delivery-option/buyer-delivery-option.component';
+import { SuccessComponent } from './buyers-dashboard/pages/success/success.component';
+import { CancelComponent } from './buyers-dashboard/pages/cancel/cancel.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/index', pathMatch: 'full'},
@@ -47,7 +49,9 @@ const routes: Routes = [
     { path: 'response/order', component: BuyerDeliveryOptionComponent },
     { path: 'buyerprofile', component: BuyerProfileComponent },
     { path: 'buyertracker', component: BuyerMapComponent },
-    { path: 'support', component: SupportComponent }
+    { path: 'support', component: SupportComponent },
+    { path: 'success', component: SuccessComponent},
+    { path: 'cancel', component: CancelComponent}
   ] },
   // sellerdashboard and its pages will routered here
   { path: 'sellerdashboard/:id', component: SellerComponentComponent, canActivate: [AuthGuard], children: [
@@ -56,7 +60,8 @@ const routes: Routes = [
     { path: 'selleradvertise', component: SellerAdvertiseComponent},
     { path: 'sellermessages', component: SellerMessagesComponent},
     { path: 'sellerincome', component: SellerIncomeComponent},
-    { path: 'support', component: SupportComponent }
+    { path: 'support', component: SupportComponent },
+   
   ] },
   // wild card routing will direct to this component
   { path: '**', component: NotFoundComponentComponent }

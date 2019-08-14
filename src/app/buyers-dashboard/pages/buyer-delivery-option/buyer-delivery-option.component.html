@@ -175,6 +175,94 @@
             <mat-card class="stepper-card">
               <mat-card-content>
                 <!-- Payment content -->
+                <div class="container">
+                    <table class="table table-striped">
+                       <tbody>
+                          <tr>
+                             <td colspan="1">
+                                <form id="payNow" method="post" action="https://sandbox.payhere.lk/pay/checkout" class="well form-horizontal" #payNow>
+                                   <fieldset>
+                                        <input type="hidden" name="merchant_id" value="1212627">
+                                        <input type="hidden" name="return_url" [value]="return_url">
+                                        <input type="hidden" name="cancel_url" [value]="cancel_url">
+                                        <input type="hidden" name="notify_url" value="http://127.0.0.1:3000/payhere/handle">  
+                                        <input type="hidden" name="order_id" value="{{orderId}}" [(ngModel)]="currentPayment.order_id">
+                                        <input type="hidden" name="items" value="UCSC_Exploration_Club's_Donations">
+                                        <input type="hidden" name="currency" value="LKR">
+                                      <div class="form-group">
+                                         <label class="col-md-4 control-label">First Name</label>
+                                         <div class="col-md-8 inputGroupContainer">
+                                            <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                              <input [(ngModel)]="currentPayment.first_name" id="fullName" name="first_name" placeholder="First Name" class="form-control" required="true" value="" type="text"></div>
+                                         </div>
+                                      </div>
+                                      <div class="form-group">
+                                         <label class="col-md-4 control-label">Last Name</label>
+                                         <div class="col-md-8 inputGroupContainer">
+                                            <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                              <input [(ngModel)]="currentPayment.last_name" id="fullName" name="last_name" placeholder="Last Name" class="form-control" required="true" value="" type="text"></div>
+                                         </div>
+                                      </div>
+                                      <div class="form-group">
+                                         <label class="col-md-4 control-label">Address Line </label>
+                                         <div class="col-md-8 inputGroupContainer">
+                                            <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-home"></i>
+                                            </span><input [(ngModel)]="currentPayment.address" id="addressLine1" name="address" placeholder="Address Line" class="form-control" required="true" value="" type="text"></div>
+                                         </div>
+                                      </div>
+                                     
+                                      <div class="form-group">
+                                         <label class="col-md-4 control-label">City</label>
+                                         <div class="col-md-8 inputGroupContainer">
+                                            <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+                                              <input [(ngModel)]="currentPayment.city" id="city" name="city" placeholder="City" class="form-control" required="true" value="" type="text"></div>
+                                         </div>
+                                      </div>
+                                      
+                                       <div class="form-group">
+                                         <label class="col-md-4 control-label">Country</label>
+                                         <div class="col-md-8 inputGroupContainer">
+                                            <div class="input-group">
+                                               <span class="input-group-addon" style="max-width: 100%;"><i class="glyphicon glyphicon-list"></i></span>
+             
+                                               <select name="country" class="selectpicker form-control" [(ngModel)]="currentPayment.country">
+                                                  <option [ngValue] = "country" selected>Sri Lanka</option>
+                                               </select>
+                                            </div>
+                                         </div>
+                                      </div> 
+                                       <div class="form-group">
+                                         <label class="col-md-4 control-label">Email</label>
+                                         <div class="col-md-8 inputGroupContainer">
+                                            <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+                                              <input [(ngModel)]="currentPayment.email" id="email" name="email" placeholder="Email" class="form-control" required="true" value="" type="text"></div>
+                                         </div>
+                                      </div>
+                                      <div class="form-group">
+                                         <label class="col-md-4 control-label">Phone Number</label>
+                                         <div class="col-md-8 inputGroupContainer">
+                                            <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+                                              <input [(ngModel)]="currentPayment.pnumber" id="phoneNumber" name="phone" placeholder="Phone Number" class="form-control" required="true" value="" type="text"></div>
+                                         </div>
+                                      </div>
+                                      <div class="form-group">
+                                         <label class="col-md-4 control-label">Amount</label>
+                                         <div class="col-md-8 inputGroupContainer">
+                                            <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-euro"></i></span>
+                                              <input [(ngModel)]="currentPayment.amount" id="amount" name="amount" placeholder="Amount" class="form-control" required="true" value="" type="text"></div>
+                                         </div>
+                                      </div> 
+                                     
+                                   </fieldset>
+                                   <button (click)="onPay()" class="btn btn-success">Pay</button>
+                                </form>
+                             </td>
+                            
+                          </tr>
+                       </tbody>
+                    </table>
+                 </div>
+
               </mat-card-content>
               <mat-card-actions class="text-right">
                 <button mat-button matStepperPrevious>Previous</button>
