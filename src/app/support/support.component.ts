@@ -5,6 +5,7 @@ import { Subscription } from 'rxjs';
 
 import { SupportService } from '../services/support.service';
 import { SupportData } from 'src/app/models/support-data.model';
+import { DeleteConfirmationBoxComponent } from '../shared/delete-confirmation-box/delete-confirmation-box.component';
 
 @Component({
   selector: 'app-support',
@@ -18,7 +19,7 @@ export class SupportComponent implements OnInit {
   support: SupportData[] = [];
   private supportSub: Subscription;
 
-  constructor(private supportService: SupportService) { }
+  constructor(private supportService: SupportService, public dialog: MatDialog) { }
 
   ngOnInit() {
     this.supportForm = new FormGroup({
@@ -26,6 +27,19 @@ export class SupportComponent implements OnInit {
       email: new FormControl(null, Validators.required),
       phoneNo: new FormControl(null, Validators.required),
       message: new FormControl (null, Validators.required),
+  });
+}
+openDialog(): void {
+  const dialogRef = this.dialog.open(DeleteConfirmationBoxComponent, {
+    width: '350px',
+    data: 'Do you wish to proceed?'
+  });
+
+  dialogRef.afterClosed().subscribe(result => {
+    if (result) {
+      console.log('Yes clicked');
+      this.onPublish();
+    }
   });
 }
 
