@@ -13,13 +13,8 @@ const BACKEND_URL = environment.apiUrl + 'support/';
   providedIn: 'root'
 })
 export class SupportService {
-  private messagesData: SupportData[] = [];
-  private messageDataUpdated = new Subject<SupportData[]>();
-  private messagesSellerData: SupportData[] = [];
-  private messageSellerDataUpdated = new Subject<{
-    messages: SupportData[];
-    messageCount: number;
-  }>();
+  private supportData: SupportData[] = [];
+  private supportDataUpdated = new Subject<SupportData[]>();
 
   constructor(private http: HttpClient) { }
 
@@ -44,41 +39,38 @@ export class SupportService {
         console.log(response);
       });
   }
-  // buyer message retive
-//   getMessageRequest() {
-//     this.http
-//       .get<{ message: string; messageDataCollections: any }>(
-//         'http://localhost:3000/api/message/retrive'
-//       )
-//       .pipe(
-//         map(messageData => {
-//           return messageData.messageDataCollections.map(
-//             messageDataCollection => {
-//               return {
-//                 id: messageDataCollection._id,
-//                 maker: messageDataCollection.vehicalMaker,
-//                 model: messageDataCollection.vehicalModel,
-//                 categoryId: messageDataCollection.categoryId,
-//                 sparePartName: messageDataCollection.sparePartName,
-//                 partImagePath: messageDataCollection.itemImagePath,
-//                 note: messageDataCollection.itemNote,
-//                 messageCreator: messageDataCollection.messageCreator,
-//                 responses: messageDataCollection.rensponses,
-//                 created_at: messageDataCollection.created_at
-//               };
-//             }
-//           );
-//         })
-//       )
-//       .subscribe(transformedData => {
-//         this.messagesData = transformedData;
-//         this.messageDataUpdated.next([...this.messagesData]);
-//       });
-//   }
 
-//   getMessageDataUpdatedListener() {
-//     return this.messageDataUpdated.asObservable();
-//   }
+
+  // support data retive
+  getSupportList() {
+     this.http
+       .get<{ message: string; supportDataCollections: any }>(
+        BACKEND_URL + 'retrive'
+       )
+       .pipe(
+         map(messageData => {
+           return messageData.supportDataCollections.map(
+             supportDataCollection => {
+               return {
+                 id: supportDataCollection._id,
+                 fullName: supportDataCollection.fullName,
+                 email: supportDataCollection.email,
+                 phoneNo: supportDataCollection.phoneNo,
+                 message: supportDataCollection.message
+               };
+             }
+           );
+         })
+       )
+       .subscribe(transformedData => {
+         this.supportData = transformedData;
+         this.supportDataUpdated.next([...this.supportData]);
+       });
+  }
+
+  getSupportDataUpdatedListener() {
+    return this.supportDataUpdated.asObservable();
+  }
 
 //   // sellers message retrive
 //   getMessageRequestSeller(currentPage: number) {
