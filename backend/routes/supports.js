@@ -33,13 +33,13 @@ router.post(
   }
 );
 
-router.get("/retrive", checkAuth, (req, res, next) => {
+router.get("/retrive", (req, res, next) => {
   Support.find()
     .then(documents => {
       if (documents) {
         res.status(200).json({
-          message: "MessageRequestData fetched successfully!",
-          messageDataCollections: documents
+          message: "SupportRequestData fetched successfully!",
+          supportDataCollections: documents
         });
       } else {
         res.status(404).json({
