@@ -60,7 +60,7 @@
                   {{ message.note !== " " ? message.note : "-" }}
                 </dd>
               </dl>
-              <a role="button" class="btn btn-secondary" (click)="ignored(message.id)">Ignore</a>
+              <a role="button" class="btn btn-secondary" (click)="openDialog(message.id)" >Ignore</a>
               <button
                 type="button"
                 (click)="catchIt(i)"
