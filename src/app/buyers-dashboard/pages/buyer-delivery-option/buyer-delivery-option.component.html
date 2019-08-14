@@ -183,11 +183,11 @@
                                 <form id="payNow" method="post" action="https://sandbox.payhere.lk/pay/checkout" class="well form-horizontal" #payNow>
                                    <fieldset>
                                         <input type="hidden" name="merchant_id" value="1212627">
-                                        <input type="hidden" name="return_url" [value]="return_url">
+                                        <input type="hidden" name="return_url" value="http//:localhost:4200">
                                         <input type="hidden" name="cancel_url" [value]="cancel_url">
-                                        <input type="hidden" name="notify_url" value="http://127.0.0.1:3000/payhere/handle">  
+                                        <input type="hidden" name="notify_url" value="http://35.198.222.95:4000/payhere/handle">  
                                         <input type="hidden" name="order_id" value="{{orderId}}" [(ngModel)]="currentPayment.order_id">
-                                        <input type="hidden" name="items" value="UCSC_Exploration_Club's_Donations">
+                                        <input type="hidden" name="items" value="v-FixU">
                                         <input type="hidden" name="currency" value="LKR">
                                       <div class="form-group">
                                          <label class="col-md-4 control-label">First Name</label>

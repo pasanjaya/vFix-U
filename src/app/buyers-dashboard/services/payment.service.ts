@@ -12,7 +12,7 @@ export class  PaymentService{
     constructor(private http: HttpClient){}
 
     savePayment(payment: Payment): Observable<any>{
-        return this.http.post("/payment",{
+        return this.http.post("http://localhost:3000/api/payment/pay",{
             "first_name": payment.first_name,
             "last_name": payment.last_name,
             "address": payment.address,

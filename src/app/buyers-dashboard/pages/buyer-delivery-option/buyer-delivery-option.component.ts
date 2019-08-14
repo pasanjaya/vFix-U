@@ -72,10 +72,12 @@ export class BuyerDeliveryOptionComponent implements OnInit {
     this.authListenerSub = this.authService.getAuthStatusLintener()
       .subscribe(isAuthenticated => {
         this.userId = this.authService.getUserId();
-        this.return_url = this.BASEURL + "/buyerdashboard/" + this.userId + "/success";
+        this.return_url = "http://localhost:4200/buyerdashboard/" + this.userId + "/success";
         this.cancel_url = this.BASEURL + "/buyerdashboard/" + this.userId + "/cancel";
+        console.log(this.return_url)
       });
 
+      
     
     this.buyerDeliveryService.getOrderResponses(orderId)
     .subscribe(document => {
