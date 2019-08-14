@@ -1,3 +1,31 @@
-<p>
-  admin-mail works!
-</p>
+<div class="header bg-gradient-default pb-8 pt-5 pt-md-8">
+  <!-- Page content -->
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-6 mb-5" *ngFor="let support of supportData">
+        <div class="card" >
+          <div class="card-body">
+            <h5 class="card-title">New message</h5>
+            <dl class="row">
+              <dt class="col-sm-4">Name:</dt>
+              <dd class="col-sm-8">{{ support.fullName }}</dd>
+              <dt class="col-sm-4">Email:</dt>
+              <dd class="col-sm-8">{{ support.email }}</dd>
+              <!-- <dt class="col-sm-4">Category:</dt>
+          <dd class="col-sm-8">{{ message.categoryId }}</dd> -->
+              <dt class="col-sm-4">Contact:</dt>
+              <dd class="col-sm-8">{{ support.phoneNo }}</dd>
+              <dt class="col-sm-4">Message:</dt>
+              <dd class="col-sm-8">{{ support.message }}</dd>
+            </dl>
+            <div style="float: right;" >
+                <button type="button" class="btn btn-danger" (click)="openDialog()">Remove</button>
+                <button type="button" class="btn btn-default">Reply</button>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br />
+  </div>
+</div>

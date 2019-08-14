@@ -140,8 +140,8 @@ router.post('/reqIgnore', checkAuth, (req, res, next) => {
     .catch(err => {
       res.status(501).json({
         message: 'message not ignored'
-      })
-    })
-})
+      });
+    });
+});
 
 module.exports = router;

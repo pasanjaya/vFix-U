@@ -2,6 +2,7 @@ import { MessageResponseService } from './../../services/message-response.servic
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { BsModalRef, BsModalService, PageChangedEvent } from 'ngx-bootstrap';
+import { MatDialog } from '@angular/material';
 
 import { MessageRequestData } from 'src/app/models/message-request-data.model';
 
@@ -9,6 +10,7 @@ import { MessageRequestService } from './../../../buyers-dashboard/services/mess
 import { SellerProfileService } from '../../services/seller-profile.service';
 
 import { SellerDashboardCatchitComponent } from './seller-dashboard-catchit/seller-dashboard-catchit.component';
+import { DeleteConfirmationBoxComponent } from 'src/app/shared/delete-confirmation-box/delete-confirmation-box.component';
 
 @Component({
   selector: 'app-buyer-dashboard',
@@ -32,7 +34,8 @@ export class SellerDashboardComponent implements OnInit, OnDestroy {
     private sellerProfileService: SellerProfileService,
     private messageRequestService: MessageRequestService,
     private messageResponseService: MessageResponseService,
-    private modalService: BsModalService
+    private modalService: BsModalService,
+    public dialog: MatDialog
   ) {}
 
   ngOnInit() {
@@ -93,6 +96,20 @@ export class SellerDashboardComponent implements OnInit, OnDestroy {
     const updatedMessage = this.messagesData.filter(advert => advert.id !== id);
     this.messagesData = updatedMessage;
     this.messageResponseService.rejectCatchRequest(id, 'ignore');
+  }
+
+  openDialog(id: string): void {
+    const dialogRef = this.dialog.open(DeleteConfirmationBoxComponent, {
+      width: '350px',
+      data: 'Do you confirm the ignorance of this request?'
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        console.log('Yes clicked');
+        this.ignored(id);
+      }
+    });
   }
 
   ngOnDestroy() {
