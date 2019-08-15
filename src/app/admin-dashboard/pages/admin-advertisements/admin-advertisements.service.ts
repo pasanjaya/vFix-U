@@ -48,6 +48,15 @@ export class AdminAdvertisementsService {
     return this.advertisementUpdated.asObservable();
   }
 
+  approveAdvertisement(id: string) {
+    this.http.put('http://localhost:3000/api/landing/approve/' + id, { approved: true })
+    .subscribe(response => {
+      console.log(response);
+    });
+  }
+
+
+
   deleteAdvertisement(id: string) {
     this.http.delete('http://localhost:3000/api/landing/delete/' + id)
     .subscribe(() => {

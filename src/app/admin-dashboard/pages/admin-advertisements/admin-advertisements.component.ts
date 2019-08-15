@@ -40,8 +40,8 @@ export class AdminAdvertisementsComponent implements OnInit, OnDestroy {
       });
   }
 
-  approve() {
-
+  approve(id: string) {
+    // this.adminAdvertisementService.approveAdvertisement(id);
   }
 
   // delete advertisements

@@ -53,6 +53,26 @@ router.get("/adv/approve", (req, res, next) => {
 });
 
 
+router.put("/approve/:id", (req, res, next) => {
+    Advertisements.updateOne({_id: req.params.id}, advertisement)
+    .then(result => {
+      if (result.nModified > 0) {
+        res.status(200).json({
+          message: 'Updated Successfully'
+        });
+      } else {
+        res.status(401).json({
+          message: 'Not Authorized'
+        });
+      }
+    }).catch(err => {
+      res.status(500).json({
+        message: 'Couldn\'t update advertisment'
+      });
+    });
+  }
+);
+
 router.delete('/delete/:id', (req, res, next) => {
   Advertisements.deleteOne({_id: req.params.id})
   .then(result => {
