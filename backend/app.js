@@ -14,12 +14,9 @@ const messageRequestRoutes = require("./routes/messageRequests");
 const messageResponseRoute = require('./routes/messageResponses');
 const landingRoutes = require('./routes/landingAdvertisements');
 const paymentRoutes = require('./routes/payment');
-<<<<<<< HEAD
 const summaryRoutes = require('./routes/summary');
-=======
 const mobileUserRoutes = require('./routes/mobileUsers');
 const supportRoutes = require("./routes/supports");
->>>>>>> fd582e2b9c472a8442d4dac86ae7f858265ee60b
 
 // const carDataRoutes = require("./routes/carData")
 
@@ -97,12 +94,9 @@ app.use('/api/message/response', messageResponseRoute);
 app.use('/api/merchant/adver', advertisementRoutes);
 app.use('/api/landing', landingRoutes);
 app.use('/api/payment', paymentRoutes);
-<<<<<<< HEAD
 app.use('/api/summarize', summaryRoutes);
-=======
 app.use('/api/mobile/user', mobileUserRoutes);
 app.use('/api/support', supportRoutes);
->>>>>>> fd582e2b9c472a8442d4dac86ae7f858265ee60b
 // app.use('/api/car-data', carDataRoutes);
 
 module.exports = app;
