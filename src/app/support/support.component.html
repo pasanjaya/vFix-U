@@ -1,33 +1,68 @@
 <div class="container mt-5">
   <div class="col-8">
     <div class="card">
-      <div class="card-header" style="background-image: url('assets/img/bg-01.jpg');">
+      <div
+        class="card-header"
+        style="background-image: url('assets/img/bg-01.jpg');"
+      >
         <h1 class="text-white">Contact Us</h1>
         <h3 class="text-white">Feel free to drop us a line below!</h3>
       </div>
       <div class="card-body">
-        <form class="validate-form">
-          <div class="form-group" data-validate="Name is required">
-            <label for="name">Full Name:</label>
-            <input type="text" class="form-control" id="name" placeholder="Enter full name" />
-          </div>
-          <div class="form-group" data-validate="Valid email is required: ex@abc.xyz">
-            <label for="email">Email:</label>
-            <input type="email" class="form-control" id="email" placeholder="Enter email addess" />
-          </div>
-          <div class="form-group">
-            <label for="phone">Phone:</label>
-            <input type="text" class="form-control" id="phone" placeholder="Enter phone number" />
-          </div>
+        <form [formGroup]="supportForm" (ngSubmit)="onPublish()">
+            <div class="form-group" data-validate="Name is required">
+              <label for="name">Full Name:</label>
+              <input
+                type="text"
+                class="form-control"
+                id="fullName"
+                placeholder="Enter full name"
+                formControlName="fullName"
+              />
+            </div>
+            <div
+              class="form-group"
+              data-validate="Valid email is required: ex@abc.xyz"
+            >
+              <label for="email">Email:</label>
+              <input
+                type="email"
+                class="form-control"
+                id="email"
+                placeholder="Enter email addess"
+                formControlName="email"
+              />
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone:</label>
+              <input
+                type="text"
+                class="form-control"
+                id="phoneNo"
+                placeholder="Enter phone number"
+                formControlName="phoneNo"
+              />
+            </div>
 
-          <div class="form-group" data-validate="Message is required">
-            <label for="message">Message:</label>
-            <textarea class="form-control" name="message" placeholder="Your Comment..."></textarea>
-          </div>
-          <div class="text-right">
-            <button type="button" class="btn btn-success">Send <i class="ni ni-send"></i></button>
-          </div>
-        </form>
+            <div class="form-group" data-validate="Message is required">
+              <label for="message">Message:</label>
+              <textarea
+                class="form-control"
+                name="message"
+                placeholder="Your Comment..."
+                formControlName="message"
+              ></textarea>
+            </div>
+            <div class="text-right">
+              <button
+                type="submit"
+                class="btn btn-success"
+                (click)="openDialog()"
+                >
+                Send<i class="ni ni-send"></i>
+              </button>
+            </div>
+          </form>
       </div>
     </div>
   </div>
