@@ -11,6 +11,7 @@ import{OrderResponse} from '../../../models/order-response.model';
 import {Payment} from '../buyer-delivery-option/payment.model'
 
 import { environment } from 'src/environments/environment';
+import { Summary } from './summary.model';
 
 @Component({
   selector: 'app-buyer-delivery-option',
@@ -43,11 +44,13 @@ export class BuyerDeliveryOptionComponent implements OnInit {
   };
   payForm: FormGroup;
   country="Srilanka";
-  orderId: string = Math.random().toString(36).substring(8);
+  ship_id: string = Math.random().toString(36).substring(8);
 
-  
+  private orderId: string;
+
   total = 0;
   quality = '';
+  deliveryCost = 850;
   shippingForm: FormGroup;
   order_response: OrderResponse;
   
@@ -59,13 +62,15 @@ export class BuyerDeliveryOptionComponent implements OnInit {
 
   ngOnInit() {
 
-    this.currentPayment.order_id = this.orderId
+    this.currentPayment.order_id = this.ship_id
 
    
-    let orderId = this.route.snapshot.queryParams['orderId'];
+
+   
+    this.orderId = this.route.snapshot.queryParams['orderId'];
     this.queryParamsSub = this.route.queryParams
       .subscribe((qParams) => {
-        orderId = qParams['orderId'];
+        this.orderId = qParams['orderId'];
       });
     
     this.userId = this.authService.getUserId();
@@ -79,7 +84,7 @@ export class BuyerDeliveryOptionComponent implements OnInit {
 
       
     
-    this.buyerDeliveryService.getOrderResponses(orderId)
+    this.buyerDeliveryService.getOrderResponses(this.orderId)
     .subscribe(document => {
     
      
@@ -92,6 +97,7 @@ export class BuyerDeliveryOptionComponent implements OnInit {
       }
       this.order_response = orderDetails;
       console.log(this.order_response);
+
       
     })
 
@@ -107,7 +113,25 @@ export class BuyerDeliveryOptionComponent implements OnInit {
   }
 
 
-  onOrder() {
+  onSummery() {
+    const orderSummery: Summary = {
+      unitPrice: this.order_response.unitPrice,
+      order_id: this.orderId,
+      quantity: this.quality,
+      deleveryCost:this.deliveryCost,
+      seller_id:this.order_response.responseCreator.merchantId,
+      recipient_name: this.shippingForm.get('name').value,
+      recipient_address: this.shippingForm.get('address').value,
+      recipient_city: this.shippingForm.get('city').value,
+      recipirnt_contact: this.shippingForm.get('contactNo').value,
+
+
+    }
+    console.log("tttt")
+    console.log(orderSummery)
+    this.paymentService.saveSummary(orderSummery).subscribe(result =>{
+      console.log(result);
+    })
 
   }
 
