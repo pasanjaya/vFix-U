@@ -13,6 +13,7 @@ const advertisementRoutes = require("./routes/advertisements");
 const messageRequestRoutes = require("./routes/messageRequests");
 const messageResponseRoute = require('./routes/messageResponses');
 const landingRoutes = require('./routes/landingAdvertisements');
+const paymentRoutes = require('./routes/payment');
 const mobileUserRoutes = require('./routes/mobileUsers');
 const supportRoutes = require("./routes/supports");
 
@@ -91,6 +92,7 @@ app.use('/api/message', messageRequestRoutes);
 app.use('/api/message/response', messageResponseRoute);
 app.use('/api/merchant/adver', advertisementRoutes);
 app.use('/api/landing', landingRoutes);
+app.use('/api/payment', paymentRoutes);
 app.use('/api/mobile/user', mobileUserRoutes);
 app.use('/api/support', supportRoutes);
 // app.use('/api/car-data', carDataRoutes);
