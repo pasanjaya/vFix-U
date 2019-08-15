@@ -47,13 +47,13 @@
                 class="card-profile-stats d-flex justify-content-center mt-md-5"
               >
                 <div>
-                  <span class="heading">10</span>
+                  <span class="heading">0</span>
                   <span class="description">Reviews</span>
                 </div>
               </div>
             </div>
           </div>
-          <div class="text-center">
+          <div class="text-center" *ngIf="hasProfile">
             <link
               rel="stylesheet"
               href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
@@ -67,8 +67,8 @@
             <hr class="my-4" />
             <h2><b>Comments</b></h2>
             <div class="card-body">
-              <h5 class="card-title">Commentor</h5>
-              <p class="card-text">Comment</p>
+              <h5 class="card-title">Admin</h5>
+              <p class="card-text">Welcome to vFix-U system</p>
               <button class="btn btn-icon btn-sm btn-primary" type="button">
                 <span class="btn-inner--icon"
                   ><i class="ni ni-like-2"></i>
@@ -78,31 +78,6 @@
                 Reply
               </button>
             </div>
-            <div class="card-body">
-              <h5 class="card-title">Commentor</h5>
-              <p class="card-text">Comment</p>
-              <button class="btn btn-icon btn-sm btn-primary" type="button">
-                <span class="btn-inner--icon"
-                  ><i class="ni ni-like-2"></i>
-                </span>
-              </button>
-              <button type="button" class="btn btn-primary btn-sm">
-                Reply
-              </button>
-            </div>
-            <div class="card-body">
-              <h5 class="card-title">Commentor</h5>
-              <p class="card-text">Comment</p>
-              <button class="btn btn-icon btn-sm btn-primary" type="button">
-                <span class="btn-inner--icon"
-                  ><i class="ni ni-like-2"></i>
-                </span>
-              </button>
-              <button type="button" class="btn btn-primary btn-sm">
-                Reply
-              </button>
-            </div>
-            <a href="javascript:void(0)">Show more</a>
           </div>
         </div>
       </div>
@@ -124,41 +99,6 @@
             <div class="spinner-border spinner-border-sm" role="status" *ngIf="isLoading">
               <span class="sr-only">Loading...</span>
             </div>
-            <!-- <div class='row'>
-              <div class="form-group">
-                  <label class="custom-toggle">
-                      <input type="checkbox" formControlName="mode">
-                      <span class="custom-toggle-slider rounded-circle"></span>
-                  </label>
-                  <label class="form-control-label" for="input-email" class="mr-2">View Mode</label>
-              </div>
-            </div> -->
-
-            <!-- <h6 class="heading-small text-muted mb-4">User information</h6>
-              <div class="pl-lg-4">
-                <div class="row">
-                  <div class="col-lg-6">
-                    <div class="form-group">
-                        <label class="form-control-label" for="input-email">Email address</label>
-                        <input type="email" id="input-email" class="form-control form-control-alternative" placeholder="jesse@example.com">
-                    </div>
-                  </div>
-                  <div class="col-lg-6">
-                      <div class="form-group">
-                          <label class="form-control-label" for="input-full-name">Full Name</label>
-                          <input type="text" id="input-full-name" class="form-control form-control-alternative" placeholder="Name" value="Lucky">
-                        </div>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-lg-6">
-                    <div class="form-group">
-                      <label class="form-control-label" for="input-mobile-number">Mobile Number</label>
-                      <input type="text" id="input-mobile-number" class="form-control form-control-alternative" placeholder="07X XXX XXXX" value="Jesse">
-                    </div>
-                  </div>
-                </div>
-              </div> -->
             <hr class="my-4" />
             <!-- Address -->
             <h6 class="heading-small text-muted mb-4">Shop information</h6>

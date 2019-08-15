@@ -214,12 +214,10 @@
                 class="text-danger font-italic"
                 >This field is required</small
               >
-          </form>
-
           <div class="mb-3">
             <ul class="list-group">
               <li class="list-group-item" *ngIf="images.length <= 0;else catList">
-                <small>Task list is empty!</small>
+                <small>Carousel image list is empty!</small>
               </li>
               <li class="list-group-item" #catList *ngFor="let img of images; index as i">
                 <span>{{i+1}}. {{ img.catName }}</span>
@@ -231,6 +229,7 @@
               </li>
             </ul>
           </div>
+        </form>
         </div>
       </div>
     </div>
