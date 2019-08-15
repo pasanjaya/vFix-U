@@ -62,6 +62,8 @@ import { DeleteConfirmationBoxComponent } from './shared/delete-confirmation-box
 import { ErrorComponent } from './shared/errors/errors.component';
 import { SupportComponent } from './support/support.component';
 import { BuyerDeliveryOptionComponent } from './buyers-dashboard/pages/buyer-delivery-option/buyer-delivery-option.component';
+import { SuccessComponent } from './buyers-dashboard/pages/success/success.component';
+import { CancelComponent } from './buyers-dashboard/pages/cancel/cancel.component';
 
 @NgModule({
   declarations: [
@@ -96,7 +98,9 @@ import { BuyerDeliveryOptionComponent } from './buyers-dashboard/pages/buyer-del
     ErrorComponent,
     BuyerMapComponent,
     SupportComponent,
-    BuyerDeliveryOptionComponent
+    BuyerDeliveryOptionComponent,
+    SuccessComponent,
+    CancelComponent
   ],
   imports: [
     BrowserModule,

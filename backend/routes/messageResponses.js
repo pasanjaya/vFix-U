@@ -144,4 +144,31 @@ router.post('/reqIgnore', checkAuth, (req, res, next) => {
     });
 });
 
+
+
+// to buyer delivery
+
+router.get("/order/:id", (req, res, next) => {
+  Response.find({ _id: req.params.id })
+    .populate({path: "responseCreator", select: "profile", populate: {path: "profile", model: "MerchantProfile" } })
+    .select('brand unitPrice MerchantProfile')
+    .exec((err, document) => {
+      if (err) {
+        res.status(500).json({
+          message: 'Response and creator profile population error'
+        });
+      }
+      if (!document) {
+        res.status(404).json({
+          message: "data not found"
+        });
+      }
+      res.status(200).json({
+        message: "respond found",
+        response: document
+      });
+    });
+});
+
+
 module.exports = router;
